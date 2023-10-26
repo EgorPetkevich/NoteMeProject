@@ -16,6 +16,10 @@
 		F2FD43922AE838290068A5CB /* UIImage+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD43912AE838290068A5CB /* UIImage+Consts.swift */; };
 		F2FD43952AE83B2B0068A5CB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F2FD43942AE83B2B0068A5CB /* SnapKit */; };
 		F2FD43972AE83B2B0068A5CB /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F2FD43962AE83B2B0068A5CB /* SnapKit-Dynamic */; };
+		F2FD439E2AE83DE10068A5CB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD439D2AE83DE10068A5CB /* LoginVC.swift */; };
+		F2FD43A02AE9BA330068A5CB /* UILabel+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD439F2AE9BA330068A5CB /* UILabel+Consts.swift */; };
+		F2FD43A22AE9BB720068A5CB /* UIView+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD43A12AE9BB720068A5CB /* UIView+Consts.swift */; };
+		F2FD43A42AE9CC530068A5CB /* UIButton+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD43A32AE9CC530068A5CB /* UIButton+Consts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		F2FD438D2AE82E810068A5CB /* UIColor+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Consts.swift"; sourceTree = "<group>"; };
 		F2FD438F2AE834E70068A5CB /* UIFont+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Consts.swift"; sourceTree = "<group>"; };
 		F2FD43912AE838290068A5CB /* UIImage+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Consts.swift"; sourceTree = "<group>"; };
+		F2FD439D2AE83DE10068A5CB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		F2FD439F2AE9BA330068A5CB /* UILabel+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Consts.swift"; sourceTree = "<group>"; };
+		F2FD43A12AE9BB720068A5CB /* UIView+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Consts.swift"; sourceTree = "<group>"; };
+		F2FD43A32AE9CC530068A5CB /* UIButton+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Consts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 		F2FD43752AE825000068A5CB /* NoteMe */ = {
 			isa = PBXGroup;
 			children = (
+				F2FD43982AE83D880068A5CB /* Modules */,
 				F2FD438A2AE82D2A0068A5CB /* App */,
 				F2FD438B2AE82DE70068A5CB /* Resourse */,
 				F2FD43812AE825020068A5CB /* LaunchScreen.storyboard */,
@@ -94,8 +103,35 @@
 				F2FD438D2AE82E810068A5CB /* UIColor+Consts.swift */,
 				F2FD438F2AE834E70068A5CB /* UIFont+Consts.swift */,
 				F2FD43912AE838290068A5CB /* UIImage+Consts.swift */,
+				F2FD439F2AE9BA330068A5CB /* UILabel+Consts.swift */,
+				F2FD43A12AE9BB720068A5CB /* UIView+Consts.swift */,
+				F2FD43A32AE9CC530068A5CB /* UIButton+Consts.swift */,
 			);
 			path = Consts;
+			sourceTree = "<group>";
+		};
+		F2FD43982AE83D880068A5CB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F2FD439B2AE83DBF0068A5CB /* Auth */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F2FD439B2AE83DBF0068A5CB /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				F2FD439C2AE83DCA0068A5CB /* Login */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		F2FD439C2AE83DCA0068A5CB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F2FD439D2AE83DE10068A5CB /* LoginVC.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,9 +211,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2FD43A02AE9BA330068A5CB /* UILabel+Consts.swift in Sources */,
 				F2FD43922AE838290068A5CB /* UIImage+Consts.swift in Sources */,
 				F2FD43902AE834E70068A5CB /* UIFont+Consts.swift in Sources */,
+				F2FD439E2AE83DE10068A5CB /* LoginVC.swift in Sources */,
+				F2FD43A22AE9BB720068A5CB /* UIView+Consts.swift in Sources */,
 				F2FD43772AE825000068A5CB /* AppDelegate.swift in Sources */,
+				F2FD43A42AE9CC530068A5CB /* UIButton+Consts.swift in Sources */,
 				F2FD438E2AE82E810068A5CB /* UIColor+Consts.swift in Sources */,
 				F2FD43792AE825000068A5CB /* SceneDelegate.swift in Sources */,
 			);
