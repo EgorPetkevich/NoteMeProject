@@ -8,15 +8,17 @@
 import UIKit
 
 extension UIView {
+    
     static func content() -> UIView {
         let view = UIView()
-        view.backgroundColor = .appGray
+        view.backgroundColor = .appContentWhite
         return view
     }
     
-    static func login () -> UIView {
+    static func info() -> UIView {
         let view = UIView()
-        view.backgroundColor = UIColor.appContentWhite
+        view.cornerRadius = 5.0
+        view.backgroundColor = UIColor.appInfoWhite
         return view
     }
     
@@ -25,4 +27,5 @@ extension UIView {
         view.backgroundColor = UIColor.black
         return view
     }
+    
 }

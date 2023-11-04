@@ -29,4 +29,13 @@ extension UILabel {
         label.font = UIFont.appRegularFont(textSize)
         return label
     }
+    
+    static func interpret(_ text: String, _ textSize: CGFloat = 13.0) -> UILabel {
+        let label = UILabel()
+        label.text = text
+        label.font = UIFont.appRegularFont(textSize)
+        label.numberOfLines = 2
+        return label
+    }
+    
 }

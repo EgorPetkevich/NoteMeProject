@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2F3EA5F2AF15F710019445B /* View+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3EA5E2AF15F710019445B /* View+Layer.swift */; };
+		F2F3EA622AF160440019445B /* UIButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3EA612AF160440019445B /* UIButton+Styles.swift */; };
+		F2F3EA652AF16ECA0019445B /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3EA642AF16ECA0019445B /* LineTextField.swift */; };
+		F2F3EA682AF55E3D0019445B /* SingInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3EA672AF55E3D0019445B /* SingInVC.swift */; };
+		F2F3EA6B2AF564E00019445B /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3EA6A2AF564E00019445B /* ResetPasswordVC.swift */; };
+		F2F3EA6F2AF69B720019445B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2F3EA712AF69B720019445B /* Localizable.strings */; };
+		F2F3EA742AF6ACDC0019445B /* String+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3EA732AF6ACDC0019445B /* String+Locale.swift */; };
 		F2FD43772AE825000068A5CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD43762AE825000068A5CB /* AppDelegate.swift */; };
 		F2FD43792AE825000068A5CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD43782AE825000068A5CB /* SceneDelegate.swift */; };
 		F2FD43802AE825020068A5CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2FD437F2AE825020068A5CB /* Assets.xcassets */; };
@@ -19,10 +26,17 @@
 		F2FD439E2AE83DE10068A5CB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD439D2AE83DE10068A5CB /* LoginVC.swift */; };
 		F2FD43A02AE9BA330068A5CB /* UILabel+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD439F2AE9BA330068A5CB /* UILabel+Consts.swift */; };
 		F2FD43A22AE9BB720068A5CB /* UIView+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD43A12AE9BB720068A5CB /* UIView+Consts.swift */; };
-		F2FD43A42AE9CC530068A5CB /* UIButton+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD43A32AE9CC530068A5CB /* UIButton+Consts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F2F3EA5E2AF15F710019445B /* View+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Layer.swift"; sourceTree = "<group>"; };
+		F2F3EA612AF160440019445B /* UIButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styles.swift"; sourceTree = "<group>"; };
+		F2F3EA642AF16ECA0019445B /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
+		F2F3EA672AF55E3D0019445B /* SingInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInVC.swift; sourceTree = "<group>"; };
+		F2F3EA6A2AF564E00019445B /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
+		F2F3EA702AF69B720019445B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F2F3EA722AF69C4E0019445B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F2F3EA732AF6ACDC0019445B /* String+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Locale.swift"; sourceTree = "<group>"; };
 		F2FD43732AE825000068A5CB /* NoteMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2FD43762AE825000068A5CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2FD43782AE825000068A5CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +49,6 @@
 		F2FD439D2AE83DE10068A5CB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		F2FD439F2AE9BA330068A5CB /* UILabel+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Consts.swift"; sourceTree = "<group>"; };
 		F2FD43A12AE9BB720068A5CB /* UIView+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Consts.swift"; sourceTree = "<group>"; };
-		F2FD43A32AE9CC530068A5CB /* UIButton+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Consts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +64,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F2F3EA5D2AF15F560019445B /* Utiles */ = {
+			isa = PBXGroup;
+			children = (
+				F2F3EA5E2AF15F710019445B /* View+Layer.swift */,
+				F2F3EA732AF6ACDC0019445B /* String+Locale.swift */,
+			);
+			path = Utiles;
+			sourceTree = "<group>";
+		};
+		F2F3EA602AF160220019445B /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				F2F3EA612AF160440019445B /* UIButton+Styles.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		F2F3EA632AF16E9C0019445B /* Castom */ = {
+			isa = PBXGroup;
+			children = (
+				F2F3EA642AF16ECA0019445B /* LineTextField.swift */,
+			);
+			path = Castom;
+			sourceTree = "<group>";
+		};
+		F2F3EA662AF55D9F0019445B /* SingIn */ = {
+			isa = PBXGroup;
+			children = (
+				F2F3EA672AF55E3D0019445B /* SingInVC.swift */,
+			);
+			path = SingIn;
+			sourceTree = "<group>";
+		};
+		F2F3EA692AF564BA0019445B /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				F2F3EA6A2AF564E00019445B /* ResetPasswordVC.swift */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		F2F3EA6C2AF69A390019445B /* Localize */ = {
+			isa = PBXGroup;
+			children = (
+				F2F3EA712AF69B720019445B /* Localizable.strings */,
+			);
+			path = Localize;
+			sourceTree = "<group>";
+		};
 		F2FD436A2AE825000068A5CB = {
 			isa = PBXGroup;
 			children = (
 				F2FD43752AE825000068A5CB /* NoteMe */,
+				F2FD43812AE825020068A5CB /* LaunchScreen.storyboard */,
 				F2FD43742AE825000068A5CB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,10 +133,12 @@
 		F2FD43752AE825000068A5CB /* NoteMe */ = {
 			isa = PBXGroup;
 			children = (
-				F2FD43982AE83D880068A5CB /* Modules */,
 				F2FD438A2AE82D2A0068A5CB /* App */,
+				F2F3EA632AF16E9C0019445B /* Castom */,
+				F2FD43982AE83D880068A5CB /* Modules */,
 				F2FD438B2AE82DE70068A5CB /* Resourse */,
-				F2FD43812AE825020068A5CB /* LaunchScreen.storyboard */,
+				F2F3EA602AF160220019445B /* Style */,
+				F2F3EA5D2AF15F560019445B /* Utiles */,
 			);
 			path = NoteMe;
 			sourceTree = "<group>";
@@ -91,8 +156,9 @@
 		F2FD438B2AE82DE70068A5CB /* Resourse */ = {
 			isa = PBXGroup;
 			children = (
-				F2FD438C2AE82E3B0068A5CB /* Consts */,
 				F2FD437F2AE825020068A5CB /* Assets.xcassets */,
+				F2FD438C2AE82E3B0068A5CB /* Consts */,
+				F2F3EA6C2AF69A390019445B /* Localize */,
 			);
 			path = Resourse;
 			sourceTree = "<group>";
@@ -100,12 +166,11 @@
 		F2FD438C2AE82E3B0068A5CB /* Consts */ = {
 			isa = PBXGroup;
 			children = (
+				F2FD43A12AE9BB720068A5CB /* UIView+Consts.swift */,
 				F2FD438D2AE82E810068A5CB /* UIColor+Consts.swift */,
 				F2FD438F2AE834E70068A5CB /* UIFont+Consts.swift */,
 				F2FD43912AE838290068A5CB /* UIImage+Consts.swift */,
 				F2FD439F2AE9BA330068A5CB /* UILabel+Consts.swift */,
-				F2FD43A12AE9BB720068A5CB /* UIView+Consts.swift */,
-				F2FD43A32AE9CC530068A5CB /* UIButton+Consts.swift */,
 			);
 			path = Consts;
 			sourceTree = "<group>";
@@ -114,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				F2FD439B2AE83DBF0068A5CB /* Auth */,
+				F2F3EA692AF564BA0019445B /* ResetPassword */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -122,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				F2FD439C2AE83DCA0068A5CB /* Login */,
+				F2F3EA662AF55D9F0019445B /* SingIn */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -180,6 +247,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = F2FD436A2AE825000068A5CB;
 			packageReferences = (
@@ -200,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2FD43832AE825020068A5CB /* LaunchScreen.storyboard in Resources */,
+				F2F3EA6F2AF69B720019445B /* Localizable.strings in Resources */,
 				F2FD43802AE825020068A5CB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,13 +281,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2FD43A02AE9BA330068A5CB /* UILabel+Consts.swift in Sources */,
+				F2F3EA6B2AF564E00019445B /* ResetPasswordVC.swift in Sources */,
 				F2FD43922AE838290068A5CB /* UIImage+Consts.swift in Sources */,
 				F2FD43902AE834E70068A5CB /* UIFont+Consts.swift in Sources */,
 				F2FD439E2AE83DE10068A5CB /* LoginVC.swift in Sources */,
 				F2FD43A22AE9BB720068A5CB /* UIView+Consts.swift in Sources */,
 				F2FD43772AE825000068A5CB /* AppDelegate.swift in Sources */,
-				F2FD43A42AE9CC530068A5CB /* UIButton+Consts.swift in Sources */,
+				F2F3EA622AF160440019445B /* UIButton+Styles.swift in Sources */,
+				F2F3EA742AF6ACDC0019445B /* String+Locale.swift in Sources */,
+				F2F3EA652AF16ECA0019445B /* LineTextField.swift in Sources */,
 				F2FD438E2AE82E810068A5CB /* UIColor+Consts.swift in Sources */,
+				F2F3EA5F2AF15F710019445B /* View+Layer.swift in Sources */,
+				F2F3EA682AF55E3D0019445B /* SingInVC.swift in Sources */,
 				F2FD43792AE825000068A5CB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,6 +300,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		F2F3EA712AF69B720019445B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2F3EA702AF69B720019445B /* en */,
+				F2F3EA722AF69C4E0019445B /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		F2FD43812AE825020068A5CB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -242,6 +325,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -305,6 +389,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

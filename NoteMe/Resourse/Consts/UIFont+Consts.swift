@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIFont{
+    
     static var appFont: UIFont = .systemFont(ofSize: 17.0)
     static var appTitleFont: UIFont = UIFont(name: "Helvetica-Bold", size: 25)!
     
