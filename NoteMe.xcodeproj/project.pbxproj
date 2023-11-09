@@ -24,8 +24,8 @@
 		F2FD43952AE83B2B0068A5CB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F2FD43942AE83B2B0068A5CB /* SnapKit */; };
 		F2FD43972AE83B2B0068A5CB /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F2FD43962AE83B2B0068A5CB /* SnapKit-Dynamic */; };
 		F2FD439E2AE83DE10068A5CB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD439D2AE83DE10068A5CB /* LoginVC.swift */; };
-		F2FD43A02AE9BA330068A5CB /* UILabel+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD439F2AE9BA330068A5CB /* UILabel+Consts.swift */; };
-		F2FD43A22AE9BB720068A5CB /* UIView+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD43A12AE9BB720068A5CB /* UIView+Consts.swift */; };
+		F2FD43A02AE9BA330068A5CB /* UILabel+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD439F2AE9BA330068A5CB /* UILabel+Styles.swift */; };
+		F2FD43A22AE9BB720068A5CB /* UIView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD43A12AE9BB720068A5CB /* UIView+Styles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,8 +47,8 @@
 		F2FD438F2AE834E70068A5CB /* UIFont+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Consts.swift"; sourceTree = "<group>"; };
 		F2FD43912AE838290068A5CB /* UIImage+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Consts.swift"; sourceTree = "<group>"; };
 		F2FD439D2AE83DE10068A5CB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		F2FD439F2AE9BA330068A5CB /* UILabel+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Consts.swift"; sourceTree = "<group>"; };
-		F2FD43A12AE9BB720068A5CB /* UIView+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Consts.swift"; sourceTree = "<group>"; };
+		F2FD439F2AE9BA330068A5CB /* UILabel+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Styles.swift"; sourceTree = "<group>"; };
+		F2FD43A12AE9BB720068A5CB /* UIView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Styles.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				F2F3EA612AF160440019445B /* UIButton+Styles.swift */,
+				F2FD439F2AE9BA330068A5CB /* UILabel+Styles.swift */,
+				F2FD43A12AE9BB720068A5CB /* UIView+Styles.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -166,11 +168,9 @@
 		F2FD438C2AE82E3B0068A5CB /* Consts */ = {
 			isa = PBXGroup;
 			children = (
-				F2FD43A12AE9BB720068A5CB /* UIView+Consts.swift */,
 				F2FD438D2AE82E810068A5CB /* UIColor+Consts.swift */,
 				F2FD438F2AE834E70068A5CB /* UIFont+Consts.swift */,
 				F2FD43912AE838290068A5CB /* UIImage+Consts.swift */,
-				F2FD439F2AE9BA330068A5CB /* UILabel+Consts.swift */,
 			);
 			path = Consts;
 			sourceTree = "<group>";
@@ -280,12 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2FD43A02AE9BA330068A5CB /* UILabel+Consts.swift in Sources */,
+				F2FD43A02AE9BA330068A5CB /* UILabel+Styles.swift in Sources */,
 				F2F3EA6B2AF564E00019445B /* ResetPasswordVC.swift in Sources */,
 				F2FD43922AE838290068A5CB /* UIImage+Consts.swift in Sources */,
 				F2FD43902AE834E70068A5CB /* UIFont+Consts.swift in Sources */,
 				F2FD439E2AE83DE10068A5CB /* LoginVC.swift in Sources */,
-				F2FD43A22AE9BB720068A5CB /* UIView+Consts.swift in Sources */,
+				F2FD43A22AE9BB720068A5CB /* UIView+Styles.swift in Sources */,
 				F2FD43772AE825000068A5CB /* AppDelegate.swift in Sources */,
 				F2F3EA622AF160440019445B /* UIButton+Styles.swift in Sources */,
 				F2F3EA742AF6ACDC0019445B /* String+Locale.swift in Sources */,
