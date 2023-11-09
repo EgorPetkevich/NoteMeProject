@@ -11,7 +11,7 @@ extension UIView {
     
     static func content() -> UIView {
         let view = UIView()
-        view.backgroundColor = .appContentWhite
+        view.backgroundColor = UIColor.appContentWhite
         return view
     }
     
@@ -19,6 +19,7 @@ extension UIView {
         let view = UIView()
         view.cornerRadius = 5.0
         view.backgroundColor = UIColor.appInfoWhite
+        view.setShadow()
         return view
     }
     

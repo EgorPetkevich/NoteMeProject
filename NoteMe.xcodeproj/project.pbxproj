@@ -179,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				F2FD439B2AE83DBF0068A5CB /* Auth */,
-				F2F3EA692AF564BA0019445B /* ResetPassword */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -189,6 +188,7 @@
 			children = (
 				F2FD439C2AE83DCA0068A5CB /* Login */,
 				F2F3EA662AF55D9F0019445B /* SingIn */,
+				F2F3EA692AF564BA0019445B /* ResetPassword */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
