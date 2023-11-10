@@ -62,12 +62,12 @@ final class ResetPasswordVC: UIViewController {
         
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(logoImageView.snp.bottom).inset(-122.0)
+            make.bottom.equalTo(infoView.snp.top).inset(-8.0)
             make.height.equalTo(29.0)
         }
         
         infoView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).inset(-8.0)
+            make.centerY.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(16.0)
         }
         
