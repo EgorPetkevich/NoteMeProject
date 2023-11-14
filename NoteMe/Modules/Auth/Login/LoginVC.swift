@@ -8,36 +8,70 @@
 import UIKit
 import SnapKit
 
+protocol LoginViewModelProtocol {
+    var catchEmailError: ((String?) -> Void)? { get set }
+    var catchPasswordError: ((String?) -> Void)? { get set}
+    
+    func catchEmailError(email: String?, password: String?, error: (String) -> Void)
+    
+    func loginDidTap(email: String?, password: String?)
+    func newAccountDidTap()
+    func forgotPasswordDidTap(email: String?)
+}
+
+
 final class LoginVC: UIViewController {
     
     private lazy var contentView: UIView = .content()
     private lazy var infoView: UIView = .info()
-    private lazy var titleLabel: UILabel = .title("welcom_back_title".localized)
+    private lazy var titleLabel: UILabel = .title(.Auth.logTitle)
     
     private lazy var logoImageView: UIImageView = UIImageView(image: .General.logo)
     
     private lazy var loginButton: UIButton = 
-        .yellowRoundedButton("login_button".localized)
-    private lazy var newAccountButton: UIButton = .underlineyellowButton("new_account_button".localized)
-    private lazy var forgotPasswordButton: UIButton = .underlineGrayButton("forgot_password_button".localized)
+        .yellowRoundedButton(.Auth.logLoginButton)
+        .withAction(self, #selector(loginDidTap))
+    private lazy var newAccountButton: UIButton =
+        .underlineyellowButton(.Auth.logNewAccountButton)
+        .withAction(self, #selector(newAccountDidTap))
+    private lazy var forgotPasswordButton: UIButton = 
+        .underlineGrayButton(.Auth.logForgotPassButton)
     
-    private lazy var emailTextField: LineTextField = {
-        let textField = LineTextField()
-        textField.title = "email_label".localized
-        textField.placeholder = "enter_email_text_field".localized
-        return textField
-    }()
+    private lazy var emailTextField: LineTextField =
+    LineTextField()
+        .setTitle(.Auth.logEmailTitle)
+        .setPlaceholder(.Auth.logEmailTextField)
     
-    private lazy var passwordTextField: LineTextField = {
-        let textField = LineTextField()
-        textField.title = "password_label".localized
-        textField.placeholder = "enter_password_text_field".localized
-        return textField
-    }()
+    private lazy var passwordTextField: LineTextField =
+    LineTextField()
+        .setTitle(.Auth.logPassTitle)
+        .setPlaceholder(.Auth.logPassTextField)
+        
+    private var viewModel: LoginViewModelProtocol
+    
+    init(viewModel: LoginViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        
+        bind()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         setUpUI()
         setUpConstrains()
+    }
+    
+    private func bind() {
+        viewModel.catchEmailError = { errorText in
+            self.emailTextField.setErrorText(errorText)
+        }
+        viewModel.catchPasswordError = { errorText in
+            self.passwordTextField.setErrorText(errorText)
+        }
     }
     
     private func setUpUI() {
@@ -105,6 +139,18 @@ final class LoginVC: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(20.0)
             make.height.equalTo(20.0)
         }
+    }
+    
+    @objc private func loginDidTap() {
+        viewModel.loginDidTap(email: emailTextField.text, password: passwordTextField.text)
+    }
+    
+    @objc private func newAccountDidTap() {
+        viewModel.newAccountDidTap()
+    }
+    
+    @objc private func forgotPasswordDidTap() {
+        viewModel.forgotPasswordDidTap(email: emailTextField.text)
     }
     
 }

@@ -22,12 +22,12 @@ extension UIButton {
         return button
     }
     
-    static func cancelButton() -> UIButton {
+    static func cancelButton(_ title: String) -> UIButton {
         let button = UIButton()
         button.backgroundColor = .clear
         button.cornerRadius = 5.0
         button.setBorder(width: 1.0, color: .appYellow)
-        button.setTitle("cancel_button".localized, for: .normal)
+        button.setTitle(title, for: .normal)
         button.setTitleColor(.appYellow, for: .normal)
         button.setTitleColor(
             .appYellow.withAlphaComponent(0.75),

@@ -6,20 +6,34 @@
   
 */
 
-"welcom_back_title" = "Welcome back!";
-"login_button" = "Login";
-"new_account_button" = "New Account";
-"forgot_password_button" = "Forgot Password";
-"enter_email_text_field" = "Enter E-mail";
-"enter_password_text_field" = "Enter Password";
-"email_label" = "E-mail";
-"password_label" = "Password";
-"nice_to_meet_you_title" = "Nice to meet you";
-"register_button" = "Register";
-"i_have_account_button" = "I have an account";
-"repeat_password_label" = "Repeat Password";
-"repeat_password_text_field" = "Repeat Password";
-"reset_password_title" = "Reset Password";
-"interpret_label_reset_password" = "Enter your email address and we will share a link to create a new password.";
-"reset_button" = "Reset";
-"cancel_button" = "Cancel";
+//MARK: Auth
+//Login
+"auth_log_title" = "Welcome back!";
+"auth_log_login_button" = "Login";
+"auth_log_new_account_button" = "New Account";
+"auth_log_email_title" = "E-mail";
+"auth_log_password_title" = "Password";
+"auth_log_email_text_field" = "Enter E-mail";
+"auth_log_password_text_field" = "Enter Password";
+"auth_log_forgot_password_button" = "Forgot Password";
+
+//SingIn
+"auth_singin_title" = "Nice to meet you";
+"auth_singin_register_button" = "Register";
+"auth_singin_i_have_account_button" = "I have an account";
+"auth_singin_email_title" = "E-mail";
+"auth_singin_password_title" = "Password";
+"auth_singin_email_text_field" = "Enter E-mail";
+"auth_singin_password_text_field" = "Enter Password";
+"auth_singin_repeat_password_title" = "Repeat Password";
+"auth_singin_repeat_password_text_field" = "Repeat Password";
+
+//ResetPassword
+"auth_resetpass_title" = "Reset Password";
+"auth_resetpass_reset_button" = "Reset";
+"auth_resetpass_cancel_button" = "Cancel";
+"auth_resetpass_text" =  "Enter your email address and we will share a link to create a new password.";
+"auth_resetpass_email_text_field" = "E-mail";
+
+
+

@@ -12,34 +12,28 @@ final class SingInVC: UIViewController {
     
     private lazy var contentView: UIView = .content()
     private lazy var infoView: UIView = .info()
-    private lazy var titleLabel: UILabel = .title("nice_to_meet_you_title".localized)
+    private lazy var titleLabel: UILabel = .title(.Auth.singInTitle)
     
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var registerButton: UIButton = .yellowRoundedButton("register_button".localized)
-    private lazy var iHaveAccountButton: UIButton = .underlineyellowButton("i_have_account_button".localized)
+    private lazy var registerButton: UIButton = .yellowRoundedButton(.Auth.singInRegButton)
+    private lazy var iHaveAccountButton: UIButton = .underlineyellowButton(.Auth.singInIHaveAccountButton)
     
-    private lazy var emailTextField: LineTextField = {
-        let textField = LineTextField()
-        textField.title = "email_label".localized
-        textField.placeholder = "enter_email_text_field".localized
-        return textField
-    }()
+    private lazy var emailTextField: LineTextField =
+    LineTextField()
+        .setTitle(.Auth.singInEmailTitle)
+        .setPlaceholder(.Auth.singInEmailTextField)
+
+    private lazy var passwordTextField: LineTextField =
+    LineTextField()
+        .setTitle(.Auth.singInPassTitle)
+        .setPlaceholder(.Auth.singInEmailTextField)
     
-    private lazy var passwordTextField: LineTextField = {
-        let textField = LineTextField()
-        textField.title = "password_label".localized
-        textField.placeholder = "enter_password_text_field".localized
-        return textField
-    }()
-    
-    private lazy var repeatPasswordTextField: LineTextField = {
-        let textField = LineTextField()
-        textField.title = "repeat_password_label".localized
-        textField.placeholder = "repeat_password_text_field".localized
-        return textField
-    }()
+    private lazy var repeatPasswordTextField: LineTextField =
+    LineTextField()
+        .setTitle(.Auth.singInRepeatPassTitle)
+        .setPlaceholder(.Auth.singInRepeatPassTextField)
     
     override func viewDidLoad() {
         setUpUI()

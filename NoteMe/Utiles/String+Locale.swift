@@ -12,5 +12,7 @@ extension String {
     var localized: String {
         return NSLocalizedString(self, comment: "")
     }
+    //MARK: Auth
+    enum Auth {}
     
 }

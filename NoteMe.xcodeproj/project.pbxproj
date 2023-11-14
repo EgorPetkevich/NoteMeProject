@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2B976AF2AFE9434005ADC3B /* UIButton+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B976AE2AFE9434005ADC3B /* UIButton+Actions.swift */; };
+		F2B976B12AFE9785005ADC3B /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B976B02AFE9785005ADC3B /* LoginVM.swift */; };
+		F2B976B32AFE97F3005ADC3B /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B976B22AFE97F3005ADC3B /* LoginAssembler.swift */; };
+		F2B976B92AFEA1BD005ADC3B /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B976B82AFEA1BD005ADC3B /* InputValidator.swift */; };
+		F2B976BC2AFEA814005ADC3B /* InputValidator+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B976BB2AFEA814005ADC3B /* InputValidator+Login.swift */; };
+		F2B976C02B0112A8005ADC3B /* Localization+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B976BF2B0112A8005ADC3B /* Localization+Auth.swift */; };
+		F2B976C42B017C32005ADC3B /* LineTextField+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B976C32B017C32005ADC3B /* LineTextField+Set.swift */; };
 		F2F3EA5F2AF15F710019445B /* View+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3EA5E2AF15F710019445B /* View+Layer.swift */; };
 		F2F3EA622AF160440019445B /* UIButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3EA612AF160440019445B /* UIButton+Styles.swift */; };
 		F2F3EA652AF16ECA0019445B /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3EA642AF16ECA0019445B /* LineTextField.swift */; };
@@ -29,6 +36,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F2B976AE2AFE9434005ADC3B /* UIButton+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Actions.swift"; sourceTree = "<group>"; };
+		F2B976B02AFE9785005ADC3B /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		F2B976B22AFE97F3005ADC3B /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
+		F2B976B82AFEA1BD005ADC3B /* InputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidator.swift; sourceTree = "<group>"; };
+		F2B976BB2AFEA814005ADC3B /* InputValidator+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Login.swift"; sourceTree = "<group>"; };
+		F2B976BF2B0112A8005ADC3B /* Localization+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localization+Auth.swift"; sourceTree = "<group>"; };
+		F2B976C32B017C32005ADC3B /* LineTextField+Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LineTextField+Set.swift"; sourceTree = "<group>"; };
 		F2F3EA5E2AF15F710019445B /* View+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Layer.swift"; sourceTree = "<group>"; };
 		F2F3EA612AF160440019445B /* UIButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styles.swift"; sourceTree = "<group>"; };
 		F2F3EA642AF16ECA0019445B /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
@@ -64,11 +78,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F2B976B42AFEA152005ADC3B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F2B976B52AFEA16C005ADC3B /* InputValidator */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F2B976B52AFEA16C005ADC3B /* InputValidator */ = {
+			isa = PBXGroup;
+			children = (
+				F2B976B82AFEA1BD005ADC3B /* InputValidator.swift */,
+			);
+			path = InputValidator;
+			sourceTree = "<group>";
+		};
+		F2B976BA2AFEA7B5005ADC3B /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F2B976BB2AFEA814005ADC3B /* InputValidator+Login.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F2B976BD2B01120A005ADC3B /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				F2B976BE2B011231005ADC3B /* Localization+Auth */,
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
+		F2B976BE2B011231005ADC3B /* Localization+Auth */ = {
+			isa = PBXGroup;
+			children = (
+				F2B976BF2B0112A8005ADC3B /* Localization+Auth.swift */,
+			);
+			path = "Localization+Auth";
+			sourceTree = "<group>";
+		};
 		F2F3EA5D2AF15F560019445B /* Utiles */ = {
 			isa = PBXGroup;
 			children = (
 				F2F3EA5E2AF15F710019445B /* View+Layer.swift */,
 				F2F3EA732AF6ACDC0019445B /* String+Locale.swift */,
+				F2B976AE2AFE9434005ADC3B /* UIButton+Actions.swift */,
+				F2B976C32B017C32005ADC3B /* LineTextField+Set.swift */,
 			);
 			path = Utiles;
 			sourceTree = "<group>";
@@ -139,6 +195,7 @@
 				F2F3EA632AF16E9C0019445B /* Castom */,
 				F2FD43982AE83D880068A5CB /* Modules */,
 				F2FD438B2AE82DE70068A5CB /* Resourse */,
+				F2B976B42AFEA152005ADC3B /* Services */,
 				F2F3EA602AF160220019445B /* Style */,
 				F2F3EA5D2AF15F560019445B /* Utiles */,
 			);
@@ -160,6 +217,7 @@
 			children = (
 				F2FD437F2AE825020068A5CB /* Assets.xcassets */,
 				F2FD438C2AE82E3B0068A5CB /* Consts */,
+				F2B976BD2B01120A005ADC3B /* Localizations */,
 				F2F3EA6C2AF69A390019445B /* Localize */,
 			);
 			path = Resourse;
@@ -196,7 +254,10 @@
 		F2FD439C2AE83DCA0068A5CB /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F2B976BA2AFEA7B5005ADC3B /* UseCases */,
 				F2FD439D2AE83DE10068A5CB /* LoginVC.swift */,
+				F2B976B02AFE9785005ADC3B /* LoginVM.swift */,
+				F2B976B22AFE97F3005ADC3B /* LoginAssembler.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -282,14 +343,21 @@
 			files = (
 				F2FD43A02AE9BA330068A5CB /* UILabel+Styles.swift in Sources */,
 				F2F3EA6B2AF564E00019445B /* ResetPasswordVC.swift in Sources */,
+				F2B976BC2AFEA814005ADC3B /* InputValidator+Login.swift in Sources */,
+				F2B976C42B017C32005ADC3B /* LineTextField+Set.swift in Sources */,
 				F2FD43922AE838290068A5CB /* UIImage+Consts.swift in Sources */,
 				F2FD43902AE834E70068A5CB /* UIFont+Consts.swift in Sources */,
+				F2B976B12AFE9785005ADC3B /* LoginVM.swift in Sources */,
 				F2FD439E2AE83DE10068A5CB /* LoginVC.swift in Sources */,
+				F2B976B32AFE97F3005ADC3B /* LoginAssembler.swift in Sources */,
 				F2FD43A22AE9BB720068A5CB /* UIView+Styles.swift in Sources */,
 				F2FD43772AE825000068A5CB /* AppDelegate.swift in Sources */,
+				F2B976AF2AFE9434005ADC3B /* UIButton+Actions.swift in Sources */,
 				F2F3EA622AF160440019445B /* UIButton+Styles.swift in Sources */,
+				F2B976C02B0112A8005ADC3B /* Localization+Auth.swift in Sources */,
 				F2F3EA742AF6ACDC0019445B /* String+Locale.swift in Sources */,
 				F2F3EA652AF16ECA0019445B /* LineTextField.swift in Sources */,
+				F2B976B92AFEA1BD005ADC3B /* InputValidator.swift in Sources */,
 				F2FD438E2AE82E810068A5CB /* UIColor+Consts.swift in Sources */,
 				F2F3EA5F2AF15F710019445B /* View+Layer.swift in Sources */,
 				F2F3EA682AF55E3D0019445B /* SingInVC.swift in Sources */,

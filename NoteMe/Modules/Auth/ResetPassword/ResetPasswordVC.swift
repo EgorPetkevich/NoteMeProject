@@ -12,22 +12,19 @@ final class ResetPasswordVC: UIViewController {
     
     private lazy var contentView: UIView = .content()
     private lazy var infoView: UIView = UIView.info()
-    private lazy var titleLabel: UILabel = .title("reset_password_title".localized)
-    private lazy var interpretLabel: UILabel = .interpret("interpret_label_reset_password".localized, 13.0)
+    private lazy var titleLabel: UILabel = .title(.Auth.resetPassTitle)
+    private lazy var interpretLabel: UILabel = .interpret(.Auth.resetPassText, 13.0)
     
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var resetButton: UIButton = .yellowRoundedButton("reset_button".localized)
-    private lazy var cancelButton: UIButton = .cancelButton()
+    private lazy var resetButton: UIButton = .yellowRoundedButton(.Auth.resetPassResetButton)
+    private lazy var cancelButton: UIButton = .cancelButton(.Auth.resetPassCancelButton)
     
-    private lazy var emailTextField: LineTextField = {
-        let textField = LineTextField()
-        textField.placeholder = "enter_email_text_field".localized
-        return textField
-    }()
-    
-    
+    private lazy var emailTextField: LineTextField =
+    LineTextField()
+        .setPlaceholder(.Auth.resetPassEmailTextField)
+
     override func viewDidLoad() {
         setUpUI()
         setUpConstrains()

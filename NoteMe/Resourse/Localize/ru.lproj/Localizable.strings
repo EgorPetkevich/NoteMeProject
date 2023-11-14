@@ -5,21 +5,34 @@
   Created by George Popkich on 4.11.23.
   
 */
+//MARK: Auth
 
-"welcom_back_title" = "С возвращением!";
-"login_button" = "Далее";
-"new_account_button" = "Создать аккаунт";
-"forgot_password_button" = "Забыли пароль";
-"enter_email_text_field" = "Введите Электронную почту";
-"enter_password_text_field" = "Введите Пароль";
-"email_label" = "Электронная почта";
-"password_label" = "Пароль";
-"nice_to_meet_you_title" = "Добро пожаловать";
-"register_button" = "Зарегистрироваться";
-"i_have_account_button" = "У меня есть аккаунт";
-"repeat_password_label" = "Повторите пароль";
-"repeat_password_text_field" = "Повторите пароль";
-"reset_password_title" = "Поменять пароль";
-"interpret_label_reset_password" = "Введите свой адрес электронной почты, и мы поделимся ссылкой для создания нового пароля.";
-"reset_button" = "Cменить";
-"cancel_button" = "Отмена";
+
+
+//Login
+"auth_log_title" = "С возвращением!";
+"auth_log_login_button" = "Далее";
+"auth_log_new_account_button" = "Создать аккаунт";
+"auth_log_email_title" = "Электронная почта";
+"auth_log_password_title" =  "Пароль";
+"auth_log_email_text_field" = "Введите Электронную почту";
+"auth_log_password_text_field" = "Введите Пароль";
+"auth_log_forgot_password_button" = "Забыли пароль";
+
+//SingIn
+"auth_singin_title" = "Добро пожаловать";
+"auth_singin_register_button" = "Зарегистрироваться";
+"auth_singin_i_have_account_button" = "У меня есть аккаунт";
+"auth_singin_email_title" = "Электронная почта";
+"auth_singin_password_title" = "Пароль";
+"auth_singin_email_text_field" = "Введите Электронную почту";
+"auth_singin_password_text_field" = "Введите Пароль";
+"auth_singin_repeat_password_title" = "Повторите пароль";
+"auth_singin_repeat_password_text_field" = "Повторите пароль";
+
+//ResetPassword
+"auth_resetpass_title" = "Сброс Пароля";
+"auth_resetpass_reset_button" = "Cменить";
+"auth_resetpass_cancel_button" = "Отмена";
+"auth_resetpass_text" = "Введите свой адрес электронной почты, и мы поделимся ссылкой для создания нового пароля.";
+"auth_resetpass_email_text_field" = "Электронная почта";
