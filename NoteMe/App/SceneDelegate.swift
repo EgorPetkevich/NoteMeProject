@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window = UIWindow(windowScene: windowScene)
         
-        window?.rootViewController = LoginAssembler.make()
+        window?.rootViewController = ResetAssembler.make()
 //        window?.rootViewController = SingInVC()
 //        window?.rootViewController = ResetPasswordVC()
         window?.makeKeyAndVisible()

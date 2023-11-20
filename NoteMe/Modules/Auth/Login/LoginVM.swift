@@ -19,15 +19,13 @@ protocol LoginInputValidatorUseCase {
 }
 
 final class LoginVM: LoginViewModelProtocol {
-    func catchEmailError(email: String?, password: String?, error: (String) -> Void) {
         
-    }
-    
     var catchEmailError: ((String?) -> Void)?
     var catchPasswordError: ((String?) -> Void)?
     
     private let authService: LoginAuthServiceUseCase
     private let inputValidator: LoginInputValidatorUseCase
+    
     
     init(authService: LoginAuthServiceUseCase,
          inputValidator: LoginInputValidatorUseCase
@@ -36,25 +34,31 @@ final class LoginVM: LoginViewModelProtocol {
         self.authService = authService
     }
     
-    func loginDidTap(email: String?, password: String?) { 
-        guard inputValidator.validate(email: email) else {
-            catchEmailError?("Wrong E-mail")
-            return
-        }
-        catchEmailError?(nil)
-        guard inputValidator.validate(password: password) else {
-            catchPasswordError?("Non-valid Password")
-            return
-        }
-        catchPasswordError?(nil)
-        guard let email, let password else {return}
+    func loginDidTap(email: String?, password: String?)  {
+        guard
+            checkValidation(email: email, password: password),
+            let email,
+            let password
+        else {return}
+        
         authService.login(email: email, password: password) { isSuccess in
             print(isSuccess)
+            
         }
     }
     
     func newAccountDidTap() { }
     
-    func forgotPasswordDidTap(email: String?) {}
+    func forgotPasswordDidTap(email: String?) { }
+    
+    private func checkValidation(email: String?, password: String?) -> Bool {
+        let isEmailValid = inputValidator.validate(email: email)
+        let isPasswordValid = inputValidator.validate(password: password)
+        
+        catchEmailError?(isEmailValid ? nil : "Wrong Email")
+        catchPasswordError?(isPasswordValid ? nil : "Non-Valid Password")
+        
+        return isEmailValid && isPasswordValid
+    }
     
 }

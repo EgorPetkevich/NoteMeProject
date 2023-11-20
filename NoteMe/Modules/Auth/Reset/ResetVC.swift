@@ -8,26 +8,56 @@
 import UIKit
 import SnapKit
 
-final class ResetPasswordVC: UIViewController {
+@objc protocol ResetViewModelProtocol {
+    var catchEmailError: ((String?) -> Void)? {get set}
+    
+    func resetDidTap(email: String?)
+    @objc func cancelDidTap()
+}
+
+final class ResetVC: UIViewController {
     
     private lazy var contentView: UIView = .content()
     private lazy var infoView: UIView = UIView.info()
     private lazy var titleLabel: UILabel = .title(.Auth.resetPassTitle)
     private lazy var interpretLabel: UILabel = .interpret(.Auth.resetPassText, 13.0)
     
+    private lazy var logoContainer: UIView = UIView()
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var resetButton: UIButton = .yellowRoundedButton(.Auth.resetPassResetButton)
-    private lazy var cancelButton: UIButton = .cancelButton(.Auth.resetPassCancelButton)
+    private lazy var resetButton: UIButton =
+        .yellowRoundedButton(.Auth.resetPassResetButton)
+        .withAction(self, #selector(resetButtonDidTap))
+    private lazy var cancelButton: UIButton = 
+        .cancelButton(.Auth.resetPassCancelButton)
+        .withAction(viewModel, #selector(ResetViewModelProtocol.cancelDidTap))
     
     private lazy var emailTextField: LineTextField =
     LineTextField()
         .setPlaceholder(.Auth.resetPassEmailTextField)
 
+    private var viewModel: ResetViewModelProtocol
+    
+    init(viewModel: ResetViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        bind()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         setUpUI()
         setUpConstrains()
+    }
+    
+    func bind() {
+        viewModel.catchEmailError = { errorTest in
+            self.emailTextField.setErrorText(errorTest)
+        }
     }
     
     private func setUpUI() {
@@ -36,12 +66,14 @@ final class ResetPasswordVC: UIViewController {
         view.addSubview(resetButton)
         view.addSubview(cancelButton)
         
-        contentView.addSubview(logoImageView)
+        contentView.addSubview(logoContainer)
         contentView.addSubview(titleLabel)
         contentView.addSubview(infoView)
         
         infoView.addSubview(interpretLabel)
         infoView.addSubview(emailTextField)
+        
+        logoContainer.addSubview(logoImageView)
     }
     
     private func setUpConstrains() {
@@ -51,9 +83,13 @@ final class ResetPasswordVC: UIViewController {
             make.bottom.equalTo(resetButton.snp.centerY)
         }
         
+        logoContainer.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalToSuperview()
+            make.bottom.equalTo(titleLabel.snp.top)
+        }
+        
         logoImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(72.0)
-            make.centerX.equalToSuperview()
+            make.center.equalToSuperview()
             make.size.equalTo(96.0)
         }
         
@@ -89,6 +125,10 @@ final class ResetPasswordVC: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(20.0)
             make.height.equalTo(45.0)
         }
+    }
+    
+    @objc private func resetButtonDidTap() {
+        viewModel.resetDidTap(email: emailTextField.text)
     }
     
 }
