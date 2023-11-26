@@ -100,5 +100,28 @@ extension String.Auth {
         "auth_resetpass_email_text_field".localized
     }
     
+    static var loginEmailError: String {
+        "auth_login_email_text_error".localized
+    }
+    
+    static var loginPassError: String {
+        "auth_login_password_text_error".localized
+    }
+    
+    static var registerEmailError: String {
+        "auth_register_email_text_error".localized
+    }
+    
+    static var registerPassError: String {
+        "auth_register_password_text_error".localized
+    }
+    
+    static var registerRepPassError: String {
+        "auth_register_repeat_password_text_error".localized
+    }
+    
+    static var resetEmailError: String {
+        "auth_reset_email_text_error".localized
+    }
     
 }

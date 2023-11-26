@@ -7,4 +7,4 @@
 
 import Foundation
 
-extension KeyboardHelper: KeyboardHelperUseCase {}
+extension KeyboardHelper: KeyboardHelperRegisterUseCase { }

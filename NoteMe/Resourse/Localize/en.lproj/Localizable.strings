@@ -35,5 +35,15 @@
 "auth_resetpass_text" =  "Enter your email address and we will share a link to create a new password.";
 "auth_resetpass_email_text_field" = "E-mail";
 
+//LoginTextError
+"auth_login_email_text_error" = "Wrong Email";
+"auth_login_password_text_error" = "Non-Valid Password";
 
+//RegisterTextError
+"auth_register_email_text_error" = "Wrong Email";
+"auth_register_password_text_error" = "Non-Valid Password";
+"auth_register_repeat_password_text_error" = "Passwords do not match";
+
+//ResetTextError
+"auth_reset_email_text_error" = "Wrong Email";
 

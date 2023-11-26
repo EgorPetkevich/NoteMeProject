@@ -7,4 +7,4 @@
 
 import Foundation
 
-extension InputValidator: ResetInputValidatorUseCase {}
+extension InputValidator: ResetInputValidatorUseCase { }

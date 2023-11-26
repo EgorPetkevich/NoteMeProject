@@ -15,8 +15,6 @@ import SnapKit
     @objc func haveAccountDidTap()
 }
 
-
-
 final class RegisterVC: UIViewController {
     
     private lazy var contentView: UIView = .content()
@@ -153,7 +151,7 @@ final class RegisterVC: UIViewController {
 extension RegisterVC: RegisterPresenterDelegate {
     
     func keyboardFrameChanged(_ frame: CGRect) {
-        let maxY = infoView.frame.maxY + contentView.frame.minY + 16.0 + (view.safeAreaLayoutGuide.layoutFrame.maxY - view.frame.maxY)
+        let maxY = infoView.frame.maxY + contentView.frame.minY + 16.0
         let keyboardY = frame.minY - 16.0
         
         if maxY > keyboardY {
@@ -167,7 +165,6 @@ extension RegisterVC: RegisterPresenterDelegate {
         }
     }
     
-    
     func setEmailError(error: String?) {
         self.emailTextField.errorText = error
     }
@@ -179,6 +176,5 @@ extension RegisterVC: RegisterPresenterDelegate {
     func setRepeatPassError(error: String?) {
         self.repeatPasswordTextField.errorText = error
     }
-    
     
 }

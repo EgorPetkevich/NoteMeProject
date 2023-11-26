@@ -11,12 +11,12 @@ import SnapKit
 @objc protocol LoginViewModelProtocol: AnyObject {
     var catchEmailError: ((String?) -> Void)? { get set }
     var catchPasswordError: ((String?) -> Void)? { get set}
+    var keyboardFrameChanged: ((CGRect) -> Void)? { get set}
     
     func loginDidTap(email: String?, password: String?)
     @objc func newAccountDidTap()
     func forgotPasswordDidTap(email: String?)
 }
-
 
 final class LoginVC: UIViewController {
     
@@ -36,6 +36,7 @@ final class LoginVC: UIViewController {
                     #selector(LoginViewModelProtocol.newAccountDidTap))
     private lazy var forgotPasswordButton: UIButton =
         .underlineGrayButton(.Auth.logForgotPassButton)
+        .withAction(self, #selector(forgotPasswordDidTap))
     
     private lazy var emailTextField: LineTextField =
     LineTextField()
@@ -71,6 +72,9 @@ final class LoginVC: UIViewController {
         }
         viewModel.catchPasswordError = { errorText in
             self.passwordTextField.setErrorText(errorText)
+        }
+        viewModel.keyboardFrameChanged = { frame in
+            self.keyboardFrameChanged(frame)
         }
     }
     
@@ -154,6 +158,21 @@ final class LoginVC: UIViewController {
     
     @objc private func forgotPasswordDidTap() {
         viewModel.forgotPasswordDidTap(email: emailTextField.text)
+    }
+    
+    private func keyboardFrameChanged(_ frame: CGRect) {
+        let maxY = infoView.frame.maxY + contentView.frame.minY + 16.0
+        let keyboardY = frame.minY - 16.0
+        
+        if maxY > keyboardY {
+            let diff = maxY - keyboardY
+            UIView.animate(withDuration: 0.25) {
+                self.infoView.snp.updateConstraints { make in
+                    make.centerY.equalToSuperview().offset(-diff)
+                }
+                self.view.layoutIfNeeded()
+            }
+        }
     }
     
 }

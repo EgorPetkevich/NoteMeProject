@@ -10,6 +10,7 @@ import SnapKit
 
 @objc protocol ResetViewModelProtocol {
     var catchEmailError: ((String?) -> Void)? {get set}
+    var keyboardFrameChanged: ((CGRect) -> Void)? { get set}
     
     func resetDidTap(email: String?)
     @objc func cancelDidTap()
@@ -57,6 +58,9 @@ final class ResetVC: UIViewController {
     func bind() {
         viewModel.catchEmailError = { errorTest in
             self.emailTextField.setErrorText(errorTest)
+        }
+        viewModel.keyboardFrameChanged = { frame in
+            self.keyboardFrameChanged(frame)
         }
     }
     
@@ -129,6 +133,21 @@ final class ResetVC: UIViewController {
     
     @objc private func resetButtonDidTap() {
         viewModel.resetDidTap(email: emailTextField.text)
+    }
+    
+    private func keyboardFrameChanged(_ frame: CGRect) {
+        let maxY = infoView.frame.maxY + contentView.frame.minY + 16.0
+        let keyboardY = frame.minY - 16.0
+        
+        if maxY > keyboardY {
+            let diff = maxY - keyboardY
+            UIView.animate(withDuration: 0.25) {
+                self.infoView.snp.updateConstraints { make in
+                    make.centerY.equalToSuperview().offset(-diff)
+                }
+                self.view.layoutIfNeeded()
+            }
+        }
     }
     
 }

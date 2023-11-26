@@ -36,3 +36,16 @@
 "auth_resetpass_cancel_button" = "Отмена";
 "auth_resetpass_text" = "Введите свой адрес электронной почты, и мы поделимся ссылкой для создания нового пароля.";
 "auth_resetpass_email_text_field" = "Электронная почта";
+
+
+//LoginTextError
+"auth_login_email_text_error" = "Неправильная электронная почта";
+"auth_login_password_text_error" = "Неправильный пароль";
+
+//RegisterTextError
+"auth_register_email_text_error" = "Неправильная электронная почта";
+"auth_register_password_text_error" = "Неправильный пароль";
+"auth_register_repeat_password_text_error" = "Пароли не совпадают";
+
+//ResetTextError
+"auth_reset_email_text_error" = "Неправильная электронная почта";

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol RegisterCoordinatorProtocol: AnyObject {
+    func finish()
+}
+
 protocol RegisterAuthServiceUseCase {
     func register(email: String,
                   password: String?,
@@ -22,31 +26,36 @@ protocol RegisterPresenterDelegate: AnyObject {
     func keyboardFrameChanged(_ frame: CGRect)
 }
 
-protocol KeyboardHelperUseCase {
+protocol KeyboardHelperRegisterUseCase {
+    @discardableResult
     func onWillShow(_ handler: @escaping (CGRect) -> Void) -> Self
+    @discardableResult
     func onWillHide(_ handler: @escaping (CGRect) -> Void) -> Self
-    
 }
+
 protocol RegisterInputValidatorUseCase {
     func validate(email: String?) -> Bool
     func validate(password: String?) -> Bool
 }
 
-
 final class RegisterPresenter: RegisterPresenterProtocol {
    
     weak var delegate: RegisterPresenterDelegate?
     
+    private weak var coordinator: RegisterCoordinatorProtocol?
+    
     private let registerAuthService: RegisterAuthServiceUseCase
-    private let keyboardHelper: KeyboardHelperUseCase
+    private let keyboardHelper: KeyboardHelperRegisterUseCase
     private let inputValidator: RegisterInputValidatorUseCase
     
-    init(keyboardHelper: KeyboardHelperUseCase,
+    init(keyboardHelper: KeyboardHelperRegisterUseCase,
          registerAuthService: RegisterAuthServiceUseCase,
-         inputValidator: RegisterInputValidatorUseCase) {
+         inputValidator: RegisterInputValidatorUseCase,
+         coordinator: RegisterCoordinatorProtocol) {
         self.keyboardHelper = keyboardHelper
         self.registerAuthService = registerAuthService
         self.inputValidator = inputValidator
+        self.coordinator = coordinator
         
         bind()
     }
@@ -57,11 +66,20 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         }.onWillHide { [weak self] frame in
             self?.delegate?.keyboardFrameChanged(frame)
         }
+        
+//        keyboardHelper
+//            .onWillShow { [weak delegate] in
+//                delegate?.keyboardFrameChanged($0)
+//            }.onWillHide { [weak delegate] in
+//                delegate?.keyboardFrameChanged($0)
+//            }
+
     }
     
     func registerDidTap(email: String?, 
                         password: String?,
                         repeatPassword: String?) {
+        print("\(#function)")
         guard
             checkValidation(email: email, 
                             password: password,
@@ -74,35 +92,33 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         registerAuthService.register(email: email,
                                      password: password,
                                      repeatPassword: repeatPassword)
-        { isSuccess in
+        { [weak coordinator] isSuccess in
             print(isSuccess)
+            coordinator?.finish()
         }
         
     }
     
     func haveAccountDidTap() {
-        
+        print("\(#function)")
+        coordinator?.finish()
     }
     
-        private func checkValidation(email: String?, 
-                                     password: String?,
-                                     repeatPassword: String?) -> Bool {
-            let isEmailValid = inputValidator.validate(email: email)
-            let isPasswordValid = inputValidator.validate(password: password)
-            let isRepeatPassValid = repeatPassword == password
-            
-            delegate?.setEmailError(error: 
-                                        isEmailValid ? nil : "Wrong Email")
-            delegate?.setPasswordError(error: 
-                                        isPasswordValid ? nil : "Non-Valid Password")
-            delegate?.setRepeatPassError(error: 
-                                        isRepeatPassValid ? nil : "Passwords do not match")
-            
-            return isEmailValid && isPasswordValid && isRepeatPassValid
-        }
-    
-    
-    
-    
-    
+    private func checkValidation(email: String?,
+                                 password: String?,
+                                 repeatPassword: String?) -> Bool {
+        let isEmailValid = inputValidator.validate(email: email)
+        let isPasswordValid = inputValidator.validate(password: password)
+        let isRepeatPassValid = repeatPassword == password
+        
+        delegate?.setEmailError(error:
+                                    isEmailValid ? nil : .Auth.registerEmailError)
+        delegate?.setPasswordError(error:
+                                    isPasswordValid ? nil : .Auth.registerPassError)
+        delegate?.setRepeatPassError(error:
+                                        isRepeatPassValid ? nil : .Auth.registerRepPassError)
+        
+        return isEmailValid && isPasswordValid && isRepeatPassValid
+    }
+      
 }
