@@ -30,11 +30,18 @@ extension UILabel {
         return label
     }
     
-    static func interpret(_ text: String, _ textSize: CGFloat = 13.0) -> UILabel {
+    static func interpret(_ text: String, _ textSize: CGFloat = 13.0, _ numOfLines: Int = 2) -> UILabel {
         let label = UILabel()
         label.text = text
         label.font = UIFont.appRegularFont(textSize)
-        label.numberOfLines = 2
+        label.numberOfLines = numOfLines
+        return label
+    }
+    
+    static func interpretAttrText(_ attrText: NSMutableAttributedString, _ numOfLines: Int = 7 ) -> UILabel {
+        let label = UILabel()
+        label.attributedText = attrText
+        label.numberOfLines = numOfLines
         return label
     }
     

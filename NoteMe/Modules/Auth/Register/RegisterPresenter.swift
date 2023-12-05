@@ -61,18 +61,12 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     }
     
     private func bind() {
-        keyboardHelper.onWillShow { [weak self] frame in
-            self?.delegate?.keyboardFrameChanged(frame)
-        }.onWillHide { [weak self] frame in
-            self?.delegate?.keyboardFrameChanged(frame)
-        }
         
-//        keyboardHelper
-//            .onWillShow { [weak delegate] in
-//                delegate?.keyboardFrameChanged($0)
-//            }.onWillHide { [weak delegate] in
-//                delegate?.keyboardFrameChanged($0)
-//            }
+        keyboardHelper.onWillShow { [weak self] in
+            self?.delegate?.keyboardFrameChanged($0)
+        }.onWillHide { [weak self] in
+            self?.delegate?.keyboardFrameChanged($0)
+        }
 
     }
     

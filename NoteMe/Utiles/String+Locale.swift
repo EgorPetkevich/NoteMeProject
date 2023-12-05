@@ -15,4 +15,7 @@ extension String {
     //MARK: Auth
     enum Auth {}
     
+    //MARK: Onboarding
+    enum Onboarding {}
+    
 }

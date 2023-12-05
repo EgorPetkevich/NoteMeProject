@@ -65,7 +65,7 @@ final class ResetVC: UIViewController {
     }
     
     private func setUpUI() {
-        view.backgroundColor = .appBlack
+        view.backgroundColor = .appBackground
         view.addSubview(contentView)
         view.addSubview(resetButton)
         view.addSubview(cancelButton)

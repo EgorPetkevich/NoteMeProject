@@ -47,3 +47,17 @@
 //ResetTextError
 "auth_reset_email_text_error" = "Wrong Email";
 
+//MARK: Onboarding
+
+//OnboardingFirstStep
+"onboarding_first_step_title" = "Welcome";
+"onboarding_first_step_interpret_text" = "NoteMe is an application, which notify you about everything!";
+"onboarding_first_step_next_button" = "Next";
+
+//OnboardingSecondStep //FIXME: \n\u{2022}
+"onboarding_second_step_title" = "Diffrent types!";
+"onboarding_second_step_interpret_text" = "You can use 3 types of notifications\n\u{2022} Calendar - choose the date, when you want to receive notification.\n\u{2022} Location - choose the region and notification will come after you enter it.\n\u{2022} Timer - set timer and after the selected period, you will receive the notification.";
+"onboarding_second_step_done_button" = "Done";
+"onboarding_second_step_calendar" = "Calendar";
+"onboarding_second_step_location" = "Location";
+"onboarding_second_step_timer" = "Timer";

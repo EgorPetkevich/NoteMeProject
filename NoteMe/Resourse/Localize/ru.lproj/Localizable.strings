@@ -49,3 +49,18 @@
 
 //ResetTextError
 "auth_reset_email_text_error" = "Неправильная электронная почта";
+
+//MARK: Onboarding
+
+//OnboardingFirstStep
+"onboarding_first_step_title" = "Добро пожаловать";
+"onboarding_first_step_interpret_text" = "NoteMe это приложение, которое уведомляет вас обо всем!";
+"onboarding_first_step_next_button" = "Далее";
+
+//OnboardingSecondStep //FIXME: \n\u{2022}
+"onboarding_second_step_title" = "Различные виды!";
+"onboarding_second_step_interpret_text" = "Вы можете использовать 3 типа уведомлений.\n\u{2022} Календарь – выберите дату, когда вы хотите получать уведомления.\n\u{2022} Местоположение — выберите регион, и уведомление придет после того, как вы его введете.\ n\u{2022} Таймер - установите таймер, и по истечении выбранного периода вы получите уведомление.";
+"onboarding_second_step_done_button" = "Готово";
+"onboarding_second_step_calendar" = "Календарь";
+"onboarding_second_step_location" = "Местоположение";
+"onboarding_second_step_timer" = "Таймер";

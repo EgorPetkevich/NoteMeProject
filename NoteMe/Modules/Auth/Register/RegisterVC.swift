@@ -64,7 +64,7 @@ final class RegisterVC: UIViewController {
     }
     
     private func setUpUI() {
-        view.backgroundColor = .appBlack
+        view.backgroundColor = .appBackground
         view.addSubview(contentView)
         view.addSubview(registerButton)
         view.addSubview(iHaveAccountButton)

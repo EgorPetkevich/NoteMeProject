@@ -62,8 +62,8 @@ final class LoginVC: UIViewController {
     }
     
     override func viewDidLoad() {
-        setUpUI()
-        setUpConstrains()
+        setup()
+        setupConstrains()
     }
     
     private func bind() {
@@ -78,8 +78,8 @@ final class LoginVC: UIViewController {
         }
     }
     
-    private func setUpUI() {
-        view.backgroundColor = .appBlack
+    private func setup() {
+        view.backgroundColor = .appBackground
         view.addSubview(contentView)
         view.addSubview(loginButton)
         view.addSubview(newAccountButton)
@@ -95,7 +95,7 @@ final class LoginVC: UIViewController {
         logoContainer.addSubview(logoImageView)
     }
     
-    private func setUpConstrains() {
+    private func setupConstrains() {
         contentView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)

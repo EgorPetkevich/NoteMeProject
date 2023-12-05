@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "1F7DEC06-9C15-499A-B1B7-68A6F6311DD5"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A029F765-55FB-4837-A361-51F135CB5928"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/App/AppCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "startApp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1F808C0-EB06-4BF7-86C0-88346F06CD08"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/Modules/Onboarding/OnboardingFirstStep/Coordinator/OnboardFirstStepCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "openNextStep()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F1F808C0-EB06-4BF7-86C0-88346F06CD08 - 44131a6df8ecb1b1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (NoteMe.Coordinator) -&gt; () in NoteMe.OnboardFirstStepCoordinator.openNextStep() -&gt; ()"
+                  moduleName = "NoteMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/Onboarding/OnboardingFirstStep/Coordinator/OnboardFirstStepCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "F1F808C0-EB06-4BF7-86C0-88346F06CD08 - 77f26be7c940ca59"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (NoteMe.Coordinator) -&gt; Swift.Bool in closure #2 (NoteMe.Coordinator) -&gt; () in NoteMe.OnboardFirstStepCoordinator.openNextStep() -&gt; ()"
+                  moduleName = "NoteMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/Onboarding/OnboardingFirstStep/Coordinator/OnboardFirstStepCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6CDC1365-CAD1-4605-8AD6-23D581809B54"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/Modules/Onboarding/OnboardingFirstStep/Coordinator/OnboardFirstStepCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "openNextStep()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BB5111FD-3FC3-4F3E-8404-1FD2F88D92E1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/App/AppCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "startApp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2B00CB42-9EFF-4B4A-A992-B2BF13ECA415"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/App/AppCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "startApp()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2B00CB42-9EFF-4B4A-A992-B2BF13ECA415 - 29ddf843d207c7b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NoteMe.AppCoordinator.startApp() -&gt; ()"
+                  moduleName = "NoteMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/App/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "2B00CB42-9EFF-4B4A-A992-B2BF13ECA415 - 29ddf843d207c7b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NoteMe.AppCoordinator.startApp() -&gt; ()"
+                  moduleName = "NoteMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/App/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C1479F0-27D2-4AD2-90A2-F0B009C2800F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/Modules/Onboarding/OnboardSecondStep/OnboardSecondStepVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "makeBulletAttributes(word:text:attributedString:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54FA6E08-8E3A-425F-857A-0DCE4605FBAF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/Modules/Onboarding/OnboardSecondStep/OnboardSecondStepVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "makeBulletAttributes(word:text:attributedString:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "54FA6E08-8E3A-425F-857A-0DCE4605FBAF - 263226be89313065"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NoteMe.OnboardSecondStepVC.makeBulletAttributes(word: Swift.String, text: Swift.String, attributedString: inout __C.NSMutableAttributedString) -&gt; ()"
+                  moduleName = "NoteMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/Onboarding/OnboardSecondStep/OnboardSecondStepVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "808">
+               </Location>
+               <Location
+                  uuid = "54FA6E08-8E3A-425F-857A-0DCE4605FBAF - 263226be89313065"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NoteMe.OnboardSecondStepVC.makeBulletAttributes(word: Swift.String, text: Swift.String, attributedString: inout __C.NSMutableAttributedString) -&gt; ()"
+                  moduleName = "NoteMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/Onboarding/OnboardSecondStep/OnboardSecondStepVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "928">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

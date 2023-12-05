@@ -123,5 +123,6 @@ extension String.Auth {
     static var resetEmailError: String {
         "auth_reset_email_text_error".localized
     }
+
     
 }
