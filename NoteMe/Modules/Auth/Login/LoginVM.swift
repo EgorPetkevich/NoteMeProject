@@ -4,13 +4,13 @@
 //
 //  Created by George Popkich on 10.11.23.
 //
-
-import Foundation
+import UIKit
 
 protocol LoginCoordinatorProtocol: AnyObject {
     func finish()
     func openRegisterModule()
     func openResetModule()
+    func showAlert(_ alert: UIAlertController)
 }
 
 protocol LoginAuthServiceUseCase {
@@ -72,14 +72,21 @@ final class LoginVM: LoginViewModelProtocol {
             let password
         else {return}
         
-        authService.login(email: email, password: password) { [weak coordinator]
+        authService.login(email: email, password: password) { [self]
             isSuccess in
-                print(isSuccess)
+            print(isSuccess)
             if isSuccess {
-                ParametersHelper.set(.authenticatied, value: true)
-                coordinator?.finish()
+                //FIXME: uncomment
+//                ParametersHelper.set(.authenticatied, value: true)
+//                coordinator?.finish()
+            }else {
+                let alertVC = AlertBuilder.build(title: "Error",
+                                                 message: "Invalid Email or Password",
+                                                 okTitle: "Ok")
+                coordinator?.showAlert(alertVC)
+                
+                errorValidation()
             }
-            
         }
     }
     
@@ -97,10 +104,16 @@ final class LoginVM: LoginViewModelProtocol {
         let isEmailValid = inputValidator.validate(email: email)
         let isPasswordValid = inputValidator.validate(password: password)
         
-        catchEmailError?(isEmailValid ? nil : .Auth.loginEmailError)
-        catchPasswordError?(isPasswordValid ? nil : .Auth.loginPassError)
+        errorValidation(isEmailValid: isEmailValid, isPasswordValid: isPasswordValid)
         
         return isEmailValid && isPasswordValid
+    }
+    
+    private func errorValidation(
+        isEmailValid: Bool = false,
+        isPasswordValid: Bool = false) {
+        catchEmailError?(isEmailValid ? nil : .Auth.loginEmailError)
+        catchPasswordError?(isPasswordValid ? nil : .Auth.loginPassError)
     }
     
 }

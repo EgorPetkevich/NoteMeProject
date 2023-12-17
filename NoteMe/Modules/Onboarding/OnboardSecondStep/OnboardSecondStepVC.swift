@@ -17,8 +17,13 @@ final class OnboardSecondStepVC: UIViewController {
     private lazy var contentView: UIView = .content()
     private lazy var infoView: UIView = .info()
     private lazy var titleLabel: UILabel = .title(.Onboarding.secondStepTitle)
-    private lazy var interpretTextLabel: UILabel = .interpretAttrText(makeText())
-    
+    private lazy var interpretTextLabel: UILabel = {
+        let label = UILabel()
+        let text = "You can use 3 types of notifications <p style=\"margin-left: 8px;\"> <b>&#8226; Calendar -</b> choose the date, when you want to receive notification. <br><b>&#8226; Location -</b> hoose the region and notification will come after you enter it. <br><b>&#8226; Timer -</b>  set timer and after the selected period, you will receive the notification."
+        label.attributedText = .parse(html: text, font: .appFont.withSize(13))
+        label.numberOfLines = .zero 
+        return label
+    }()
     private lazy var logoContainer: UIView = UIView()
     private lazy var logoImageView: UIImageView = UIImageView(image: .General.logo)
     
@@ -121,63 +126,5 @@ final class OnboardSecondStepVC: UIViewController {
         }
     }
     
-    func makeText() ->  NSMutableAttributedString {
-        let text = String.Onboarding.secondStepInterpretText
-
-        var attributedString = NSMutableAttributedString(string: text)
-
-        makeTextAttributes(location: 0, length: attributedString.length, attributedString: &attributedString)
-        makeBulletAttributes(word: .Onboarding.secondStepCalendar, text: text, attributedString: &attributedString)
-        makeBulletAttributes(word: .Onboarding.secondStepLocation, text: text, attributedString: &attributedString)
-        makeBulletAttributes(word: .Onboarding.secondStepTimer, text: text, attributedString: &attributedString)
-        
-        return attributedString
-    }
-    
-    func makeTextAttributes(location: Int, length: Int, attributedString: inout NSMutableAttributedString) {
-        let otherTextAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.appRegularFont(13.0),
-            .foregroundColor: UIColor.appText,
-            
-        ]
-        
-        attributedString.addAttributes(otherTextAttributes, range: NSRange(location: location, length: length))
-        
-    }
-    
-    func makeBulletAttributes(word serchwd: String, text: String, attributedString: inout NSMutableAttributedString){
-        let bulletAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.appBoldFont(13.0),
-            .foregroundColor: UIColor.appText,
-            .paragraphStyle: NSMutableParagraphStyle().appendingNewline()
-            
-        ]
-
-        var i = 0
-        var word = ""
-        for simb in text {
-            if simb ==  " " {
-                if word == " " + serchwd {
-                    attributedString.addAttributes(bulletAttributes, range: NSRange(location: i-word.count, length: word.count))
-                }
-                word = ""
-            }
-            word += String(simb)
-            i+=1
-        }
-    }
-    
-    
-}
-
-extension NSMutableParagraphStyle {
-    func appendingNewline() -> NSMutableParagraphStyle {
-        let copy = mutableCopy() as! NSMutableParagraphStyle
-        copy.alignment = .left
-        copy.headIndent = 10.0
-        copy.firstLineHeadIndent = 0.0
-        copy.tailIndent = 0.0
-        return copy
-    }
 }
 

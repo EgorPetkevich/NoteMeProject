@@ -9,12 +9,13 @@ import UIKit
 
 protocol RegisterCoordinatorProtocol: AnyObject {
     func finish()
+    func showAlert(_ alert: UIAlertController)
 }
 
 protocol RegisterAuthServiceUseCase {
     func register(email: String,
-                  password: String?,
-                  repeatPassword: String?,
+                  password: String,
+                  repeatPassword: String,
                   complition: @escaping (Bool) -> Void)
 }
 
@@ -61,13 +62,11 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     }
     
     private func bind() {
-        
         keyboardHelper.onWillShow { [weak self] in
             self?.delegate?.keyboardFrameChanged($0)
         }.onWillHide { [weak self] in
             self?.delegate?.keyboardFrameChanged($0)
         }
-
     }
     
     func registerDidTap(email: String?, 
@@ -86,9 +85,18 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         registerAuthService.register(email: email,
                                      password: password,
                                      repeatPassword: repeatPassword)
-        { [weak coordinator] isSuccess in
+        { [self] isSuccess in
             print(isSuccess)
-            coordinator?.finish()
+            if isSuccess {
+//                FIXME: uncomment
+                let alertVC = AlertBuilder.build(title: "Success Registation", message: nil)
+//                coordinator?.showAlert(alertVC)
+                coordinator?.finish()
+            }else {
+                let alertVC = AlertBuilder.build(title: "Error", message: "Invalid Email or Password", okTitle: "Ok")
+                coordinator?.showAlert(alertVC)
+                errorValidation()
+            }
         }
         
     }
@@ -96,6 +104,10 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     func haveAccountDidTap() {
         print("\(#function)")
         coordinator?.finish()
+    }
+    
+    private func setError() {
+        
     }
     
     private func checkValidation(email: String?,
@@ -113,6 +125,21 @@ final class RegisterPresenter: RegisterPresenterProtocol {
                                         isRepeatPassValid ? nil : .Auth.registerRepPassError)
         
         return isEmailValid && isPasswordValid && isRepeatPassValid
+    }
+    
+    private func errorValidation(
+        isEmailValid: Bool = false,
+        isPasswordValid: Bool = false,
+        isRepeatPassValid: Bool = false) {
+            delegate?
+                .setEmailError(error:
+                                isEmailValid ? nil : .Auth.registerEmailError)
+            delegate?
+                .setPasswordError(error:
+                                    isPasswordValid ? nil : .Auth.registerPassError)
+            delegate?
+                .setRepeatPassError(error:
+                                        isRepeatPassValid ? nil : .Auth.registerRepPassError)
     }
       
 }

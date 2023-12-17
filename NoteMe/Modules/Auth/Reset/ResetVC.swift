@@ -56,11 +56,11 @@ final class ResetVC: UIViewController {
     }
     
     func bind() {
-        viewModel.catchEmailError = { errorTest in
-            self.emailTextField.setErrorText(errorTest)
+        viewModel.catchEmailError = { [weak self] errorTest in
+            self?.emailTextField.setErrorText(errorTest)
         }
-        viewModel.keyboardFrameChanged = { frame in
-            self.keyboardFrameChanged(frame)
+        viewModel.keyboardFrameChanged = { [weak self] frame in
+            self?.keyboardFrameChanged(frame)
         }
     }
     

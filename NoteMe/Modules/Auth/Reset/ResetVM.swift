@@ -4,15 +4,15 @@
 //
 //  Created by George Popkich on 21.11.23.
 //
-
-import Foundation
+import UIKit
 
 protocol ResetCoordinatorProtocol: AnyObject {
     func finish()
+    func showAlert(_ alert: UIAlertController)
 }
 
 protocol ResetAuthServiceUseCase {
-    func reset(email: String?, complition: @escaping (Bool) -> Void)
+    func reset(email: String, complition: @escaping (Bool) -> Void)
 }
 
 protocol ResetInputValidatorUseCase {
@@ -64,9 +64,19 @@ final class ResetVM: ResetViewModelProtocol {
             let email
         else { return }
         
-        resetAuthService.reset(email: email) { [weak coordinator] isSuccess in
+        resetAuthService.reset(email: email) { [self]
+            isSuccess in
             print(isSuccess)
-            coordinator?.finish()
+            if isSuccess {
+                //FIXME: uncomment
+                let alertVC = AlertBuilder.build(title: "Reset email", message: "We send a password reset email to you")
+//                coordinator?.showAlert(alertVC)
+                coordinator?.finish()
+            }else {
+                let alertVC = AlertBuilder.build(title: "Error", message: "Invalid Email", okTitle: "Ok")
+                coordinator?.showAlert(alertVC)
+                errorValidation()
+            }
         }
     }
     
@@ -77,8 +87,12 @@ final class ResetVM: ResetViewModelProtocol {
     
     private func validate(email: String?) -> Bool {
         let isEmailValid = inputValidator.validate(email: email)
-        catchEmailError?(isEmailValid ? nil : .Auth.resetEmailError)
+        errorValidation(isEmailValid: isEmailValid)
         return isEmailValid
+    }
+    
+    private func errorValidation(isEmailValid: Bool = false) {
+        catchEmailError?(isEmailValid ? nil : .Auth.resetEmailError)
     }
     
 }

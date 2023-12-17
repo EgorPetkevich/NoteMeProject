@@ -56,7 +56,8 @@
 
 //OnboardingSecondStep //FIXME: \n\u{2022}
 "onboarding_second_step_title" = "Diffrent types!";
-"onboarding_second_step_interpret_text" = "You can use 3 types of notifications\n\u{2022} Calendar - choose the date, when you want to receive notification.\n\u{2022} Location - choose the region and notification will come after you enter it.\n\u{2022} Timer - set timer and after the selected period, you will receive the notification.";
+"onboarding_second_step_interpret_text" = "You can use 3 types of notifications\n● Calendar - choose the date, when you want to receive notification.\n● Location - choose the region and notification will come after you enter it.\n● Timer - set timer and after the selected period, you will receive the notification.";
+//"onboarding_second_step_interpret_text" = "You can use 3 types of notifications</n> ● <b>Calendar</b> - choose the date, when you want to receive notification.\n● %@ - choose the region and notification will come after you enter it.\n● %@ - set timer and after the selected period, you will receive the notification.";
 "onboarding_second_step_done_button" = "Done";
 "onboarding_second_step_calendar" = "Calendar";
 "onboarding_second_step_location" = "Location";

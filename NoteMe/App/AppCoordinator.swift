@@ -18,7 +18,7 @@ final class AppCoordinator: Coordinator {
     func startApp() {
         //FIXME: - TEST CODE
         //open module
-//        ParametersHelper.set(.onboardDidFinish, value: false)
+        ParametersHelper.set(.onboardDidFinish, value: false)
         ParametersHelper.set(.authenticatied, value: true)
         if !ParametersHelper.get(.authenticatied) {
             openAuthModule()
