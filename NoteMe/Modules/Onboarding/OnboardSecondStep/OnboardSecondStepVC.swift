@@ -19,6 +19,7 @@ final class OnboardSecondStepVC: UIViewController {
     private lazy var titleLabel: UILabel = .title(.Onboarding.secondStepTitle)
     private lazy var interpretTextLabel: UILabel = {
         let label = UILabel()
+        //FIXME: localize
         let text = "You can use 3 types of notifications <p style=\"margin-left: 8px;\"> <b>&#8226; Calendar -</b> choose the date, when you want to receive notification. <br><b>&#8226; Location -</b> hoose the region and notification will come after you enter it. <br><b>&#8226; Timer -</b>  set timer and after the selected period, you will receive the notification."
         label.attributedText = .parse(html: text, font: .appFont.withSize(13))
         label.numberOfLines = .zero 

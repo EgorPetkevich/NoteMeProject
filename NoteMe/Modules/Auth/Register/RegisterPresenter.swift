@@ -39,6 +39,10 @@ protocol RegisterInputValidatorUseCase {
     func validate(password: String?) -> Bool
 }
 
+protocol RegisterAlertServiceUseCase {
+    func showRegisterAlert(title: String, message: String?, okTitle: String)
+}
+
 final class RegisterPresenter: RegisterPresenterProtocol {
    
     weak var delegate: RegisterPresenterDelegate?
@@ -48,15 +52,18 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     private let registerAuthService: RegisterAuthServiceUseCase
     private let keyboardHelper: KeyboardHelperRegisterUseCase
     private let inputValidator: RegisterInputValidatorUseCase
+    private let alertService: RegisterAlertServiceUseCase
     
     init(keyboardHelper: KeyboardHelperRegisterUseCase,
          registerAuthService: RegisterAuthServiceUseCase,
          inputValidator: RegisterInputValidatorUseCase,
-         coordinator: RegisterCoordinatorProtocol) {
+         coordinator: RegisterCoordinatorProtocol,
+         alertService: RegisterAlertServiceUseCase) {
         self.keyboardHelper = keyboardHelper
         self.registerAuthService = registerAuthService
         self.inputValidator = inputValidator
         self.coordinator = coordinator
+        self.alertService = alertService
         
         bind()
     }
@@ -85,17 +92,22 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         registerAuthService.register(email: email,
                                      password: password,
                                      repeatPassword: repeatPassword)
-        { [self] isSuccess in
+        { [weak self] isSuccess in
             print(isSuccess)
             if isSuccess {
 //                FIXME: uncomment
-                let alertVC = AlertBuilder.build(title: "Success Registation", message: nil)
-//                coordinator?.showAlert(alertVC)
-                coordinator?.finish()
+                self?.alertService.showRegisterAlert(
+                    title: "Success Registation",
+                    message: nil,
+                    okTitle: "Ok")
+                self?.coordinator?.finish()
             }else {
-                let alertVC = AlertBuilder.build(title: "Error", message: "Invalid Email or Password", okTitle: "Ok")
-                coordinator?.showAlert(alertVC)
-                errorValidation()
+                self?.alertService.showRegisterAlert(
+                    title: "Error",
+                    message: "Invalid Email or Password",
+                    okTitle: "Ok")
+            
+                self?.errorValidation()
             }
         }
         

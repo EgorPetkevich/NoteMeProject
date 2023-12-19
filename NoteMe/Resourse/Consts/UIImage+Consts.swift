@@ -19,4 +19,12 @@ extension UIImage {
         static let infoSet: UIImage = .init(named: "infoSet")!
     }
     
+    //MARK: TabBar
+    enum TabBar {
+        static let selectedHome: UIImage = .init(named: "selectedHome")!
+        static let unselectedHome: UIImage = .init(named: "unselectedHome")!
+        static let selectedProfile: UIImage = .init(named: "selectedProfile")!
+        static let unselectedProfile: UIImage = .init(named: "unselectedProfile")!
+    }
+    
 }

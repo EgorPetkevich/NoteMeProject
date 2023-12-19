@@ -9,26 +9,29 @@ import UIKit
 
 final class AppCoordinator: Coordinator {
     
+    static var windowScene: UIWindowScene?
+    
     private var window: UIWindow
     
     init(scene: UIWindowScene) {
         self.window = UIWindow(windowScene: scene)
+        Self.windowScene = scene
     }
     
     func startApp() {
         //FIXME: - TEST CODE
         //open module
-        ParametersHelper.set(.onboardDidFinish, value: false)
-        ParametersHelper.set(.authenticatied, value: true)
-        if !ParametersHelper.get(.authenticatied) {
-            openAuthModule()
-        }else if !ParametersHelper.get(.onboardDidFinish) {
-            openOnboardingModule()
-        }else {
-            //open mainApp
-            openMainApp()
-        }
-        
+//        ParametersHelper.set(.onboardDidFinish, value: false)
+//        ParametersHelper.set(.authenticatied, value: false)
+//        if !ParametersHelper.get(.authenticatied) {
+//            openAuthModule()
+//        }else if !ParametersHelper.get(.onboardDidFinish) {
+//            openOnboardingModule()
+//        }else {
+//            //open mainApp
+//            openMainApp()
+//        }
+        openMainApp()
     }
     
     private func openAuthModule() {
@@ -60,11 +63,12 @@ final class AppCoordinator: Coordinator {
     }
     
     private func openMainApp () {
-        let coordinator = TabBarCoordinator()
+        let coordinator = MainTabBarCoordinator()
         children.append(coordinator)
         
         coordinator.onDidFinish = { [weak self] coordinator in
             self?.children.removeAll {coordinator == $0}
+            self?.startApp()
         }
         
         let vc = coordinator.start()

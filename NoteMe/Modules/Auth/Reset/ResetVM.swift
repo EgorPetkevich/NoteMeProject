@@ -26,6 +26,10 @@ protocol KeyboardHelperResetUseCase {
     func onWillHide(_ handler: @escaping (CGRect) -> Void) -> Self
 }
 
+protocol ResetAlertServiceUseCase {
+    func showResetAlert(title: String, message: String, okTitle: String)
+}
+
 final class ResetVM: ResetViewModelProtocol {
     
     var keyboardFrameChanged: ((CGRect) -> Void)?
@@ -36,15 +40,18 @@ final class ResetVM: ResetViewModelProtocol {
     private var keyboardHelper: KeyboardHelperResetUseCase
     private var inputValidator: ResetInputValidatorUseCase
     private var resetAuthService: ResetAuthServiceUseCase
+    private var alertService: ResetAlertServiceUseCase
     
     init(inputValidator: ResetInputValidatorUseCase,
          resetAuthService: ResetAuthServiceUseCase,
          coordinator: ResetCoordinatorProtocol?,
-         keyboardHelper: KeyboardHelperResetUseCase) {
+         keyboardHelper: KeyboardHelperResetUseCase,
+         alertService: ResetAlertServiceUseCase) {
         self.inputValidator = inputValidator
         self.resetAuthService = resetAuthService
         self.coordinator = coordinator
         self.keyboardHelper = keyboardHelper
+        self.alertService = alertService
         
         bind()
     }
@@ -64,18 +71,24 @@ final class ResetVM: ResetViewModelProtocol {
             let email
         else { return }
         
-        resetAuthService.reset(email: email) { [self]
+        resetAuthService.reset(email: email) { [weak self]
             isSuccess in
             print(isSuccess)
             if isSuccess {
                 //FIXME: uncomment
-                let alertVC = AlertBuilder.build(title: "Reset email", message: "We send a password reset email to you")
-//                coordinator?.showAlert(alertVC)
-                coordinator?.finish()
+                self?.alertService.showResetAlert(
+                    title: "Password reset ",
+                    message: "We send a password reset email to you",
+                    okTitle: "Ok")
+                
+                self?.coordinator?.finish()
             }else {
-                let alertVC = AlertBuilder.build(title: "Error", message: "Invalid Email", okTitle: "Ok")
-                coordinator?.showAlert(alertVC)
-                errorValidation()
+                self?.alertService.showResetAlert(
+                    title: "Error",
+                    message: "Invalid Email",
+                    okTitle: "Ok")
+
+                self?.errorValidation()
             }
         }
     }
