@@ -39,4 +39,18 @@ final class AuthService {
         }
     }
     
+    func signOut(complition: @escaping (Bool) -> Void) {
+        do {
+          try fireBase.signOut()
+            complition(true)
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+            complition(false)
+        }
+    }
+    
+    func currentUser() -> User? {
+        return fireBase.currentUser
+    }
+    
 }

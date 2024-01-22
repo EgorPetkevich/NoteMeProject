@@ -27,4 +27,12 @@ extension UIImage {
         static let unselectedProfile: UIImage = .init(named: "unselectedProfile")!
     }
     
+    //MARK: Profile
+    enum Profile {
+        static let notifiaction: UIImage = .init(named: "notifiations")!
+        static let export: UIImage = .init(named: "export")!
+        static let logout: UIImage = .init(named: "logout")!
+    }
+    
+
 }

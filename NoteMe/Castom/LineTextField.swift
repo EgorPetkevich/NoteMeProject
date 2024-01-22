@@ -21,8 +21,8 @@ final class LineTextField: UIView {
     private lazy var textField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .none
+        textField.textColor = .appText
         textField.font = UIFont.appRegularFont(15.0)
-        textField.textColor = UIColor.appText
         textField.textAlignment = .left
         return textField
     }()

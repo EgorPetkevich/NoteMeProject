@@ -22,6 +22,7 @@ final class LoginVC: UIViewController {
     
     private lazy var contentView: UIView = .content()
     private lazy var infoView: UIView = .info()
+    
     private lazy var titleLabel: UILabel = .title(.Auth.logTitle)
     
     private lazy var logoContainer: UIView = UIView()

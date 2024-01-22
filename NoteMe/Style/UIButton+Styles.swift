@@ -36,6 +36,28 @@ extension UIButton {
         return button
     }
     
+    static func profileButton(_ title: String, _ image: UIImage) -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = .clear
+        button.cornerRadius = 5.0
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(.appText, for: .normal)
+        button.setTitleColor(
+            .appText.withAlphaComponent(0.75),
+            for: .highlighted)
+        button.titleLabel?.font = UIFont.appRegularFont(16.0)
+        button.setImage(image, for: .normal)
+        button.contentHorizontalAlignment = .left
+        button.imageEdgeInsets = UIEdgeInsets(top: 0.0, left: -5.0, bottom: 0.0, right: 0.0)
+        return button
+    }
+    
+    static func clearButton() -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = .clear
+        return button
+    }
+    
     static func underlineyellowButton (_ title: String) -> UIButton {
         return underlineButton(title,
                                color: .appYellow,

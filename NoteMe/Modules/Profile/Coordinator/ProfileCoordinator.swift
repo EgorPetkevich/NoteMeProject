@@ -10,7 +10,11 @@ import UIKit
 final class ProfileCoordinator: Coordinator {
     
     override func start() -> UIViewController {
-        return ProfileAssembler.make()
+        return ProfileAssembler.make(coordinator: self)
     }
     
+}
+
+extension ProfileCoordinator: ProfileCoordinatorProtocol {
+   
 }

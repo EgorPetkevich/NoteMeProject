@@ -16,6 +16,10 @@
 		F253EA4A2B165C1000AEDDD7 /* OnboardSecondStepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F253EA492B165C1000AEDDD7 /* OnboardSecondStepVM.swift */; };
 		F253EA4C2B165C7200AEDDD7 /* OnboardingSecondStepAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F253EA4B2B165C7200AEDDD7 /* OnboardingSecondStepAssembler.swift */; };
 		F253EA4E2B165D5700AEDDD7 /* OnboardSecondStepCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F253EA4D2B165D5700AEDDD7 /* OnboardSecondStepCoordinator.swift */; };
+		F25B2F7F2B55425200F13A5A /* LineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2F7E2B55425200F13A5A /* LineButton.swift */; };
+		F25B2F812B5E9EA000F13A5A /* LineButton+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2F802B5E9EA000F13A5A /* LineButton+Set.swift */; };
+		F25B2F832B5EAED300F13A5A /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2F822B5EAED300F13A5A /* ProfileVM.swift */; };
+		F25B2F862B5EB5B900F13A5A /* AuthService+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2F852B5EB5B900F13A5A /* AuthService+Profile.swift */; };
 		F28284672B0BE51400AF496D /* KeyboardHelper+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28284662B0BE51400AF496D /* KeyboardHelper+Register.swift */; };
 		F28284692B0BF70E00AF496D /* InputValidator+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28284682B0BF70E00AF496D /* InputValidator+Register.swift */; };
 		F282846B2B0C0BD600AF496D /* ResetVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F282846A2B0C0BD600AF496D /* ResetVM.swift */; };
@@ -96,6 +100,10 @@
 		F253EA492B165C1000AEDDD7 /* OnboardSecondStepVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSecondStepVM.swift; sourceTree = "<group>"; };
 		F253EA4B2B165C7200AEDDD7 /* OnboardingSecondStepAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSecondStepAssembler.swift; sourceTree = "<group>"; };
 		F253EA4D2B165D5700AEDDD7 /* OnboardSecondStepCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSecondStepCoordinator.swift; sourceTree = "<group>"; };
+		F25B2F7E2B55425200F13A5A /* LineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineButton.swift; sourceTree = "<group>"; };
+		F25B2F802B5E9EA000F13A5A /* LineButton+Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LineButton+Set.swift"; sourceTree = "<group>"; };
+		F25B2F822B5EAED300F13A5A /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
+		F25B2F852B5EB5B900F13A5A /* AuthService+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Profile.swift"; sourceTree = "<group>"; };
 		F28284662B0BE51400AF496D /* KeyboardHelper+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Register.swift"; sourceTree = "<group>"; };
 		F28284682B0BF70E00AF496D /* InputValidator+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Register.swift"; sourceTree = "<group>"; };
 		F282846A2B0C0BD600AF496D /* ResetVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetVM.swift; sourceTree = "<group>"; };
@@ -235,6 +243,14 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		F25B2F842B5EB59A00F13A5A /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				F25B2F852B5EB5B900F13A5A /* AuthService+Profile.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
 		F28284652B0BE4E600AF496D /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,7 +387,9 @@
 			isa = PBXGroup;
 			children = (
 				F2DF716D2B31A977000267C8 /* Coordinator */,
+				F25B2F842B5EB59A00F13A5A /* UseCase */,
 				F2DF716E2B31A991000267C8 /* ProfileVC.swift */,
+				F25B2F822B5EAED300F13A5A /* ProfileVM.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -427,6 +445,7 @@
 				F2F3EA732AF6ACDC0019445B /* String+Locale.swift */,
 				F2B976AE2AFE9434005ADC3B /* UIButton+Actions.swift */,
 				F2B976C32B017C32005ADC3B /* LineTextField+Set.swift */,
+				F25B2F802B5E9EA000F13A5A /* LineButton+Set.swift */,
 			);
 			path = Utiles;
 			sourceTree = "<group>";
@@ -445,6 +464,7 @@
 			isa = PBXGroup;
 			children = (
 				F2F3EA642AF16ECA0019445B /* LineTextField.swift */,
+				F25B2F7E2B55425200F13A5A /* LineButton.swift */,
 			);
 			path = Castom;
 			sourceTree = "<group>";
@@ -665,6 +685,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F25B2F832B5EAED300F13A5A /* ProfileVM.swift in Sources */,
+				F25B2F812B5E9EA000F13A5A /* LineButton+Set.swift in Sources */,
 				F2DF71692B3069D1000267C8 /* HomeAssembler.swift in Sources */,
 				F2CDC9102B2F0DEA001EBA76 /* NSAttributedString+HTML.swift in Sources */,
 				F2BE85B02B03E54B0058A64D /* KeyboardHelper.swift in Sources */,
@@ -672,6 +694,7 @@
 				F28284702B0C0E4700AF496D /* InputValidator+Reset.swift in Sources */,
 				F28620B82B1F12D100C91413 /* Localization+Onboarding.swift in Sources */,
 				F2DF71632B305D48000267C8 /* AlertService+Reset.swift in Sources */,
+				F25B2F7F2B55425200F13A5A /* LineButton.swift in Sources */,
 				F2FD43A02AE9BA330068A5CB /* UILabel+Styles.swift in Sources */,
 				F2DF71732B31AC92000267C8 /* ProfileCoordinator.swift in Sources */,
 				F2F3EA6B2AF564E00019445B /* ResetVC.swift in Sources */,
@@ -725,6 +748,7 @@
 				F2F3EA682AF55E3D0019445B /* RegisterVC.swift in Sources */,
 				F2DF716F2B31A991000267C8 /* ProfileVC.swift in Sources */,
 				F2FD43792AE825000068A5CB /* SceneDelegate.swift in Sources */,
+				F25B2F862B5EB5B900F13A5A /* AuthService+Profile.swift in Sources */,
 				F2E6B8C92B13D77E00F42C7E /* ResetCoordinator.swift in Sources */,
 				F28620FF2B1F95CC00C91413 /* AuthService.swift in Sources */,
 				F28284672B0BE51400AF496D /* KeyboardHelper+Register.swift in Sources */,

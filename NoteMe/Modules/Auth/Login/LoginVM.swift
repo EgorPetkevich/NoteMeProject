@@ -86,8 +86,8 @@ final class LoginVM: LoginViewModelProtocol {
                     title: "Login Success",
                     message: nil,
                     okTitle: "Ok")
-//                ParametersHelper.set(.authenticatied, value: true)
-//                self?.coordinator?.finish()
+                ParametersHelper.set(.authenticatied, value: true)
+                self?.coordinator?.finish()
             }else {
                 self?.alertService.showLogAlert(
                     title: "Error",
