@@ -7,4 +7,16 @@
 
 import Foundation
 
-extension InputValidator: ResetInputValidatorUseCase { }
+struct ResetInputValidatorUseCase: ResetInputValidatorUseCaseProtocol {
+    
+    private let inputValidator: InputValidator
+    
+    init(inputValidator: InputValidator) {
+        self.inputValidator = inputValidator
+    }
+    
+    func validate(email: String?) -> Bool {
+        inputValidator.validate(email: email)
+    }
+    
+}

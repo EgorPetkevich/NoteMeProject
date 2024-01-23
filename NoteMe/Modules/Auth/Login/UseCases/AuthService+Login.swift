@@ -7,12 +7,20 @@
 
 import Foundation
 
-extension AuthService: LoginAuthServiceUseCase {
+struct LoginAuthServiceUseCase: LoginAuthServiceUseCaseProtocol {
     
-    func login(email: String, password: String, completion: @escaping (Bool) -> Void) {
-        self.singIn(email: email,
-                    password: password,
-                    complition: completion)
+    private let authService: AuthService
+    
+    init(authService: AuthService) {
+        self.authService = authService
     }
     
+    func login(email: String, password: String, completion: @escaping (Bool) -> Void) {
+        authService.singIn(email: email,
+                           password: password,
+                           complition: completion)
+    }
+    
+    
 }
+

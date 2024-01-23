@@ -20,6 +20,9 @@
 		F25B2F812B5E9EA000F13A5A /* LineButton+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2F802B5E9EA000F13A5A /* LineButton+Set.swift */; };
 		F25B2F832B5EAED300F13A5A /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2F822B5EAED300F13A5A /* ProfileVM.swift */; };
 		F25B2F862B5EB5B900F13A5A /* AuthService+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2F852B5EB5B900F13A5A /* AuthService+Profile.swift */; };
+		F25B2F892B5EE6F600F13A5A /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2F882B5EE6F600F13A5A /* Container.swift */; };
+		F25B2F8B2B5EEAAB00F13A5A /* ContainerRegistrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2F8A2B5EEAAB00F13A5A /* ContainerRegistrator.swift */; };
+		F25B2F8E2B5EF50500F13A5A /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2F8D2B5EF50500F13A5A /* WindowManager.swift */; };
 		F28284672B0BE51400AF496D /* KeyboardHelper+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28284662B0BE51400AF496D /* KeyboardHelper+Register.swift */; };
 		F28284692B0BF70E00AF496D /* InputValidator+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28284682B0BF70E00AF496D /* InputValidator+Register.swift */; };
 		F282846B2B0C0BD600AF496D /* ResetVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F282846A2B0C0BD600AF496D /* ResetVM.swift */; };
@@ -104,6 +107,9 @@
 		F25B2F802B5E9EA000F13A5A /* LineButton+Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LineButton+Set.swift"; sourceTree = "<group>"; };
 		F25B2F822B5EAED300F13A5A /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		F25B2F852B5EB5B900F13A5A /* AuthService+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Profile.swift"; sourceTree = "<group>"; };
+		F25B2F882B5EE6F600F13A5A /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		F25B2F8A2B5EEAAB00F13A5A /* ContainerRegistrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRegistrator.swift; sourceTree = "<group>"; };
+		F25B2F8D2B5EF50500F13A5A /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
 		F28284662B0BE51400AF496D /* KeyboardHelper+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Register.swift"; sourceTree = "<group>"; };
 		F28284682B0BF70E00AF496D /* InputValidator+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Register.swift"; sourceTree = "<group>"; };
 		F282846A2B0C0BD600AF496D /* ResetVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetVM.swift; sourceTree = "<group>"; };
@@ -251,6 +257,23 @@
 			path = UseCase;
 			sourceTree = "<group>";
 		};
+		F25B2F872B5EE6DF00F13A5A /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				F25B2F882B5EE6F600F13A5A /* Container.swift */,
+				F25B2F8A2B5EEAAB00F13A5A /* ContainerRegistrator.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		F25B2F8C2B5EF4F100F13A5A /* WindowManager */ = {
+			isa = PBXGroup;
+			children = (
+				F25B2F8D2B5EF50500F13A5A /* WindowManager.swift */,
+			);
+			path = WindowManager;
+			sourceTree = "<group>";
+		};
 		F28284652B0BE4E600AF496D /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +334,8 @@
 		F2B976B42AFEA152005ADC3B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F25B2F8C2B5EF4F100F13A5A /* WindowManager */,
+				F25B2F872B5EE6DF00F13A5A /* Container */,
 				F28621022B1F98D100C91413 /* AllertService */,
 				F28620FD2B1F95BB00C91413 /* AuthService */,
 				F253EA352B164B4900AEDDD7 /* ParametersHelper */,
@@ -397,8 +422,8 @@
 		F2DF716D2B31A977000267C8 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				F2DF71702B31AC11000267C8 /* ProfileAssembler.swift */,
 				F2DF71722B31AC92000267C8 /* ProfileCoordinator.swift */,
+				F2DF71702B31AC11000267C8 /* ProfileAssembler.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -568,8 +593,8 @@
 			isa = PBXGroup;
 			children = (
 				F2FD439B2AE83DBF0068A5CB /* Auth */,
-				F2DF71642B306988000267C8 /* Home */,
 				F253EA382B16541600AEDDD7 /* Onboarding */,
+				F2DF71642B306988000267C8 /* Home */,
 				F2DF716C2B31A961000267C8 /* Profile */,
 				F28620BA2B1F5E1F00C91413 /* TabBar */,
 			);
@@ -704,6 +729,7 @@
 				F2FD43922AE838290068A5CB /* UIImage+Consts.swift in Sources */,
 				F2FD43902AE834E70068A5CB /* UIFont+Consts.swift in Sources */,
 				F253EA4C2B165C7200AEDDD7 /* OnboardingSecondStepAssembler.swift in Sources */,
+				F25B2F892B5EE6F600F13A5A /* Container.swift in Sources */,
 				F2B976B12AFE9785005ADC3B /* LoginVM.swift in Sources */,
 				F28620BD2B1F5E4900C91413 /* MainTabBarVC.swift in Sources */,
 				F2E6B8AD2B0D24D200F42C7E /* RegisteCoordinator.swift in Sources */,
@@ -718,6 +744,7 @@
 				F28284692B0BF70E00AF496D /* InputValidator+Register.swift in Sources */,
 				F2DF716B2B306A20000267C8 /* HomeCoordinator.swift in Sources */,
 				F282846B2B0C0BD600AF496D /* ResetVM.swift in Sources */,
+				F25B2F8E2B5EF50500F13A5A /* WindowManager.swift in Sources */,
 				F28620C12B1F5FEC00C91413 /* MainTabBarAssembler.swift in Sources */,
 				F253EA3E2B16569400AEDDD7 /* OnboardingFirstStepVM.swift in Sources */,
 				F253EA372B164B6600AEDDD7 /* ParametersHelper.swift in Sources */,
@@ -738,6 +765,7 @@
 				F253EA422B1657DE00AEDDD7 /* OnboardFirstStepCoordinator.swift in Sources */,
 				F2CDC92A2B2FB6BE001EBA76 /* AlertService+Login.swift in Sources */,
 				F2E6B8A72B0D129B00F42C7E /* Coordinator.swift in Sources */,
+				F25B2F8B2B5EEAAB00F13A5A /* ContainerRegistrator.swift in Sources */,
 				F2E6B8CE2B13E8D800F42C7E /* KeyboardHelper+Reset.swift in Sources */,
 				F2FD438E2AE82E810068A5CB /* UIColor+Consts.swift in Sources */,
 				F28621012B1F975A00C91413 /* AuthService+Login.swift in Sources */,

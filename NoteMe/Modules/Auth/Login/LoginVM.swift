@@ -12,25 +12,25 @@ protocol LoginCoordinatorProtocol: AnyObject {
     func openResetModule()
 }
 
-protocol LoginAuthServiceUseCase {
+protocol LoginAuthServiceUseCaseProtocol {
     func login(email: String,
                password: String,
                completion: @escaping (Bool) -> Void)
 }
 
-protocol LoginInputValidatorUseCase {
+protocol LoginInputValidatorUseCaseProtocol {
     func validate(email: String?) -> Bool
     func validate(password: String?) -> Bool
 }
 
-protocol KeyboardHelperLoginUseCase {
+protocol KeyboardHelperLoginUseCaseProtocol {
     @discardableResult
-    func onWillShow(_ handler: @escaping (CGRect) -> Void) -> Self
+    func onWillShow(_ handler: @escaping (CGRect) -> Void) -> KeyboardHelper
     @discardableResult
-    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> Self
+    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> KeyboardHelper
 }
 
-protocol LoginAlertServiceUseCase {
+protocol LoginAlertServiceUseCaseProtocol {
     func showLogAlert(title: String, message: String?, okTitle: String)
 }
 
@@ -43,15 +43,15 @@ final class LoginVM: LoginViewModelProtocol {
     
     private weak var coordinator: LoginCoordinatorProtocol?
     
-    private let keyboardHelper: KeyboardHelperLoginUseCase
-    private let authService: LoginAuthServiceUseCase
-    private let inputValidator: LoginInputValidatorUseCase
+    private let keyboardHelper: KeyboardHelperLoginUseCaseProtocol
+    private let authService: LoginAuthServiceUseCaseProtocol
+    private let inputValidator: LoginInputValidatorUseCaseProtocol
     private let alertService: LoginAlertServiceUseCase
     
-    init(authService: LoginAuthServiceUseCase,
-         inputValidator: LoginInputValidatorUseCase,
+    init(authService: LoginAuthServiceUseCaseProtocol,
+         inputValidator: LoginInputValidatorUseCaseProtocol,
          coordinator: LoginCoordinatorProtocol,
-         keyboardHelper: KeyboardHelperLoginUseCase,
+         keyboardHelper: KeyboardHelperLoginUseCaseProtocol,
          alertService: LoginAlertServiceUseCase) {
         self.inputValidator = inputValidator
         self.authService = authService

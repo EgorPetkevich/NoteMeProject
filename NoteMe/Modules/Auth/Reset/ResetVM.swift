@@ -11,22 +11,22 @@ protocol ResetCoordinatorProtocol: AnyObject {
     func showAlert(_ alert: UIAlertController)
 }
 
-protocol ResetAuthServiceUseCase {
+protocol ResetAuthServiceUseCaseProtocol {
     func reset(email: String, complition: @escaping (Bool) -> Void)
 }
 
-protocol ResetInputValidatorUseCase {
+protocol ResetInputValidatorUseCaseProtocol {
     func validate(email: String?) -> Bool
 }
 
-protocol KeyboardHelperResetUseCase {
+protocol KeyboardHelperResetUseCaseProtocol {
     @discardableResult
-    func onWillShow(_ handler: @escaping (CGRect) -> Void) -> Self
+    func onWillShow(_ handler: @escaping (CGRect) -> Void) -> KeyboardHelper
     @discardableResult
-    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> Self
+    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> KeyboardHelper
 }
 
-protocol ResetAlertServiceUseCase {
+protocol ResetAlertServiceUseCaseProtocol {
     func showResetAlert(title: String, message: String, okTitle: String)
 }
 
@@ -37,16 +37,16 @@ final class ResetVM: ResetViewModelProtocol {
     
     private weak var coordinator: ResetCoordinatorProtocol?
     
-    private var keyboardHelper: KeyboardHelperResetUseCase
-    private var inputValidator: ResetInputValidatorUseCase
-    private var resetAuthService: ResetAuthServiceUseCase
-    private var alertService: ResetAlertServiceUseCase
+    private var keyboardHelper: KeyboardHelperResetUseCaseProtocol
+    private var inputValidator: ResetInputValidatorUseCaseProtocol
+    private var resetAuthService: ResetAuthServiceUseCaseProtocol
+    private var alertService: ResetAlertServiceUseCaseProtocol
     
-    init(inputValidator: ResetInputValidatorUseCase,
-         resetAuthService: ResetAuthServiceUseCase,
+    init(inputValidator: ResetInputValidatorUseCaseProtocol,
+         resetAuthService: ResetAuthServiceUseCaseProtocol,
          coordinator: ResetCoordinatorProtocol?,
-         keyboardHelper: KeyboardHelperResetUseCase,
-         alertService: ResetAlertServiceUseCase) {
+         keyboardHelper: KeyboardHelperResetUseCaseProtocol,
+         alertService: ResetAlertServiceUseCaseProtocol) {
         self.inputValidator = inputValidator
         self.resetAuthService = resetAuthService
         self.coordinator = coordinator

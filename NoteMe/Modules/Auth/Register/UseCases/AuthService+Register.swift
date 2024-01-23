@@ -7,8 +7,20 @@
 
 import Foundation
 
-extension AuthService: RegisterAuthServiceUseCase {
-    func register(email: String, password: String, repeatPassword: String, complition: @escaping (Bool) -> Void) {
-        singUp(email: email, password: password, complition: complition)
+struct RegisterAuthServiceUseCase: RegisterAuthServiceUseCaseProtocol {
+    
+    private let authService: AuthService
+    
+    init(authService: AuthService) {
+        self.authService = authService
     }
+    
+    func register(email: String, password: String, repeatPassword: String, complition: @escaping (Bool) -> Void) {
+        
+        authService.singUp(email: email,
+                           password: password,
+                           complition: complition)
+    }
+    
 }
+

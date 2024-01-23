@@ -11,7 +11,7 @@ protocol ProfileCoordinatorProtocol: AnyObject {
     func finish()
 }
 
-protocol ProfileAuthServiceUseCase {
+protocol ProfileAuthServiceUseCaseProtocol {
     func logout(completion: @escaping (Bool) -> Void)
     func getUserEmail() -> String?
 }
@@ -22,9 +22,10 @@ final class ProfileVM: ProfileViewModelProtocol {
     
     private weak var coordinator: ProfileCoordinatorProtocol?
     
-    private let authService: ProfileAuthServiceUseCase
+    private let authService: ProfileAuthServiceUseCaseProtocol
     
-    init(coordinator: ProfileCoordinatorProtocol? = nil, authService: ProfileAuthServiceUseCase) {
+    init(coordinator: ProfileCoordinatorProtocol? = nil, 
+         authService: ProfileAuthServiceUseCaseProtocol) {
         self.coordinator = coordinator
         self.authService = authService
         

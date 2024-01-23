@@ -7,4 +7,22 @@
 
 import Foundation
 
-extension KeyboardHelper: KeyboardHelperResetUseCase { }
+struct ResetKeyboardHelperRegisterUseCase: KeyboardHelperResetUseCaseProtocol {
+    
+    private let keyboardHelper: KeyboardHelper
+    
+    init(keyboardHelper: KeyboardHelper) {
+        self.keyboardHelper = keyboardHelper
+    }
+    
+    func onWillShow(_ handler: @escaping (CGRect) -> Void) -> KeyboardHelper {
+        keyboardHelper.onWillShow(handler)
+    }
+    
+    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> KeyboardHelper {
+        keyboardHelper.onWillHide(handler)
+    }
+    
+    
+    
+}

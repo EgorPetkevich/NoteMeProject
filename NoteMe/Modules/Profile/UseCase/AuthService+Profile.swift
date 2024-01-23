@@ -7,13 +7,19 @@
 
 import Foundation
 
-extension AuthService: ProfileAuthServiceUseCase {
+struct ProfileAuthServiceUseCase: ProfileAuthServiceUseCaseProtocol {
+    
+    private let authService: AuthService
+    
+    init(authService: AuthService) {
+        self.authService = authService
+    }
     
     func logout(completion: @escaping (Bool) -> Void) {
-        self.signOut(complition: completion)
+        authService.signOut(complition: completion)
     }
     
     func getUserEmail() -> String? {
-        return self.currentUser()?.email
+        return authService.currentUser()?.email
     }
 }

@@ -7,10 +7,16 @@
 
 import Foundation
 
-extension AlertService: RegisterAlertServiceUseCase {
+struct RegisterAlertServiceUseCase: RegisterAlertServiceUseCaseProtocol {
+    
+    private let alertService: AlertService
+    
+    init(alertService: AlertService) {
+        self.alertService = alertService
+    }
     
     func showRegisterAlert(title: String, message: String?, okTitle: String) {
-        showAlert(title: title, message: message, okTitle: okTitle)
+        alertService.showAlert(title: title, message: message, okTitle: okTitle)
     }
     
 }

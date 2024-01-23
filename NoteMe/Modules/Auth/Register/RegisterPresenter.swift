@@ -12,7 +12,7 @@ protocol RegisterCoordinatorProtocol: AnyObject {
     func showAlert(_ alert: UIAlertController)
 }
 
-protocol RegisterAuthServiceUseCase {
+protocol RegisterAuthServiceUseCaseProtocol {
     func register(email: String,
                   password: String,
                   repeatPassword: String,
@@ -27,19 +27,19 @@ protocol RegisterPresenterDelegate: AnyObject {
     func keyboardFrameChanged(_ frame: CGRect)
 }
 
-protocol KeyboardHelperRegisterUseCase {
+protocol KeyboardHelperRegisterUseCaseProtocol {
     @discardableResult
-    func onWillShow(_ handler: @escaping (CGRect) -> Void) -> Self
+    func onWillShow(_ handler: @escaping (CGRect) -> Void) -> KeyboardHelper
     @discardableResult
-    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> Self
+    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> KeyboardHelper
 }
 
-protocol RegisterInputValidatorUseCase {
+protocol RegisterInputValidatorUseCaseProtocol {
     func validate(email: String?) -> Bool
     func validate(password: String?) -> Bool
 }
 
-protocol RegisterAlertServiceUseCase {
+protocol RegisterAlertServiceUseCaseProtocol {
     func showRegisterAlert(title: String, message: String?, okTitle: String)
 }
 
@@ -49,16 +49,16 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     
     private weak var coordinator: RegisterCoordinatorProtocol?
     
-    private let registerAuthService: RegisterAuthServiceUseCase
-    private let keyboardHelper: KeyboardHelperRegisterUseCase
-    private let inputValidator: RegisterInputValidatorUseCase
-    private let alertService: RegisterAlertServiceUseCase
+    private let registerAuthService: RegisterAuthServiceUseCaseProtocol
+    private let keyboardHelper: KeyboardHelperRegisterUseCaseProtocol
+    private let inputValidator: RegisterInputValidatorUseCaseProtocol
+    private let alertService: RegisterAlertServiceUseCaseProtocol
     
-    init(keyboardHelper: KeyboardHelperRegisterUseCase,
-         registerAuthService: RegisterAuthServiceUseCase,
-         inputValidator: RegisterInputValidatorUseCase,
+    init(keyboardHelper: KeyboardHelperRegisterUseCaseProtocol,
+         registerAuthService: RegisterAuthServiceUseCaseProtocol,
+         inputValidator: RegisterInputValidatorUseCaseProtocol,
          coordinator: RegisterCoordinatorProtocol,
-         alertService: RegisterAlertServiceUseCase) {
+         alertService: RegisterAlertServiceUseCaseProtocol) {
         self.keyboardHelper = keyboardHelper
         self.registerAuthService = registerAuthService
         self.inputValidator = inputValidator
