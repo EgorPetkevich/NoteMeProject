@@ -5,7 +5,7 @@
 //  Created by George Popkich on 22.01.24.
 //
 
-import Foundation
+import UIKit
 
 protocol ProfileCoordinatorProtocol: AnyObject {
     func finish()
@@ -16,44 +16,42 @@ protocol ProfileAuthServiceUseCaseProtocol {
     func getUserEmail() -> String?
 }
 
-final class ProfileVM: ProfileViewModelProtocol {
+protocol ProfileAdapterProtocol {
     
-    var userEmail: ((String?) -> Void)?
+    func reloadData(whith sections: [ProfileSections])
+    func makeTableView() -> UITableView
+}
+
+final class ProfileVM: ProfileViewModelProtocol {
     
     private weak var coordinator: ProfileCoordinatorProtocol?
     
     private let authService: ProfileAuthServiceUseCaseProtocol
+    private let adapter: ProfileAdapterProtocol
+    
+    var sections: [ProfileSections] {
+        return [
+            .account(authService.getUserEmail() ?? ""),
+            .settings(ProfileSettingsRows.allCases)
+        ]
+    }
     
     init(coordinator: ProfileCoordinatorProtocol? = nil, 
-         authService: ProfileAuthServiceUseCaseProtocol) {
+         authService: ProfileAuthServiceUseCaseProtocol,
+         adapter: ProfileAdapterProtocol) {
         self.coordinator = coordinator
         self.authService = authService
+        self.adapter = adapter
         
-        setUserEmail()
+        commonInit()
     }
     
-    func setUserEmail() {
-        userEmail?(authService.getUserEmail())
+    func makeTableView() -> UITableView {
+        return adapter.makeTableView()
     }
     
-    func notiButtonDidTap() {
-        print("\(#function)")
+    private func commonInit() {
+        adapter.reloadData(whith: sections)
     }
-    
-    func exportButtonDidTap() {
-        print("\(#function)")
-    }
-    
-    func logoutButtonDidTap() {
-        print("\(#function)")
-        authService.logout() { [weak self]
-            isSuccess in
-            print(isSuccess)
-            if isSuccess {
-                self?.coordinator?.finish()
-            }
-        }
-    }
-    
     
 }

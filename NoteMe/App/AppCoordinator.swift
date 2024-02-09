@@ -22,15 +22,15 @@ final class AppCoordinator: Coordinator {
 //        open module
 //        ParametersHelper.set(.onboardDidFinish, value: false)
 //        ParametersHelper.set(.authenticatied, value: false)
-        if !ParametersHelper.get(.authenticatied) {
-            openAuthModule()
-        }else if !ParametersHelper.get(.onboardDidFinish) {
-            openOnboardingModule()
-        }else {
-            //open mainApp
-            openMainApp()
-        }
-//        openMainApp()
+//        if !ParametersHelper.get(.authenticatied) {
+//            openAuthModule()
+//        }else if !ParametersHelper.get(.onboardDidFinish) {
+//            openOnboardingModule()
+//        }else {
+//            //open mainApp
+//            openMainApp()
+//        }
+        openMainApp()
     }
     
     private func openAuthModule() {

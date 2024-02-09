@@ -16,7 +16,9 @@ final class ProfileAssembler {
         
         let authService = ProfileAuthServiceUseCase(authService: container.resolve())
         
-        let vm = ProfileVM(coordinator: coordinator, authService: authService)
+        let vm = ProfileVM(coordinator: coordinator,
+                           authService: authService,
+                           adapter: ProfileAdapter())
         return ProfileVC(viewModel: vm)
     }
     
