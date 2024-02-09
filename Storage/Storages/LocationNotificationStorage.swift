@@ -7,7 +7,6 @@
 
 import CoreData
 
-
 public final class LocationNotificationStorage:
     NotificationStorage<LocationNotificationDTO> {}
 //

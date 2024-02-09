@@ -10,8 +10,13 @@ import Foundation
 import CoreData
 
 @objc(LocationNotificationMO)
-public class LocationNotificationMO: BaseNotificationMO {
+public class LocationNotificationMO: BaseNotificationMO, MODescription {
 
+    public func apply(dto: any DTODescription) {
+        guard let dto = dto as? LocationNotificationDTO else { return }
+        apply(dto: dto)
+    }
+    
     func apply(dto: LocationNotificationDTO) {
         self.identifier = dto.id
         self.date = dto.date

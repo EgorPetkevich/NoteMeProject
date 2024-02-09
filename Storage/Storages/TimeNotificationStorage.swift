@@ -7,7 +7,6 @@
 
 import CoreData
 
-
 public final class TimeNotificationStorage:
     NotificationStorage<TimeNotificationDTO> {}
     

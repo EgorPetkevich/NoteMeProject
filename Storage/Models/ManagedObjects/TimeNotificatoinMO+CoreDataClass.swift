@@ -10,9 +10,14 @@ import Foundation
 import CoreData
 
 @objc(TimeNotificatoinMO)
-public class TimeNotificatoinMO: BaseNotificationMO {
+public class TimeNotificatoinMO: BaseNotificationMO, MODescription {
+    
+    public func apply(dto: any DTODescription) {
+        guard let dto = dto as? TimeNotificationDTO else { return }
+        apply(dto: dto)
+    }
 
-    func apply(dto: TimeNotificationDTO) {
+    private func apply(dto: TimeNotificationDTO) {
         self.identifier = dto.id
         self.date = dto.date
         self.title = dto.title
