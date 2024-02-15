@@ -1,13 +1,13 @@
 //
-//  ProfileSettingsCell.swift
+//  PopSelectionCell.swift
 //  NoteMe
 //
-//  Created by George Popkich on 29.01.24.
+//  Created by George Popkich on 15.02.24.
 //
 
 import UIKit
 
-final class ProfileSettingsCell: UITableViewCell {
+final class PopSelectionCell: UITableViewCell {
     
     private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
@@ -22,13 +22,6 @@ final class ProfileSettingsCell: UITableViewCell {
         return label
     }()
     
-    private lazy var statusLabel: UILabel = {
-        let label = UILabel()
-        label.font = .appFont.withSize(12.0)
-        label.textColor = .appGrayText
-        return label
-    }()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
@@ -39,11 +32,16 @@ final class ProfileSettingsCell: UITableViewCell {
         fatalError()
     }
     
-    func setup(_ type: ProfileSettingsRows) {
+    func setupEdit(_ type: EditNotificationRows) {
         titleLabel.text = type.title
-        titleLabel.textColor = type == .logout ? .appRed : .appText
+        titleLabel.textColor = .appText
         iconImageView.image = type.icon
-        statusLabel.text = type.infoText
+    }
+    
+    func setupNotifications(_ type: NotificationsRows) {
+        titleLabel.text = type.title
+        titleLabel.textColor = .appText
+        iconImageView.image = type.icon
     }
     
     func setupUI() {
@@ -51,7 +49,6 @@ final class ProfileSettingsCell: UITableViewCell {
         
         addSubview(iconImageView)
         addSubview(titleLabel)
-        addSubview(statusLabel)
     }
     
     private func setupConstraints() {
@@ -62,11 +59,6 @@ final class ProfileSettingsCell: UITableViewCell {
             make.verticalEdges.equalToSuperview().inset(12.0)
         }
         
-        statusLabel.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(16.0)
-            make.verticalEdges.equalToSuperview().inset(12.0)
-        }
-        
         titleLabel.snp.makeConstraints { make in
             make.leading.equalTo(iconImageView.snp.trailing).inset(-8.0)
             make.verticalEdges.equalToSuperview().inset(12.0)
@@ -74,3 +66,4 @@ final class ProfileSettingsCell: UITableViewCell {
     }
     
 }
+

@@ -37,4 +37,16 @@ extension LineTextField {
         return self
     }
     
+    @discardableResult
+    func borderStyle(_ borderStyle: UITextField.BorderStyle?) -> LineTextField {
+        self.borderStyle = borderStyle
+        return self
+    }
+    
+    @discardableResult
+    func setInputView(_ inputView: UIView?) -> LineTextField {
+        self.textFieldInputView = inputView
+        return self
+    }
+    
 }

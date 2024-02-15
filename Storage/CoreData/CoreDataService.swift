@@ -14,25 +14,36 @@ final class CoreDataService {
     static var shared: CoreDataService = .init()
     
     var mainContext: NSManagedObjectContext {
-        return persistentContainer.viewContext
-    }
-    
-    var backgroundContext: NSManagedObjectContext {
-        let context = persistentContainer.newBackgroundContext()
-        context.parent = mainContext
+        let context =  persistentContainer.viewContext
+        context.automaticallyMergesChangesFromParent = true
         return context
     }
     
+    var backgroundContext: NSManagedObjectContext {
+        return persistentContainer.newBackgroundContext()
 
+    }
+    
     private var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "NotificationDataBase")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
+        let modelName = "NotificationDataBase"
+        let bundle = Bundle(for: CoreDataService.self)
+        guard
+            let modelURL = bundle.url(forResource: modelName,
+                                      withExtension: "momd"),
+            let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL)
+        else { fatalError("unable to find model in bundle") }
+            
+        let container = NSPersistentContainer(name: modelName,
+                                                  managedObjectModel: managedObjectModel)
+            
+            container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+                if let error = error as NSError? {
+                    fatalError("Unresolved error \(error), \(error.userInfo)")
+                }
+            })
+            return container
+        }()
+    
     
     func saveMainContext(complition: ComplitionHandler? = nil) {
         saveContext(context: mainContext, complition: complition)

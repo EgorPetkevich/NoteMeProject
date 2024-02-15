@@ -8,6 +8,8 @@
 import UIKit
 
 protocol ProfileViewModelProtocol {
+    var sections: [ProfileSections] { get }
+    
     func makeTableView() -> UITableView
 
 }
@@ -23,7 +25,6 @@ final class ProfileVC: UIViewController {
     init(viewModel: ProfileViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        
         setupTabBarItem()
     }
     

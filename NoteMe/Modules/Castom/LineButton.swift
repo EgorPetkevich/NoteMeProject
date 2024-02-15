@@ -41,7 +41,6 @@ final class LineButton: UIView {
         super.init(frame: .zero)
        
         commonInit()
-        
     }
     
     required init?(coder: NSCoder, targer: Any, selector: Selector) {

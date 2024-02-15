@@ -7,9 +7,9 @@
 
 import Foundation
 
-public struct LocationNotificationDTO: DTODescription {
+public final class LocationNotificationDTO: DTODescription {
     
-    public typealias DTO = Self
+    public typealias DTO = LocationNotificationDTO
     public typealias MO = LocationNotificationMO
     
     public var id: String

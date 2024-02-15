@@ -70,6 +70,15 @@ extension UIButton {
                                 font: .appBoldFont(15.0))
     }
     
+    static func addHomeButton() -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = .appYellow
+        button.titleLabel?.textColor = .appText
+        button.titleLabel?.font = .appBoldFont(25.0)
+        button.setImage(.TabBar.plus, for: .normal)
+        return button
+    }
+    
     static func underlineButton(
             _ title: String,
             color: UIColor,

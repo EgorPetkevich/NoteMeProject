@@ -7,9 +7,9 @@
 
 import Foundation
 
-public struct TimeNotificationDTO: DTODescription {
+public final class TimeNotificationDTO: DTODescription {
     
-    public typealias DTO = Self
+    public typealias DTO = TimeNotificationDTO
     public typealias MO = TimeNotificatoinMO
     
     

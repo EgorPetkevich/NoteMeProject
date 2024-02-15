@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 13.4, *)
 final class AppCoordinator: Coordinator {
     
     private let container: Container
@@ -31,6 +32,11 @@ final class AppCoordinator: Coordinator {
 //            openMainApp()
 //        }
         openMainApp()
+//        let vc = DateNotificationCoordinator(container: container).start()
+//        let window = windowManager.get(type: .main)
+//        window.rootViewController = vc
+//        windowManager.show(type: .main)
+        
     }
     
     private func openAuthModule() {

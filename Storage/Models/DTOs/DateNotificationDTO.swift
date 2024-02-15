@@ -8,9 +8,9 @@
 import Foundation
 import CoreData
 
-public struct DateNotificationDTO: DTODescription {
+public final class DateNotificationDTO: DTODescription {
     
-    public typealias DTO = Self
+    public typealias DTO = DateNotificationDTO
     public typealias MO = DateNotificationMO
     
     
@@ -55,6 +55,10 @@ public struct DateNotificationDTO: DTODescription {
         self.subtitle = mo.subtitle
         self.completedDate = mo.completedDate
         self.targetDate = targetDate
-        
     }
+    
+    public func getMOType() -> NSManagedObject.Type {
+        return MO.self
+    }
+    
 }

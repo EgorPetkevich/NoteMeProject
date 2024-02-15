@@ -17,7 +17,6 @@ protocol ProfileAuthServiceUseCaseProtocol {
 }
 
 protocol ProfileAdapterProtocol {
-    
     func reloadData(whith sections: [ProfileSections])
     func makeTableView() -> UITableView
 }

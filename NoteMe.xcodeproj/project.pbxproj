@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F245B3DA2B78D91A003FD5B7 /* DateNotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3D92B78D91A003FD5B7 /* DateNotificationVC.swift */; };
+		F245B3DC2B78D943003FD5B7 /* DateNotificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3DB2B78D943003FD5B7 /* DateNotificationVM.swift */; };
+		F245B3DE2B78D969003FD5B7 /* DateNotificatoinCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3DD2B78D969003FD5B7 /* DateNotificatoinCoordinator.swift */; };
+		F245B3E02B78D97E003FD5B7 /* DateNotificationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3DF2B78D97E003FD5B7 /* DateNotificationAssembler.swift */; };
+		F245B3E42B78DF33003FD5B7 /* UIDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3E32B78DF33003FD5B7 /* UIDatePicker.swift */; };
+		F245B3E62B78E0BB003FD5B7 /* DatePickerView+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3E52B78E0BB003FD5B7 /* DatePickerView+Actions.swift */; };
+		F245B3E82B794AB8003FD5B7 /* UITextView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3E72B794AB8003FD5B7 /* UITextView+Style.swift */; };
+		F245B3EA2B7958FF003FD5B7 /* LineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3E92B7958FF003FD5B7 /* LineTextView.swift */; };
+		F245B3EC2B796301003FD5B7 /* LineTextView+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3EB2B796301003FD5B7 /* LineTextView+Set.swift */; };
+		F245B3EE2B7A2723003FD5B7 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3ED2B7A2723003FD5B7 /* DatePickerView.swift */; };
+		F245B3F22B7A63ED003FD5B7 /* DateNotificationKeyboardHelperUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3F12B7A63ED003FD5B7 /* DateNotificationKeyboardHelperUseCase.swift */; };
+		F245B3F52B7BBBBC003FD5B7 /* MainTabBarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3F42B7BBBBC003FD5B7 /* MainTabBarVM.swift */; };
+		F245B3F92B7BBF3C003FD5B7 /* PopNotificationSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3F82B7BBF3C003FD5B7 /* PopNotificationSelectorVC.swift */; };
+		F245B3FB2B7BBF4E003FD5B7 /* PopNotificationSelectorVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3FA2B7BBF4E003FD5B7 /* PopNotificationSelectorVM.swift */; };
+		F245B3FD2B7BD226003FD5B7 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3FC2B7BD226003FD5B7 /* HomeVM.swift */; };
+		F245B3FF2B7E2B14003FD5B7 /* PopNotificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3FE2B7E2B14003FD5B7 /* PopNotificationCoordinator.swift */; };
+		F245B4012B7E2B5F003FD5B7 /* PopNotificationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4002B7E2B5F003FD5B7 /* PopNotificationAssembler.swift */; };
+		F245B4062B7E595A003FD5B7 /* PopSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4052B7E595A003FD5B7 /* PopSelectionCell.swift */; };
+		F245B4082B7E5A8D003FD5B7 /* NotificationSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4072B7E5A8D003FD5B7 /* NotificationSections.swift */; };
+		F245B40A2B7E61CC003FD5B7 /* PopNotificationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4092B7E61CC003FD5B7 /* PopNotificationAdapter.swift */; };
 		F253EA372B164B6600AEDDD7 /* ParametersHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F253EA362B164B6600AEDDD7 /* ParametersHelper.swift */; };
 		F253EA3C2B16547300AEDDD7 /* OnboardFirstStepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F253EA3B2B16547300AEDDD7 /* OnboardFirstStepVC.swift */; };
 		F253EA3E2B16569400AEDDD7 /* OnboardingFirstStepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F253EA3D2B16569400AEDDD7 /* OnboardingFirstStepVM.swift */; };
@@ -146,6 +166,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F245B3D92B78D91A003FD5B7 /* DateNotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationVC.swift; sourceTree = "<group>"; };
+		F245B3DB2B78D943003FD5B7 /* DateNotificationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationVM.swift; sourceTree = "<group>"; };
+		F245B3DD2B78D969003FD5B7 /* DateNotificatoinCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificatoinCoordinator.swift; sourceTree = "<group>"; };
+		F245B3DF2B78D97E003FD5B7 /* DateNotificationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationAssembler.swift; sourceTree = "<group>"; };
+		F245B3E32B78DF33003FD5B7 /* UIDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDatePicker.swift; sourceTree = "<group>"; };
+		F245B3E52B78E0BB003FD5B7 /* DatePickerView+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatePickerView+Actions.swift"; sourceTree = "<group>"; };
+		F245B3E72B794AB8003FD5B7 /* UITextView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Style.swift"; sourceTree = "<group>"; };
+		F245B3E92B7958FF003FD5B7 /* LineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextView.swift; sourceTree = "<group>"; };
+		F245B3EB2B796301003FD5B7 /* LineTextView+Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LineTextView+Set.swift"; sourceTree = "<group>"; };
+		F245B3ED2B7A2723003FD5B7 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		F245B3F12B7A63ED003FD5B7 /* DateNotificationKeyboardHelperUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationKeyboardHelperUseCase.swift; sourceTree = "<group>"; };
+		F245B3F42B7BBBBC003FD5B7 /* MainTabBarVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVM.swift; sourceTree = "<group>"; };
+		F245B3F82B7BBF3C003FD5B7 /* PopNotificationSelectorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopNotificationSelectorVC.swift; sourceTree = "<group>"; };
+		F245B3FA2B7BBF4E003FD5B7 /* PopNotificationSelectorVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopNotificationSelectorVM.swift; sourceTree = "<group>"; };
+		F245B3FC2B7BD226003FD5B7 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		F245B3FE2B7E2B14003FD5B7 /* PopNotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopNotificationCoordinator.swift; sourceTree = "<group>"; };
+		F245B4002B7E2B5F003FD5B7 /* PopNotificationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopNotificationAssembler.swift; sourceTree = "<group>"; };
+		F245B4052B7E595A003FD5B7 /* PopSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopSelectionCell.swift; sourceTree = "<group>"; };
+		F245B4072B7E5A8D003FD5B7 /* NotificationSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSections.swift; sourceTree = "<group>"; };
+		F245B4092B7E61CC003FD5B7 /* PopNotificationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopNotificationAdapter.swift; sourceTree = "<group>"; };
 		F253EA362B164B6600AEDDD7 /* ParametersHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersHelper.swift; sourceTree = "<group>"; };
 		F253EA3B2B16547300AEDDD7 /* OnboardFirstStepVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFirstStepVC.swift; sourceTree = "<group>"; };
 		F253EA3D2B16569400AEDDD7 /* OnboardingFirstStepVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFirstStepVM.swift; sourceTree = "<group>"; };
@@ -281,6 +321,104 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F245B3D32B78D87F003FD5B7 /* CreateNotification */ = {
+			isa = PBXGroup;
+			children = (
+				F245B3D42B78D8B5003FD5B7 /* DateNotification */,
+				F245B3D62B78D8D9003FD5B7 /* LocationNotification */,
+				F245B3D52B78D8C1003FD5B7 /* TimerNotificaton */,
+			);
+			path = CreateNotification;
+			sourceTree = "<group>";
+		};
+		F245B3D42B78D8B5003FD5B7 /* DateNotification */ = {
+			isa = PBXGroup;
+			children = (
+				F245B3D72B78D8F4003FD5B7 /* Coordinatior */,
+				F245B3D82B78D8FF003FD5B7 /* UseCases */,
+				F245B3D92B78D91A003FD5B7 /* DateNotificationVC.swift */,
+				F245B3DB2B78D943003FD5B7 /* DateNotificationVM.swift */,
+			);
+			path = DateNotification;
+			sourceTree = "<group>";
+		};
+		F245B3D52B78D8C1003FD5B7 /* TimerNotificaton */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TimerNotificaton;
+			sourceTree = "<group>";
+		};
+		F245B3D62B78D8D9003FD5B7 /* LocationNotification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocationNotification;
+			sourceTree = "<group>";
+		};
+		F245B3D72B78D8F4003FD5B7 /* Coordinatior */ = {
+			isa = PBXGroup;
+			children = (
+				F245B3DD2B78D969003FD5B7 /* DateNotificatoinCoordinator.swift */,
+				F245B3DF2B78D97E003FD5B7 /* DateNotificationAssembler.swift */,
+			);
+			path = Coordinatior;
+			sourceTree = "<group>";
+		};
+		F245B3D82B78D8FF003FD5B7 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F245B3F12B7A63ED003FD5B7 /* DateNotificationKeyboardHelperUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F245B3F62B7BBEE8003FD5B7 /* PopNotificationSelector */ = {
+			isa = PBXGroup;
+			children = (
+				F245B4022B7E58E1003FD5B7 /* Adapter */,
+				F245B3F72B7BBF08003FD5B7 /* Coordinator */,
+				F245B3F82B7BBF3C003FD5B7 /* PopNotificationSelectorVC.swift */,
+				F245B3FA2B7BBF4E003FD5B7 /* PopNotificationSelectorVM.swift */,
+			);
+			path = PopNotificationSelector;
+			sourceTree = "<group>";
+		};
+		F245B3F72B7BBF08003FD5B7 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F245B3FE2B7E2B14003FD5B7 /* PopNotificationCoordinator.swift */,
+				F245B4002B7E2B5F003FD5B7 /* PopNotificationAssembler.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F245B4022B7E58E1003FD5B7 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				F245B4032B7E5900003FD5B7 /* Cells */,
+				F245B4042B7E5910003FD5B7 /* Sections */,
+				F245B4092B7E61CC003FD5B7 /* PopNotificationAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		F245B4032B7E5900003FD5B7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F245B4052B7E595A003FD5B7 /* PopSelectionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F245B4042B7E5910003FD5B7 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				F245B4072B7E5A8D003FD5B7 /* NotificationSections.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
 		F253EA352B164B4900AEDDD7 /* ParametersHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +526,7 @@
 			children = (
 				F28620BB2B1F5E2B00C91413 /* Coordinator */,
 				F28620BC2B1F5E4900C91413 /* MainTabBarVC.swift */,
+				F245B3F42B7BBBBC003FD5B7 /* MainTabBarVM.swift */,
 			);
 			name = TabBar;
 			path = Tabbar/TabBar;
@@ -618,6 +757,7 @@
 			children = (
 				F2DF71652B306991000267C8 /* Coordinator */,
 				F2DF71662B3069B4000267C8 /* HomeVC.swift */,
+				F245B3FC2B7BD226003FD5B7 /* HomeVM.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -695,6 +835,8 @@
 				F2B976AE2AFE9434005ADC3B /* UIButton+Actions.swift */,
 				F2B976C32B017C32005ADC3B /* LineTextField+Set.swift */,
 				F25B2F802B5E9EA000F13A5A /* LineButton+Set.swift */,
+				F245B3E52B78E0BB003FD5B7 /* DatePickerView+Actions.swift */,
+				F245B3EB2B796301003FD5B7 /* LineTextView+Set.swift */,
 			);
 			path = Utiles;
 			sourceTree = "<group>";
@@ -705,6 +847,8 @@
 				F2F3EA612AF160440019445B /* UIButton+Styles.swift */,
 				F2FD439F2AE9BA330068A5CB /* UILabel+Styles.swift */,
 				F2FD43A12AE9BB720068A5CB /* UIView+Styles.swift */,
+				F245B3E32B78DF33003FD5B7 /* UIDatePicker.swift */,
+				F245B3E72B794AB8003FD5B7 /* UITextView+Style.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -714,6 +858,8 @@
 			children = (
 				F2F3EA642AF16ECA0019445B /* LineTextField.swift */,
 				F25B2F7E2B55425200F13A5A /* LineButton.swift */,
+				F245B3E92B7958FF003FD5B7 /* LineTextView.swift */,
+				F245B3ED2B7A2723003FD5B7 /* DatePickerView.swift */,
 			);
 			path = Castom;
 			sourceTree = "<group>";
@@ -772,7 +918,6 @@
 			children = (
 				F28620C42B1F847D00C91413 /* GoogleService-Info.plist */,
 				F2FD438A2AE82D2A0068A5CB /* App */,
-				F2F3EA632AF16E9C0019445B /* Castom */,
 				F2FD43982AE83D880068A5CB /* Modules */,
 				F2FD438B2AE82DE70068A5CB /* Resourse */,
 				F2B976B42AFEA152005ADC3B /* Services */,
@@ -818,11 +963,14 @@
 		F2FD43982AE83D880068A5CB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F2F3EA632AF16E9C0019445B /* Castom */,
 				F2FD439B2AE83DBF0068A5CB /* Auth */,
-				F253EA382B16541600AEDDD7 /* Onboarding */,
 				F2DF71642B306988000267C8 /* Home */,
+				F253EA382B16541600AEDDD7 /* Onboarding */,
 				F2DF716C2B31A961000267C8 /* Profile */,
 				F28620BA2B1F5E1F00C91413 /* TabBar */,
+				F245B3F62B7BBEE8003FD5B7 /* PopNotificationSelector */,
+				F245B3D32B78D87F003FD5B7 /* CreateNotification */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1011,6 +1159,7 @@
 				F2DF71692B3069D1000267C8 /* HomeAssembler.swift in Sources */,
 				F2CDC9102B2F0DEA001EBA76 /* NSAttributedString+HTML.swift in Sources */,
 				F2BE85B02B03E54B0058A64D /* KeyboardHelper.swift in Sources */,
+				F245B4082B7E5A8D003FD5B7 /* NotificationSections.swift in Sources */,
 				F2CDC90E2B2F0110001EBA76 /* AuthService+Reset.swift in Sources */,
 				F28284702B0C0E4700AF496D /* InputValidator+Reset.swift in Sources */,
 				F28620B82B1F12D100C91413 /* Localization+Onboarding.swift in Sources */,
@@ -1019,10 +1168,17 @@
 				F2ADABE02B67BE4D00040848 /* ProfileSections.swift in Sources */,
 				F25B2F7F2B55425200F13A5A /* LineButton.swift in Sources */,
 				F2FD43A02AE9BA330068A5CB /* UILabel+Styles.swift in Sources */,
+				F245B40A2B7E61CC003FD5B7 /* PopNotificationAdapter.swift in Sources */,
 				F2DF71732B31AC92000267C8 /* ProfileCoordinator.swift in Sources */,
+				F245B3FF2B7E2B14003FD5B7 /* PopNotificationCoordinator.swift in Sources */,
 				F2F3EA6B2AF564E00019445B /* ResetVC.swift in Sources */,
 				F2B976BC2AFEA814005ADC3B /* InputValidator+Login.swift in Sources */,
+				F245B3FD2B7BD226003FD5B7 /* HomeVM.swift in Sources */,
 				F2BE85AB2B03DB880058A64D /* RegisterPresenter.swift in Sources */,
+				F245B3EA2B7958FF003FD5B7 /* LineTextView.swift in Sources */,
+				F245B3EE2B7A2723003FD5B7 /* DatePickerView.swift in Sources */,
+				F245B3DA2B78D91A003FD5B7 /* DateNotificationVC.swift in Sources */,
+				F245B3EC2B796301003FD5B7 /* LineTextView+Set.swift in Sources */,
 				F2ADABE92B68163200040848 /* ProfileSettingsCell.swift in Sources */,
 				F2B976C42B017C32005ADC3B /* LineTextField+Set.swift in Sources */,
 				F2FD43922AE838290068A5CB /* UIImage+Consts.swift in Sources */,
@@ -1034,6 +1190,8 @@
 				F2E6B8AD2B0D24D200F42C7E /* RegisteCoordinator.swift in Sources */,
 				F2FD439E2AE83DE10068A5CB /* LoginVC.swift in Sources */,
 				F2B976B32AFE97F3005ADC3B /* LoginAssembler.swift in Sources */,
+				F245B3E02B78D97E003FD5B7 /* DateNotificationAssembler.swift in Sources */,
+				F245B3F52B7BBBBC003FD5B7 /* MainTabBarVM.swift in Sources */,
 				F2ADABEE2B691E8000040848 /* ProfileAdapter.swift in Sources */,
 				F253EA482B165B3000AEDDD7 /* OnboardSecondStepVC.swift in Sources */,
 				F2E6B8A42B0D124700F42C7E /* AppCoordinator.swift in Sources */,
@@ -1043,16 +1201,21 @@
 				F2CDC92C2B30569B001EBA76 /* AlertService+Register.swift in Sources */,
 				F2E6B8AA2B0D1B7000F42C7E /* LoginCoordinator.swift in Sources */,
 				F28284692B0BF70E00AF496D /* InputValidator+Register.swift in Sources */,
+				F245B4012B7E2B5F003FD5B7 /* PopNotificationAssembler.swift in Sources */,
 				F2DF716B2B306A20000267C8 /* HomeCoordinator.swift in Sources */,
+				F245B3DC2B78D943003FD5B7 /* DateNotificationVM.swift in Sources */,
 				F282846B2B0C0BD600AF496D /* ResetVM.swift in Sources */,
 				F25B2F8E2B5EF50500F13A5A /* WindowManager.swift in Sources */,
 				F28620C12B1F5FEC00C91413 /* MainTabBarAssembler.swift in Sources */,
 				F253EA3E2B16569400AEDDD7 /* OnboardingFirstStepVM.swift in Sources */,
+				F245B3E62B78E0BB003FD5B7 /* DatePickerView+Actions.swift in Sources */,
 				F253EA372B164B6600AEDDD7 /* ParametersHelper.swift in Sources */,
 				F2DF71712B31AC11000267C8 /* ProfileAssembler.swift in Sources */,
 				F2E6B8CC2B13E02700F42C7E /* KeyboardHelper+Login.swift in Sources */,
 				F253EA4A2B165C1000AEDDD7 /* OnboardSecondStepVM.swift in Sources */,
+				F245B3DE2B78D969003FD5B7 /* DateNotificatoinCoordinator.swift in Sources */,
 				F253EA4E2B165D5700AEDDD7 /* OnboardSecondStepCoordinator.swift in Sources */,
+				F245B3FB2B7BBF4E003FD5B7 /* PopNotificationSelectorVM.swift in Sources */,
 				F28620C32B1F612E00C91413 /* MainTabBarCoordinator.swift in Sources */,
 				F2FD43772AE825000068A5CB /* AppDelegate.swift in Sources */,
 				F2CDC90C2B2D9D35001EBA76 /* AuthService+Register.swift in Sources */,
@@ -1068,20 +1231,25 @@
 				F2E6B8A72B0D129B00F42C7E /* Coordinator.swift in Sources */,
 				F25B2F8B2B5EEAAB00F13A5A /* ContainerRegistrator.swift in Sources */,
 				F2E6B8CE2B13E8D800F42C7E /* KeyboardHelper+Reset.swift in Sources */,
+				F245B3F22B7A63ED003FD5B7 /* DateNotificationKeyboardHelperUseCase.swift in Sources */,
 				F2FD438E2AE82E810068A5CB /* UIColor+Consts.swift in Sources */,
 				F28621012B1F975A00C91413 /* AuthService+Login.swift in Sources */,
+				F245B4062B7E595A003FD5B7 /* PopSelectionCell.swift in Sources */,
 				F2F3EA5F2AF15F710019445B /* View+Layer.swift in Sources */,
 				F2CDC9152B2F65D5001EBA76 /* AlertService.swift in Sources */,
 				F253EA402B16573700AEDDD7 /* OnboardFirstStepAssembler.swift in Sources */,
 				F282846D2B0C0D5100AF496D /* ResetAssembler.swift in Sources */,
 				F2F3EA682AF55E3D0019445B /* RegisterVC.swift in Sources */,
 				F2DF716F2B31A991000267C8 /* ProfileVC.swift in Sources */,
+				F245B3F92B7BBF3C003FD5B7 /* PopNotificationSelectorVC.swift in Sources */,
 				F2FD43792AE825000068A5CB /* SceneDelegate.swift in Sources */,
+				F245B3E42B78DF33003FD5B7 /* UIDatePicker.swift in Sources */,
 				F25B2F862B5EB5B900F13A5A /* AuthService+Profile.swift in Sources */,
 				F2E6B8C92B13D77E00F42C7E /* ResetCoordinator.swift in Sources */,
 				F28620FF2B1F95CC00C91413 /* AuthService.swift in Sources */,
 				F28284672B0BE51400AF496D /* KeyboardHelper+Register.swift in Sources */,
 				F253EA3C2B16547300AEDDD7 /* OnboardFirstStepVC.swift in Sources */,
+				F245B3E82B794AB8003FD5B7 /* UITextView+Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1131,7 +1299,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1167,7 +1335,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1325,7 +1493,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1356,7 +1524,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

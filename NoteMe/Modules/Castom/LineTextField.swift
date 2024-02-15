@@ -8,6 +8,10 @@
 import UIKit
 import SnapKit
 
+protocol LineTextFieldDelegate: AnyObject {
+    func lineTextField(_ textField: LineTextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+}
+
 final class LineTextField: UIView {
     
     private lazy var titleLabel: UILabel = {
@@ -20,10 +24,10 @@ final class LineTextField: UIView {
     
     private lazy var textField: UITextField = {
         let textField = UITextField()
-        textField.borderStyle = .none
         textField.textColor = .appText
         textField.font = UIFont.appRegularFont(15.0)
         textField.textAlignment = .left
+        textField.delegate = self
         return textField
     }()
     
@@ -61,15 +65,39 @@ final class LineTextField: UIView {
         set { textField.text = newValue }
     }
     
-    var delegate: UITextFieldDelegate? {
-        get { textField.delegate }
-        set { textField.delegate = newValue }
+    var borderStyle: UITextField.BorderStyle? {
+        get { textField.borderStyle }
+        set { textField.borderStyle = newValue ?? .none }
     }
+    
+    var setSeparator: UIColor? {
+        get { separator.backgroundColor }
+        set { separator.backgroundColor = newValue}
+    }
+    
+    var textFieldInputView: UIView? {
+        get { textField.inputView }
+        set { textField.inputView = newValue }
+    }
+    
+    
+    //    var delegate: UITextFieldDelegate? {
+    //        get { textField.delegate }
+    //        set { textField.delegate = newValue }
+    //    }
+    weak var delegate: LineTextFieldDelegate?
+    
     
     init() {
         super.init(frame: .zero)
         commonInit()
     }
+    
+    init(_ comment: Any? = nil) {
+        super.init(frame: .zero)
+        commentInit()
+    }
+    
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -83,9 +111,19 @@ final class LineTextField: UIView {
         addSubview(errorLabel)
     }
     
+    private func setupCommentUI() {
+        addSubview(titleLabel)
+        addSubview(textField)
+    }
+    
     private func commonInit() {
         setupUI()
         setupConstraints()
+    }
+    
+    private func commentInit() {
+        setupCommentUI()
+        setupCommentConstraints()
     }
     
     private func setupConstraints() {
@@ -96,6 +134,7 @@ final class LineTextField: UIView {
             make.top.equalTo(titleLabel.snp.bottom).inset(-4.0)
             make.horizontalEdges.equalToSuperview()
         }
+        
         separator.snp.makeConstraints { make in
             make.top.equalTo(textField.snp.bottom).inset(-4.0)
             make.horizontalEdges.equalToSuperview()
@@ -107,4 +146,27 @@ final class LineTextField: UIView {
         }
     }
     
+    private func setupCommentConstraints() {
+        titleLabel.snp.makeConstraints { make in
+            make.horizontalEdges.top.equalToSuperview()
+        }
+        
+        textField.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).inset(-4.0)
+            make.height.equalTo(68.0)
+            make.horizontalEdges.bottom.equalToSuperview()
+        }
+    }
+    
+}
+
+extension LineTextField: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return delegate?.lineTextField(self, shouldChangeCharactersIn: range, replacementString: string) ?? true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
 }

@@ -5,6 +5,10 @@
 //  Created by George Popkich on 18.12.23.
 //
 
+protocol HomeViewModelProtocol {
+    
+}
+
 import UIKit
 
 final class HomeVC: UIViewController {

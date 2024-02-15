@@ -12,12 +12,9 @@ import CoreData
 @objc(LocationNotificationMO)
 public class LocationNotificationMO: BaseNotificationMO, MODescription {
 
-    public func apply(dto: any DTODescription) {
-        guard let dto = dto as? LocationNotificationDTO else { return }
-        apply(dto: dto)
-    }
+    public typealias DTO = LocationNotificationDTO
     
-    func apply(dto: LocationNotificationDTO) {
+    public func apply(dto: LocationNotificationDTO) {
         self.identifier = dto.id
         self.date = dto.date
         self.title = dto.title

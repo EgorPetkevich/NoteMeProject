@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-final class FRCService<DTO: DTODescription>: NSObject,
+public final class FRCService<DTO: DTODescription>: NSObject,
                                              NSFetchedResultsControllerDelegate {
 
     public var didChangeContent: (([DTO]) -> Void)?

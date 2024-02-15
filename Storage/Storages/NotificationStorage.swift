@@ -10,7 +10,7 @@ import CoreData
 
 public class NotificationStorage<DTO: DTODescription> {
     
-    typealias ComplitionHandler = (Bool) -> Void
+    public typealias ComplitionHandler = (Bool) -> Void
     
     public init() {}
     
@@ -31,7 +31,7 @@ public class NotificationStorage<DTO: DTODescription> {
         .compactMap { DTO(mo: $0) }
     }
     
-    func update(dto: any DTODescription,
+    func update(dto:  DTO.MO.DTO,
                 complition: ComplitionHandler? = nil) {
         let context = CoreDataService.shared.backgroundContext
     
@@ -48,26 +48,25 @@ public class NotificationStorage<DTO: DTODescription> {
             }
         }
     
-        func create(dto: any DTODescription,
-                    complition: ComplitionHandler? = nil) {
-            let context = CoreDataService.shared.backgroundContext
-            context.perform {
-                let mo = DTO.MO(context: context)
-                mo.apply(dto: dto)
-    
-                CoreDataService.shared.saveContext(context: context,
-                                                   complition: complition)
+    public func create(dto: DTO.MO.DTO,
+                       complition: ComplitionHandler? = nil) {
+        let context = CoreDataService.shared.backgroundContext
+        context.perform {
+            let mo = DTO.MO(context: context)
+            mo.apply(dto: dto)
+            CoreDataService.shared.saveContext(context: context,
+                                               complition: complition)
             }
         }
     
-        func updateOrCreate(dto: any DTODescription,
-                            complition: ComplitionHandler? = nil) {
-    
-            if fetchMO(predicate: .Notification.noutification(byId: dto.id)).isEmpty {
-                create(dto: dto, complition: complition)
-            } else {
-                update(dto: dto, complition: complition)
-            }
+    public func updateOrCreate(dto: DTO.MO.DTO,
+                        complition: ComplitionHandler? = nil) {
+        if fetchMO(predicate: .Notification.noutification(byId: dto.id)).isEmpty {
+            create(dto: dto, complition: complition)
+        } else {
+            update(dto: dto, complition: complition)
         }
+    }
+    
 }
 

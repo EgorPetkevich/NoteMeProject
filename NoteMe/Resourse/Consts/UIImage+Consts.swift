@@ -25,6 +25,7 @@ extension UIImage {
         static let unselectedHome: UIImage = .init(named: "unselectedHome")!
         static let selectedProfile: UIImage = .init(named: "selectedProfile")!
         static let unselectedProfile: UIImage = .init(named: "unselectedProfile")!
+        static let plus: UIImage = .init(named: "plus")!
     }
     
     //MARK: Profile
