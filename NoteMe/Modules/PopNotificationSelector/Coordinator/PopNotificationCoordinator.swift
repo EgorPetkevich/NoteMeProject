@@ -38,7 +38,7 @@ final class PopNotificationSelectorCoordinator: Coordinator {
 
 extension PopNotificationSelectorCoordinator: 
     PopNotificationSelectorCoordinatorProtocol {
-    
+
     func openCalendar() {
         let coordinator = DateNotificationCoordinator(container: container)
         children.append(coordinator)
@@ -55,5 +55,36 @@ extension PopNotificationSelectorCoordinator:
         rootVC?.present(vc, animated: true)
     }
     
+    func openLocation() {
+        let coordinator = LocationNotificationCoordinator(container: container)
+        children.append(coordinator)
+        
+        let vc = coordinator.start()
+        
+        coordinator.onDidFinish = { [weak self] coordinator in
+            self?.children.removeAll {coordinator == $0}
+            vc.dismiss(animated: true)
+            self?.finish()
+        }
+        
+        vc.modalPresentationStyle = .fullScreen
+        rootVC?.present(vc, animated: true)
+    }
+    
+    func openTime() {
+        let coordinator = TimeNotificationCoordinator(container: container)
+        children.append(coordinator)
+        
+        let vc = coordinator.start()
+        
+        coordinator.onDidFinish = { [weak self] coordinator in
+            self?.children.removeAll {coordinator == $0}
+            vc.dismiss(animated: true)
+            self?.finish()
+        }
+        
+        vc.modalPresentationStyle = .fullScreen
+        rootVC?.present(vc, animated: true)
+    }
     
 }

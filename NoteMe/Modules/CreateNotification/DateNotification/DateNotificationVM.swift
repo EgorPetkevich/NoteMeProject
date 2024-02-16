@@ -15,6 +15,12 @@ protocol DateNotificationCoordinatorProtocol: AnyObject {
 protocol KeyboardHelperDateNotificationUseCaseProtocol {
     @discardableResult
     func onWillShow(_ handler: @escaping (CGRect) -> Void) -> KeyboardHelper
+    @discardableResult
+    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> KeyboardHelper
+}
+
+protocol DateNotificationStorageUseCaseProtocol {
+    func create(dto: DateNotificationDTO, complition: @escaping (Bool) -> Void)
 }
 
 final class DateNotificationVM: DateNotificationViewModelProtocol {
@@ -22,13 +28,13 @@ final class DateNotificationVM: DateNotificationViewModelProtocol {
     var keyboardFrameChanged: ((CGRect) -> Void)?
     
     private let keyboardHelper: KeyboardHelperDateNotificationUseCaseProtocol
-    private let service: NotificationStorage<DateNotificationDTO>
+    private let service: DateNotificationStorageUseCaseProtocol
     
     private weak var coordinator: DateNotificationCoordinatorProtocol?
     
     init(keyboardHelper: KeyboardHelperDateNotificationUseCaseProtocol,
          coordinator: DateNotificationCoordinatorProtocol, 
-         service: NotificationStorage<DateNotificationDTO>) {
+         service: DateNotificationStorageUseCaseProtocol) {
         self.keyboardHelper = keyboardHelper
         self.coordinator = coordinator
         self.service = service
@@ -38,6 +44,8 @@ final class DateNotificationVM: DateNotificationViewModelProtocol {
     
     private func bind() {
         keyboardHelper.onWillShow { [weak self] frame in
+            self?.keyboardFrameChanged?(frame)
+        }.onWillHide { [weak self] frame in
             self?.keyboardFrameChanged?(frame)
         }
     }
@@ -50,7 +58,7 @@ final class DateNotificationVM: DateNotificationViewModelProtocol {
             let title, let date = dateFormatter.date(from: date ?? "")
         else { return }
         
-        let dto = DateNotificationDTO(date: date,
+        let dto = DateNotificationDTO(date: Date.now,
                                       id: UUID().uuidString,
                                       title: title,
                                       subtitle: comment,

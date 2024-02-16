@@ -59,7 +59,7 @@ extension MainTabBarCoordinator: MainTabBarCoordinatorProtocol {
         guard let view = view else { return }
 
 //        vc.modalPresentationStyle = .popover
-        vc.preferredContentSize = CGSize(width: 180, height: 120)
+        vc.preferredContentSize = CGSize(width: 180, height: 132)
         vc.popoverPresentationController?.sourceView = view
         vc.popoverPresentationController?.sourceRect = CGRect(x: view.bounds.midX,
                                                               y: view.bounds.midY,

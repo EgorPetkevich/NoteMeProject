@@ -17,7 +17,7 @@ final class PopSelectionCell: UITableViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .appFont.withSize(14.0)
+        label.font = .appRegularFont(16.0)
         label.textColor = .appText
         return label
     }()
@@ -53,15 +53,16 @@ final class PopSelectionCell: UITableViewCell {
     
     private func setupConstraints() {
         
-        iconImageView.snp.makeConstraints { make in
-            make.size.equalTo(16.0)
-            make.leading.equalToSuperview().inset(16.0)
-            make.verticalEdges.equalToSuperview().inset(12.0)
+        titleLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(16.0)
+            make.top.equalToSuperview().offset(8.0)
+            make.height.equalTo(24.0)
+            make.width.equalTo(116.0)
         }
         
-        titleLabel.snp.makeConstraints { make in
-            make.leading.equalTo(iconImageView.snp.trailing).inset(-8.0)
-            make.verticalEdges.equalToSuperview().inset(12.0)
+        iconImageView.snp.makeConstraints { make in
+            make.size.equalTo(24.0)
+            make.right.top.equalToSuperview().inset(8.0)
         }
     }
     

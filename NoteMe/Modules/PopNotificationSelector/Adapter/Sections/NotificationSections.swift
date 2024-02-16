@@ -32,8 +32,8 @@ enum EditNotificationRows: CaseIterable {
     
     var title: String {
         switch self {
-        case .edit: return "edit"
-        case .delete: return "delete"
+        case .edit: return "Edit"
+        case .delete: return "Delete"
         }
     }
     
@@ -54,17 +54,17 @@ enum NotificationsRows: CaseIterable {
     
     var icon: UIImage {
         switch self {
-        case .calendar: return .Profile.notifiaction
-        case .location : return.Profile.export
-        case .timer: return .Profile.logout
+        case .calendar: return .PopNOtifications.calendar
+        case .location : return .PopNOtifications.location
+        case .timer: return .PopNOtifications.time
         }
     }
     
     var title: String {
         switch self {
-        case .calendar: return "calendar"
-        case .location: return "location"
-        case .timer: return "timer"
+        case .calendar: return "Calendar"
+        case .location: return "Location"
+        case .timer: return "Timer"
         }
     }
     

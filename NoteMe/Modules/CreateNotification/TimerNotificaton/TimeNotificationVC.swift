@@ -1,26 +1,26 @@
 //
-//  DateNotificatoinVC.swift
+//  TimeNotificationVC.swift
 //  NoteMe
 //
-//  Created by George Popkich on 11.02.24.
+//  Created by George Popkich on 16.02.24.
 //
 
 import UIKit
 import SnapKit
 
-@objc protocol DateNotificationViewModelProtocol {
+@objc protocol TimeNotificationViewModelProtocol {
     
-    func createDidTap(title: String?, date: String?, comment: String?)
+    func createDidTap(title: String?, time: String?, comment: String?)
     @objc func cancelDidTap()
 }
 
 @available(iOS 13.4, *)
-final class DateNotificationVC: UIViewController {
+final class TimeNotificationVC: UIViewController {
     
     private lazy var contentView: UIView = .content()
     private lazy var infoView: UIView = .info()
     
-    private lazy var titleLabel: UILabel = .bold("Create Date Notification", 17.0, .appText)
+    private lazy var titleLabel: UILabel = .bold("Create Timer Notification", 17.0, .appText)
     
     private lazy var createButton: UIButton =
         .yellowRoundedButton("Create")
@@ -28,8 +28,8 @@ final class DateNotificationVC: UIViewController {
     
     private lazy var cancelButton: UIButton =
         .cancelButton(.Auth.resetPassCancelButton)
-        .withAction(viewModel, 
-                    #selector(DateNotificationViewModelProtocol.cancelDidTap))
+        .withAction(viewModel,
+                    #selector(TimeNotificationViewModelProtocol.cancelDidTap))
     
     private lazy var titleTextField: LineTextField =
     LineTextField()
@@ -38,11 +38,11 @@ final class DateNotificationVC: UIViewController {
     
     private lazy var dateTextField: LineTextField =
     LineTextField()
-        .setTitle("Date")
-        .setPlaceholder("Enter Date")
+        .setTitle("Timer")
+        .setPlaceholder("Enter Timer")
         .setInputView(
             DatePickerView()
-                .setDatePickerMode(.date)
+                .setDatePickerMode(.time)
                 .select(self, #selector(dateDidChanged(_:)))
                 .setCancenButtonAction(self,
                                        #selector(cancelDatePickerButtonDidTap))
@@ -56,9 +56,9 @@ final class DateNotificationVC: UIViewController {
         .setTitle("Comment")
         .setPlaceholder("Enter Comment")
 
-    private var viewModel: DateNotificationViewModelProtocol
+    private var viewModel: TimeNotificationViewModelProtocol
 
-    init(viewModel: DateNotificationViewModelProtocol) {
+    init(viewModel: TimeNotificationViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -135,7 +135,7 @@ final class DateNotificationVC: UIViewController {
 
     @objc func createButtonDidTap() {
         viewModel.createDidTap(title: titleTextField.text,
-                                date: dateTextField.text,
+                                time: dateTextField.text,
                                 comment: commentTextView.text)
     }
     
@@ -162,7 +162,7 @@ final class DateNotificationVC: UIViewController {
 }
 
 
-extension DateNotificationVC: UIGestureRecognizerDelegate {
+extension TimeNotificationVC: UIGestureRecognizerDelegate {
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true

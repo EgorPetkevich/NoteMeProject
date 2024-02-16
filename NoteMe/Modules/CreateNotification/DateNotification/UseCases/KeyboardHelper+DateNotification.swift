@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct DateNotificationKeyboardHelperUseCase: KeyboardHelperDateNotificationUseCaseProtocol {
+struct DateNotificationKeyboardHelperUseCase:
+    KeyboardHelperDateNotificationUseCaseProtocol {
     
     private let keyboardHelper: KeyboardHelper
     
@@ -17,6 +18,9 @@ struct DateNotificationKeyboardHelperUseCase: KeyboardHelperDateNotificationUseC
     
     func onWillShow(_ handler: @escaping (CGRect) -> Void) -> KeyboardHelper {
         keyboardHelper.onWillShow(handler)
+    }
+    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> KeyboardHelper {
+        keyboardHelper.onWillHide(handler)
     }
     
 }

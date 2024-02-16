@@ -9,6 +9,8 @@ import UIKit
 
 protocol PopNotificationSelectorCoordinatorProtocol: AnyObject {
     func openCalendar()
+    func openLocation()
+    func openTime()
 }
 
 protocol PopNotificationAdapterProtocol {
@@ -57,9 +59,9 @@ final class PopNotificationSelectorVM: PopNotificationSelectorViewModelProtocol 
             case .calendar:
                 self?.coordinator?.openCalendar()
             case .location:
-                print("location")
+                self?.coordinator?.openLocation()
             case .timer:
-                print("timer")
+                self?.coordinator?.openTime()
             }
         }
     }

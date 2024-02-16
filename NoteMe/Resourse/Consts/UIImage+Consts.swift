@@ -35,5 +35,12 @@ extension UIImage {
         static let logout: UIImage = .init(named: "logout")!
     }
     
+    //MARK: PopNOtifications
+    enum PopNOtifications {
+        static let calendar: UIImage = .init(named: "calendar")!
+        static let location: UIImage = .init(named: "location")!
+        static let time: UIImage = .init(named: "time")!
+    }
+    
 
 }
