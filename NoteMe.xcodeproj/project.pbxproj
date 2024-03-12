@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F20FC09F2B9DD0B500F7BBE2 /* TimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20FC09E2B9DD0B500F7BBE2 /* TimerPickerView.swift */; };
+		F20FC0A12B9DD1CE00F7BBE2 /* TimerPickerView+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20FC0A02B9DD1CE00F7BBE2 /* TimerPickerView+Actions.swift */; };
+		F20FC0A52B9F6F3600F7BBE2 /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20FC0A42B9F6F3600F7BBE2 /* LocationVC.swift */; };
+		F20FC0A72B9F81C300F7BBE2 /* LocationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20FC0A62B9F81C300F7BBE2 /* LocationVM.swift */; };
+		F20FC0A92B9F83C100F7BBE2 /* LocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20FC0A82B9F83C100F7BBE2 /* LocationCoordinator.swift */; };
+		F20FC0AB2B9F83D100F7BBE2 /* LocationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20FC0AA2B9F83D100F7BBE2 /* LocationAssembler.swift */; };
+		F21C10AE2B8D1E8E0093484A /* TimerNotificationMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21C10AD2B8D1E8E0093484A /* TimerNotificationMO+CoreDataClass.swift */; };
+		F21C10B02B8D24E00093484A /* AllNotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21C10AF2B8D24E00093484A /* AllNotificationStorage.swift */; };
+		F21C10B22B8D2D260093484A /* NSSortDescriptor+Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21C10B12B8D2D260093484A /* NSSortDescriptor+Const.swift */; };
+		F2287FBD2B8CAF810010E58C /* HomeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2287FBC2B8CAF810010E58C /* HomeAdapter.swift */; };
+		F2287FBF2B8CAF9A0010E58C /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2287FBE2B8CAF9A0010E58C /* LocationCell.swift */; };
+		F2287FC12B8CAFCE0010E58C /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2287FC02B8CAFCE0010E58C /* TimerCell.swift */; };
+		F2287FC32B8CB00A0010E58C /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2287FC22B8CB00A0010E58C /* DateCell.swift */; };
+		F2287FC52B8CB0B30010E58C /* NotificationSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2287FC42B8CB0B30010E58C /* NotificationSection.swift */; };
+		F23B25BB2B8E445B00AC1813 /* MenuPopoverBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23B25BA2B8E445B00AC1813 /* MenuPopoverBuilder.swift */; };
+		F23B25BF2B8E452E00AC1813 /* MenuPopoverAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23B25BE2B8E452E00AC1813 /* MenuPopoverAdapter.swift */; };
+		F23B25C22B8E467900AC1813 /* MenuActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23B25C12B8E467900AC1813 /* MenuActionCell.swift */; };
+		F23B25C42B8E479200AC1813 /* MenuPopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23B25C32B8E479200AC1813 /* MenuPopoverVC.swift */; };
+		F242E8D32B95DD4000DCA1CD /* TableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = F242E8D22B95DD4000DCA1CD /* TableView+Register.swift */; };
 		F245B3DA2B78D91A003FD5B7 /* DateNotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3D92B78D91A003FD5B7 /* DateNotificationVC.swift */; };
 		F245B3DC2B78D943003FD5B7 /* DateNotificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3DB2B78D943003FD5B7 /* DateNotificationVM.swift */; };
 		F245B3DE2B78D969003FD5B7 /* DateNotificatoinCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3DD2B78D969003FD5B7 /* DateNotificatoinCoordinator.swift */; };
@@ -25,7 +44,7 @@
 		F245B3FF2B7E2B14003FD5B7 /* PopNotificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3FE2B7E2B14003FD5B7 /* PopNotificationCoordinator.swift */; };
 		F245B4012B7E2B5F003FD5B7 /* PopNotificationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4002B7E2B5F003FD5B7 /* PopNotificationAssembler.swift */; };
 		F245B4062B7E595A003FD5B7 /* PopSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4052B7E595A003FD5B7 /* PopSelectionCell.swift */; };
-		F245B4082B7E5A8D003FD5B7 /* NotificationSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4072B7E5A8D003FD5B7 /* NotificationSections.swift */; };
+		F245B4082B7E5A8D003FD5B7 /* PopNotificationSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4072B7E5A8D003FD5B7 /* PopNotificationSections.swift */; };
 		F245B40A2B7E61CC003FD5B7 /* PopNotificationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4092B7E61CC003FD5B7 /* PopNotificationAdapter.swift */; };
 		F245B40D2B7F716F003FD5B7 /* LocationNotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B40C2B7F716F003FD5B7 /* LocationNotificationVC.swift */; };
 		F245B40F2B7F7323003FD5B7 /* LocationNotificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B40E2B7F7323003FD5B7 /* LocationNotificationVM.swift */; };
@@ -34,12 +53,13 @@
 		F245B4182B7F7B24003FD5B7 /* KeyboardHelper+LocationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4172B7F7B24003FD5B7 /* KeyboardHelper+LocationNotification.swift */; };
 		F245B41A2B7F7C43003FD5B7 /* LocationNotificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4192B7F7C43003FD5B7 /* LocationNotificationCoordinator.swift */; };
 		F245B41C2B7F82D2003FD5B7 /* NotificationStorage+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B41B2B7F82D2003FD5B7 /* NotificationStorage+Date.swift */; };
-		F245B4202B7F8437003FD5B7 /* TimeNotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B41F2B7F8437003FD5B7 /* TimeNotificationVC.swift */; };
-		F245B4222B7F84F0003FD5B7 /* TimeNotificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4212B7F84F0003FD5B7 /* TimeNotificationVM.swift */; };
-		F245B4242B7F8654003FD5B7 /* NotificationStorage+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4232B7F8654003FD5B7 /* NotificationStorage+Time.swift */; };
-		F245B4262B7F868D003FD5B7 /* KeyboardHelper+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4252B7F868D003FD5B7 /* KeyboardHelper+Time.swift */; };
-		F245B4282B7F86BB003FD5B7 /* TimeNotificationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4272B7F86BB003FD5B7 /* TimeNotificationAssembler.swift */; };
-		F245B42A2B7F8752003FD5B7 /* TimeNotificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4292B7F8752003FD5B7 /* TimeNotificationCoordinator.swift */; };
+		F245B4202B7F8437003FD5B7 /* TimerNotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B41F2B7F8437003FD5B7 /* TimerNotificationVC.swift */; };
+		F245B4222B7F84F0003FD5B7 /* TimerNotificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4212B7F84F0003FD5B7 /* TimerNotificationVM.swift */; };
+		F245B4242B7F8654003FD5B7 /* NotificationStorage+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4232B7F8654003FD5B7 /* NotificationStorage+Timer.swift */; };
+		F245B4262B7F868D003FD5B7 /* KeyboardHelper+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4252B7F868D003FD5B7 /* KeyboardHelper+Timer.swift */; };
+		F245B4282B7F86BB003FD5B7 /* TimerNotificationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4272B7F86BB003FD5B7 /* TimerNotificationAssembler.swift */; };
+		F245B42A2B7F8752003FD5B7 /* TimerNotificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B4292B7F8752003FD5B7 /* TimerNotificationCoordinator.swift */; };
+		F245B42C2B850AF2003FD5B7 /* BaseNotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B42B2B850AF2003FD5B7 /* BaseNotificationDTO.swift */; };
 		F253EA372B164B6600AEDDD7 /* ParametersHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F253EA362B164B6600AEDDD7 /* ParametersHelper.swift */; };
 		F253EA3C2B16547300AEDDD7 /* OnboardFirstStepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F253EA3B2B16547300AEDDD7 /* OnboardFirstStepVC.swift */; };
 		F253EA3E2B16569400AEDDD7 /* OnboardingFirstStepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F253EA3D2B16569400AEDDD7 /* OnboardingFirstStepVM.swift */; };
@@ -80,13 +100,12 @@
 		F289A8902B7133A200A078A1 /* DateNotificationMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289A88C2B7133A200A078A1 /* DateNotificationMO+CoreDataProperties.swift */; };
 		F289A8912B7133A200A078A1 /* BaseNotificationMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289A88D2B7133A200A078A1 /* BaseNotificationMO+CoreDataClass.swift */; };
 		F289A8922B7133A200A078A1 /* BaseNotificationMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289A88E2B7133A200A078A1 /* BaseNotificationMO+CoreDataProperties.swift */; };
-		F289A8992B720B2F00A078A1 /* TimeNotificatoinMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289A8952B720B2E00A078A1 /* TimeNotificatoinMO+CoreDataClass.swift */; };
-		F289A89A2B720B2F00A078A1 /* TimeNotificatoinMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289A8962B720B2E00A078A1 /* TimeNotificatoinMO+CoreDataProperties.swift */; };
+		F289A89A2B720B2F00A078A1 /* TimerNotificationMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289A8962B720B2E00A078A1 /* TimerNotificationMO+CoreDataProperties.swift */; };
 		F289A89B2B720B2F00A078A1 /* LocationNotificationMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289A8972B720B2E00A078A1 /* LocationNotificationMO+CoreDataClass.swift */; };
 		F289A89C2B720B2F00A078A1 /* LocationNotificationMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289A8982B720B2E00A078A1 /* LocationNotificationMO+CoreDataProperties.swift */; };
-		F289A89E2B720BBA00A078A1 /* TimeNotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289A89D2B720BBA00A078A1 /* TimeNotificationDTO.swift */; };
+		F289A89E2B720BBA00A078A1 /* TimerNotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289A89D2B720BBA00A078A1 /* TimerNotificationDTO.swift */; };
 		F289A8A02B720BC800A078A1 /* LocationNotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289A89F2B720BC800A078A1 /* LocationNotificationDTO.swift */; };
-		F289A8A22B72C71A00A078A1 /* TimeNotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289A8A12B72C71A00A078A1 /* TimeNotificationStorage.swift */; };
+		F289A8A22B72C71A00A078A1 /* TimerNotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289A8A12B72C71A00A078A1 /* TimerNotificationStorage.swift */; };
 		F289A8A42B72C7EA00A078A1 /* LocationNotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289A8A32B72C7EA00A078A1 /* LocationNotificationStorage.swift */; };
 		F289A8A72B73E35600A078A1 /* DTODescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289A8A62B73E35600A078A1 /* DTODescription.swift */; };
 		F289A8A92B73E43400A078A1 /* NotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289A8A82B73E43400A078A1 /* NotificationStorage.swift */; };
@@ -179,6 +198,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F20FC09E2B9DD0B500F7BBE2 /* TimerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPickerView.swift; sourceTree = "<group>"; };
+		F20FC0A02B9DD1CE00F7BBE2 /* TimerPickerView+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerPickerView+Actions.swift"; sourceTree = "<group>"; };
+		F20FC0A42B9F6F3600F7BBE2 /* LocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
+		F20FC0A62B9F81C300F7BBE2 /* LocationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVM.swift; sourceTree = "<group>"; };
+		F20FC0A82B9F83C100F7BBE2 /* LocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinator.swift; sourceTree = "<group>"; };
+		F20FC0AA2B9F83D100F7BBE2 /* LocationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAssembler.swift; sourceTree = "<group>"; };
+		F21C10AD2B8D1E8E0093484A /* TimerNotificationMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerNotificationMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F21C10AF2B8D24E00093484A /* AllNotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotificationStorage.swift; sourceTree = "<group>"; };
+		F21C10B12B8D2D260093484A /* NSSortDescriptor+Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSortDescriptor+Const.swift"; sourceTree = "<group>"; };
+		F2287FBC2B8CAF810010E58C /* HomeAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAdapter.swift; sourceTree = "<group>"; };
+		F2287FBE2B8CAF9A0010E58C /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		F2287FC02B8CAFCE0010E58C /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
+		F2287FC22B8CB00A0010E58C /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		F2287FC42B8CB0B30010E58C /* NotificationSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSection.swift; sourceTree = "<group>"; };
+		F23B25BA2B8E445B00AC1813 /* MenuPopoverBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverBuilder.swift; sourceTree = "<group>"; };
+		F23B25BE2B8E452E00AC1813 /* MenuPopoverAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverAdapter.swift; sourceTree = "<group>"; };
+		F23B25C12B8E467900AC1813 /* MenuActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionCell.swift; sourceTree = "<group>"; };
+		F23B25C32B8E479200AC1813 /* MenuPopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverVC.swift; sourceTree = "<group>"; };
+		F242E8D22B95DD4000DCA1CD /* TableView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Register.swift"; sourceTree = "<group>"; };
 		F245B3D92B78D91A003FD5B7 /* DateNotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationVC.swift; sourceTree = "<group>"; };
 		F245B3DB2B78D943003FD5B7 /* DateNotificationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationVM.swift; sourceTree = "<group>"; };
 		F245B3DD2B78D969003FD5B7 /* DateNotificatoinCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificatoinCoordinator.swift; sourceTree = "<group>"; };
@@ -197,7 +235,7 @@
 		F245B3FE2B7E2B14003FD5B7 /* PopNotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopNotificationCoordinator.swift; sourceTree = "<group>"; };
 		F245B4002B7E2B5F003FD5B7 /* PopNotificationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopNotificationAssembler.swift; sourceTree = "<group>"; };
 		F245B4052B7E595A003FD5B7 /* PopSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopSelectionCell.swift; sourceTree = "<group>"; };
-		F245B4072B7E5A8D003FD5B7 /* NotificationSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSections.swift; sourceTree = "<group>"; };
+		F245B4072B7E5A8D003FD5B7 /* PopNotificationSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopNotificationSections.swift; sourceTree = "<group>"; };
 		F245B4092B7E61CC003FD5B7 /* PopNotificationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopNotificationAdapter.swift; sourceTree = "<group>"; };
 		F245B40C2B7F716F003FD5B7 /* LocationNotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationVC.swift; sourceTree = "<group>"; };
 		F245B40E2B7F7323003FD5B7 /* LocationNotificationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationVM.swift; sourceTree = "<group>"; };
@@ -206,12 +244,13 @@
 		F245B4172B7F7B24003FD5B7 /* KeyboardHelper+LocationNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+LocationNotification.swift"; sourceTree = "<group>"; };
 		F245B4192B7F7C43003FD5B7 /* LocationNotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationCoordinator.swift; sourceTree = "<group>"; };
 		F245B41B2B7F82D2003FD5B7 /* NotificationStorage+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationStorage+Date.swift"; sourceTree = "<group>"; };
-		F245B41F2B7F8437003FD5B7 /* TimeNotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeNotificationVC.swift; sourceTree = "<group>"; };
-		F245B4212B7F84F0003FD5B7 /* TimeNotificationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeNotificationVM.swift; sourceTree = "<group>"; };
-		F245B4232B7F8654003FD5B7 /* NotificationStorage+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationStorage+Time.swift"; sourceTree = "<group>"; };
-		F245B4252B7F868D003FD5B7 /* KeyboardHelper+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Time.swift"; sourceTree = "<group>"; };
-		F245B4272B7F86BB003FD5B7 /* TimeNotificationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeNotificationAssembler.swift; sourceTree = "<group>"; };
-		F245B4292B7F8752003FD5B7 /* TimeNotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeNotificationCoordinator.swift; sourceTree = "<group>"; };
+		F245B41F2B7F8437003FD5B7 /* TimerNotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationVC.swift; sourceTree = "<group>"; };
+		F245B4212B7F84F0003FD5B7 /* TimerNotificationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationVM.swift; sourceTree = "<group>"; };
+		F245B4232B7F8654003FD5B7 /* NotificationStorage+Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationStorage+Timer.swift"; sourceTree = "<group>"; };
+		F245B4252B7F868D003FD5B7 /* KeyboardHelper+Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Timer.swift"; sourceTree = "<group>"; };
+		F245B4272B7F86BB003FD5B7 /* TimerNotificationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationAssembler.swift; sourceTree = "<group>"; };
+		F245B4292B7F8752003FD5B7 /* TimerNotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationCoordinator.swift; sourceTree = "<group>"; };
+		F245B42B2B850AF2003FD5B7 /* BaseNotificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNotificationDTO.swift; sourceTree = "<group>"; };
 		F253EA362B164B6600AEDDD7 /* ParametersHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersHelper.swift; sourceTree = "<group>"; };
 		F253EA3B2B16547300AEDDD7 /* OnboardFirstStepVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFirstStepVC.swift; sourceTree = "<group>"; };
 		F253EA3D2B16569400AEDDD7 /* OnboardingFirstStepVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFirstStepVM.swift; sourceTree = "<group>"; };
@@ -245,13 +284,12 @@
 		F289A88C2B7133A200A078A1 /* DateNotificationMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateNotificationMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F289A88D2B7133A200A078A1 /* BaseNotificationMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseNotificationMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F289A88E2B7133A200A078A1 /* BaseNotificationMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseNotificationMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F289A8952B720B2E00A078A1 /* TimeNotificatoinMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeNotificatoinMO+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F289A8962B720B2E00A078A1 /* TimeNotificatoinMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeNotificatoinMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F289A8962B720B2E00A078A1 /* TimerNotificationMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerNotificationMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F289A8972B720B2E00A078A1 /* LocationNotificationMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationNotificationMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F289A8982B720B2E00A078A1 /* LocationNotificationMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationNotificationMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F289A89D2B720BBA00A078A1 /* TimeNotificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeNotificationDTO.swift; sourceTree = "<group>"; };
+		F289A89D2B720BBA00A078A1 /* TimerNotificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationDTO.swift; sourceTree = "<group>"; };
 		F289A89F2B720BC800A078A1 /* LocationNotificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationDTO.swift; sourceTree = "<group>"; };
-		F289A8A12B72C71A00A078A1 /* TimeNotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeNotificationStorage.swift; sourceTree = "<group>"; };
+		F289A8A12B72C71A00A078A1 /* TimerNotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationStorage.swift; sourceTree = "<group>"; };
 		F289A8A32B72C7EA00A078A1 /* LocationNotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationStorage.swift; sourceTree = "<group>"; };
 		F289A8A62B73E35600A078A1 /* DTODescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTODescription.swift; sourceTree = "<group>"; };
 		F289A8A82B73E43400A078A1 /* NotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStorage.swift; sourceTree = "<group>"; };
@@ -347,9 +385,99 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F20FC0A22B9F6EF000F7BBE2 /* SelectLocation */ = {
+			isa = PBXGroup;
+			children = (
+				F20FC0A32B9F6F2A00F7BBE2 /* Coordinator */,
+				F20FC0A42B9F6F3600F7BBE2 /* LocationVC.swift */,
+				F20FC0A62B9F81C300F7BBE2 /* LocationVM.swift */,
+			);
+			path = SelectLocation;
+			sourceTree = "<group>";
+		};
+		F20FC0A32B9F6F2A00F7BBE2 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F20FC0A82B9F83C100F7BBE2 /* LocationCoordinator.swift */,
+				F20FC0AA2B9F83D100F7BBE2 /* LocationAssembler.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F2287FB32B8CAD780010E58C /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				F2287FB52B8CADD50010E58C /* Cells */,
+				F2287FB92B8CAE190010E58C /* Sectinons */,
+				F2287FBC2B8CAF810010E58C /* HomeAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		F2287FB42B8CADA10010E58C /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F2287FB52B8CADD50010E58C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F2287FC22B8CB00A0010E58C /* DateCell.swift */,
+				F2287FBE2B8CAF9A0010E58C /* LocationCell.swift */,
+				F2287FC02B8CAFCE0010E58C /* TimerCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F2287FB92B8CAE190010E58C /* Sectinons */ = {
+			isa = PBXGroup;
+			children = (
+				F2287FC42B8CB0B30010E58C /* NotificationSection.swift */,
+			);
+			path = Sectinons;
+			sourceTree = "<group>";
+		};
+		F23B25B82B8E440A00AC1813 /* MenuPopover */ = {
+			isa = PBXGroup;
+			children = (
+				F23B25BD2B8E451000AC1813 /* Adapter */,
+				F23B25B92B8E442600AC1813 /* Coordinator */,
+				F23B25C32B8E479200AC1813 /* MenuPopoverVC.swift */,
+			);
+			path = MenuPopover;
+			sourceTree = "<group>";
+		};
+		F23B25B92B8E442600AC1813 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F23B25BA2B8E445B00AC1813 /* MenuPopoverBuilder.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F23B25BD2B8E451000AC1813 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				F23B25C02B8E466300AC1813 /* Cell */,
+				F23B25BE2B8E452E00AC1813 /* MenuPopoverAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		F23B25C02B8E466300AC1813 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F23B25C12B8E467900AC1813 /* MenuActionCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		F245B3D32B78D87F003FD5B7 /* CreateNotification */ = {
 			isa = PBXGroup;
 			children = (
+				F20FC0A22B9F6EF000F7BBE2 /* SelectLocation */,
 				F245B3D42B78D8B5003FD5B7 /* DateNotification */,
 				F245B3D62B78D8D9003FD5B7 /* LocationNotification */,
 				F245B3D52B78D8C1003FD5B7 /* TimerNotificaton */,
@@ -373,8 +501,8 @@
 			children = (
 				F245B41D2B7F8419003FD5B7 /* Coordinator */,
 				F245B41E2B7F8421003FD5B7 /* UseCases */,
-				F245B41F2B7F8437003FD5B7 /* TimeNotificationVC.swift */,
-				F245B4212B7F84F0003FD5B7 /* TimeNotificationVM.swift */,
+				F245B41F2B7F8437003FD5B7 /* TimerNotificationVC.swift */,
+				F245B4212B7F84F0003FD5B7 /* TimerNotificationVM.swift */,
 			);
 			path = TimerNotificaton;
 			sourceTree = "<group>";
@@ -449,7 +577,7 @@
 		F245B4042B7E5910003FD5B7 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
-				F245B4072B7E5A8D003FD5B7 /* NotificationSections.swift */,
+				F245B4072B7E5A8D003FD5B7 /* PopNotificationSections.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -475,8 +603,8 @@
 		F245B41D2B7F8419003FD5B7 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				F245B4272B7F86BB003FD5B7 /* TimeNotificationAssembler.swift */,
-				F245B4292B7F8752003FD5B7 /* TimeNotificationCoordinator.swift */,
+				F245B4272B7F86BB003FD5B7 /* TimerNotificationAssembler.swift */,
+				F245B4292B7F8752003FD5B7 /* TimerNotificationCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -484,8 +612,8 @@
 		F245B41E2B7F8421003FD5B7 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				F245B4232B7F8654003FD5B7 /* NotificationStorage+Time.swift */,
-				F245B4252B7F868D003FD5B7 /* KeyboardHelper+Time.swift */,
+				F245B4232B7F8654003FD5B7 /* NotificationStorage+Timer.swift */,
+				F245B4252B7F868D003FD5B7 /* KeyboardHelper+Timer.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -641,8 +769,8 @@
 		F289A88A2B71330C00A078A1 /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
-				F289A8952B720B2E00A078A1 /* TimeNotificatoinMO+CoreDataClass.swift */,
-				F289A8962B720B2E00A078A1 /* TimeNotificatoinMO+CoreDataProperties.swift */,
+				F21C10AD2B8D1E8E0093484A /* TimerNotificationMO+CoreDataClass.swift */,
+				F289A8962B720B2E00A078A1 /* TimerNotificationMO+CoreDataProperties.swift */,
 				F289A8972B720B2E00A078A1 /* LocationNotificationMO+CoreDataClass.swift */,
 				F289A8982B720B2E00A078A1 /* LocationNotificationMO+CoreDataProperties.swift */,
 				F289A88B2B7133A200A078A1 /* DateNotificationMO+CoreDataClass.swift */,
@@ -729,8 +857,9 @@
 			isa = PBXGroup;
 			children = (
 				F2ADAC112B69644F00040848 /* DateNotificationDTO.swift */,
-				F289A89D2B720BBA00A078A1 /* TimeNotificationDTO.swift */,
+				F289A89D2B720BBA00A078A1 /* TimerNotificationDTO.swift */,
 				F289A89F2B720BC800A078A1 /* LocationNotificationDTO.swift */,
+				F245B42B2B850AF2003FD5B7 /* BaseNotificationDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -749,9 +878,10 @@
 				F289A8AA2B73F5F600A078A1 /* FRC */,
 				F2ADAC192B696DE700040848 /* Consts */,
 				F2ADAC172B6968B600040848 /* DateNotificationStorage.swift */,
-				F289A8A12B72C71A00A078A1 /* TimeNotificationStorage.swift */,
+				F289A8A12B72C71A00A078A1 /* TimerNotificationStorage.swift */,
 				F289A8A32B72C7EA00A078A1 /* LocationNotificationStorage.swift */,
 				F289A8A82B73E43400A078A1 /* NotificationStorage.swift */,
+				F21C10AF2B8D24E00093484A /* AllNotificationStorage.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -760,6 +890,7 @@
 			isa = PBXGroup;
 			children = (
 				F2ADAC1A2B696E0900040848 /* NSPredicate+Const.swift */,
+				F21C10B12B8D2D260093484A /* NSSortDescriptor+Const.swift */,
 			);
 			path = Consts;
 			sourceTree = "<group>";
@@ -826,6 +957,8 @@
 		F2DF71642B306988000267C8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F2287FB32B8CAD780010E58C /* Adapter */,
+				F2287FB42B8CADA10010E58C /* UseCases */,
 				F2DF71652B306991000267C8 /* Coordinator */,
 				F2DF71662B3069B4000267C8 /* HomeVC.swift */,
 				F245B3FC2B7BD226003FD5B7 /* HomeVM.swift */,
@@ -908,6 +1041,8 @@
 				F25B2F802B5E9EA000F13A5A /* LineButton+Set.swift */,
 				F245B3E52B78E0BB003FD5B7 /* DatePickerView+Actions.swift */,
 				F245B3EB2B796301003FD5B7 /* LineTextView+Set.swift */,
+				F242E8D22B95DD4000DCA1CD /* TableView+Register.swift */,
+				F20FC0A02B9DD1CE00F7BBE2 /* TimerPickerView+Actions.swift */,
 			);
 			path = Utiles;
 			sourceTree = "<group>";
@@ -931,6 +1066,7 @@
 				F25B2F7E2B55425200F13A5A /* LineButton.swift */,
 				F245B3E92B7958FF003FD5B7 /* LineTextView.swift */,
 				F245B3ED2B7A2723003FD5B7 /* DatePickerView.swift */,
+				F20FC09E2B9DD0B500F7BBE2 /* TimerPickerView.swift */,
 			);
 			path = Castom;
 			sourceTree = "<group>";
@@ -989,6 +1125,7 @@
 			children = (
 				F28620C42B1F847D00C91413 /* GoogleService-Info.plist */,
 				F2FD438A2AE82D2A0068A5CB /* App */,
+				F2F3EA632AF16E9C0019445B /* Castom */,
 				F2FD43982AE83D880068A5CB /* Modules */,
 				F2FD438B2AE82DE70068A5CB /* Resourse */,
 				F2B976B42AFEA152005ADC3B /* Services */,
@@ -1034,7 +1171,7 @@
 		F2FD43982AE83D880068A5CB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				F2F3EA632AF16E9C0019445B /* Castom */,
+				F23B25B82B8E440A00AC1813 /* MenuPopover */,
 				F2FD439B2AE83DBF0068A5CB /* Auth */,
 				F2DF71642B306988000267C8 /* Home */,
 				F253EA382B16541600AEDDD7 /* Onboarding */,
@@ -1137,7 +1274,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					F2ADABF32B695AC400040848 = {
 						CreatedOnToolsVersion = 15.0;
@@ -1201,23 +1338,26 @@
 				F289A88F2B7133A200A078A1 /* DateNotificationMO+CoreDataClass.swift in Sources */,
 				F2ADAC182B6968B600040848 /* DateNotificationStorage.swift in Sources */,
 				F2ADAC152B69675C00040848 /* CoreDataService.swift in Sources */,
-				F289A8A22B72C71A00A078A1 /* TimeNotificationStorage.swift in Sources */,
+				F289A8A22B72C71A00A078A1 /* TimerNotificationStorage.swift in Sources */,
 				F289A8A92B73E43400A078A1 /* NotificationStorage.swift in Sources */,
+				F245B42C2B850AF2003FD5B7 /* BaseNotificationDTO.swift in Sources */,
 				F289A8922B7133A200A078A1 /* BaseNotificationMO+CoreDataProperties.swift in Sources */,
 				F289A8912B7133A200A078A1 /* BaseNotificationMO+CoreDataClass.swift in Sources */,
 				F289A8A72B73E35600A078A1 /* DTODescription.swift in Sources */,
 				F2ADAC1B2B696E0900040848 /* NSPredicate+Const.swift in Sources */,
+				F21C10AE2B8D1E8E0093484A /* TimerNotificationMO+CoreDataClass.swift in Sources */,
 				F289A89B2B720B2F00A078A1 /* LocationNotificationMO+CoreDataClass.swift in Sources */,
-				F289A89A2B720B2F00A078A1 /* TimeNotificatoinMO+CoreDataProperties.swift in Sources */,
+				F289A89A2B720B2F00A078A1 /* TimerNotificationMO+CoreDataProperties.swift in Sources */,
 				F289A8A42B72C7EA00A078A1 /* LocationNotificationStorage.swift in Sources */,
 				F2ADAC122B69644F00040848 /* DateNotificationDTO.swift in Sources */,
-				F289A8992B720B2F00A078A1 /* TimeNotificatoinMO+CoreDataClass.swift in Sources */,
 				F289A8882B7131BD00A078A1 /* NotificationDataBase.xcdatamodeld in Sources */,
 				F289A8902B7133A200A078A1 /* DateNotificationMO+CoreDataProperties.swift in Sources */,
 				F289A89C2B720B2F00A078A1 /* LocationNotificationMO+CoreDataProperties.swift in Sources */,
-				F289A89E2B720BBA00A078A1 /* TimeNotificationDTO.swift in Sources */,
+				F289A89E2B720BBA00A078A1 /* TimerNotificationDTO.swift in Sources */,
 				F289A8A02B720BC800A078A1 /* LocationNotificationDTO.swift in Sources */,
+				F21C10B02B8D24E00093484A /* AllNotificationStorage.swift in Sources */,
 				F289A8AC2B73F60800A078A1 /* FRCService.swift in Sources */,
+				F21C10B22B8D2D260093484A /* NSSortDescriptor+Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1230,10 +1370,11 @@
 				F25B2F832B5EAED300F13A5A /* ProfileVM.swift in Sources */,
 				F25B2F812B5E9EA000F13A5A /* LineButton+Set.swift in Sources */,
 				F2DF71692B3069D1000267C8 /* HomeAssembler.swift in Sources */,
-				F245B4242B7F8654003FD5B7 /* NotificationStorage+Time.swift in Sources */,
+				F245B4242B7F8654003FD5B7 /* NotificationStorage+Timer.swift in Sources */,
 				F2CDC9102B2F0DEA001EBA76 /* NSAttributedString+HTML.swift in Sources */,
 				F2BE85B02B03E54B0058A64D /* KeyboardHelper.swift in Sources */,
-				F245B4082B7E5A8D003FD5B7 /* NotificationSections.swift in Sources */,
+				F2287FC12B8CAFCE0010E58C /* TimerCell.swift in Sources */,
+				F245B4082B7E5A8D003FD5B7 /* PopNotificationSections.swift in Sources */,
 				F2CDC90E2B2F0110001EBA76 /* AuthService+Reset.swift in Sources */,
 				F28284702B0C0E4700AF496D /* InputValidator+Reset.swift in Sources */,
 				F245B41C2B7F82D2003FD5B7 /* NotificationStorage+Date.swift in Sources */,
@@ -1250,6 +1391,7 @@
 				F2B976BC2AFEA814005ADC3B /* InputValidator+Login.swift in Sources */,
 				F245B3FD2B7BD226003FD5B7 /* HomeVM.swift in Sources */,
 				F2BE85AB2B03DB880058A64D /* RegisterPresenter.swift in Sources */,
+				F242E8D32B95DD4000DCA1CD /* TableView+Register.swift in Sources */,
 				F245B3EA2B7958FF003FD5B7 /* LineTextView.swift in Sources */,
 				F245B3EE2B7A2723003FD5B7 /* DatePickerView.swift in Sources */,
 				F245B3DA2B78D91A003FD5B7 /* DateNotificationVC.swift in Sources */,
@@ -1261,12 +1403,16 @@
 				F2FD43902AE834E70068A5CB /* UIFont+Consts.swift in Sources */,
 				F253EA4C2B165C7200AEDDD7 /* OnboardingSecondStepAssembler.swift in Sources */,
 				F245B40F2B7F7323003FD5B7 /* LocationNotificationVM.swift in Sources */,
+				F20FC0A72B9F81C300F7BBE2 /* LocationVM.swift in Sources */,
+				F23B25BB2B8E445B00AC1813 /* MenuPopoverBuilder.swift in Sources */,
 				F25B2F892B5EE6F600F13A5A /* Container.swift in Sources */,
 				F2B976B12AFE9785005ADC3B /* LoginVM.swift in Sources */,
 				F28620BD2B1F5E4900C91413 /* MainTabBarVC.swift in Sources */,
+				F20FC0A12B9DD1CE00F7BBE2 /* TimerPickerView+Actions.swift in Sources */,
 				F2E6B8AD2B0D24D200F42C7E /* RegisteCoordinator.swift in Sources */,
 				F2FD439E2AE83DE10068A5CB /* LoginVC.swift in Sources */,
 				F2B976B32AFE97F3005ADC3B /* LoginAssembler.swift in Sources */,
+				F2287FBD2B8CAF810010E58C /* HomeAdapter.swift in Sources */,
 				F245B3E02B78D97E003FD5B7 /* DateNotificationAssembler.swift in Sources */,
 				F245B3F52B7BBBBC003FD5B7 /* MainTabBarVM.swift in Sources */,
 				F2ADABEE2B691E8000040848 /* ProfileAdapter.swift in Sources */,
@@ -1276,12 +1422,14 @@
 				F2ADABE22B68098100040848 /* ProfileTableViewHeader.swift in Sources */,
 				F2FD43A22AE9BB720068A5CB /* UIView+Styles.swift in Sources */,
 				F2CDC92C2B30569B001EBA76 /* AlertService+Register.swift in Sources */,
+				F20FC0A92B9F83C100F7BBE2 /* LocationCoordinator.swift in Sources */,
 				F2E6B8AA2B0D1B7000F42C7E /* LoginCoordinator.swift in Sources */,
 				F28284692B0BF70E00AF496D /* InputValidator+Register.swift in Sources */,
 				F245B4012B7E2B5F003FD5B7 /* PopNotificationAssembler.swift in Sources */,
 				F2DF716B2B306A20000267C8 /* HomeCoordinator.swift in Sources */,
 				F245B3DC2B78D943003FD5B7 /* DateNotificationVM.swift in Sources */,
 				F282846B2B0C0BD600AF496D /* ResetVM.swift in Sources */,
+				F23B25BF2B8E452E00AC1813 /* MenuPopoverAdapter.swift in Sources */,
 				F25B2F8E2B5EF50500F13A5A /* WindowManager.swift in Sources */,
 				F28620C12B1F5FEC00C91413 /* MainTabBarAssembler.swift in Sources */,
 				F253EA3E2B16569400AEDDD7 /* OnboardingFirstStepVM.swift in Sources */,
@@ -1293,6 +1441,8 @@
 				F253EA4A2B165C1000AEDDD7 /* OnboardSecondStepVM.swift in Sources */,
 				F245B3DE2B78D969003FD5B7 /* DateNotificatoinCoordinator.swift in Sources */,
 				F253EA4E2B165D5700AEDDD7 /* OnboardSecondStepCoordinator.swift in Sources */,
+				F23B25C22B8E467900AC1813 /* MenuActionCell.swift in Sources */,
+				F20FC0A52B9F6F3600F7BBE2 /* LocationVC.swift in Sources */,
 				F245B3FB2B7BBF4E003FD5B7 /* PopNotificationSelectorVM.swift in Sources */,
 				F28620C32B1F612E00C91413 /* MainTabBarCoordinator.swift in Sources */,
 				F245B40D2B7F716F003FD5B7 /* LocationNotificationVC.swift in Sources */,
@@ -1300,40 +1450,46 @@
 				F2CDC90C2B2D9D35001EBA76 /* AuthService+Register.swift in Sources */,
 				F2B976AF2AFE9434005ADC3B /* UIButton+Actions.swift in Sources */,
 				F2F3EA622AF160440019445B /* UIButton+Styles.swift in Sources */,
-				F245B4202B7F8437003FD5B7 /* TimeNotificationVC.swift in Sources */,
+				F245B4202B7F8437003FD5B7 /* TimerNotificationVC.swift in Sources */,
 				F2BE85AD2B03E1490058A64D /* RegisterAssembler.swift in Sources */,
 				F2B976C02B0112A8005ADC3B /* Localization+Auth.swift in Sources */,
 				F2F3EA742AF6ACDC0019445B /* String+Locale.swift in Sources */,
 				F2F3EA652AF16ECA0019445B /* LineTextField.swift in Sources */,
 				F2B976B92AFEA1BD005ADC3B /* InputValidator.swift in Sources */,
+				F2287FC32B8CB00A0010E58C /* DateCell.swift in Sources */,
 				F253EA422B1657DE00AEDDD7 /* OnboardFirstStepCoordinator.swift in Sources */,
 				F2CDC92A2B2FB6BE001EBA76 /* AlertService+Login.swift in Sources */,
+				F20FC0AB2B9F83D100F7BBE2 /* LocationAssembler.swift in Sources */,
+				F20FC09F2B9DD0B500F7BBE2 /* TimerPickerView.swift in Sources */,
 				F2E6B8A72B0D129B00F42C7E /* Coordinator.swift in Sources */,
-				F245B4222B7F84F0003FD5B7 /* TimeNotificationVM.swift in Sources */,
+				F245B4222B7F84F0003FD5B7 /* TimerNotificationVM.swift in Sources */,
 				F25B2F8B2B5EEAAB00F13A5A /* ContainerRegistrator.swift in Sources */,
+				F2287FBF2B8CAF9A0010E58C /* LocationCell.swift in Sources */,
 				F2E6B8CE2B13E8D800F42C7E /* KeyboardHelper+Reset.swift in Sources */,
 				F245B3F22B7A63ED003FD5B7 /* KeyboardHelper+DateNotification.swift in Sources */,
 				F2FD438E2AE82E810068A5CB /* UIColor+Consts.swift in Sources */,
 				F28621012B1F975A00C91413 /* AuthService+Login.swift in Sources */,
-				F245B4282B7F86BB003FD5B7 /* TimeNotificationAssembler.swift in Sources */,
-				F245B4262B7F868D003FD5B7 /* KeyboardHelper+Time.swift in Sources */,
+				F245B4282B7F86BB003FD5B7 /* TimerNotificationAssembler.swift in Sources */,
+				F245B4262B7F868D003FD5B7 /* KeyboardHelper+Timer.swift in Sources */,
 				F245B4062B7E595A003FD5B7 /* PopSelectionCell.swift in Sources */,
 				F2F3EA5F2AF15F710019445B /* View+Layer.swift in Sources */,
 				F2CDC9152B2F65D5001EBA76 /* AlertService.swift in Sources */,
 				F253EA402B16573700AEDDD7 /* OnboardFirstStepAssembler.swift in Sources */,
 				F282846D2B0C0D5100AF496D /* ResetAssembler.swift in Sources */,
-				F245B42A2B7F8752003FD5B7 /* TimeNotificationCoordinator.swift in Sources */,
+				F245B42A2B7F8752003FD5B7 /* TimerNotificationCoordinator.swift in Sources */,
 				F2F3EA682AF55E3D0019445B /* RegisterVC.swift in Sources */,
 				F2DF716F2B31A991000267C8 /* ProfileVC.swift in Sources */,
 				F245B3F92B7BBF3C003FD5B7 /* PopNotificationSelectorVC.swift in Sources */,
 				F2FD43792AE825000068A5CB /* SceneDelegate.swift in Sources */,
 				F245B3E42B78DF33003FD5B7 /* UIDatePicker.swift in Sources */,
 				F25B2F862B5EB5B900F13A5A /* AuthService+Profile.swift in Sources */,
+				F2287FC52B8CB0B30010E58C /* NotificationSection.swift in Sources */,
 				F2E6B8C92B13D77E00F42C7E /* ResetCoordinator.swift in Sources */,
 				F28620FF2B1F95CC00C91413 /* AuthService.swift in Sources */,
 				F28284672B0BE51400AF496D /* KeyboardHelper+Register.swift in Sources */,
 				F253EA3C2B16547300AEDDD7 /* OnboardFirstStepVC.swift in Sources */,
 				F245B3E82B794AB8003FD5B7 /* UITextView+Style.swift in Sources */,
+				F23B25C42B8E479200AC1813 /* MenuPopoverVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1372,6 +1528,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1408,6 +1565,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

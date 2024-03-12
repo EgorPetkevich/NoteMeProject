@@ -8,6 +8,19 @@
 import UIKit
 
 final class PopNotificationAdapter: NSObject {
+    
+    private enum Const {
+        static let rowHeight: CGFloat = 40.0
+    }
+    
+    enum Action {
+        case edit
+        case delet
+        case calendar
+        case location
+        case timer
+    }
+    
     var didSelectNotificationRow: ((NotificationsRows) -> Void)?
     var didSelectEditRow: ((EditNotificationRows) -> Void)?
     var sections: [PopSelectionSections] = [] {
@@ -21,6 +34,7 @@ final class PopNotificationAdapter: NSObject {
         tableView.backgroundColor = .clear
         tableView.isScrollEnabled = false
         tableView.separatorStyle = .singleLine
+        tableView.rowHeight = Const.rowHeight
         tableView.separatorInset = .init(top: 0, left: 0, bottom: 0, right: 0)
         tableView.setShadow()
         return tableView

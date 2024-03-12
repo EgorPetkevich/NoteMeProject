@@ -10,6 +10,15 @@ import SnapKit
 
 @objc protocol DateNotificationViewModelProtocol {
     
+    var editTitle: String? { get set }
+    var editDate: Date? { get set }
+    var editComment: String? { get set }
+    
+    var catchTitleError: ((String?) -> Void)? { get set }
+    var catchDateError: ((String?) -> Void)? { get set }
+    
+    var keyboardFrameChanged: ((CGRect) -> Void)? { get set }
+    
     func createDidTap(title: String?, date: String?, comment: String?)
     @objc func cancelDidTap()
 }
@@ -52,7 +61,8 @@ final class DateNotificationVC: UIViewController {
     
     
     
-    private lazy var commentTextView: LineTextView = LineTextView()
+    private lazy var commentTextView: LineTextView = 
+    LineTextView()
         .setTitle("Comment")
         .setPlaceholder("Enter Comment")
 
@@ -61,6 +71,11 @@ final class DateNotificationVC: UIViewController {
     init(viewModel: DateNotificationViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        
+        bindError()
+        bindkeyboardFrame()
+        bindEditNotification()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -71,6 +86,39 @@ final class DateNotificationVC: UIViewController {
         setup()
         setupConstrains()
         swipeGesture()
+    }
+    
+    private func bindError() {
+        viewModel.catchTitleError = { [weak self] errorText in
+            self?.titleTextField.setErrorText(errorText)
+        }
+        viewModel.catchDateError = { [weak self] errorText in
+            self?.dateTextField.setErrorText(errorText)
+        }
+    }
+    
+    private func bindkeyboardFrame() {
+        viewModel.keyboardFrameChanged = { [weak self] frame in
+            self?.keyboardFrameChanged(frame)
+        }
+        viewModel.keyboardFrameChanged = { [weak self] frame in
+            self?.keyboardFrameChanged(frame)
+        }
+    }
+    
+    private func bindEditNotification() {
+        guard let date = viewModel.editDate else { return }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM.dd.yyyy"
+        
+        titleTextField.text = viewModel.editTitle
+        dateTextField.text = dateFormatter.string(from: date)
+        
+        if viewModel.editComment != "" {
+            commentTextView.text = viewModel.editComment
+            commentTextView.textColor = .appText
+        }
+        
     }
     
     private func setup() {
@@ -174,6 +222,21 @@ extension DateNotificationVC: UIGestureRecognizerDelegate {
         swipeDown.direction =  UISwipeGestureRecognizer.Direction.down
         self.infoView.addGestureRecognizer(swipeDown)
         self.contentView.addGestureRecognizer(swipeDown)
+    }
+    
+    private func keyboardFrameChanged(_ frame: CGRect) {
+        let maxY = infoView.frame.maxY + contentView.frame.minY + 16.0
+        let keyboardY = frame.minY - 16.0
+        
+        if maxY > keyboardY {
+            let diff = maxY - keyboardY
+            UIView.animate(withDuration: 0.25) {
+                self.infoView.snp.updateConstraints { make in
+                    make.centerY.equalToSuperview().offset(-diff)
+                }
+                self.view.layoutIfNeeded()
+            }
+        }
     }
      
 }

@@ -7,287 +7,222 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A029F765-55FB-4837-A361-51F135CB5928"
+            uuid = "08367391-B50E-47C0-8D82-2995843934CA"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NoteMe/App/AppCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "startApp()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F1F808C0-EB06-4BF7-86C0-88346F06CD08"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoteMe/Modules/Onboarding/OnboardingFirstStep/Coordinator/OnboardFirstStepCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "openNextStep()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F1F808C0-EB06-4BF7-86C0-88346F06CD08 - 44131a6df8ecb1b1"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (NoteMe.Coordinator) -&gt; () in NoteMe.OnboardFirstStepCoordinator.openNextStep() -&gt; ()"
-                  moduleName = "NoteMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/Onboarding/OnboardingFirstStep/Coordinator/OnboardFirstStepCoordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "76">
-               </Location>
-               <Location
-                  uuid = "F1F808C0-EB06-4BF7-86C0-88346F06CD08 - 77f26be7c940ca59"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (NoteMe.Coordinator) -&gt; Swift.Bool in closure #2 (NoteMe.Coordinator) -&gt; () in NoteMe.OnboardFirstStepCoordinator.openNextStep() -&gt; ()"
-                  moduleName = "NoteMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/Onboarding/OnboardingFirstStep/Coordinator/OnboardFirstStepCoordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6CDC1365-CAD1-4605-8AD6-23D581809B54"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoteMe/Modules/Onboarding/OnboardingFirstStep/Coordinator/OnboardFirstStepCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "openNextStep()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BB5111FD-3FC3-4F3E-8404-1FD2F88D92E1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoteMe/App/AppCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "startApp()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2B00CB42-9EFF-4B4A-A992-B2BF13ECA415"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoteMe/App/AppCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "startApp()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2B00CB42-9EFF-4B4A-A992-B2BF13ECA415 - 29ddf843d207c7b0"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NoteMe.AppCoordinator.startApp() -&gt; ()"
-                  moduleName = "NoteMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/App/AppCoordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "120">
-               </Location>
-               <Location
-                  uuid = "2B00CB42-9EFF-4B4A-A992-B2BF13ECA415 - 29ddf843d207c7b0"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NoteMe.AppCoordinator.startApp() -&gt; ()"
-                  moduleName = "NoteMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/App/AppCoordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "148">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2B340222-4BAB-410F-BBDD-68F54B102FD3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoteMe/Modules/Auth/Login/LoginVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "LoginVC"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C86DE304-DBBE-4225-8DC8-0BE8865370F5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoteMe/Modules/Auth/Login/LoginVM.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "init(authService:inputValidator:coordinator:keyboardHelper:alertService:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A6EBCCF8-74FB-44B4-84F0-7E1672F3AE83"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoteMe/Modules/Auth/Login/LoginVM.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "loginDidTap(email:password:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8F39F057-F266-46AD-BFCE-D21BB796E47F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Storage/Storages/NotificationStorage.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "create(dto:complition:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C78AEA59-1085-41D9-899B-8174CEE19C6F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Storage/Storages/NotificationStorage.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "create(dto:complition:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "71189DDA-B327-4DCD-86C4-4E47F0BF10C0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Storage/Storages/NotificationStorage.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "create(dto:complition:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E89CABAD-453C-4BAC-9795-2D4D62669636"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Storage/Storages/NotificationStorage.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "create(dto:complition:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "189117DE-3BB8-48AF-AD5B-91119215BC40"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoteMe/Modules/PopNotificationSelector/Coordinator/PopNotificationAssembler.swift"
+            filePath = "NoteMe/Modules/MenuPopover/Coordinator/MenuPopoverBuilder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
-            landmarkName = "make(container:coordinator:select:)"
+            landmarkName = "buildAddMenu(delegate:sourseView:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0EA0B2E9-3B15-4304-B13E-B16846E725EE"
+            uuid = "1A8BDB75-61F2-4333-9A77-933C72FD4114"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NoteMe/Modules/PopNotificationSelector/PopNotificationSelectorVC.swift"
+            filePath = "NoteMe/Modules/MenuPopover/Coordinator/MenuPopoverBuilder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "buildAddMenu(delegate:sourseView:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1A8BDB75-61F2-4333-9A77-933C72FD4114 - 26b2bfa16aecdec1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static NoteMe.MenuPopoverBuilder.buildAddMenu(delegate: NoteMe.MenuPopoverDelegate, sourseView: __C.UIView) -&gt; __C.UIViewController"
+                  moduleName = "NoteMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/MenuPopover/Coordinator/MenuPopoverBuilder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "1A8BDB75-61F2-4333-9A77-933C72FD4114 - 26b2bfa16aecdec1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static NoteMe.MenuPopoverBuilder.buildAddMenu(delegate: NoteMe.MenuPopoverDelegate, sourseView: __C.UIView) -&gt; __C.UIViewController"
+                  moduleName = "NoteMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/MenuPopover/Coordinator/MenuPopoverBuilder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1DAE2672-7FEF-4367-98CC-061A5E4EE64A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/Modules/MenuPopover/Coordinator/MenuPopoverBuilder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "build(delegate:actions:sourseView:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1DAE2672-7FEF-4367-98CC-061A5E4EE64A - 91571fef859d42c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static NoteMe.MenuPopoverBuilder.build(delegate: NoteMe.MenuPopoverDelegate, actions: Swift.Array&lt;NoteMe.MenuPopoverVC.Action&gt;, sourseView: __C.UIView) -&gt; __C.UIViewController"
+                  moduleName = "NoteMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/MenuPopover/Coordinator/MenuPopoverBuilder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "1DAE2672-7FEF-4367-98CC-061A5E4EE64A - 91571fef859d424c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static NoteMe.MenuPopoverBuilder.build(delegate: NoteMe.MenuPopoverDelegate, actions: Swift.Array&lt;NoteMe.MenuPopoverVC.Action&gt;, sourseView: __C.UIView) -&gt; __C.UIViewController"
+                  moduleName = "NoteMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/MenuPopover/Coordinator/MenuPopoverBuilder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "39FE7E71-DAD7-4A49-97D4-434513FF96B4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/Modules/MenuPopover/MenuPopoverVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "setupPopover(sourseView:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F6A43F06-059C-4B34-9BC8-2E6C91E45780"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/Modules/Tabbar/TabBar/Coordinator/MainTabBarCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "openNewDateNotification()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F6A43F06-059C-4B34-9BC8-2E6C91E45780 - b5bdc411cdc4f2ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NoteMe.MainTabBarCoordinator.openNewDateNotification() -&gt; ()"
+                  moduleName = "NoteMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/Tabbar/TabBar/Coordinator/MainTabBarCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "F6A43F06-059C-4B34-9BC8-2E6C91E45780 - b5bdc411cdc4f2a9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NoteMe.MainTabBarCoordinator.openNewDateNotification() -&gt; ()"
+                  moduleName = "NoteMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/Tabbar/TabBar/Coordinator/MainTabBarCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "F6A43F06-059C-4B34-9BC8-2E6C91E45780 - b5bdc411cdc4f2ef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NoteMe.MainTabBarCoordinator.openNewDateNotification() -&gt; ()"
+                  moduleName = "NoteMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/Tabbar/TabBar/Coordinator/MainTabBarCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "514ECD85-3EE2-4BB7-A3A8-B1C587BB249E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/Modules/Home/HomeVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "makeTableView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "016F59BA-F5DA-4437-AB70-F6FF79B36820"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/Modules/Home/HomeVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -295,97 +230,113 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DF07ECDA-1845-48CE-8ED9-2DF1E2AEEE23"
-            shouldBeEnabled = "No"
+            uuid = "45415F1F-B8A1-492B-B87E-92D8CEF1D56C"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NoteMe/Modules/PopNotificationSelector/PopNotificationSelectorVC.swift"
+            filePath = "Storage/Storages/DateNotificationStorage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "init(viewModel:)"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "fetch(predicate:sortDescriptors:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "DF07ECDA-1845-48CE-8ED9-2DF1E2AEEE23 - 560bfb4807b1166e"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NoteMe.PopNotificationSelectorVC.__allocating_init(viewModel: NoteMe.PopNotificationSelectorViewModelProtocol, view: __C.UIView) -&gt; NoteMe.PopNotificationSelectorVC"
-                  moduleName = "NoteMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/PopNotificationSelector/PopNotificationSelectorVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  uuid = "DF07ECDA-1845-48CE-8ED9-2DF1E2AEEE23 - 469659a721645556"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NoteMe.PopNotificationSelectorVC.init(viewModel: NoteMe.PopNotificationSelectorViewModelProtocol, view: __C.UIView) -&gt; NoteMe.PopNotificationSelectorVC"
-                  moduleName = "NoteMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/PopNotificationSelector/PopNotificationSelectorVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "112">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "580AF4B1-8AB9-4809-A281-4614C69FE709"
+            uuid = "A7736BD1-FF66-433C-AD76-4F6428701559"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/Castom/TimerPickerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "pickerView(_:titleForRow:forComponent:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD5CA5BE-0C68-46E8-AB22-9DBAE2CC21C9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/Castom/TimerPickerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "pickerView(_:numberOfRowsInComponent:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4DE6A80E-F7CC-43EA-9A64-3501A6D9A317"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/Castom/TimerPickerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "numberOfComponents(in:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DF58C0AE-592A-471F-B46D-461ECAEFAE14"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NoteMe/Modules/Tabbar/TabBar/Coordinator/MainTabBarCoordinator.swift"
+            filePath = "NoteMe/Modules/CreateNotification/LocationNotification/LocationNotificationVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "showPopNotificationsScreen(view:select:)"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "locationImageDidTap()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "580AF4B1-8AB9-4809-A281-4614C69FE709 - 508c47f76daa67bd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NoteMe.MainTabBarCoordinator.showPopNotificationsScreen(view: Swift.Optional&lt;__C.UIView&gt;) -&gt; ()"
-                  moduleName = "NoteMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/Tabbar/TabBar/Coordinator/MainTabBarCoordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "1532">
-               </Location>
-               <Location
-                  uuid = "580AF4B1-8AB9-4809-A281-4614C69FE709 - 508c47f76daa67da"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NoteMe.MainTabBarCoordinator.showPopNotificationsScreen(view: Swift.Optional&lt;__C.UIView&gt;) -&gt; ()"
-                  moduleName = "NoteMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/Tabbar/TabBar/Coordinator/MainTabBarCoordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "456">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "431CA6DB-A556-4C8A-A095-64E76CE495CE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/Modules/CreateNotification/LocationNotification/LocationNotificationVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "locationImageDidTap()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ADF2678D-4343-4647-9D20-263871DCA141"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoteMe/Modules/CreateNotification/SelectLocation/LocationVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "bind()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -62,20 +62,7 @@ final class ProfileVC: UIViewController {
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(16.0)
         }
-       
     }
     
 }
 
-//
-//extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
-//    
-//   
-//    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        viewModel.buttons[indexPath.row].action()
-//    }
-//    
-//    
-//}

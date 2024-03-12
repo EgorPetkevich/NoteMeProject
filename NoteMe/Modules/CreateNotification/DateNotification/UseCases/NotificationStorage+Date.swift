@@ -8,7 +8,7 @@
 import Foundation
 import Storage
 
-struct DateNotificationStorage: DateNotificationStorageUseCaseProtocol {
+struct DateNotificationStorageUseCase: DateNotificationStorageUseCaseProtocol {
     
     private let service: NotificationStorage<DateNotificationDTO>
     
@@ -16,10 +16,14 @@ struct DateNotificationStorage: DateNotificationStorageUseCaseProtocol {
         self.service = service
     }
     
+    func updateOrCreate(dto: Storage.DateNotificationDTO,
+                        complition: @escaping (Bool) -> Void) {
+        service.updateOrCreate(dto: dto, complition: complition)
+    }
+    
     func create(dto: Storage.DateNotificationDTO,
                 complition: @escaping (Bool) -> Void) {
         service.create(dto: dto, complition: complition)
     }
-    
-    
+
 }

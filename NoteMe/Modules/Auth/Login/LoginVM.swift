@@ -119,9 +119,8 @@ final class LoginVM: LoginViewModelProtocol {
         return isEmailValid && isPasswordValid
     }
     
-    private func errorValidation(
-        isEmailValid: Bool = false,
-        isPasswordValid: Bool = false) {
+    private func errorValidation(isEmailValid: Bool = false,
+                                 isPasswordValid: Bool = false) {
         catchEmailError?(isEmailValid ? nil : .Auth.loginEmailError)
         catchPasswordError?(isPasswordValid ? nil : .Auth.loginPassError)
     }

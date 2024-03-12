@@ -72,7 +72,7 @@ extension PopNotificationSelectorCoordinator:
     }
     
     func openTime() {
-        let coordinator = TimeNotificationCoordinator(container: container)
+        let coordinator = TimerNotificationCoordinator(container: container)
         children.append(coordinator)
         
         let vc = coordinator.start()

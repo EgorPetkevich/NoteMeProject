@@ -18,20 +18,22 @@ public class NotificationStorage<DTO: DTODescription> {
                        sortDescriptors: [NSSortDescriptor] = [])
     -> [DTO.MO] {
         let request = NSFetchRequest<DTO.MO>(entityName: "\(DTO.MO.self)")
-        let context = CoreDataService.shared.backgroundContext
+        request.predicate = predicate
+        request.sortDescriptors = sortDescriptors
+        let context = CoreDataService.shared.mainContext
         let results = try? context.fetch(request)
         return results ?? []
     }
     
     public func fetch(predicate: NSPredicate? = nil,
                       sortDescriptors: [NSSortDescriptor] = []
-    ) -> [DTO] {
+    ) -> [any DTODescription] {
         return fetchMO(predicate: predicate,
                      sortDescriptors: sortDescriptors)
-        .compactMap { DTO(mo: $0) }
+        .compactMap { $0.toDTO() }
     }
     
-    func update(dto:  DTO.MO.DTO,
+    func update(dto:  DTO,
                 complition: ComplitionHandler? = nil) {
         let context = CoreDataService.shared.backgroundContext
     
@@ -48,25 +50,41 @@ public class NotificationStorage<DTO: DTODescription> {
             }
         }
     
-    public func create(dto: DTO.MO.DTO,
+    public func create(dto: DTO,
                        complition: ComplitionHandler? = nil) {
         let context = CoreDataService.shared.backgroundContext
+        
         context.perform {
             let mo = DTO.MO(context: context)
             mo.apply(dto: dto)
             CoreDataService.shared.saveContext(context: context,
                                                complition: complition)
-            }
         }
+    }
     
-    public func updateOrCreate(dto: DTO.MO.DTO,
+    public func updateOrCreate(dto: DTO,
                         complition: ComplitionHandler? = nil) {
-        if fetchMO(predicate: .Notification.noutification(byId: dto.id)).isEmpty {
+        if fetchMO(predicate: .Notification.noutification(byId:
+                                                            dto.id)).isEmpty {
             create(dto: dto, complition: complition)
         } else {
             update(dto: dto, complition: complition)
         }
     }
+    
+    public func delete(dto: any DTODescription,
+                       complition: ComplitionHandler? = nil) {
+          let context = CoreDataService.shared.mainContext
+          context.perform { [weak self] in
+              guard let mo = self?.fetchMO(
+                  predicate: .Notification.noutification(byId:
+                                                            dto.id)).first
+              else { return }
+              context.delete(mo)
+              CoreDataService.shared.saveContext(context: context,
+                                                 complition: complition)
+          }
+      }
     
 }
 

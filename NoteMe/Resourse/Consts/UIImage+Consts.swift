@@ -36,11 +36,26 @@ extension UIImage {
     }
     
     //MARK: PopNOtifications
-    enum PopNOtifications {
+    enum PopNotifications {
         static let calendar: UIImage = .init(named: "calendar")!
         static let location: UIImage = .init(named: "location")!
-        static let time: UIImage = .init(named: "time")!
+        static let timer: UIImage = .init(named: "time")!
+        static let edit: UIImage = .init(named: "edit_not")!
+        static let delete: UIImage = .init(named: "delete")!
     }
     
-
+    //MARK: Home
+    enum Home {
+        static let edit: UIImage = .init(named: "edit")!
+        static let date: UIImage = .init(named: "date")!
+        static let location: UIImage = .init(named: "location_home")!
+        static let timer: UIImage = .init(named: "timer")!
+        static let map: UIImage = .init(named: "map")!
+    }
+    
+    //MARK: Location
+    enum Location {
+        static let region: UIImage = .init(named: "region")!
+    }
+    
 }

@@ -55,6 +55,7 @@ extension UIButton {
     static func clearButton() -> UIButton {
         let button = UIButton()
         button.backgroundColor = .clear
+        button.titleLabel?.text = ""
         return button
     }
     
@@ -76,6 +77,14 @@ extension UIButton {
         button.titleLabel?.textColor = .appText
         button.titleLabel?.font = .appBoldFont(25.0)
         button.setImage(.TabBar.plus, for: .normal)
+        return button
+    }
+    
+    static func editNotificationButton() -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = .clear
+        button.titleLabel?.text = ""
+        button.setImage(.Home.edit, for: .normal)
         return button
     }
     
@@ -117,5 +126,6 @@ extension UIButton {
         range: NSRange(location: 0, length: text.count))
         self.setAttributedTitle(attributedString, for: .normal)
     }
+    
     
 }

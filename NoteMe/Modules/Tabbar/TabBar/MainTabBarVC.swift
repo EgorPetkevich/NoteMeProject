@@ -8,14 +8,21 @@
 import UIKit
 import SnapKit
 
-protocol MainTabBarViewModelProtocol {
-    func plusButtonDidTap(view: UIView?, select: PopNotificationSections)
+//protocol MainTabBarViewModelProtocol {
+//    func plusButtonDidTap(view: UIView?, select: PopNotificationSections)
+//}
+
+@objc protocol MainTabBarViewModelProtocol {
+    @objc func addButtonDidTap(sender: UIView)
 }
 
 
 final class MainTabBarVC: UITabBarController {
     
-    private lazy var button: UIButton = .addHomeButton().withAction(self, #selector(plusButtonDidTap))
+    private lazy var addButton: UIButton =
+        .addHomeButton()
+        .withAction(viewModel,
+                    #selector(MainTabBarViewModelProtocol.addButtonDidTap))
     
     private var viewModel: MainTabBarViewModelProtocol
     
@@ -39,25 +46,26 @@ final class MainTabBarVC: UITabBarController {
         tabBar.backgroundColor = .appBackground
         tabBar.unselectedItemTintColor = .appInfoWhite
         
-        view.addSubview(button)
+        view.addSubview(addButton)
         
     }
     
     private func setupConstrains() {
-        button.snp.makeConstraints { make in
+        addButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalTo(self.tabBar.snp.top)
             make.size.equalTo(CGSize(width: 50, height: 50))
         }
-        button.cornerRadius = 50 / 2
+        addButton.cornerRadius = 50 / 2
     }
     
-    @objc private func plusButtonDidTap() {
-        viewModel.plusButtonDidTap(view: button, select: .notifications)
+//    @objc private func plusButtonDidTap() {
+//        viewModel.plusButtonDidTap(view: button, select: .notifications)
+//    }
+
+    @objc private func addButtonDidTap() {
+        viewModel.addButtonDidTap(sender: addButton)
     }
-    
 }
-
-
 
 

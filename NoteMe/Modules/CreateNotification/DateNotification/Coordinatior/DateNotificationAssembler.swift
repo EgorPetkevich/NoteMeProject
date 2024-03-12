@@ -14,18 +14,20 @@ final class DateNotificationAssembler {
     
     @available(iOS 13.4, *)
     static func make(container: Container,
-                     coordinator: DateNotificationCoordinatorProtocol
+                     coordinator: DateNotificationCoordinatorProtocol,
+                     dto: DateNotificationDTO? = nil
     ) -> UIViewController {
         
-        let keyboardHelper = DateNotificationKeyboardHelperUseCase(keyboardHelper: 
-                                                                    container.resolve())
+        let keyboardHelper = DateNotificationKeyboardHelperUseCase(
+            keyboardHelper: container.resolve())
         
-        let storage = DateNotificationStorage(
-            service: NotificationStorage<DateNotificationDTO>())
+        let storage =  DateNotificationStorageUseCase(
+            service: container.resolve())
         
         let vm = DateNotificationVM(keyboardHelper: keyboardHelper, 
                                     coordinator: coordinator,
-                                    service: storage)
+                                    storage: storage,
+                                    dto: dto)
         
         return DateNotificationVC(viewModel: vm)
     }

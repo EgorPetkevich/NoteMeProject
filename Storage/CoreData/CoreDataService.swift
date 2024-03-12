@@ -21,7 +21,6 @@ final class CoreDataService {
     
     var backgroundContext: NSManagedObjectContext {
         return persistentContainer.newBackgroundContext()
-
     }
     
     private var persistentContainer: NSPersistentContainer = {

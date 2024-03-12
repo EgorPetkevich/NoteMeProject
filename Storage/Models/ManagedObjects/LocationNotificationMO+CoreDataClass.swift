@@ -10,17 +10,21 @@ import Foundation
 import CoreData
 
 @objc(LocationNotificationMO)
-public class LocationNotificationMO: BaseNotificationMO, MODescription {
-
-    public typealias DTO = LocationNotificationDTO
+public class LocationNotificationMO: BaseNotificationMO  {
     
-    public func apply(dto: LocationNotificationDTO) {
-        self.identifier = dto.id
-        self.date = dto.date
-        self.title = dto.title
-        self.subtitle = dto.subtitle
-        self.completedDate = dto.completedDate
-        self.location = dto.location
+    public override func toDTO() -> (any DTODescription)? {
+        return LocationNotificationDTO.fromMO(self)
+    }
+    
+    public override func apply(dto: any DTODescription) {
+        guard let locationDTO = dto as? LocationNotificationDTO else {
+            print("[MODTO]", "\(Self.self) apply failsed: dto is type of \(type(of: dto))")
+            return
+        }
+        super.apply(dto: dto)
+        self.latitude = locationDTO.latitude
+        self.longitude = locationDTO.longitude
+        self.imagePathStr = locationDTO.imagePathStr
     }
     
 }

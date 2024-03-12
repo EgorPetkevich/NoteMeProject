@@ -14,17 +14,20 @@ final class LocationNotificationAssembler {
     
     @available(iOS 13.4, *)
     static func make(container: Container,
-                     coordinator: LocationNotificationCoordinatorProtocol
+                     coordinator: LocationNotificationCoordinatorProtocol,
+                     dto: LocationNotificationDTO? = nil
     ) -> UIViewController {
         
-        let keyboardHelper = LocationNotificationKeyboardHelperUseCase(keyboardHelper:
-                                                                    container.resolve())
-        let storage = LocationNotificationStorage(
-            service: NotificationStorage<LocationNotificationDTO>())
+        let keyboardHelper = LocationNotificationKeyboardHelperUseCase(
+            keyboardHelper: container.resolve())
+        
+       let storage = LocationNotificationStorage(
+            service: container.resolve())
         
         let vm = LocationNotificationVM(keyboardHelper: keyboardHelper,
-                                    coordinator: coordinator,
-                                    service: storage)
+                                        coordinator: coordinator,
+                                        storage: storage, 
+                                        dto: dto)
         
         return LocationNotificationVC(viewModel: vm)
     }

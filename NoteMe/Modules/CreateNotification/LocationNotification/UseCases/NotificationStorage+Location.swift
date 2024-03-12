@@ -16,7 +16,12 @@ struct LocationNotificationStorage: LocationNotificationStorageUseCaseProtocol {
         self.service = service
     }
     
-    func create(dto: Storage.LocationNotificationDTO, 
+    func updateOrCreate(dto: Storage.LocationNotificationDTO,
+                        complition: @escaping (Bool) -> Void) {
+        service.updateOrCreate(dto: dto, complition: complition)
+    }
+    
+    func create(dto: Storage.LocationNotificationDTO,
                 complition: @escaping (Bool) -> Void) {
         service.create(dto: dto, complition: complition)
     }

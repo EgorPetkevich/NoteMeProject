@@ -6,52 +6,61 @@
 //
 
 import Foundation
+import CoreData
 
-public final class LocationNotificationDTO: DTODescription {
+public struct LocationNotificationDTO: DTODescription {
     
-    public typealias DTO = LocationNotificationDTO
     public typealias MO = LocationNotificationMO
     
-    public var id: String
-    
-    public var title: String
-    
-    public var subtitle: String?
-    
-    public var completedDate: Date?
-    
-    public var location: String?
-
     public var date: Date
+    public var id: String
+    public var title: String
+    public var subtitle: String?
+    public var completedDate: Date?
+    public var latitude: Double
+    public var longitude: Double
+    public var imagePathStr: String
+    public var radius: Double
     
     public init(date: Date,
-                id: String,
+                id: String = UUID().uuidString,
                 title: String,
                 subtitle: String? = nil,
                 completedDate: Date? = nil,
-                location: String? = nil) {
+                latitude: Double,
+                longitude: Double,
+                imagePathStr: String,
+                radius: Double) {
         self.date = date
         self.id = id
         self.title = title
         self.subtitle = subtitle
         self.completedDate = completedDate
-        self.location = location
+        self.latitude = latitude
+        self.longitude = longitude
+        self.imagePathStr = imagePathStr
+        self.radius = radius
     }
     
-    public init?(mo: LocationNotificationMO) {
+    public static func fromMO(_ mo: LocationNotificationMO) -> LocationNotificationDTO? {
         guard
+            let date = mo.date,
             let id = mo.identifier,
             let title = mo.title,
-            let date = mo.date,
-            let location = mo.location
-        else {return nil}
+            let imagePathStr = mo.imagePathStr
+        else { return nil }
         
-        self.date = date
-        self.id = id
-        self.title = title
-        self.subtitle = mo.subtitle
-        self.completedDate = mo.completedDate
-        self.location = location
+        return LocationNotificationDTO(
+            date: date,
+            id: id,
+            title: title,
+            subtitle: mo.subtitle,
+            completedDate: mo.completedDate,
+            latitude: mo.latitude,
+            longitude: mo.longitude,
+            imagePathStr: imagePathStr, 
+            radius: mo.radius
+        )
     }
     
 }

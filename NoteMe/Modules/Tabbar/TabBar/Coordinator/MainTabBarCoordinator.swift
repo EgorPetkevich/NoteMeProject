@@ -10,7 +10,6 @@ import SwiftUI
 
 final class MainTabBarCoordinator: Coordinator {
    
-    
     private var rootVC: UIViewController?
     private let container: Container
     
@@ -26,7 +25,7 @@ final class MainTabBarCoordinator: Coordinator {
     }
     
     private func makeHomeModule() -> UIViewController {
-        let coordinator = HomeCoordinator()
+        let coordinator = HomeCoordinator(container: container)
         children.append(coordinator)
         
         return coordinator.start()
@@ -42,32 +41,56 @@ final class MainTabBarCoordinator: Coordinator {
 }
     
 extension MainTabBarCoordinator: MainTabBarCoordinatorProtocol {
+  
+    func showMenu(sender: UIView, delegate: MenuPopoverDelegate) {
+        let menu = MenuPopoverBuilder.buildAddMenu(delegate: delegate,
+                                                   sourseView: sender)
+        rootVC?.present(menu, animated: true)
+    }
     
-    func showPopNotificationsScreen(view: UIView?,
-                                    select: PopNotificationSections) {
-        
-        let coordinator = PopNotificationSelectorCoordinator(container: container)
+    func openNewDateNotification() {
+        let coordinator = DateNotificationCoordinator(container: container)
         children.append(coordinator)
         
-        let vc = coordinator.startPopNotification(select: select)
+        let vc = coordinator.start()
         
         coordinator.onDidFinish = { [weak self] coordinator in
             self?.children.removeAll {coordinator == $0}
             vc.dismiss(animated: true)
         }
         
-        guard let view = view else { return }
-
-//        vc.modalPresentationStyle = .popover
-        vc.preferredContentSize = CGSize(width: 180, height: 132)
-        vc.popoverPresentationController?.sourceView = view
-        vc.popoverPresentationController?.sourceRect = CGRect(x: view.bounds.midX,
-                                                              y: view.bounds.midY,
-                                                              width: .zero,
-                                                              height: .zero)
-        vc.popoverPresentationController?.permittedArrowDirections = .down
-        
+        vc.modalPresentationStyle = .fullScreen
         rootVC?.present(vc, animated: true)
     }
     
+    func openNewLocationNotification() {
+        let coordinator = LocationNotificationCoordinator(container: container)
+        children.append(coordinator)
+        
+        let vc = coordinator.start()
+        
+        coordinator.onDidFinish = { [weak self] coordinator in
+            self?.children.removeAll {coordinator == $0}
+            vc.dismiss(animated: true)
+        }
+        
+        vc.modalPresentationStyle = .fullScreen
+        rootVC?.present(vc, animated: true)
+    }
+    
+    func openNewTimerNotification() {
+        let coordinator = TimerNotificationCoordinator(container: container)
+        children.append(coordinator)
+        
+        let vc = coordinator.start()
+        
+        coordinator.onDidFinish = { [weak self] coordinator in
+            self?.children.removeAll {coordinator == $0}
+            vc.dismiss(animated: true)
+        }
+        
+        vc.modalPresentationStyle = .fullScreen
+        rootVC?.present(vc, animated: true)
+    }
+
 }

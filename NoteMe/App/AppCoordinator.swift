@@ -31,11 +31,9 @@ final class AppCoordinator: Coordinator {
 //            //open mainApp
 //            openMainApp()
 //        }
+//        openAuthModule()
         openMainApp()
-//        let vc = DateNotificationCoordinator(container: container).start()
-//        let window = windowManager.get(type: .main)
-//        window.rootViewController = vc
-//        windowManager.show(type: .main)
+       
         
     }
     
