@@ -1731,6 +1731,8 @@
 				INFOPLIST_FILE = NoteMe/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Note me";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "for notification";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "for notification";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
@@ -1762,6 +1764,8 @@
 				INFOPLIST_FILE = NoteMe/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Note me";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "for notification";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "for notification";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;

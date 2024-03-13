@@ -2,7 +2,7 @@
 //  LocationNotificationMO+CoreDataProperties.swift
 //  Storage
 //
-//  Created by George Popkich on 12.03.24.
+//  Created by George Popkich on 13.03.24.
 //
 //
 

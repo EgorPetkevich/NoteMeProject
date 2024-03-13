@@ -15,6 +15,8 @@ protocol LocationCoordinatorProtocol: AnyObject {
 
 final class LocationVM: LocationViewModelProtocol {
     
+    private var locationManager: CLLocationManager = .init()
+    
     var delegate: LocationDelegate
     
     private var mapRegion: MKCoordinateRegion?
@@ -44,16 +46,17 @@ final class LocationVM: LocationViewModelProtocol {
     }
     
     private func bind() {
-        guard 
+        askPermission()
+        guard
             let latitude = locationProperties.latitude,
             let longitude = locationProperties.longitude,
             let radius = locationProperties.radius
         else { return }
         
         let center =  CLLocationCoordinate2D(latitude: latitude,
-                                                 longitude: longitude)
-        
-        let range = radius * 8
+                                             longitude: longitude)
+        let distance = CLLocationDistance(radius)
+        let range = distance * 8
         let region = MKCoordinateRegion(center: center,
                                         latitudinalMeters: range,
                                         longitudinalMeters: range)
@@ -73,6 +76,10 @@ final class LocationVM: LocationViewModelProtocol {
         coordinator?.finish()
     }
     
+    private func askPermission() {
+        locationManager.requestAlwaysAuthorization()
+    }
+    
     private func setLocationPar(_ imageView: UIView) {
         
         mapRegion = mapView.convert(imageView.bounds,
@@ -85,42 +92,11 @@ final class LocationVM: LocationViewModelProtocol {
             latitude: mapRegion.center.latitude - mapRegion.span.latitudeDelta / 2,
                                 longitude: mapRegion.center.longitude)
         let radius = centerLoc.distance(from: topLoc)
-    
+        let radiusStr = "\(radius)"
+        print("radius", radius, Double(radius))
         locationProperties.latitude =  mapRegion.center.latitude
         locationProperties.longitude = mapRegion.center.longitude
-        locationProperties.radius = radius
-    }
-    
-    private func creatRequest(radius: CLLocationDistance) {
-        guard let mapRegion else { return }
-        let id = UUID().uuidString
-        let circleRegion = CLCircularRegion(center: mapRegion.center,
-                                            radius: radius,
-                                            identifier: id)
-        circleRegion.notifyOnEntry = true
-        circleRegion.notifyOnExit = false
-        
-        let triger = UNLocationNotificationTrigger(region: circleRegion,
-                                                   repeats: false)
-        
-        let notification = NotificationRequest(triger: triger)
-        
-//               let circleRegion = CLCircularRegion(center: mapRegion.center, radius: radius, identifier: id)
-//       
-//               circleRegion.notifyOnEntry = true
-//               circleRegion.notifyOnExit = false
-//       
-//               let triger = UNLocationNotificationTrigger(region: circleRegion, repeats: false)
-//       
-//               let content = UNMutableNotificationContent()
-//               content.title = "You entered in region"
-//               content.body = "Buy milk"
-//       
-//               let request = UNNotificationRequest(identifier: id,
-//                                     content: content,
-//                                     trigger: triger)
-//       
-//               UNUserNotificationCenter.current().add(request)
+        locationProperties.radius = Double(radius)
     }
     
     private func makeScreenshot(_ regionImageView: UIView) {
@@ -144,7 +120,7 @@ public struct LocationProperties {
     
     var latitude: CLLocationDegrees?
     var longitude: CLLocationDegrees?
-    var radius: CLLocationDistance?
+    var radius: Double?
     var screenLoc: UIImage?
     
     init(){}
@@ -166,3 +142,9 @@ struct NotificationRequest {
         UNUserNotificationCenter.current().add(request)
     }
 }
+
+//extension LocationVM: CLLocationManagerDelegate {
+//    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+//
+//    }
+//}

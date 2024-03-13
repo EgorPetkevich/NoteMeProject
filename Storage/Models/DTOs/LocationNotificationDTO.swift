@@ -48,6 +48,7 @@ public struct LocationNotificationDTO: DTODescription {
             let id = mo.identifier,
             let title = mo.title,
             let imagePathStr = mo.imagePathStr
+                
         else { return nil }
         
         return LocationNotificationDTO(

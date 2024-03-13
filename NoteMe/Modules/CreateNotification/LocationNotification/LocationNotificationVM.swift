@@ -87,7 +87,7 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
         
         locationProperties.latitude = dto.latitude
         locationProperties.longitude = dto.longitude
-        locationProperties.radius = CLLocationDistance(dto.radius)
+        locationProperties.radius = dto.radius
         locationProperties.screenLoc = takeImage(for: dto.imagePathStr).image
         
     }
@@ -116,10 +116,13 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
         dto?.subtitle = locSet.comment
         dto?.latitude = latitude
         dto?.longitude = longitude
-        dto?.radius = Double(radius)
+        dto?.radius = radius
         dto?.imagePathStr = id
         
-       saveImage(image: editImage ?? UIImage(), for: id)
+        creatRequest(identifire: id,
+                     context: createContext(title: locSet.title,
+                                            body: locSet.comment))
+        saveImage(image: editImage ?? UIImage(), for: id)
         
 //        AppCoordinator.cach.setObject(editImage ?? UIImage(), forKey: id as NSString)
         
@@ -132,6 +135,7 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
     
     func locationImageDidTap() {
         print(locationProperties.radius, locationProperties.latitude)
+        
         coordinator?.editMap(locationProperties: locationProperties,
                              delegate: self)
     }
@@ -184,6 +188,40 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
         self.locationProperties = properties
         editImage = properties.screenLoc
         locImage?(properties.screenLoc)
+    }
+    
+    private func createContext(title: String,
+                               body: String?) -> UNMutableNotificationContent {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body ?? ""
+        return content
+    }
+    
+    private func creatRequest(identifire id: String, context: UNMutableNotificationContent) {
+        guard
+            let latitude = locationProperties.latitude,
+            let longitude = locationProperties.longitude,
+            let radius = locationProperties.radius
+        else { return }
+        
+        let distanceRadius = CLLocationDistance(radius)
+        let mapRegion =  CLLocationCoordinate2D(latitude: latitude,
+                                                longitude: longitude)
+        let id = UUID().uuidString
+        let circleRegion = CLCircularRegion(center: mapRegion,
+                                            radius: distanceRadius,
+                                            identifier: id)
+        circleRegion.notifyOnEntry = true
+        circleRegion.notifyOnExit = false
+        
+        let triger = UNLocationNotificationTrigger(region: circleRegion,
+                                                   repeats: false)
+        let request = UNNotificationRequest(identifier: id, content: context, trigger: triger)
+        
+//        let notification = NotificationRequest(triger: triger)
+        
+        UNUserNotificationCenter.current().add(request)
     }
     
 }

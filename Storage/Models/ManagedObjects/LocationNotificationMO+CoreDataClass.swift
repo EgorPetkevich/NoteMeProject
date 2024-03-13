@@ -25,6 +25,7 @@ public class LocationNotificationMO: BaseNotificationMO  {
         self.latitude = locationDTO.latitude
         self.longitude = locationDTO.longitude
         self.imagePathStr = locationDTO.imagePathStr
+        self.radius = locationDTO.radius
     }
     
 }
