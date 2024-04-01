@@ -117,7 +117,8 @@ final class LocationVM: LocationViewModelProtocol {
         if let text, text != "" {
             locationService.getPlaceSearch(coordinates: location,
                                            query: text) { [weak self] resualt in
-                self?.placeDidSelect(searchResualt: resualt.first, searchText: text)
+                self?.placeDidFound(searchResualt: resualt.first,
+                                     searchText: text)
             }
         }
     }
@@ -148,9 +149,20 @@ final class LocationVM: LocationViewModelProtocol {
         coordinator?.finish()
     }
     
-    private func placeDidSelect(searchResualt model: NearByResponseModel.Result?,
-                           searchText: String? = nil) {
-        if let resualt = model, resualt.name == searchText {
+    private func placeDidSelect(searchResualt model: NearByResponseModel.Result?) {
+        if let resualt = model {
+            locationProperties.latitude = resualt.geocodes.main.latitude
+            locationProperties.longitude = resualt.geocodes.main.longitude
+            DispatchQueue.main.async {
+                self.setLocationOnMap()
+                self.hideTableView?()
+            }
+        }
+    }
+    
+    private func placeDidFound(searchResualt model: NearByResponseModel.Result?,
+                               searchText: String) {
+        if let resualt = model, resualt.name.lowercased() == searchText.lowercased() {
             locationProperties.latitude = resualt.geocodes.main.latitude
             locationProperties.longitude = resualt.geocodes.main.longitude
             DispatchQueue.main.async {
