@@ -200,12 +200,15 @@ final class LocationNotificationVC: UIViewController {
 
 extension LocationNotificationVC: UIGestureRecognizerDelegate {
     
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, 
+                           shouldRecognizeSimultaneouslyWith 
+                           otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
     
     private func swipeGesture() {
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.hideKeyboardOnSwipeDown))
+        let swipeDown = UISwipeGestureRecognizer(target: self, 
+                                                 action: #selector(self.hideKeyboardOnSwipeDown))
         swipeDown.delegate = self
         swipeDown.direction =  UISwipeGestureRecognizer.Direction.down
         self.infoView.addGestureRecognizer(swipeDown)

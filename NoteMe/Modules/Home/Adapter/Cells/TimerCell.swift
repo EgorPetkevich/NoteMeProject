@@ -25,7 +25,7 @@ final class TimerCell: UITableViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .appRegularFont(15.0)
+        label.font = .appBoldFont(15.0)
         label.textColor = .appText
         return label
     }()
@@ -87,8 +87,9 @@ final class TimerCell: UITableViewCell {
         }
         
         content.snp.makeConstraints { make in
-            make.height.equalTo(115.0)
+            make.height.equalTo(110.0)
             make.horizontalEdges.equalToSuperview()
+            make.top.equalTo( self.contentView.snp.top).offset(10.0)
         }
         
         titleLabel.snp.makeConstraints { make in
@@ -126,35 +127,55 @@ final class TimerCell: UITableViewCell {
     }
     
     private func setTimerLabel() {
-          guard let timeLeft = dto?.timeLeft else { return }
-          
-          if timeLeft >= 0 {
-              let time = NSInteger(timeLeft)
-              let seconds = time % 60
-              let minutes = (time / 60) % 60
-              let hours = (time / 3600)
-              timerLabel.text = String(format: "%0.2d:%0.2d:%0.2d",
-                                       hours,
-                                       minutes,
-                                       seconds)
-          } else {
-              timerLabel.text = "00:00:00"
-          }
-      }
+        guard let timeLeft = dto?.timeLeft else { return }
+        
+        if timeLeft > 0 {
+            let time = NSInteger(timeLeft)
+            let seconds = time % 60
+            let minutes = (time / 60) % 60
+            let hours = (time / 3600)
+            timerLabel.text = String(format: "%0.2d:%0.2d:%0.2d",
+                                     hours,
+                                     minutes,
+                                     seconds)
+            return
+        }
+    }
 
       
       private func runTimer() {
-          guard let timeLeft = dto?.timeLeft else { return }
 
           Timer.scheduledTimer(withTimeInterval: 1,
                                repeats: true) { [weak self] timer in
-              self?.setTimerLabel()
-              guard timeLeft >= 0 else {
+              if NSInteger(self?.dto?.timeLeft ?? 0.0) > 0 {
+                  self?.setTimerLabel()
+              } else {
+                  self?.timerLabel.text = "00:00:00"
+                  self?.creatRequest(identifire: self?.dto?.id,
+                                     context: self?.createContext(title: self?.dto?.title,
+                                                                  body: self?.dto?.subtitle) ?? UNMutableNotificationContent())
                   timer.invalidate()
                   return
               }
           }
       }
+    
+    private func createContext(title: String?,
+                               body: String?) -> UNMutableNotificationContent {
+        let content = UNMutableNotificationContent()
+        content.title = title ?? ""
+        content.body = body ?? ""
+        return content
+    }
+    
+    private func creatRequest(identifire id: String?,
+                              context: UNMutableNotificationContent) {
+        
+        let request = UNNotificationRequest(identifier: id!,
+                                            content: context,
+                                            trigger: nil)
+        UNUserNotificationCenter.current().add(request)
+    }
     
     
 }

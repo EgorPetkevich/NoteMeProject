@@ -58,4 +58,8 @@ extension UIImage {
         static let region: UIImage = .init(named: "region")!
     }
     
+    enum SearchLocation {
+        static let location: UIImage = .init(named: "location_search")!
+    }
+    
 }

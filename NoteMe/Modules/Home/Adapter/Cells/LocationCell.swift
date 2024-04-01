@@ -12,6 +12,7 @@ final class LocationCell: UITableViewCell {
     
     var buttonDidTap: ((_ sender: UIButton) -> Void)?
     
+    private var fileManager = FileManagerService.instansce
     
     private lazy var content: UIView = .content()
     
@@ -24,7 +25,7 @@ final class LocationCell: UITableViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .appRegularFont(15.0)
+        label.font = .appBoldFont(15.0)
         label.textColor = .appText
         return label
     }()
@@ -56,9 +57,8 @@ final class LocationCell: UITableViewCell {
         titleLabel.text = type.title
         titleLabel.textColor = .appText
         subtitleLabel.text = type.subtitle
-        let image = takeImage(for: type.imagePathStr).image
-        locationImageView.image = image
-        locationImageView.contentMode = .scaleAspectFit
+        locationImageView.image = takeImage(for: type.imagePathStr)
+        
     }
 
     func setupUI() {
@@ -77,12 +77,13 @@ final class LocationCell: UITableViewCell {
     private func setupConstraints() {
         
         self.contentView.snp.makeConstraints { make in
-            make.height.equalTo(237.0)
+            make.height.equalTo(257.0)
         }
         
         content.snp.makeConstraints { make in
-            make.height.equalTo(235.0)
+            make.height.equalTo(247.0)
             make.horizontalEdges.equalToSuperview()
+            make.top.equalTo(self.contentView.snp.top).offset(10.0)
         }
         
         titleLabel.snp.makeConstraints { make in
@@ -105,7 +106,7 @@ final class LocationCell: UITableViewCell {
         
         locationImageView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(16.0)
-            make.top.equalTo(infoImageView.snp.bottom).inset(-16.0)
+            make.top.equalTo(infoImageView.snp.bottom).offset(8.0)
             make.bottom.equalToSuperview().inset(16.0)
         }
         
@@ -115,9 +116,10 @@ final class LocationCell: UITableViewCell {
         }
     }
     
-    private func takeImage(for key: String) -> UIImageView {
-        let data: NSData = UserDefaults.standard.object(forKey: key) as! NSData
-        return UIImageView(image: UIImage(data: data as Data))
+    private func takeImage(for key: String) -> UIImage {
+        return fileManager.read(directory: .userLocationScreenshots,
+                                with: key) ?? UIImage()
+        
     }
     
     @objc private func editButtonDidTap(sender: UIButton) {

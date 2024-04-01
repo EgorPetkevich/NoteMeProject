@@ -74,6 +74,7 @@ extension ProfileAdapter: UITableViewDataSource {
 }
 
 extension ProfileAdapter: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView,
                    viewForHeaderInSection section: Int) -> UIView? {
         let section = sections[section]
@@ -81,9 +82,11 @@ extension ProfileAdapter: UITableViewDelegate {
         header.text = section.headerText
         return header
     }
+    
 }
 
 extension ProfileAdapter: ProfileAdapterProtocol {
+    
     func reloadData(whith sections: [ProfileSections]) {
         self.sections = sections
     }
@@ -91,4 +94,5 @@ extension ProfileAdapter: ProfileAdapterProtocol {
     func makeTableView() -> UITableView {
         return tableView
     }
+    
 }

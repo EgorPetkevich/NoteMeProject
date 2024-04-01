@@ -18,7 +18,7 @@ final class DateCell: UITableViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .appRegularFont(15.0)
+        label.font = .appBoldFont(15.0)
         label.textColor = .appText
         return label
     }()
@@ -93,12 +93,13 @@ final class DateCell: UITableViewCell {
     private func setupConstraints() {
         
         self.contentView.snp.makeConstraints { make in
-            make.height.equalTo(87)
+            make.height.equalTo(92)
         }
         
         content.snp.makeConstraints { make in
             make.height.equalTo(82)
             make.horizontalEdges.equalToSuperview()
+            make.top.equalTo(self.contentView.snp.top).offset(10)
         }
         
         titleLabel.snp.makeConstraints { make in

@@ -9,10 +9,17 @@ import Foundation
 import CoreData
 
 public extension NSSortDescriptor {
+    
     enum Notification {
         public static var byDate: NSSortDescriptor {
             let dateKeyPath = #keyPath(BaseNotificationMO.date)
             return .init(key: dateKeyPath, ascending: false)
         }
     }
+    
+    static var byComplited: NSSortDescriptor {
+        let completedKeyPath = #keyPath(BaseNotificationMO.completedDate)
+        return .init(key: completedKeyPath, ascending: true)
+    }
+    
 }

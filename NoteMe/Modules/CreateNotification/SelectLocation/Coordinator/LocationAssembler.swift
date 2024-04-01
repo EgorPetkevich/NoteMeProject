@@ -16,7 +16,12 @@ final class LocationAssembler {
                      locationProperties: LocationProperties?,
                      delegate: LocationDelegate) -> UIViewController {
         
-        let vm = LocationVM(coordinator: coordinator,
+        let adapter = SearchLocationAdapter()
+        let locationService = LocationNetworkServiceUseCase(service: container.resolve())
+        
+        let vm = LocationVM(adapter: adapter,
+                            locationService: locationService,
+                            coordinator: coordinator,
                             locationProperties: locationProperties,
                             delegate: delegate)
         

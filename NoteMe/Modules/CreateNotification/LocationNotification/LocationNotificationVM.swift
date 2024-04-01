@@ -33,6 +33,11 @@ protocol LocationDelegate {
     func updateLocationProperties(_ properties: LocationProperties)
 }
 
+protocol LocationNotificationFileManagerServiceUseCaseProtocol {
+    func save(image: UIImage, with path: String)
+    func takeImage(with path: String) -> UIImage?
+}
+
 final class LocationNotificationVM: LocationNotificationViewModelProtocol,
                                     LocationDelegate {
 //    var imageCache = NSCache<NSString, UIImage>()
@@ -55,16 +60,19 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
     private let keyboardHelper: KeyboardHelperLocationNotificationUseCaseProtocol
     private let storage: LocationNotificationStorageUseCaseProtocol
     private var dto: LocationNotificationDTO?
+    private var fileManager: LocationNotificationFileManagerServiceUseCaseProtocol
     
     private weak var coordinator: LocationNotificationCoordinatorProtocol?
     
     init(keyboardHelper: KeyboardHelperLocationNotificationUseCaseProtocol,
          coordinator: LocationNotificationCoordinatorProtocol,
          storage: LocationNotificationStorageUseCaseProtocol,
+         fileManager: LocationNotificationFileManagerServiceUseCaseProtocol,
          dto: LocationNotificationDTO? = nil) {
         self.keyboardHelper = keyboardHelper
         self.coordinator = coordinator
         self.storage = storage
+        self.fileManager = fileManager
         self.dto = dto
         
         bindkeyboardHelper()
@@ -83,12 +91,12 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
         guard let dto else { return }
         editTitle = dto.title
         editComment = dto.subtitle
-        editImage = takeImage(for: dto.imagePathStr).image
+        editImage = takeImage(for: dto.imagePathStr)
         
         locationProperties.latitude = dto.latitude
         locationProperties.longitude = dto.longitude
         locationProperties.radius = dto.radius
-        locationProperties.screenLoc = takeImage(for: dto.imagePathStr).image
+        locationProperties.screenLoc = takeImage(for: dto.imagePathStr)
         
     }
     
@@ -124,8 +132,6 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
                                             body: locSet.comment))
         saveImage(image: editImage ?? UIImage(), for: id)
         
-//        AppCoordinator.cach.setObject(editImage ?? UIImage(), forKey: id as NSString)
-        
         storage.updateOrCreate(dto: dto ?? newDTO) { complition in
             print(complition)
         }
@@ -134,8 +140,6 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
     }
     
     func locationImageDidTap() {
-        print(locationProperties.radius, locationProperties.latitude)
-        
         coordinator?.editMap(locationProperties: locationProperties,
                              delegate: self)
     }
@@ -145,14 +149,11 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
     }
     
     private func saveImage(image: UIImage, for key: String) {
-        let myImageView = UIImageView(image: image)
-        let imageData = myImageView.image!.pngData()
-        UserDefaults.standard.set(imageData, forKey: key)
+        fileManager.save(image: image, with: key)
     }
     
-    private func takeImage(for key: String) -> UIImageView {
-        let data: NSData = UserDefaults.standard.object(forKey: key) as! NSData
-        return UIImageView(image: UIImage(data: data as Data))
+    private func takeImage(for key: String) -> UIImage {
+        return fileManager.takeImage(with: key) ?? UIImage()
     }
     
     private func checkValid(title: String?,
@@ -219,16 +220,9 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
                                                    repeats: false)
         let request = UNNotificationRequest(identifier: id, content: context, trigger: triger)
         
-//        let notification = NotificationRequest(triger: triger)
-        
         UNUserNotificationCenter.current().add(request)
     }
     
 }
 
 
-//public class ImageCache {
-//    
-//    static var cach = NSCache<NSString, UIImage>()
-//    
-//}

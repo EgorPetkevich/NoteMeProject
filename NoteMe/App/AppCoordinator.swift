@@ -19,6 +19,10 @@ final class AppCoordinator: Coordinator {
     }
     
     func startApp() {
+        if !ParametersHelper.get(.createLocationScreenshotsDirectory) {
+            FileManagerService.creatDierectory(name: .userLocationScreenshots)
+            ParametersHelper.set(.createLocationScreenshotsDirectory, value: true)
+        }
         //FIXME: - TEST CODE
 //        open module
 //        ParametersHelper.set(.onboardDidFinish, value: false)

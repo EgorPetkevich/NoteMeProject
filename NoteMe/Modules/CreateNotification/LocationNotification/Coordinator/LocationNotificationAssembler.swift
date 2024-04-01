@@ -21,12 +21,16 @@ final class LocationNotificationAssembler {
         let keyboardHelper = LocationNotificationKeyboardHelperUseCase(
             keyboardHelper: container.resolve())
         
-       let storage = LocationNotificationStorage(
+        let storage = LocationNotificationStorage(
             service: container.resolve())
+        
+        let fm = LocationFileManagerUseCase(
+            fileManagerService: container.resolve())
         
         let vm = LocationNotificationVM(keyboardHelper: keyboardHelper,
                                         coordinator: coordinator,
-                                        storage: storage, 
+                                        storage: storage,
+                                        fileManager: fm,
                                         dto: dto)
         
         return LocationNotificationVC(viewModel: vm)

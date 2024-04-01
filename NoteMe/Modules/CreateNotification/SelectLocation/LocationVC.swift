@@ -10,22 +10,30 @@ import MapKit
 
 @objc protocol LocationViewModelProtocol {
     var mapView: MKMapView { get set }
+    var searchEditing: String? { get set }
+    var hideTableView: (() -> Void)? { get set }
+    var showTableView: (() -> Void)? { get set }
+    var placesNotFound: (() -> Void)? { get set }
     
     func selectDidTap(regionImageView: UIImageView)
+    func searchBarDidTap(regionImageView: UIImageView)
+    func makeTableView() -> UITableView
+    func searchBarSearchButtonDidTap(with text: String?)
+    func searchBarCancelButtonDidTap()
     @objc func cancelDidTap()
 }
 
 final class LocationVC: UIViewController {
     
     private lazy var contentView: UIView = .content()
-    
+    private lazy var searchTableView: UITableView = viewModel.makeTableView()
     private lazy var locatinionManager: CLLocationManager = .init()
-    
     private lazy var mapView: MKMapView = viewModel.mapView
+    private lazy var placesNotFoundView: UIView = .placesNotFoundView()
+    private lazy var searchBar: UISearchBar = .createSearchBar()
     
     private lazy var regionImageView: UIImageView = {
-        let image = UIImageView(image: .init(named: "region"))
-        image.translatesAutoresizingMaskIntoConstraints = false
+        let image = UIImageView(image: .Location.region)
         return image
     }()
     
@@ -45,7 +53,6 @@ final class LocationVC: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         bind()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -53,23 +60,43 @@ final class LocationVC: UIViewController {
     }
     
     override func viewDidLoad() {
+        searchTableView.isHidden = true
+        
         setup()
         setupConstrains()
     }
     
     private func bind() {
+        searchBar.delegate = self
+        placesNotFoundView.isHidden = true
         
+        viewModel.hideTableView = { [weak self] in
+            self?.searchTableView.isHidden = true
+            self?.searchBar.text = ""
+            self?.view.endEditing(true)
+        }
+        viewModel.showTableView = { [weak self] in
+            self?.searchTableView.isHidden = false
+        }
+        viewModel.placesNotFound = { [weak self] in
+            self?.placesNotFoundView.isHidden = false
+        }
     }
     
     private func setup() {
+        view.backgroundColor = .appContentWhite
         view.backgroundColor = .appBackground
         view.addSubview(contentView)
         view.addSubview(selectButton)
         view.addSubview(cancelButton)
         
         contentView.addSubview(mapView)
+        contentView.addSubview(searchBar)
         
         mapView.addSubview(regionImageView)
+        mapView.addSubview(searchTableView)
+        
+        searchTableView.addSubview(placesNotFoundView)
     }
     
     private func setupConstrains() {
@@ -77,6 +104,15 @@ final class LocationVC: UIViewController {
             make.horizontalEdges.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.bottom.equalTo(selectButton.snp.centerY)
+        }
+        
+        searchBar.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalToSuperview()
+            make.height.equalTo(56.0)
+        }
+        
+        searchTableView.snp.makeConstraints { make in
+            make.verticalEdges.horizontalEdges.equalToSuperview()
         }
         
         selectButton.snp.makeConstraints { make in
@@ -92,13 +128,23 @@ final class LocationVC: UIViewController {
         }
         
         mapView.snp.makeConstraints { make in
-            make.horizontalEdges.verticalEdges.equalToSuperview()
+            make.horizontalEdges.equalToSuperview()
+            make.top.equalTo(searchBar.snp.bottom)
+            make.bottom.equalToSuperview()
         }
         
         regionImageView.snp.makeConstraints { make in
             make.centerY.centerX.equalToSuperview()
             make.size.equalTo(mapView.snp.width).dividedBy(4)
         }
+        
+        placesNotFoundView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(200.0)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(110)
+            make.height.equalTo(78)
+        }
+        
     }
     
     @objc private func selectButtonDidTap() {
@@ -107,3 +153,27 @@ final class LocationVC: UIViewController {
     
 }
 
+extension LocationVC: UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        placesNotFoundView.isHidden = true
+        viewModel.searchBarDidTap(regionImageView: regionImageView)
+        viewModel.searchEditing = ""
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        placesNotFoundView.isHidden = true
+        viewModel.searchEditing = searchText
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.searchBarSearchButtonDidTap(with: searchBar.text)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        view.endEditing(true)
+        viewModel.searchBarCancelButtonDidTap()
+    }
+    
+}

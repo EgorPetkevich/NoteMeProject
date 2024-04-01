@@ -50,7 +50,7 @@ final class CoreDataService {
     
     func saveContext(context: NSManagedObjectContext,
                      complition: ComplitionHandler? = nil) {
-        if context.hasChanges {
+//        if context.hasChanges {
             do {
                 try context.save()
                 complition?(true)
@@ -59,7 +59,7 @@ final class CoreDataService {
                 complition?(false)
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
-        }
+//        }
     }
     
 }

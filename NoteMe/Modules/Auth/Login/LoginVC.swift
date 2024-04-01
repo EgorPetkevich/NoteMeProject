@@ -153,7 +153,8 @@ final class LoginVC: UIViewController {
     }
     
     @objc private func loginDidTap() {
-        viewModel.loginDidTap(email: emailTextField.text, password: passwordTextField.text)
+        viewModel.loginDidTap(email: emailTextField.text,
+                              password: passwordTextField.text)
     }
     
     

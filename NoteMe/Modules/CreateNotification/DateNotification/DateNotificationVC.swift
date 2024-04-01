@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 @objc protocol DateNotificationViewModelProtocol {
-    
     var editTitle: String? { get set }
     var editDate: Date? { get set }
     var editComment: String? { get set }
@@ -208,7 +207,6 @@ final class DateNotificationVC: UIViewController {
     }
     
 }
-
 
 extension DateNotificationVC: UIGestureRecognizerDelegate {
     

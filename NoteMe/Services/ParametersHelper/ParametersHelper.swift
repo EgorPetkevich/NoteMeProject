@@ -13,6 +13,7 @@ final class ParametersHelper {
         case authenticatied
         case onboarded
         case onboardDidFinish
+        case createLocationScreenshotsDirectory
     }
     
     private static var ud: UserDefaults = .standard

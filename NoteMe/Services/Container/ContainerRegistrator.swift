@@ -21,6 +21,8 @@ final class ContainerRegistrator {
         container.register { NotificationStorage<LocationNotificationDTO>() }
         container.register { NotificationStorage<TimerNotificationDTO>() }
         container.register { AllNotificationStorage() }
+        container.register { FileManagerService.instansce }
+        container.register { LocationNetworkService() }
         
         return container
     }

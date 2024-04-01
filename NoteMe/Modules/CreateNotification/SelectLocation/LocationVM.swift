@@ -13,11 +13,45 @@ protocol LocationCoordinatorProtocol: AnyObject {
     func finish()
 }
 
+protocol SearchLocationAdapterProtocol {
+    var selectSearchResualt: ((NearByResponseModel.Result) -> Void)? { get set }
+    
+    func makeTableView() -> UITableView
+    func reloadDate(_ searchList: [NearByResponseModel.Result])
+    func reloadTableView()
+}
+
+protocol LocationNetworkServiceUseCaseProtocol {
+    func getNearBy(coordinates: CLLocationCoordinate2D,
+                   complition: @escaping([NearByResponseModel.Result]) -> Void)
+    func getPlaceSearch(coordinates: CLLocationCoordinate2D,
+                        query: String,
+                        complition: @escaping([NearByResponseModel.Result])
+                        -> Void)
+}
+
 final class LocationVM: LocationViewModelProtocol {
     
-    private var locationManager: CLLocationManager = .init()
-    
     var delegate: LocationDelegate
+    var hideTableView: (() -> Void)?
+    var showTableView: (() -> Void)?
+    var placesNotFound: (() -> Void)?
+    
+    var searchResualtDidSelect: NearByResponseModel.Result? {
+        didSet {
+            placeDidSelect(searchResualt: searchResualtDidSelect)
+        }
+    }
+    
+    var searchEditing: String? {
+        didSet {
+            searchPlaces(with: searchEditing)
+        }
+    }
+
+    private var locationManager: CLLocationManager = .init()
+    private var adapter: SearchLocationAdapterProtocol
+    private var locationService: LocationNetworkServiceUseCaseProtocol
     
     private var mapRegion: MKCoordinateRegion?
     var regionImageView: UIImageView?
@@ -32,20 +66,36 @@ final class LocationVM: LocationViewModelProtocol {
     
     weak var coordinator: LocationCoordinatorProtocol?
     
-    private var locationProperties =  LocationProperties()
-    
+    private var locationProperties = LocationProperties()
+    private var location: CLLocationCoordinate2D {
+        .init(
+            latitude: locationProperties.latitude ?? 0.0,
+            longitude: locationProperties.longitude ?? 0.0
+        )
+    }
 
-    init(coordinator: LocationCoordinatorProtocol, 
+    init(adapter: SearchLocationAdapter,
+         locationService: LocationNetworkServiceUseCaseProtocol,
+         coordinator: LocationCoordinatorProtocol,
          locationProperties: LocationProperties?,
          delegate: LocationDelegate) {
+        self.adapter = adapter
+        self.locationService = locationService
         self.coordinator = coordinator
         self.locationProperties = locationProperties ?? LocationProperties()
         self.delegate = delegate
         
-        bind()
+        bindAdapter()
+        setLocationOnMap()
     }
     
-    private func bind() {
+    private func bindAdapter() {
+        adapter.selectSearchResualt = { [weak self] searchResualt in
+            self?.searchResualtDidSelect = searchResualt
+        }
+    }
+    
+    private func setLocationOnMap(){
         askPermission()
         guard
             let latitude = locationProperties.latitude,
@@ -63,6 +113,28 @@ final class LocationVM: LocationViewModelProtocol {
         self.mapView.setRegion(region, animated: false)
     }
     
+    func searchBarSearchButtonDidTap(with text: String?) {
+        if let text, text != "" {
+            locationService.getPlaceSearch(coordinates: location,
+                                           query: text) { [weak self] resualt in
+                self?.placeDidSelect(searchResualt: resualt.first, searchText: text)
+            }
+        }
+    }
+    
+    func searchBarCancelButtonDidTap() {
+        hideTableView?()
+    }
+    
+    func makeTableView() -> UITableView {
+        return adapter.makeTableView()
+    }
+    
+    func searchBarDidTap(regionImageView: UIImageView) {
+        showTableView?()
+        setLocationPar(regionImageView)
+    }
+    
     func selectDidTap(regionImageView: UIImageView) {
         setLocationPar(regionImageView)
         makeScreenshot(regionImageView)
@@ -74,6 +146,42 @@ final class LocationVM: LocationViewModelProtocol {
     
     func cancelDidTap() {
         coordinator?.finish()
+    }
+    
+    private func placeDidSelect(searchResualt model: NearByResponseModel.Result?,
+                           searchText: String? = nil) {
+        if let resualt = model, resualt.name == searchText {
+            locationProperties.latitude = resualt.geocodes.main.latitude
+            locationProperties.longitude = resualt.geocodes.main.longitude
+            DispatchQueue.main.async {
+                self.setLocationOnMap()
+                self.hideTableView?()
+            }
+        }else {
+            DispatchQueue.main.async {
+                self.reloadTableView(searchList: [])
+                self.placesNotFound?()
+            }
+        }
+    }
+    
+    private func searchPlaces(with text: String?) {
+        if let text, text != "" {
+            locationService.getPlaceSearch(coordinates: location,
+                                           query: text) { [weak self] resualt in
+                self?.reloadTableView(searchList: resualt)
+            }
+        } else {
+            locationService.getNearBy(coordinates: location) { [weak self] resualt in
+                self?.reloadTableView(searchList: resualt)
+            }
+        }
+    }
+    
+    private func reloadTableView(searchList: [NearByResponseModel.Result]) {
+        DispatchQueue.main.async {
+            self.adapter.reloadDate(searchList)
+        }
     }
     
     private func askPermission() {
@@ -92,8 +200,7 @@ final class LocationVM: LocationViewModelProtocol {
             latitude: mapRegion.center.latitude - mapRegion.span.latitudeDelta / 2,
                                 longitude: mapRegion.center.longitude)
         let radius = centerLoc.distance(from: topLoc)
-        let radiusStr = "\(radius)"
-        print("radius", radius, Double(radius))
+        
         locationProperties.latitude =  mapRegion.center.latitude
         locationProperties.longitude = mapRegion.center.longitude
         locationProperties.radius = Double(radius)
@@ -142,9 +249,3 @@ struct NotificationRequest {
         UNUserNotificationCenter.current().add(request)
     }
 }
-
-//extension LocationVM: CLLocationManagerDelegate {
-//    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-//
-//    }
-//}

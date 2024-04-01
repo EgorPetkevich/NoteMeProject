@@ -9,10 +9,12 @@ import UIKit
 import Storage
 
 protocol HomeAdapterProtocol: AnyObject {
-    func reloadDate(_ dtoList: [any DTODescription])
-    func makeTableView() -> UITableView
     var tapButtonOnDTO: ((_ sender: UIButton,
                           _ dto: any DTODescription) -> Void)? { get set}
+    var filterDidSelect: ((NotificationFilterType) -> Void)? { get set }
+    
+    func reloadDate(_ dtoList: [any DTODescription])
+    func makeTableView() -> UITableView
 }
 
 protocol HomeCoordinatorProtocol: AnyObject {
@@ -21,20 +23,35 @@ protocol HomeCoordinatorProtocol: AnyObject {
     
 }
 
+protocol HomeStorageUseCaseProtocol {
+    func delete(dto: any DTODescription)
+}
+
+protocol HomeFRCServiceUseCaseProtocol {
+    var fetchedDTOs: [any DTODescription] { get }
+    var didChangeContent: (([any DTODescription]) -> Void)? { get set }
+    func startHandle()
+}
+
 final class HomeVM: HomeViewModelProtocol {
     
     private weak var coordinator: HomeCoordinatorProtocol?
+    private var selectedFilter: NotificationFilterType = .all {
+        didSet {
+            adapter.reloadDate(filterResults())
+        }
+    }
     
-    private let frcService: FRCService<BaseNotificationDTO>
+    private var frcService: HomeFRCServiceUseCaseProtocol
     private let adapter: HomeAdapterProtocol
-    private let storage: AllNotificationStorage
+    private let storage: HomeStorageUseCaseProtocol
     var showPopup: ((_ sender: UIButton) -> Void)?
     private var selectedDTO: (any DTODescription)?
     
     init(adapter: HomeAdapterProtocol,
-         storage: AllNotificationStorage,
+         storage: HomeStorageUseCaseProtocol,
          coordinator: HomeCoordinatorProtocol,
-         frcService: FRCService<BaseNotificationDTO> ) {
+         frcService: HomeFRCServiceUseCaseProtocol) {
         self.adapter = adapter
            self.storage = storage
            self.coordinator = coordinator
@@ -44,14 +61,18 @@ final class HomeVM: HomeViewModelProtocol {
        }
     
     private func bind() {
-        frcService.didChangeContent = { [weak adapter] dtoList in
-            adapter?.reloadDate(dtoList)
+        frcService.didChangeContent = { [weak self] dtoList in
+            self?.adapter.reloadDate(self?.filterResults() ?? [])
         }
         
         adapter.tapButtonOnDTO = { [weak self] sender, dto in
             guard let self else { return }
             self.selectedDTO = dto
             self.coordinator?.showMenu(sender: sender, delegate: self)
+        }
+        
+        adapter.filterDidSelect = { [weak self] type in
+            self?.selectedFilter = type
         }
     }
     
@@ -63,6 +84,21 @@ final class HomeVM: HomeViewModelProtocol {
     
     func makeTableView() -> UITableView {
         return adapter.makeTableView()
+    }
+    
+    private func filterResults() -> [any DTODescription] {
+        return  frcService.fetchedDTOs.filter { dto in
+            switch selectedFilter {
+            case .date:
+                return  dto is DateNotificationDTO
+            case .timer:
+                return dto is TimerNotificationDTO
+            case .location:
+                return dto is LocationNotificationDTO
+            default:
+                return true
+            }
+        }
     }
     
 }

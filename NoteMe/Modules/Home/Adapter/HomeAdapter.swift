@@ -10,6 +10,14 @@ import Storage
 import CoreData
     
 final class HomeAdapter: NSObject, HomeAdapterProtocol {
+    
+    private enum Const {
+        static var headerHeight: CGFloat = 32.0 + 10
+    }
+    
+//    private var selectedFilter
+    
+    var filterDidSelect: ((NotificationFilterType) -> Void)?
 
     var tapButtonOnDTO: ((_ sender: UIButton,
                           _ dto: any DTODescription) -> Void)?
@@ -20,7 +28,14 @@ final class HomeAdapter: NSObject, HomeAdapterProtocol {
         }
     }
     
-    private var tableView: UITableView = {
+    private lazy var tableHeaderView: NotificationFilterView = {
+        let frame = CGRect(x: .zero, y: .zero, width: .zero, height: Const.headerHeight)
+        let headerView = NotificationFilterView(frame: frame)
+        headerView.delegate = self
+        return headerView
+    }()
+    
+    private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.allowsSelection = false
         tableView.backgroundColor = .clear
@@ -29,6 +44,7 @@ final class HomeAdapter: NSObject, HomeAdapterProtocol {
         tableView.cornerRadius = 5
         tableView.showsVerticalScrollIndicator = false
         tableView.setShadow()
+        tableView.tableHeaderView = tableHeaderView
         return tableView
     }()
     
@@ -109,6 +125,11 @@ extension HomeAdapter: UITableViewDelegate {
     
 }
 
-
-
+extension HomeAdapter: NotificationFilterViewDelegate {
+   
+    func notificationFilterView(_ filterView: NotificationFilterView, 
+                                didSelect type: NotificationFilterType) {
+        filterDidSelect?(type)
+    }
+}
 

@@ -35,6 +35,22 @@ final class HomeVC: UIViewController {
         viewModel.viewDidLoad()
         setupUI()
         setupConstrains()
+        
+        
+//        let request = PlaceSearchRequest(model: .init(query: "пицца", coordinates: .init(latitude: 53.867882, longitude: 27.609913)))
+//        let session = NetworkSessionProvider()
+//        session.send(request: request) { decode in
+//            print(decode)
+//        }
+//        let service = LocationNetworkService()
+//        service.getNearBy(coordinates: .init(latitude: 53.867882, longitude: 27.609913)) { array in
+//            print(array.map { $0.name })
+//        }
+//        
+//        service.getPlaceSearch(coordinates: .init(latitude: 53.867882, longitude: 27.609913), query: "пицца лисица") { array in
+//            print(array.map { $0.name })
+//        }
+        
     }
     
     private func setupUI() {
@@ -52,10 +68,12 @@ final class HomeVC: UIViewController {
     
     private func setupConstrains() {
         contentView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
+            make.horizontalEdges.verticalEdges.equalTo(view.safeAreaLayoutGuide.snp.edges)
         }
         tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(16.0)
+            make.horizontalEdges.equalToSuperview()
+            make.top.equalToSuperview().offset(10.0)
+            make.bottom.equalToSuperview()
         }
     }
     
