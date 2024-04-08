@@ -12,7 +12,6 @@ final class LocationNotificationAssembler {
     
     private init() {}
     
-    @available(iOS 13.4, *)
     static func make(container: Container,
                      coordinator: LocationNotificationCoordinatorProtocol,
                      dto: LocationNotificationDTO? = nil
@@ -27,10 +26,14 @@ final class LocationNotificationAssembler {
         let fm = LocationFileManagerUseCase(
             fileManagerService: container.resolve())
         
+        let notiService = LocationNotification(
+            service: container.resolve())
+        
         let vm = LocationNotificationVM(keyboardHelper: keyboardHelper,
                                         coordinator: coordinator,
                                         storage: storage,
                                         fileManager: fm,
+                                        notificationService: notiService,
                                         dto: dto)
         
         return LocationNotificationVC(viewModel: vm)

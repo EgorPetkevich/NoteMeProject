@@ -151,31 +151,11 @@ final class TimerCell: UITableViewCell {
                   self?.setTimerLabel()
               } else {
                   self?.timerLabel.text = "00:00:00"
-                  self?.creatRequest(identifire: self?.dto?.id,
-                                     context: self?.createContext(title: self?.dto?.title,
-                                                                  body: self?.dto?.subtitle) ?? UNMutableNotificationContent())
                   timer.invalidate()
                   return
               }
           }
       }
-    
-    private func createContext(title: String?,
-                               body: String?) -> UNMutableNotificationContent {
-        let content = UNMutableNotificationContent()
-        content.title = title ?? ""
-        content.body = body ?? ""
-        return content
-    }
-    
-    private func creatRequest(identifire id: String?,
-                              context: UNMutableNotificationContent) {
-        
-        let request = UNNotificationRequest(identifier: id!,
-                                            content: context,
-                                            trigger: nil)
-        UNUserNotificationCenter.current().add(request)
-    }
     
     
 }

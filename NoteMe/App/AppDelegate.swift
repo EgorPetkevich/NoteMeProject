@@ -12,7 +12,8 @@ class AppDelegate: UIResponder,
                    UIApplicationDelegate,
                    UNUserNotificationCenterDelegate {
 
-
+    private let notificationHandler = NotificationHandler()
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -27,12 +28,14 @@ class AppDelegate: UIResponder,
             UNUserNotificationCenter.current().delegate = self
         }
         FirebaseApp.configure()
+        notificationHandler.chekIsCompleted()
         return true
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, 
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        notificationHandler.setIsComplited(notification: notification)
         completionHandler([.banner, .sound])
     }
 

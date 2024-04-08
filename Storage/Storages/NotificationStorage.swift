@@ -35,8 +35,8 @@ public class NotificationStorage<DTO: DTODescription> {
         .compactMap { $0.toDTO() }
     }
     
-    func update(dto: DTO,
-                complition: ComplitionHandler? = nil) {
+    public func update(dto: any DTODescription,
+                       complition: ComplitionHandler? = nil) {
         let context = CoreDataService.shared.backgroundContext
     
             context.perform { [weak self] in
@@ -53,7 +53,7 @@ public class NotificationStorage<DTO: DTODescription> {
             }
         }
     
-    public func create(dto: DTO,
+    public func create(dto: any DTODescription,
                        complition: ComplitionHandler? = nil) {
         let context = CoreDataService.shared.backgroundContext
         
@@ -65,7 +65,7 @@ public class NotificationStorage<DTO: DTODescription> {
         }
     }
     
-    public func updateOrCreate(dto: DTO,
+    public func updateOrCreate(dto: any DTODescription,
                                complition: ComplitionHandler? = nil) {
         let context = CoreDataService.shared.mainContext
         if fetchMO(predicate: .Notification.noutification(byId: dto.id),
@@ -73,6 +73,22 @@ public class NotificationStorage<DTO: DTODescription> {
             create(dto: dto, complition: complition)
         } else {
             update(dto: dto, complition: complition)
+        }
+    }
+    
+    public func udateDTOs(dtos: [any DTODescription], 
+                          complition: ComplitionHandler? = nil) {
+        let context = CoreDataService.shared.backgroundContext
+        let ids = dtos.map { $0.id }
+        
+        context.perform { [weak self] in
+            guard let mos = self?.fetchMO(predicate: .Notification.notifications(in: ids), context: context) else { return }
+            mos.forEach { model in
+                guard let dto = dtos.first(where: { $0.id == model.identifier }) else { return }
+                model.apply(dto: dto)
+            }
+            CoreDataService.shared.saveContext(context: context,
+                                               complition: complition)
         }
     }
     

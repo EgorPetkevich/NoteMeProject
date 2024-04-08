@@ -25,6 +25,10 @@ protocol DateNotificationStorageUseCaseProtocol {
                         complition: @escaping (Bool) -> Void)
 }
 
+protocol DateNotificationServiceUseCaseProtocol {
+    func updateOrCreate(dto: DateNotificationDTO)
+}
+
 final class DateNotificationVM: DateNotificationViewModelProtocol {
     
     typealias DateSet = (title: String, date: Date, comment: String)
@@ -42,16 +46,19 @@ final class DateNotificationVM: DateNotificationViewModelProtocol {
     
     private let keyboardHelper: KeyboardHelperDateNotificationUseCaseProtocol
     private let storage: DateNotificationStorageUseCaseProtocol
+    private let notificationService: DateNotificationServiceUseCaseProtocol
     
     private weak var coordinator: DateNotificationCoordinatorProtocol?
     
     init(keyboardHelper: KeyboardHelperDateNotificationUseCaseProtocol,
          coordinator: DateNotificationCoordinatorProtocol,
          storage: DateNotificationStorageUseCaseProtocol,
+         notificationService: DateNotificationServiceUseCaseProtocol,
          dto: DateNotificationDTO? = nil) {
         self.keyboardHelper = keyboardHelper
         self.coordinator = coordinator
         self.storage = storage
+        self.notificationService = notificationService
         self.dto = dto
         
         bindkeyboardHelper()
@@ -90,11 +97,13 @@ final class DateNotificationVM: DateNotificationViewModelProtocol {
         dto?.title = dateSet.title
         dto?.subtitle = dateSet.comment
         dto?.targetDate = dateSet.date
+        
+        notificationService.updateOrCreate(dto: dto ?? newDTO)
+        
         storage.updateOrCreate(dto: dto ?? newDTO) { complition in
             print(#function, "comlition Date Notificatoin: \(complition)")
         }
         self.coordinator?.finish()
-        
     }
     
     func cancelDidTap() {

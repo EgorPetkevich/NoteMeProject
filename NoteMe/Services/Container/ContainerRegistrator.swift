@@ -23,6 +23,7 @@ final class ContainerRegistrator {
         container.register { AllNotificationStorage() }
         container.register { FileManagerService.instansce }
         container.register { LocationNetworkService() }
+        container.register { NotificationService() }
         
         return container
     }

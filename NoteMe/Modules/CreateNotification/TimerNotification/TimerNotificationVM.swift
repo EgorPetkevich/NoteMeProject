@@ -26,6 +26,11 @@ protocol TimerNotificationStorageUseCaseProtocol {
                          complition: @escaping (Bool) -> Void)
 }
 
+protocol TimerNotificationServiceUseCaseProtocol {
+    func updateOrCreate(dto: TimerNotificationDTO)
+}
+
+
 final class TimerNotificationVM: TimerNotificationViewModelProtocol {
     
     typealias TimerSet = (title: String, targetDate: Date, comment: String)
@@ -43,16 +48,19 @@ final class TimerNotificationVM: TimerNotificationViewModelProtocol {
     
     private let keyboardHelper: KeyboardHelperTimerNotificationUseCaseProtocol
     private let storage: TimerNotificationStorageUseCaseProtocol
+    private let notificationService: TimerNotificationServiceUseCaseProtocol
     
     private weak var coordinator: TimerNotificationCoordinatorProtocol?
     
     init(keyboardHelper: KeyboardHelperTimerNotificationUseCaseProtocol,
          coordinator: TimerNotificationCoordinatorProtocol,
          storage: TimerNotificationStorageUseCaseProtocol,
+         notificationService: TimerNotificationServiceUseCaseProtocol,
          dto: TimerNotificationDTO? = nil) {
         self.keyboardHelper = keyboardHelper
         self.coordinator = coordinator
         self.storage = storage
+        self.notificationService = notificationService
         self.dto = dto
         
         bindkeyboardHelper()
@@ -91,6 +99,9 @@ final class TimerNotificationVM: TimerNotificationViewModelProtocol {
         dto?.title = timerSet.title
         dto?.subtitle = timerSet.comment
         dto?.targetDate =  timerSet.targetDate
+        
+        notificationService.updateOrCreate(dto: dto ?? newDTO)
+        
         storage.updateOrCreate(dto: dto ?? newDTO) { complition in
             print(#function, "comlition Timer Notificatoin: \(complition)")
         }

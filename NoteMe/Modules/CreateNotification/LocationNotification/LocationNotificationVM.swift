@@ -38,6 +38,14 @@ protocol LocationNotificationFileManagerServiceUseCaseProtocol {
     func takeImage(with path: String) -> UIImage?
 }
 
+protocol LocationNotificationServiceUseCaseProtocol {
+    func updateOrCreate(dto: LocationNotificationDTO,
+                        circleRegion: CLCircularRegion?,
+                        notifyOnEntry: Bool,
+                        notifyOnExit: Bool,
+                        repeats: Bool)
+}
+
 final class LocationNotificationVM: LocationNotificationViewModelProtocol,
                                     LocationDelegate {
 //    var imageCache = NSCache<NSString, UIImage>()
@@ -61,6 +69,7 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
     private let storage: LocationNotificationStorageUseCaseProtocol
     private var dto: LocationNotificationDTO?
     private var fileManager: LocationNotificationFileManagerServiceUseCaseProtocol
+    private var notificationService: LocationNotificationServiceUseCaseProtocol
     
     private weak var coordinator: LocationNotificationCoordinatorProtocol?
     
@@ -68,11 +77,13 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
          coordinator: LocationNotificationCoordinatorProtocol,
          storage: LocationNotificationStorageUseCaseProtocol,
          fileManager: LocationNotificationFileManagerServiceUseCaseProtocol,
+         notificationService: LocationNotificationServiceUseCaseProtocol,
          dto: LocationNotificationDTO? = nil) {
         self.keyboardHelper = keyboardHelper
         self.coordinator = coordinator
         self.storage = storage
         self.fileManager = fileManager
+        self.notificationService = notificationService
         self.dto = dto
         
         bindkeyboardHelper()
@@ -102,22 +113,27 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
     
     func createDidTap(title: String?, comment: String?) {
         
-        guard 
+        guard
             let locSet = checkValid(title: title, comment: comment),
             let latitude = locationProperties.latitude,
             let longitude = locationProperties.longitude,
             let radius = locationProperties.radius
         else { return }
         
-        let id = UUID().uuidString
+        let newID = UUID().uuidString
+        
+        if let dto {
+            
+        }
+        
 
         let newDTO = LocationNotificationDTO(date: Date(),
-                                             id: id,
+                                             id: newID,
                                              title: locSet.title,
                                              subtitle: locSet.comment,
                                              latitude: latitude,
                                              longitude: longitude,
-                                             imagePathStr: id,
+                                             imagePathStr: newID,
                                              radius: radius)
 
         dto?.title = locSet.title
@@ -125,12 +141,15 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
         dto?.latitude = latitude
         dto?.longitude = longitude
         dto?.radius = radius
-        dto?.imagePathStr = id
+
+        notificationService.updateOrCreate(
+            dto: dto ?? newDTO,
+            circleRegion: creatCircularRegion(with: dto?.id ?? newID),
+            notifyOnEntry: true,
+            notifyOnExit: false,
+            repeats: false)
         
-        creatRequest(identifire: id,
-                     context: createContext(title: locSet.title,
-                                            body: locSet.comment))
-        saveImage(image: editImage ?? UIImage(), for: id)
+        saveImage(image: editImage ?? UIImage(), for: dto?.id ?? newID)
         
         storage.updateOrCreate(dto: dto ?? newDTO) { complition in
             print(complition)
@@ -191,36 +210,20 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
         locImage?(properties.screenLoc)
     }
     
-    private func createContext(title: String,
-                               body: String?) -> UNMutableNotificationContent {
-        let content = UNMutableNotificationContent()
-        content.title = title
-        content.body = body ?? ""
-        return content
-    }
-    
-    private func creatRequest(identifire id: String, context: UNMutableNotificationContent) {
+    private func creatCircularRegion(with id: String) -> CLCircularRegion? {
         guard
             let latitude = locationProperties.latitude,
             let longitude = locationProperties.longitude,
             let radius = locationProperties.radius
-        else { return }
+        else { return nil }
         
         let distanceRadius = CLLocationDistance(radius)
         let mapRegion =  CLLocationCoordinate2D(latitude: latitude,
                                                 longitude: longitude)
-        let id = UUID().uuidString
         let circleRegion = CLCircularRegion(center: mapRegion,
                                             radius: distanceRadius,
                                             identifier: id)
-        circleRegion.notifyOnEntry = true
-        circleRegion.notifyOnExit = false
-        
-        let triger = UNLocationNotificationTrigger(region: circleRegion,
-                                                   repeats: false)
-        let request = UNNotificationRequest(identifier: id, content: context, trigger: triger)
-        
-        UNUserNotificationCenter.current().add(request)
+        return circleRegion
     }
     
 }

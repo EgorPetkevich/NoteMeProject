@@ -12,7 +12,6 @@ final class DateNotificationAssembler {
     
     private init() {}
     
-    @available(iOS 13.4, *)
     static func make(container: Container,
                      coordinator: DateNotificationCoordinatorProtocol,
                      dto: DateNotificationDTO? = nil
@@ -24,9 +23,13 @@ final class DateNotificationAssembler {
         let storage =  DateNotificationStorageUseCase(
             service: container.resolve())
         
+        let notificationService = DateNotification(
+            service: container.resolve())
+        
         let vm = DateNotificationVM(keyboardHelper: keyboardHelper, 
                                     coordinator: coordinator,
                                     storage: storage,
+                                    notificationService: notificationService,
                                     dto: dto)
         
         return DateNotificationVC(viewModel: vm)
