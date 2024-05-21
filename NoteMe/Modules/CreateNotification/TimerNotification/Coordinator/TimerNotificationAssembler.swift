@@ -20,16 +20,11 @@ final class TimerNotificationAssembler {
         let keyboardHelper = TimerNotificationKeyboardHelperUseCase(
             keyboardHelper: container.resolve())
         
-        let storage = TimerNotificationStorageUseCase(
-            service: container.resolve())
-        
-        let notificationService = TimerNotification(
-            service: container.resolve())
+        let dataWorker = TimerDataWorker(dataWorker: container.resolve())
         
         let vm = TimerNotificationVM(keyboardHelper: keyboardHelper,
                                      coordinator: coordinator,
-                                     storage: storage,
-                                     notificationService: notificationService,
+                                     dataWorker: dataWorker,
                                      dto: dto)
         
         return TimerNotificationVC(viewModel: vm)

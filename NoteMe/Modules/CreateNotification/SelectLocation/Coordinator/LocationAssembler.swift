@@ -22,7 +22,7 @@ final class LocationAssembler {
         let vm = LocationVM(adapter: adapter,
                             locationService: locationService,
                             coordinator: coordinator,
-                            locationProperties: locationProperties,
+                            locationProperties: locationProperties, locationManager: .init(),
                             delegate: delegate)
         
         return LocationVC(viewModel: vm)

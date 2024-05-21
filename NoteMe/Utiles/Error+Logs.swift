@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+extension Error {
+    
+    func log(root: String? = nil) {
+        let finalRoot = root ?? "\(Self.self)"
+        //log error
+        print("[\(finalRoot)]", localizedDescription)
+    }
+    
+}

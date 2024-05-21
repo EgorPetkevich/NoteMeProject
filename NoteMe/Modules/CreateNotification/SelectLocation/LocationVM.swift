@@ -36,6 +36,7 @@ final class LocationVM: LocationViewModelProtocol {
     var hideTableView: (() -> Void)?
     var showTableView: (() -> Void)?
     var placesNotFound: (() -> Void)?
+    var timer: Timer?
     
     var searchResualtDidSelect: NearByResponseModel.Result? {
         didSet {
@@ -45,11 +46,15 @@ final class LocationVM: LocationViewModelProtocol {
     
     var searchEditing: String? {
         didSet {
-            searchPlaces(with: searchEditing)
+            timer?.invalidate()
+            timer = Timer.scheduledTimer(withTimeInterval: 2.0,
+                                         repeats: false) { [weak self] _ in
+                self?.searchPlaces(with: self?.searchEditing)
+            }
         }
     }
 
-    private var locationManager: CLLocationManager = .init()
+    private var locationManager: CLLocationManager
     private var adapter: SearchLocationAdapterProtocol
     private var locationService: LocationNetworkServiceUseCaseProtocol
     
@@ -78,11 +83,13 @@ final class LocationVM: LocationViewModelProtocol {
          locationService: LocationNetworkServiceUseCaseProtocol,
          coordinator: LocationCoordinatorProtocol,
          locationProperties: LocationProperties?,
+         locationManager: CLLocationManager,
          delegate: LocationDelegate) {
         self.adapter = adapter
         self.locationService = locationService
         self.coordinator = coordinator
         self.locationProperties = locationProperties ?? LocationProperties()
+        self.locationManager = locationManager
         self.delegate = delegate
         
         bindAdapter()
@@ -246,18 +253,18 @@ public struct LocationProperties {
     
 }
 
-
-struct NotificationRequest {
-    
-    let content = UNMutableNotificationContent()
-    let triger: UNLocationNotificationTrigger
-    let id = UUID().uuidString
-    
-    func request() {
-        let request = UNNotificationRequest(identifier: id,
-                              content: content,
-                              trigger: triger)
-        
-        UNUserNotificationCenter.current().add(request)
-    }
-}
+//
+//struct NotificationRequest {
+//    
+//    let content = UNMutableNotificationContent()
+//    let triger: UNLocationNotificationTrigger
+//    let id = UUID().uuidString
+//    
+//    func request() {
+//        let request = UNNotificationRequest(identifier: id,
+//                              content: content,
+//                              trigger: triger)
+//        
+//        UNUserNotificationCenter.current().add(request)
+//    }
+//}

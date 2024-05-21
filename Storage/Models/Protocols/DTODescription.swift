@@ -24,7 +24,8 @@ public protocol DTODescription {
     var subtitle: String? { get set }
     var completedDate: Date? { get set }
     
-    static func fromMO(_ mo: MO) -> Self?
+    func createMO(context: NSManagedObjectContext) -> MO?
     
+    static func fromMO(_ mo: MO) -> Self?
 }
 

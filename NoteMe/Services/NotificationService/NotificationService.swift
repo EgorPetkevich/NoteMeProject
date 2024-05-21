@@ -73,7 +73,6 @@ final class NotificationService {
                 let dto = dto as? LocationNotificationDTO,
                 let notifyOnExit,
                 let notifyOnEntry,
-                let repeats,
                 let circleRegion
             else { return }
             makeLocationNotification(
@@ -96,6 +95,24 @@ final class NotificationService {
         content.title = dto.title
         content.body = dto.subtitle ?? ""
         return content
+    }
+    
+}
+
+
+extension NotificationService:
+    
+    NotificationServiceDataWorkerUseCase {
+    func makeNotifications(from dtos: [any DTODescription]) {
+        dtos.forEach { dto in
+            self.updateOrCreateNotification(dto: dto)
+        }
+    }
+    
+    func removeNotifications(ids: [String]) {
+        ids.forEach { id in
+            self.removeNotification(id: id)
+        }
     }
     
 }

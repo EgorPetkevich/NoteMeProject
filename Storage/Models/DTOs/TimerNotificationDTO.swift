@@ -56,4 +56,10 @@ public struct TimerNotificationDTO: DTODescription {
         )
     }
     
+    public func createMO(context: NSManagedObjectContext) -> TimerNotificationMO? {
+        let mo = TimerNotificationMO(context: context)
+        mo.apply(dto: self)
+        return mo
+    }
+    
 }

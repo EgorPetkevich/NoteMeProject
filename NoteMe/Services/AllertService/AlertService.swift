@@ -9,7 +9,7 @@ import UIKit
 
 final class AlertService {
     
-    typealias AlertActionhandler = () -> Void
+    typealias AlertActionHandler = () -> Void
     
     private let windowManager: WindowManager
     
@@ -20,16 +20,16 @@ final class AlertService {
     func showAlert(title: String?,
                    message: String?,
                    cancelTitle: String? = nil,
-                   cancelHeldler: AlertActionhandler? = nil,
+                   cancelHeldler: AlertActionHandler? = nil,
                    okTitle: String? = nil,
-                   okHeldler: AlertActionhandler? = nil) {
+                   okHandler: AlertActionHandler? = nil) {
         //Build
         let alertVC = buildAlert(title: title,
                                 message: message,
                                  cancelTitle: cancelTitle, 
                                  cancelHeldler: cancelHeldler,
                                  okTitle: okTitle,
-                                 okHeldler: okHeldler)
+                                 okHandler: okHandler)
         
         let window = windowManager.get(type: .alert)
         window.rootViewController = UIViewController()
@@ -40,9 +40,9 @@ final class AlertService {
     private func buildAlert(title: String?,
                             message: String?,
                             cancelTitle: String? = nil,
-                            cancelHeldler: AlertActionhandler? = nil,
+                            cancelHeldler: AlertActionHandler? = nil,
                             okTitle: String? = nil,
-                            okHeldler: AlertActionhandler? = nil) -> UIAlertController {
+                            okHandler: AlertActionHandler? = nil) -> UIAlertController {
         let alertVC = UIAlertController(title: title,
                                         message: message,
                                         preferredStyle: .alert)
@@ -57,7 +57,7 @@ final class AlertService {
         
         if let okTitle {
             let action = UIAlertAction(title: okTitle, style: .default) { [weak self] _ in
-                okHeldler?()
+                okHandler?()
                 self?.windowManager.hideAndRemove(type: .alert)
             }
             alertVC.addAction(action)

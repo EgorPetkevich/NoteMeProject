@@ -23,20 +23,16 @@ final class AppCoordinator: Coordinator {
             FileManagerService.creatDierectory(name: .userLocationScreenshots)
             ParametersHelper.set(.createLocationScreenshotsDirectory, value: true)
         }
-        //FIXME: - TEST CODE
 //        open module
-//        ParametersHelper.set(.onboardDidFinish, value: false)
-//        ParametersHelper.set(.authenticatied, value: false)
-//        if !ParametersHelper.get(.authenticatied) {
-//            openAuthModule()
-//        }else if !ParametersHelper.get(.onboardDidFinish) {
-//            openOnboardingModule()
-//        }else {
-//            //open mainApp
-//            openMainApp()
-//        }
-//        openAuthModule()
-        openMainApp()
+        if !ParametersHelper.get(.authenticatied) {
+            openAuthModule()
+        }else if !ParametersHelper.get(.onboardDidFinish) {
+            openOnboardingModule()
+        }else {
+            //open mainApp
+            openMainApp()
+        }
+        openAuthModule()
        
         
     }

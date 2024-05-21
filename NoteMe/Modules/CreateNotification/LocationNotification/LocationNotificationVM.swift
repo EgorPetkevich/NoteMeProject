@@ -22,21 +22,14 @@ protocol KeyboardHelperLocationNotificationUseCaseProtocol {
     func onWillHide(_ handler: @escaping (CGRect) -> Void) -> KeyboardHelper
 }
 
-protocol LocationNotificationStorageUseCaseProtocol {
-    func create(dto: LocationNotificationDTO, 
-                complition: @escaping (Bool) -> Void)
-    func updateOrCreate(dto: Storage.LocationNotificationDTO,
-                        complition: @escaping (Bool) -> Void)
-}
-
 protocol LocationDelegate {
     func updateLocationProperties(_ properties: LocationProperties)
 }
 
-protocol LocationNotificationFileManagerServiceUseCaseProtocol {
-    func save(image: UIImage, with path: String)
-    func takeImage(with path: String) -> UIImage?
-}
+//protocol LocationNotificationFileManagerServiceUseCaseProtocol {
+//    func save(image: UIImage, with path: String)
+//    func takeImage(with path: String) -> UIImage?
+//}
 
 protocol LocationNotificationServiceUseCaseProtocol {
     func updateOrCreate(dto: LocationNotificationDTO,
@@ -46,9 +39,17 @@ protocol LocationNotificationServiceUseCaseProtocol {
                         repeats: Bool)
 }
 
+protocol LocationNotificationDataWorkerUseCaseProtocol {
+    func updateOrCreate(dto: LocationNotificationDTO)
+}
+
+protocol LocationNotificationFileDataWorkerUseCaseProtocol {
+    func save(image: UIImage, id: String) 
+    func getImage(id: String, complition: @escaping (UIImage?) -> Void)
+}
+
 final class LocationNotificationVM: LocationNotificationViewModelProtocol,
                                     LocationDelegate {
-//    var imageCache = NSCache<NSString, UIImage>()
     
     typealias LocSet = (title: String, comment: String)
 
@@ -66,23 +67,23 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
     private var locationProperties = LocationProperties()
     
     private let keyboardHelper: KeyboardHelperLocationNotificationUseCaseProtocol
-    private let storage: LocationNotificationStorageUseCaseProtocol
+    private var dataWorker: LocationNotificationDataWorkerUseCaseProtocol
     private var dto: LocationNotificationDTO?
-    private var fileManager: LocationNotificationFileManagerServiceUseCaseProtocol
+    private var fileDataWorker: LocationNotificationFileDataWorkerUseCaseProtocol
     private var notificationService: LocationNotificationServiceUseCaseProtocol
     
     private weak var coordinator: LocationNotificationCoordinatorProtocol?
     
     init(keyboardHelper: KeyboardHelperLocationNotificationUseCaseProtocol,
          coordinator: LocationNotificationCoordinatorProtocol,
-         storage: LocationNotificationStorageUseCaseProtocol,
-         fileManager: LocationNotificationFileManagerServiceUseCaseProtocol,
+         dataWorker: LocationNotificationDataWorkerUseCaseProtocol,
+         fileDataWorker: LocationNotificationFileDataWorkerUseCaseProtocol,
          notificationService: LocationNotificationServiceUseCaseProtocol,
          dto: LocationNotificationDTO? = nil) {
         self.keyboardHelper = keyboardHelper
         self.coordinator = coordinator
-        self.storage = storage
-        self.fileManager = fileManager
+        self.dataWorker = dataWorker
+        self.fileDataWorker = fileDataWorker
         self.notificationService = notificationService
         self.dto = dto
         
@@ -102,12 +103,11 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
         guard let dto else { return }
         editTitle = dto.title
         editComment = dto.subtitle
-        editImage = takeImage(for: dto.imagePathStr)
+        takeImage(for: dto.imagePathStr)
         
         locationProperties.latitude = dto.latitude
         locationProperties.longitude = dto.longitude
         locationProperties.radius = dto.radius
-        locationProperties.screenLoc = takeImage(for: dto.imagePathStr)
         
     }
     
@@ -121,10 +121,6 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
         else { return }
         
         let newID = UUID().uuidString
-        
-        if let dto {
-            
-        }
         
 
         let newDTO = LocationNotificationDTO(date: Date(),
@@ -151,9 +147,8 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
         
         saveImage(image: editImage ?? UIImage(), for: dto?.id ?? newID)
         
-        storage.updateOrCreate(dto: dto ?? newDTO) { complition in
-            print(complition)
-        }
+        dataWorker.updateOrCreate(dto: dto ?? newDTO)
+        
         self.coordinator?.finish()
         
     }
@@ -168,11 +163,14 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
     }
     
     private func saveImage(image: UIImage, for key: String) {
-        fileManager.save(image: image, with: key)
+        fileDataWorker.save(image: image, id: key)
     }
     
-    private func takeImage(for key: String) -> UIImage {
-        return fileManager.takeImage(with: key) ?? UIImage()
+    private func takeImage(for key: String) {
+        fileDataWorker.getImage(id: key) { [weak self] image in
+            self?.editImage =  image ?? .Home.map
+            self?.locationProperties.screenLoc = image ??  .Home.map
+        }
     }
     
     private func checkValid(title: String?,

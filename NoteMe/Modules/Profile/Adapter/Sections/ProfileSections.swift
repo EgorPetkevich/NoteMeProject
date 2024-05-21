@@ -9,6 +9,7 @@ import UIKit
 
 enum ProfileSections {
     case account(String)
+    case map
     case settings([ProfileSettingsRows])
     
     var numberOfRows: Int {
@@ -21,6 +22,7 @@ enum ProfileSections {
     var headerText: String {
         switch self {
         case .account: return "Account"
+        case .map: return "Notification"
         case .settings(_): return "Settings"
         }
     }
@@ -41,7 +43,7 @@ enum ProfileSettingsRows: CaseIterable {
     
     var title: String {
         switch self {
-        case .notifications: return "notificatins"
+        case .notifications: return "notifications"
         case .export: return "export"
         case .logout: return "logout"
         }

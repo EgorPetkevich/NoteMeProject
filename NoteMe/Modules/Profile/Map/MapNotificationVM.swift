@@ -11,6 +11,7 @@ import MapKit
 import Storage
 
 protocol MapNotificationCoordinatorProtocol: AnyObject {
+    func pinDidTap(title: String?, subtitle: String?)
     func finish()
 }
 
@@ -18,7 +19,7 @@ protocol MapNotificationStorageUseCaseProtocol {
     func fetch() -> [LocationNotificationDTO]
 }
 
-final class MapNotificationVM: NSObject, MapViewModelProtocol {
+final class MapNotificationVM: NSObject, MapNotificationViewModelProtocol {
     
     private var locationManager: CLLocationManager
     private var mapRegion: MKCoordinateRegion?
@@ -38,9 +39,11 @@ final class MapNotificationVM: NSObject, MapViewModelProtocol {
     private weak var coordinator: MapNotificationCoordinatorProtocol?
     
     init(coordinator: MapNotificationCoordinatorProtocol? = nil,
-         locationManager: CLLocationManager) {
+         locationManager: CLLocationManager,
+         storage: MapNotificationStorageUseCaseProtocol) {
         self.coordinator = coordinator
         self.locationManager = locationManager
+        self.storage = storage
         super.init()
         mapView.delegate = self
         askPermission()
@@ -48,12 +51,14 @@ final class MapNotificationVM: NSObject, MapViewModelProtocol {
     }
     
     private func setupAnnotations() {
-        let galleryPin = LocationPin(coordinate: .init(latitude: 53.908538,
-                                                       longitude:  27.548427),
-                                     title: "Gallery Minsk",
-                                     subtitle: "Mall")
+        storage.fetch().forEach { dto in
+            let pin = LocationPin(coordinate: .init(latitude: dto.latitude,
+                                                    longitude: dto.longitude),
+                                  title: dto.title,
+                                  subtitle: dto.subtitle)
+            mapView.addAnnotation(pin)
+        }
         
-        mapView.addAnnotation(galleryPin)
     }
     
     private func askPermission() {
@@ -66,15 +71,16 @@ final class MapNotificationVM: NSObject, MapViewModelProtocol {
     
 }
     
-extension MapNotificationsVM: CLLocationManagerDelegate {
+extension MapNotificationVM: CLLocationManagerDelegate {
     
     
 }
 
-extension MapNotificationsVM: MKMapViewDelegate {
+extension MapNotificationVM: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView,
                  viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let pinView = mapView.dequeueReusableAnnotationView(withIdentifier: "\(LocationPinView.self)", for: annotation)
+        let pinView = mapView.dequeueReusableAnnotationView(
+            withIdentifier: "\(LocationPinView.self)", for: annotation)
         return pinView
     }
     
@@ -83,6 +89,12 @@ extension MapNotificationsVM: MKMapViewDelegate {
         UIView.animate(withDuration: 0.1) {
             view.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         }
+        
+        guard let title = view.annotation?.title,
+              let subtitle = view.annotation?.subtitle
+        else { return }
+        
+        coordinator?.pinDidTap(title: title, subtitle: subtitle)
     }
     
     func mapView(_ mapView: MKMapView, 

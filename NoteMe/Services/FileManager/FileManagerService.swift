@@ -68,3 +68,15 @@ final class FileManagerService {
     }
     
 }
+
+
+extension FileManagerService: FileDataWorkerFileManagerServiceUseCaseProtocol {
+    func save(image: UIImage, with path: String) {
+        self.save(directory: .userLocationScreenshots, image: image, with: path)
+    }
+    
+    func read(with path: String) -> UIImage? {
+        self.read(directory: .userLocationScreenshots, with: path)
+    }
+    
+}

@@ -27,7 +27,6 @@ final class LocationVC: UIViewController {
     
     private lazy var contentView: UIView = .content()
     private lazy var searchTableView: UITableView = viewModel.makeTableView()
-    private lazy var locatinionManager: CLLocationManager = .init()
     private lazy var mapView: MKMapView = viewModel.mapView
     private lazy var placesNotFoundView: UIView = .placesNotFoundView()
     private lazy var searchBar: UISearchBar = .createSearchBar()
@@ -62,7 +61,7 @@ final class LocationVC: UIViewController {
     override func viewDidLoad() {
         searchTableView.isHidden = true
         
-        setup()
+        setupUI()
         setupConstrains()
     }
     
@@ -83,7 +82,7 @@ final class LocationVC: UIViewController {
         }
     }
     
-    private func setup() {
+    private func setupUI() {
         view.backgroundColor = .appContentWhite
         view.backgroundColor = .appBackground
         view.addSubview(contentView)

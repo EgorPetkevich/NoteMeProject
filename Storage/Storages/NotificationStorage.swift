@@ -76,6 +76,18 @@ public class NotificationStorage<DTO: DTODescription> {
         }
     }
     
+    public func createDTOs(dtos:  [any DTODescription],
+                           complition: ComplitionHandler? = nil) {
+        let context = CoreDataService.shared.backgroundContext
+        context.perform {
+            let mos = dtos.map {
+                $0.createMO(context: context)
+            }
+            CoreDataService.shared.saveContext(context: context,
+                                               complition: complition)
+        }
+    }
+    
     public func udateDTOs(dtos: [any DTODescription], 
                           complition: ComplitionHandler? = nil) {
         let context = CoreDataService.shared.backgroundContext
@@ -105,6 +117,20 @@ public class NotificationStorage<DTO: DTODescription> {
                                                  complition: complition)
           }
       }
+    
+    public func deleteAll(dtos: [any DTODescription],
+                          complition: ComplitionHandler? = nil) {
+        let context = CoreDataService.shared.backgroundContext
+        context.perform { [weak self] in
+            let ids = dtos.map { $0.id }
+            let mos = self?.fetchMO(predicate: .Notification
+                                               .notifications(in: ids),
+                                    context: context)
+            mos?.forEach(context.delete)
+            CoreDataService.shared.saveContext(context: context,
+                                               complition: complition)
+        }
+    }
     
 }
 

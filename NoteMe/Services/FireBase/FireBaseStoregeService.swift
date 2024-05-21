@@ -20,7 +20,7 @@ enum FireBaseStorageError: String, LocalizedError {
     }
 }
 
-final class FireBaseStorageService {
+final class FireBaseStoregeService {
     
     private enum Paths {
         static let location = "locationNotification"
@@ -104,10 +104,5 @@ final class FireBaseStorageService {
             }
         }
     }
-    
-}
-
-extension FireBaseStorageService: 
-    FileDataWorkerFireBaseStorageServiceUseCaseProtocol {
     
 }

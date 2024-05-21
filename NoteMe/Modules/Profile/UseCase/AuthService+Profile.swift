@@ -15,8 +15,8 @@ struct ProfileAuthServiceUseCase: ProfileAuthServiceUseCaseProtocol {
         self.authService = authService
     }
     
-    func logout(completion: @escaping (Bool) -> Void) {
-        authService.signOut(complition: completion)
+    func logout(completion: @escaping (Result<Void, Error>) -> Void) {
+        authService.signOut(completion: completion)
     }
     
     func getUserEmail() -> String? {

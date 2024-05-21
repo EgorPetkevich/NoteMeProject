@@ -15,10 +15,11 @@ final class ProfileAssembler {
                      coordinator: ProfileCoordinatorProtocol) -> UIViewController {
         
         let authService = ProfileAuthServiceUseCase(authService: container.resolve())
-        
+        let alertService = ProfileAlertService(service: container.resolve())
         let vm = ProfileVM(coordinator: coordinator,
                            authService: authService,
-                           adapter: ProfileAdapter())
+                           adapter: ProfileAdapter(),
+                           alertService: alertService)
         return ProfileVC(viewModel: vm)
     }
     

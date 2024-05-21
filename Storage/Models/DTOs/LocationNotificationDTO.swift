@@ -64,4 +64,10 @@ public struct LocationNotificationDTO: DTODescription {
         )
     }
     
+    public func createMO(context: NSManagedObjectContext) -> LocationNotificationMO? {
+        let mo = LocationNotificationMO(context: context)
+        mo.apply(dto: self)
+        return mo
+    }
+    
 }

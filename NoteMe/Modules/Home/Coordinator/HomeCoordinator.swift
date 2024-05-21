@@ -62,7 +62,8 @@ extension HomeCoordinator: HomeCoordinatorProtocol {
     }
     
     func openEditLocationNotification(dto: LocationNotificationDTO) {
-        let coordinator = LocationNotificationCoordinator(container: container, dto)
+        let coordinator = LocationNotificationCoordinator(container: container, 
+                                                          dto)
         children.append(coordinator)
         
         let vc = coordinator.start()

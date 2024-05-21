@@ -9,6 +9,8 @@ import UIKit
 
 final class ProfileAdapter: NSObject {
     
+    var selectMap: (() -> Void)?
+    
     var sections: [ProfileSections] = [] {
         didSet {
             tableView.reloadData()
@@ -33,17 +35,18 @@ final class ProfileAdapter: NSObject {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(ProfileSettingsCell.self,
-                           forCellReuseIdentifier: "\(ProfileSettingsCell.self)")
-        tableView.register(ProfileAccountCell.self,
-                           forCellReuseIdentifier: "\(ProfileAccountCell.self)")
+        tableView.register(ProfileSettingsCell.self)
+        tableView.register(ProfileMapCell.self)
+        tableView.register(ProfileAccountCell.self)
     }
     
 }
 
 extension ProfileAdapter: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        sections.count
+        print("\(sections.count)")
+        return sections.count
+       
     }
     
     func tableView(_ tableView: UITableView,
@@ -57,17 +60,16 @@ extension ProfileAdapter: UITableViewDataSource {
         
         switch section {
         case .account(let email):
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: "\(ProfileAccountCell.self)",
-                for: indexPath) as? ProfileAccountCell
-            cell?.setup(email)
-            return cell ?? UITableViewCell()
+            let cell: ProfileAccountCell = tableView.dequeue(at: indexPath)
+            cell.setup(email)
+            return cell
+        case .map:
+            let cell: ProfileMapCell = tableView.dequeue(at: indexPath)
+            return cell
         case .settings(let rows):
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: "\(ProfileSettingsCell.self)",
-                for: indexPath) as? ProfileSettingsCell
-            cell?.setup(rows[indexPath.row])
-            return cell ?? UITableViewCell()
+            let cell: ProfileSettingsCell = tableView.dequeue(at: indexPath)
+            cell.setup(rows[indexPath.row])
+            return cell
         }
     }
 
@@ -83,6 +85,17 @@ extension ProfileAdapter: UITableViewDelegate {
         return header
     }
     
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
+        let section = sections[indexPath.section]
+        
+        switch section {
+        case .map: selectMap?()
+        default : break
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+
 }
 
 extension ProfileAdapter: ProfileAdapterProtocol {

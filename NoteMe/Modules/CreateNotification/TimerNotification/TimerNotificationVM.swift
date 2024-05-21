@@ -19,14 +19,18 @@ protocol KeyboardHelperTimerNotificationUseCaseProtocol {
     func onWillHide(_ handler: @escaping (CGRect) -> Void) -> KeyboardHelper
 }
 
-protocol TimerNotificationStorageUseCaseProtocol {
-    func create(dto: TimerNotificationDTO, 
-                complition: @escaping (Bool) -> Void)
-    func  updateOrCreate(dto: Storage.TimerNotificationDTO,
-                         complition: @escaping (Bool) -> Void)
-}
+//protocol TimerNotificationStorageUseCaseProtocol {
+//    func create(dto: TimerNotificationDTO, 
+//                complition: @escaping (Bool) -> Void)
+//    func  updateOrCreate(dto: Storage.TimerNotificationDTO,
+//                         complition: @escaping (Bool) -> Void)
+//}
+//
+//protocol TimerNotificationServiceUseCaseProtocol {
+//    func updateOrCreate(dto: TimerNotificationDTO)
+//}
 
-protocol TimerNotificationServiceUseCaseProtocol {
+protocol TimerNotificationDataWorkerUseCaseProtocol {
     func updateOrCreate(dto: TimerNotificationDTO)
 }
 
@@ -47,20 +51,17 @@ final class TimerNotificationVM: TimerNotificationViewModelProtocol {
     private var dto: TimerNotificationDTO?
     
     private let keyboardHelper: KeyboardHelperTimerNotificationUseCaseProtocol
-    private let storage: TimerNotificationStorageUseCaseProtocol
-    private let notificationService: TimerNotificationServiceUseCaseProtocol
+    private var dataWorker: TimerNotificationDataWorkerUseCaseProtocol
     
     private weak var coordinator: TimerNotificationCoordinatorProtocol?
     
     init(keyboardHelper: KeyboardHelperTimerNotificationUseCaseProtocol,
          coordinator: TimerNotificationCoordinatorProtocol,
-         storage: TimerNotificationStorageUseCaseProtocol,
-         notificationService: TimerNotificationServiceUseCaseProtocol,
+         dataWorker: TimerNotificationDataWorkerUseCaseProtocol,
          dto: TimerNotificationDTO? = nil) {
         self.keyboardHelper = keyboardHelper
         self.coordinator = coordinator
-        self.storage = storage
-        self.notificationService = notificationService
+        self.dataWorker = dataWorker
         self.dto = dto
         
         bindkeyboardHelper()
@@ -100,11 +101,8 @@ final class TimerNotificationVM: TimerNotificationViewModelProtocol {
         dto?.subtitle = timerSet.comment
         dto?.targetDate =  timerSet.targetDate
         
-        notificationService.updateOrCreate(dto: dto ?? newDTO)
+        dataWorker.updateOrCreate(dto: dto ?? newDTO)
         
-        storage.updateOrCreate(dto: dto ?? newDTO) { complition in
-            print(#function, "comlition Timer Notificatoin: \(complition)")
-        }
         self.coordinator?.finish()
         
     }
@@ -117,7 +115,6 @@ final class TimerNotificationVM: TimerNotificationViewModelProtocol {
         guard let timeLeft else { return nil}
         if timeLeft >= 0 {
             let time = NSInteger(timeLeft)
-            let seconds = time % 60
             let minutes = (time / 60) % 60
             let hours = (time / 3600)
             return String(format: "%0.2d.%0.2d",

@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+struct LoginDataWorker: NotificationDataWorkerLoginUseCaseProtocol {
+    
+    private let service: NotificationDataWorker
+    
+    init(service: NotificationDataWorker) {
+        self.service = service
+    }
+    
+    func restore() {
+        service.restore { complition in print(#function + "\(complition)")}
+    }
+    
+}

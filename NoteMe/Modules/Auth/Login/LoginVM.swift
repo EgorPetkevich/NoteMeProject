@@ -34,6 +34,10 @@ protocol LoginAlertServiceUseCaseProtocol {
     func showLogAlert(title: String, message: String?, okTitle: String)
 }
 
+protocol NotificationDataWorkerLoginUseCaseProtocol {
+    func restore()
+}
+
 
 final class LoginVM: LoginViewModelProtocol {
     
@@ -47,18 +51,20 @@ final class LoginVM: LoginViewModelProtocol {
     private let authService: LoginAuthServiceUseCaseProtocol
     private let inputValidator: LoginInputValidatorUseCaseProtocol
     private let alertService: LoginAlertServiceUseCase
+    private let dataWorker: NotificationDataWorkerLoginUseCaseProtocol
     
     init(authService: LoginAuthServiceUseCaseProtocol,
          inputValidator: LoginInputValidatorUseCaseProtocol,
          coordinator: LoginCoordinatorProtocol,
          keyboardHelper: KeyboardHelperLoginUseCaseProtocol,
-         alertService: LoginAlertServiceUseCase) {
+         alertService: LoginAlertServiceUseCase,
+         dataWorker: NotificationDataWorkerLoginUseCaseProtocol) {
         self.inputValidator = inputValidator
         self.authService = authService
         self.coordinator = coordinator
         self.keyboardHelper = keyboardHelper
         self.alertService = alertService
-        
+        self.dataWorker = dataWorker
         bind()
     }
     
@@ -81,7 +87,7 @@ final class LoginVM: LoginViewModelProtocol {
             isSuccess in
             print(isSuccess)
             if isSuccess {
-                //FIXME: uncomment
+                self?.dataWorker.restore()
                 self?.alertService.showLogAlert(
                     title: "Login Success",
                     message: nil,

@@ -1,5 +1,5 @@
 //
-//  MapAssembler.swift
+//  MapNotificationAssembler.swift
 //  NoteMe
 //
 //  Created by George Popkich on 9.04.24.
@@ -7,16 +7,20 @@
 
 import UIKit
 
-final class MapAssembler {
+final class MapNotificationAssembler {
     
     private init() {}
     
     static func make(container: Container,
-                     coordinator: MapCoordinatorProtocol) -> UIViewController {
+                     coordinator: MapNotificationCoordinatorProtocol)
+    -> UIViewController {
         
-        let vm = MapVM(coordinator: coordinator,
-                       locationManager: .init())
-        return MapVC(viewModel: vm)
+        let storage = MapNotificationStorage(service: container.resolve())
+        
+        let vm = MapNotificationVM(coordinator: coordinator,
+                                   locationManager: .init(),
+                                   storage: storage)
+        return MapNotificationVC(viewModel: vm)
     }
     
 }

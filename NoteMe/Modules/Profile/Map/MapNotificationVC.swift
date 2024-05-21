@@ -1,5 +1,5 @@
 //
-//  MapVC.swift
+//  MapNotificationVC.swift
 //  NoteMe
 //
 //  Created by George Popkich on 9.04.24.
@@ -8,12 +8,12 @@
 import UIKit
 import MapKit
 
-@objc protocol MapViewModelProtocol {
+@objc protocol MapNotificationViewModelProtocol {
     var mapView: MKMapView { get set }
     @objc func cancelDidTap()
 }
 
-final class MapVC: UIViewController {
+final class MapNotificationVC: UIViewController {
     
     private lazy var contentView: UIView = .content()
     private lazy var locatinionManager: CLLocationManager = .init()
@@ -24,9 +24,9 @@ final class MapVC: UIViewController {
         .withAction(viewModel,
                     #selector(LocationViewModelProtocol.cancelDidTap))
     
-    private var viewModel: MapViewModelProtocol
+    private var viewModel: MapNotificationViewModelProtocol
     
-    init(viewModel: MapViewModelProtocol) {
+    init(viewModel: MapNotificationViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

@@ -18,10 +18,10 @@ struct LocationNotification: LocationNotificationServiceUseCaseProtocol {
     }
     
     func updateOrCreate(dto: LocationNotificationDTO,
-                                    circleRegion: CLCircularRegion?,
-                                    notifyOnEntry: Bool,
-                                    notifyOnExit: Bool,
-                                    repeats: Bool) {
+                        circleRegion: CLCircularRegion?,
+                        notifyOnEntry: Bool,
+                        notifyOnExit: Bool,
+                        repeats: Bool) {
         service.updateOrCreateNotification(dto: dto,
                                            circleRegion: circleRegion,
                                            notifyOnEntry: notifyOnEntry,

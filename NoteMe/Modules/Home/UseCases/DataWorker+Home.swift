@@ -6,5 +6,20 @@
 //
 
 import Foundation
+import Storage
 
-struct 
+struct HomeDataWorker: HomeNotificationDataWorkerUseCaseProtocol {
+    
+    private var dataWorker: NotificationDataWorker
+    
+    init(dataWorker: NotificationDataWorker) {
+        self.dataWorker = dataWorker
+    }
+    
+    func deleteByUser(dto: any DTODescription) {
+        dataWorker.deleteByUser(dto: dto) { complition in
+            print(#function + "\(complition)")
+        }
+    }
+    
+}

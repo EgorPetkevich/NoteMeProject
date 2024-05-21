@@ -19,17 +19,11 @@ final class DateNotificationAssembler {
         
         let keyboardHelper = DateNotificationKeyboardHelperUseCase(
             keyboardHelper: container.resolve())
-        
-        let storage =  DateNotificationStorageUseCase(
-            service: container.resolve())
-        
-        let notificationService = DateNotification(
-            service: container.resolve())
+        let dataWorker = DateDataWorker(dataWorker: container.resolve())
         
         let vm = DateNotificationVM(keyboardHelper: keyboardHelper, 
                                     coordinator: coordinator,
-                                    storage: storage,
-                                    notificationService: notificationService,
+                                    dataWorker: dataWorker,
                                     dto: dto)
         
         return DateNotificationVC(viewModel: vm)

@@ -8,8 +8,7 @@
 import Foundation
 import CoreData
 
-public final class FRCService<DTO: DTODescription>: NSObject,
-                                             NSFetchedResultsControllerDelegate {
+public final class FRCService<DTO: DTODescription>: NSObject, NSFetchedResultsControllerDelegate {
     
     public var didChangeContent: (([any DTODescription]) -> Void)?
     
@@ -40,7 +39,8 @@ public final class FRCService<DTO: DTODescription>: NSObject,
         try? frc.performFetch()
     }
     
-    public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    public func controllerDidChangeContent(
+        _ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         try? controller.performFetch()
         didChangeContent?(fetchedDTOs)
     }

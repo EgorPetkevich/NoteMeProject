@@ -20,19 +20,18 @@ final class LocationNotificationAssembler {
         let keyboardHelper = LocationNotificationKeyboardHelperUseCase(
             keyboardHelper: container.resolve())
         
-        let storage = LocationNotificationStorage(
-            service: container.resolve())
+        let dataWorker = LocationDataWorker(dataWorker: container.resolve())
         
-        let fm = LocationFileManagerUseCase(
-            fileManagerService: container.resolve())
+        let fileDataWorker = LocationFileDataWorker(
+            fileDataWorker: container.resolve())
         
         let notiService = LocationNotification(
             service: container.resolve())
         
         let vm = LocationNotificationVM(keyboardHelper: keyboardHelper,
                                         coordinator: coordinator,
-                                        storage: storage,
-                                        fileManager: fm,
+                                        dataWorker: dataWorker,
+                                        fileDataWorker: fileDataWorker,
                                         notificationService: notiService,
                                         dto: dto)
         

@@ -19,13 +19,7 @@ protocol KeyboardHelperDateNotificationUseCaseProtocol {
     func onWillHide(_ handler: @escaping (CGRect) -> Void) -> KeyboardHelper
 }
 
-protocol DateNotificationStorageUseCaseProtocol {
-    func create(dto: DateNotificationDTO, complition: @escaping (Bool) -> Void)
-    func updateOrCreate(dto: Storage.DateNotificationDTO,
-                        complition: @escaping (Bool) -> Void)
-}
-
-protocol DateNotificationServiceUseCaseProtocol {
+protocol DateNotificationDataWorkerUseCaseProtocol {
     func updateOrCreate(dto: DateNotificationDTO)
 }
 
@@ -45,20 +39,17 @@ final class DateNotificationVM: DateNotificationViewModelProtocol {
     private var dto: DateNotificationDTO?
     
     private let keyboardHelper: KeyboardHelperDateNotificationUseCaseProtocol
-    private let storage: DateNotificationStorageUseCaseProtocol
-    private let notificationService: DateNotificationServiceUseCaseProtocol
+    private var dataWorker: DateNotificationDataWorkerUseCaseProtocol
     
     private weak var coordinator: DateNotificationCoordinatorProtocol?
     
     init(keyboardHelper: KeyboardHelperDateNotificationUseCaseProtocol,
          coordinator: DateNotificationCoordinatorProtocol,
-         storage: DateNotificationStorageUseCaseProtocol,
-         notificationService: DateNotificationServiceUseCaseProtocol,
+         dataWorker: DateNotificationDataWorkerUseCaseProtocol,
          dto: DateNotificationDTO? = nil) {
         self.keyboardHelper = keyboardHelper
         self.coordinator = coordinator
-        self.storage = storage
-        self.notificationService = notificationService
+        self.dataWorker = dataWorker
         self.dto = dto
         
         bindkeyboardHelper()
@@ -98,11 +89,8 @@ final class DateNotificationVM: DateNotificationViewModelProtocol {
         dto?.subtitle = dateSet.comment
         dto?.targetDate = dateSet.date
         
-        notificationService.updateOrCreate(dto: dto ?? newDTO)
+        dataWorker.updateOrCreate(dto: dto ?? newDTO)
         
-        storage.updateOrCreate(dto: dto ?? newDTO) { complition in
-            print(#function, "comlition Date Notificatoin: \(complition)")
-        }
         self.coordinator?.finish()
     }
     

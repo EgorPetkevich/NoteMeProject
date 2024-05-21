@@ -20,17 +20,16 @@ protocol HomeAdapterProtocol: AnyObject {
 protocol HomeCoordinatorProtocol: AnyObject {
     func startEdite(date dto: any DTODescription)
     func showMenu(sender: UIView, delegate: MenuPopoverDelegate)
-    
-}
-
-protocol HomeStorageUseCaseProtocol {
-    func delete(dto: any DTODescription)
 }
 
 protocol HomeFRCServiceUseCaseProtocol {
     var fetchedDTOs: [any DTODescription] { get }
     var didChangeContent: (([any DTODescription]) -> Void)? { get set }
     func startHandle()
+}
+
+protocol HomeNotificationDataWorkerUseCaseProtocol {
+    func deleteByUser(dto: any DTODescription)
 }
 
 final class HomeVM: HomeViewModelProtocol {
@@ -42,22 +41,22 @@ final class HomeVM: HomeViewModelProtocol {
         }
     }
     
-    private var frcService: HomeFRCServiceUseCaseProtocol
     private let adapter: HomeAdapterProtocol
-    private let storage: HomeStorageUseCaseProtocol
+    private var frcService: HomeFRCServiceUseCaseProtocol
+    private var dataWorker: HomeNotificationDataWorkerUseCaseProtocol
     var showPopup: ((_ sender: UIButton) -> Void)?
     private var selectedDTO: (any DTODescription)?
     
     init(adapter: HomeAdapterProtocol,
-         storage: HomeStorageUseCaseProtocol,
          coordinator: HomeCoordinatorProtocol,
-         frcService: HomeFRCServiceUseCaseProtocol) {
+         frcService: HomeFRCServiceUseCaseProtocol,
+         dataWorker: HomeNotificationDataWorkerUseCaseProtocol ) {
         self.adapter = adapter
-           self.storage = storage
-           self.coordinator = coordinator
-           self.frcService = frcService
+        self.coordinator = coordinator
+        self.frcService = frcService
+        self.dataWorker = dataWorker
         
-           bind()
+        bind()
        }
     
     private func bind() {
@@ -111,7 +110,7 @@ extension HomeVM: MenuPopoverDelegate {
         case .edit:
             coordinator?.startEdite(date: dto)
         case .delete:
-            storage.delete(dto: dto)
+            dataWorker.deleteByUser(dto: dto)
         default: break
         }
     }

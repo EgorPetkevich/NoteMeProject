@@ -18,12 +18,14 @@ final class LoginAssembler {
         let inputValidator = LoginInputValidatorUseCase(inputValidator: container.resolve())
         let alertServict = LoginAlertServiceUseCase(alertService: container.resolve())
         let keyboardHelper = LoginKeyboardHelperUseCase(keyboardHelper: container.resolve())
+        let dataWorker = LoginDataWorker(service: container.resolve())
         
         let vm = LoginVM(authService: authUseCase,
                          inputValidator: inputValidator,
                          coordinator: coordinator,
                          keyboardHelper: keyboardHelper,
-                         alertService: alertServict)
+                         alertService: alertServict,
+                         dataWorker: dataWorker)
         return LoginVC(viewModel: vm)
     }
     

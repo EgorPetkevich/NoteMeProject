@@ -33,6 +33,7 @@ extension UIImage {
         static let notifiaction: UIImage = .init(named: "notifiations")!
         static let export: UIImage = .init(named: "export")!
         static let logout: UIImage = .init(named: "logout")!
+        static let location: UIImage = .init(named: "location_profile")!
     }
     
     //MARK: PopNOtifications
