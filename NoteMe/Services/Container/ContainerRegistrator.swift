@@ -24,16 +24,13 @@ final class ContainerRegistrator {
         container.register { FileManagerService.instansce }
         container.register { LocationNetworkService() }
         container.register { NotificationService() }
-        container.register { FireBaseBackupService() }
-        container.register { FireBaseStorageService()}
-        container.register { NotificationService() }
         container.register { NotificationDataWorker(
-            storage: AllNotificationStorage(),
-            backupService: FireBaseBackupService(),
-            notificationService: NotificationService())}
-        container.register { FileDataWorker(
-            fileManagerService: FileManagerService.instansce,
-            fireBaseStorageService: FireBaseStorageService())}
+                    storage: AllNotificationStorage(),
+                    backupService: FireBaseBackupService(),
+                    notificationService: NotificationService())}
+                container.register { FileDataWorker(
+                    fileManagerService: FileManagerService.instansce,
+                    fireBaseStorageService: FireBaseStorageService())}
         return container
     }
     

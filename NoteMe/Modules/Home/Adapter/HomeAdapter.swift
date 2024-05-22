@@ -88,7 +88,6 @@ extension HomeAdapter: UITableViewDataSource {
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let dto = dtoList[indexPath.row]
-        
         switch dto {
         case is DateNotificationDTO:
             let cell: DateCell = tableView.dequeue(at: indexPath)

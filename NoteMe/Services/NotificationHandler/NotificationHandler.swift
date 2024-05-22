@@ -15,7 +15,7 @@ final class NotificationHandler {
     private let notificationCenter = UNUserNotificationCenter.current()
     
     func chekIsCompleted() {
-        notificationCenter.getDeliveredNotifications { 
+        notificationCenter.getDeliveredNotifications {
             [weak self] notifications in
             self?.setIsCompleted(notifications: notifications)
         }
@@ -26,13 +26,13 @@ final class NotificationHandler {
         let date = notification.date
         
         var dto = storage
-            .fetch(predicate: .Notification.noutification(byId: id))
+            .fetch(predicate: .Notification.notification(byId: id))
             .first
         
         dto?.completedDate = date
         
         guard let dto else { return }
-        storage.update(dto: dto)
+        storage.updateOrCreate(dto: dto)
         
     }
     
@@ -43,7 +43,7 @@ final class NotificationHandler {
             .fetch(predicate: .Notification.notifications(in: ids))
             .map { dto in
                 var updatedDTO = dto
-                let date = notifications.first { 
+                let date = notifications.first {
                     $0.request.identifier  == dto.id }?
                     .date
                 updatedDTO.completedDate = date

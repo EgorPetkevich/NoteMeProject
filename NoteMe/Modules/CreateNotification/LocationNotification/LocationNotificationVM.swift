@@ -26,11 +26,6 @@ protocol LocationDelegate {
     func updateLocationProperties(_ properties: LocationProperties)
 }
 
-//protocol LocationNotificationFileManagerServiceUseCaseProtocol {
-//    func save(image: UIImage, with path: String)
-//    func takeImage(with path: String) -> UIImage?
-//}
-
 protocol LocationNotificationServiceUseCaseProtocol {
     func updateOrCreate(dto: LocationNotificationDTO,
                         circleRegion: CLCircularRegion?,

@@ -36,13 +36,14 @@ public class NotificationStorage<DTO: DTODescription> {
     }
     
     public func update(dto: any DTODescription,
-                       complition: ComplitionHandler? = nil) {
+                       complition: ComplitionHandler? = nil,
+                       context: NSManagedObjectContext) {
         let context = CoreDataService.shared.backgroundContext
     
             context.perform { [weak self] in
                 guard
                     let mo = self?.fetchMO(
-                        predicate: .Notification.noutification(byId: dto.id),
+                        predicate: .Notification.notification(byId: dto.id),
                         context: context
                     ).first
                 else { return }
@@ -54,12 +55,10 @@ public class NotificationStorage<DTO: DTODescription> {
         }
     
     public func create(dto: any DTODescription,
-                       complition: ComplitionHandler? = nil) {
-        let context = CoreDataService.shared.backgroundContext
-        
+                       complition: ComplitionHandler? = nil,
+                       context: NSManagedObjectContext) {
         context.perform {
-            let mo = DTO.MO(context: context)
-            mo.apply(dto: dto)
+            let _ = dto.createMO(context: context)
             CoreDataService.shared.saveContext(context: context,
                                                complition: complition)
         }
@@ -67,12 +66,13 @@ public class NotificationStorage<DTO: DTODescription> {
     
     public func updateOrCreate(dto: any DTODescription,
                                complition: ComplitionHandler? = nil) {
-        let context = CoreDataService.shared.mainContext
-        if fetchMO(predicate: .Notification.noutification(byId: dto.id),
+        let context = CoreDataService.shared.backgroundContext
+        
+        if fetchMO(predicate: .Notification.notification(byId: dto.id),
                    context: context ).isEmpty {
-            create(dto: dto, complition: complition)
+            create(dto: dto, complition: complition, context: context)
         } else {
-            update(dto: dto, complition: complition)
+            update(dto: dto, complition: complition, context: context)
         }
     }
     
@@ -80,7 +80,7 @@ public class NotificationStorage<DTO: DTODescription> {
                            complition: ComplitionHandler? = nil) {
         let context = CoreDataService.shared.backgroundContext
         context.perform {
-            let mos = dtos.map {
+            _ = dtos.map {
                 $0.createMO(context: context)
             }
             CoreDataService.shared.saveContext(context: context,
@@ -88,13 +88,14 @@ public class NotificationStorage<DTO: DTODescription> {
         }
     }
     
-    public func udateDTOs(dtos: [any DTODescription], 
+    public func udateDTOs(dtos: [any DTODescription],
                           complition: ComplitionHandler? = nil) {
         let context = CoreDataService.shared.backgroundContext
         let ids = dtos.map { $0.id }
         
         context.perform { [weak self] in
-            guard let mos = self?.fetchMO(predicate: .Notification.notifications(in: ids), context: context) else { return }
+            guard let mos = self?.fetchMO(predicate: .Notification.notifications(in: ids), 
+                                          context: context) else { return }
             mos.forEach { model in
                 guard let dto = dtos.first(where: { $0.id == model.identifier }) else { return }
                 model.apply(dto: dto)
@@ -109,7 +110,7 @@ public class NotificationStorage<DTO: DTODescription> {
           let context = CoreDataService.shared.mainContext
           context.perform { [weak self] in
               guard let mo = self?.fetchMO(
-                  predicate: .Notification.noutification(byId: dto.id),
+                  predicate: .Notification.notification(byId: dto.id),
                   context: context).first
               else { return }
               context.delete(mo)
@@ -133,4 +134,3 @@ public class NotificationStorage<DTO: DTODescription> {
     }
     
 }
-

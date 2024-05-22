@@ -34,7 +34,6 @@ final class AppCoordinator: Coordinator {
         }
         openAuthModule()
        
-        
     }
     
     private func openAuthModule() {

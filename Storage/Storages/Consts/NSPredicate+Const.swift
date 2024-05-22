@@ -16,7 +16,7 @@ public extension NSPredicate {
             return .init(format: "\(complitedDateKeyPath) = NULL")
         }
          
-        public static func noutification(byId id: String) -> NSPredicate {
+        public static func notification(byId id: String) -> NSPredicate {
             let idKeyPath = #keyPath(BaseNotificationMO.identifier)
             return .init(format: "\(idKeyPath) CONTAINS[cd] %@", id)
         }

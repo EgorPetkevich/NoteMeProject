@@ -33,22 +33,19 @@ final class NotificationDataWorker {
     
     func updateOrCreate(dto: any DTODescription,
                         complition: ComplitionHandler? = nil) {
-        storage
-            .updateOrCreate(dto: dto) { [notificationService,
-                                         backupService] isSuccess in
-            defer{ complition?(isSuccess) }
+        storage.updateOrCreate(dto: dto) { [weak self] isSuccess in
+                defer{ complition?(isSuccess) }
             
-            guard isSuccess else { return }
+                guard isSuccess else { return }
             
-            notificationService.makeNotifications(from: [dto])
-            backupService.backup(dto: dto)
+                self?.notificationService.makeNotifications(from: [dto])
+                self?.backupService.backup(dto: dto)
         }
     }
     
     func deleteByUser(dto: any DTODescription,
                 complition: ComplitionHandler? = nil) {
-        storage
-            .delete(dto: dto) { [notificationService,
+        storage.delete(dto: dto) { [notificationService,
                                  backupService] isSuccess in
             defer{ complition?(isSuccess) }
             
