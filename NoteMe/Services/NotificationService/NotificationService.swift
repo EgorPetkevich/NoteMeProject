@@ -37,11 +37,12 @@ final class NotificationService {
         notificationCenter.add(request)
     }
     
-    func makeLocationNotification(circleRegion: CLCircularRegion,
-                                  notifyOnEntry: Bool = true,
+    func makeLocationNotification(notifyOnEntry: Bool = true,
                                   notifyOnExit: Bool = false,
                                   repeats: Bool = false,
                                   dto: LocationNotificationDTO) {
+        guard let circleRegion = creatCircularRegion(with: dto) else { return }
+        
         circleRegion.notifyOnEntry = notifyOnEntry
         circleRegion.notifyOnExit = notifyOnExit
         
@@ -54,11 +55,7 @@ final class NotificationService {
         notificationCenter.add(request)
     }
     
-    func updateOrCreateNotification(dto: any DTODescription,
-                                    circleRegion: CLCircularRegion? = nil,
-                                    notifyOnEntry: Bool? = nil,
-                                    notifyOnExit: Bool? = nil,
-                                    repeats: Bool? = nil) {
+    func updateOrCreateNotification(dto: any DTODescription) {
         removeNotification(id: dto.id)
         
         switch dto {
@@ -69,17 +66,8 @@ final class NotificationService {
             guard let dto = dto as? TimerNotificationDTO else { return }
             makeTimerNotification(dto: dto)
         case is LocationNotificationDTO:
-            guard
-                let dto = dto as? LocationNotificationDTO,
-                let notifyOnExit,
-                let notifyOnEntry,
-                let circleRegion
-            else { return }
-            makeLocationNotification(
-                circleRegion: circleRegion, 
-                notifyOnEntry: notifyOnEntry,
-                notifyOnExit: notifyOnExit,
-                dto: dto)
+            guard let dto = dto as? LocationNotificationDTO else { return }
+            makeLocationNotification(dto: dto)
         default: break
         }
     }
@@ -95,6 +83,19 @@ final class NotificationService {
         content.title = dto.title
         content.body = dto.subtitle ?? ""
         return content
+    }
+    
+    private func creatCircularRegion(
+        with dto: LocationNotificationDTO
+    ) -> CLCircularRegion? {
+   
+        let distanceRadius = CLLocationDistance(dto.radius)
+        let mapRegion =  CLLocationCoordinate2D(latitude: dto.latitude,
+                                                longitude:  dto.longitude)
+        let circleRegion = CLCircularRegion(center: mapRegion,
+                                            radius: distanceRadius,
+                                            identifier: dto.id)
+        return circleRegion
     }
     
 }

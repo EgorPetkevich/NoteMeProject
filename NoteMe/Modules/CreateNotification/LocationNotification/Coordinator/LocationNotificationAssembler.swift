@@ -25,14 +25,10 @@ final class LocationNotificationAssembler {
         let fileDataWorker = LocationFileDataWorker(
             fileDataWorker: container.resolve())
         
-        let notiService = LocationNotification(
-            service: container.resolve())
-        
         let vm = LocationNotificationVM(keyboardHelper: keyboardHelper,
                                         coordinator: coordinator,
                                         dataWorker: dataWorker,
                                         fileDataWorker: fileDataWorker,
-                                        notificationService: notiService,
                                         dto: dto)
         
         return LocationNotificationVC(viewModel: vm)

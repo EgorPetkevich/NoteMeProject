@@ -26,14 +26,6 @@ protocol LocationDelegate {
     func updateLocationProperties(_ properties: LocationProperties)
 }
 
-protocol LocationNotificationServiceUseCaseProtocol {
-    func updateOrCreate(dto: LocationNotificationDTO,
-                        circleRegion: CLCircularRegion?,
-                        notifyOnEntry: Bool,
-                        notifyOnExit: Bool,
-                        repeats: Bool)
-}
-
 protocol LocationNotificationDataWorkerUseCaseProtocol {
     func updateOrCreate(dto: LocationNotificationDTO)
 }
@@ -65,7 +57,6 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
     private var dataWorker: LocationNotificationDataWorkerUseCaseProtocol
     private var dto: LocationNotificationDTO?
     private var fileDataWorker: LocationNotificationFileDataWorkerUseCaseProtocol
-    private var notificationService: LocationNotificationServiceUseCaseProtocol
     
     private weak var coordinator: LocationNotificationCoordinatorProtocol?
     
@@ -73,13 +64,11 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
          coordinator: LocationNotificationCoordinatorProtocol,
          dataWorker: LocationNotificationDataWorkerUseCaseProtocol,
          fileDataWorker: LocationNotificationFileDataWorkerUseCaseProtocol,
-         notificationService: LocationNotificationServiceUseCaseProtocol,
          dto: LocationNotificationDTO? = nil) {
         self.keyboardHelper = keyboardHelper
         self.coordinator = coordinator
         self.dataWorker = dataWorker
         self.fileDataWorker = fileDataWorker
-        self.notificationService = notificationService
         self.dto = dto
         
         bindkeyboardHelper()
@@ -132,13 +121,6 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
         dto?.latitude = latitude
         dto?.longitude = longitude
         dto?.radius = radius
-
-        notificationService.updateOrCreate(
-            dto: dto ?? newDTO,
-            circleRegion: creatCircularRegion(with: dto?.id ?? newID),
-            notifyOnEntry: true,
-            notifyOnExit: false,
-            repeats: false)
         
         saveImage(image: editImage ?? .Home.map, for: dto?.id ?? newID)
         
@@ -201,22 +183,6 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
         self.locationProperties = properties
         editImage = properties.screenLoc
         locImage?(properties.screenLoc)
-    }
-    
-    private func creatCircularRegion(with id: String) -> CLCircularRegion? {
-        guard
-            let latitude = locationProperties.latitude,
-            let longitude = locationProperties.longitude,
-            let radius = locationProperties.radius
-        else { return nil }
-        
-        let distanceRadius = CLLocationDistance(radius)
-        let mapRegion =  CLLocationCoordinate2D(latitude: latitude,
-                                                longitude: longitude)
-        let circleRegion = CLCircularRegion(center: mapRegion,
-                                            radius: distanceRadius,
-                                            identifier: id)
-        return circleRegion
     }
     
 }

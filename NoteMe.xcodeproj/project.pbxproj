@@ -72,7 +72,6 @@
 		F24AC1082BBB579E00F12829 /* SearchBar+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AC1072BBB579E00F12829 /* SearchBar+Set.swift */; };
 		F24AC10B2BBC734800F12829 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AC10A2BBC734800F12829 /* NotificationHandler.swift */; };
 		F24AC10E2BBD8E9900F12829 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AC10D2BBD8E9900F12829 /* NotificationService.swift */; };
-		F24AC1102BC29B5600F12829 /* LocationNotificationUseCase+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AC10F2BC29B5600F12829 /* LocationNotificationUseCase+Notification.swift */; };
 		F24AC1162BC5293000F12829 /* ProfileMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AC1152BC5293000F12829 /* ProfileMapCell.swift */; };
 		F24AC1192BC5892200F12829 /* MapNotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AC1182BC5892200F12829 /* MapNotificationVC.swift */; };
 		F24AC11B2BC5892B00F12829 /* MapNotificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AC11A2BC5892B00F12829 /* MapNotificationVM.swift */; };
@@ -324,7 +323,6 @@
 		F24AC1072BBB579E00F12829 /* SearchBar+Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchBar+Set.swift"; sourceTree = "<group>"; };
 		F24AC10A2BBC734800F12829 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		F24AC10D2BBD8E9900F12829 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		F24AC10F2BC29B5600F12829 /* LocationNotificationUseCase+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationNotificationUseCase+Notification.swift"; sourceTree = "<group>"; };
 		F24AC1152BC5293000F12829 /* ProfileMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMapCell.swift; sourceTree = "<group>"; };
 		F24AC1182BC5892200F12829 /* MapNotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNotificationVC.swift; sourceTree = "<group>"; };
 		F24AC11A2BC5892B00F12829 /* MapNotificationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNotificationVM.swift; sourceTree = "<group>"; };
@@ -720,7 +718,6 @@
 			isa = PBXGroup;
 			children = (
 				F245B4172B7F7B24003FD5B7 /* KeyboardHelper+LocationNotification.swift */,
-				F24AC10F2BC29B5600F12829 /* LocationNotificationUseCase+Notification.swift */,
 				F2EA56BF2BFD023C00CAA359 /* DataWorker+Location.swift */,
 				F2EA56C82BFD214500CAA359 /* FileDataWorker+Location.swift */,
 			);
@@ -1910,7 +1907,6 @@
 				F2C459042BA9F448000BE010 /* ApiPaths.swift in Sources */,
 				F2287FC32B8CB00A0010E58C /* DateCell.swift in Sources */,
 				F253EA422B1657DE00AEDDD7 /* OnboardFirstStepCoordinator.swift in Sources */,
-				F24AC1102BC29B5600F12829 /* LocationNotificationUseCase+Notification.swift in Sources */,
 				F2CDC92A2B2FB6BE001EBA76 /* AlertService+Login.swift in Sources */,
 				F20FC0AB2B9F83D100F7BBE2 /* LocationAssembler.swift in Sources */,
 				F20FC09F2B9DD0B500F7BBE2 /* TimerPickerView.swift in Sources */,
