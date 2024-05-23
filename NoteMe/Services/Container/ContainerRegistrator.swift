@@ -30,7 +30,8 @@ final class ContainerRegistrator {
                     notificationService: NotificationService())}
                 container.register { FileDataWorker(
                     fileManagerService: FileManagerService.instansce,
-                    fireBaseStorageService: FireBaseStorageService())}
+                    fireBaseStorageService: FireBaseStorageService(), 
+                    storage: LocationNotificationStorage())}
         return container
     }
     

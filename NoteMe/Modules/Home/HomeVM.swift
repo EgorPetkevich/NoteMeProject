@@ -43,13 +43,14 @@ final class HomeVM: HomeViewModelProtocol {
     private let adapter: HomeAdapterProtocol
     private var frcService: HomeFRCServiceUseCaseProtocol
     private var dataWorker: HomeNotificationDataWorkerUseCaseProtocol
+    
     var showPopup: ((_ sender: UIButton) -> Void)?
     private var selectedDTO: (any DTODescription)?
     
     init(adapter: HomeAdapterProtocol,
          coordinator: HomeCoordinatorProtocol,
          frcService: HomeFRCServiceUseCaseProtocol,
-         dataWorker: HomeNotificationDataWorkerUseCaseProtocol ) {
+         dataWorker: HomeNotificationDataWorkerUseCaseProtocol) {
         self.adapter = adapter
         self.coordinator = coordinator
         self.frcService = frcService

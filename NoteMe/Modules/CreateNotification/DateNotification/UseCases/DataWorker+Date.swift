@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Foundation
 import Storage
 
 struct DateDataWorker: DateNotificationDataWorkerUseCaseProtocol {
@@ -19,7 +18,7 @@ struct DateDataWorker: DateNotificationDataWorkerUseCaseProtocol {
     
     func updateOrCreate(dto: DateNotificationDTO) {
         dataWorker.updateOrCreate(dto: dto) { complition in
-            print(#function + "\(complition)")
+            print(#function + " Date Notfication \(complition)")
         }
     }
     

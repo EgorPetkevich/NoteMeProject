@@ -19,7 +19,7 @@ struct LocationDataWorker: LocationNotificationDataWorkerUseCaseProtocol {
     
     func updateOrCreate(dto: LocationNotificationDTO) {
         dataWorker.updateOrCreate(dto: dto) { complition in
-            print(#function + "\(complition)")
+            print(#function + "Location Notification \(complition)")
         }
     }
     

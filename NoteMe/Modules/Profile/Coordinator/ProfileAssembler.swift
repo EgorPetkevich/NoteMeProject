@@ -16,10 +16,12 @@ final class ProfileAssembler {
         
         let authService = ProfileAuthServiceUseCase(authService: container.resolve())
         let alertService = ProfileAlertService(service: container.resolve())
+        let dataWorker = ProfileDataWorker(dataWorker: container.resolve())
         let vm = ProfileVM(coordinator: coordinator,
                            authService: authService,
                            adapter: ProfileAdapter(),
-                           alertService: alertService)
+                           alertService: alertService,
+                           dataWorker: dataWorker)
         return ProfileVC(viewModel: vm)
     }
     

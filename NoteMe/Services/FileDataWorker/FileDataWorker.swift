@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Storage
 
 protocol FileDataWorkerFileManagerServiceUseCaseProtocol {
     func save(image: UIImage,
@@ -27,10 +28,14 @@ final class FileDataWorker {
     
     private var fileManagerService: FileDataWorkerFileManagerServiceUseCaseProtocol
     private var fireBaseStorageService: FileDataWorkerFireBaseStorageServiceUseCaseProtocol
+    private var storage: LocationNotificationStorage
     
-    init(fileManagerService: FileDataWorkerFileManagerServiceUseCaseProtocol, fireBaseStorageService: FileDataWorkerFireBaseStorageServiceUseCaseProtocol) {
+    init(fileManagerService: FileDataWorkerFileManagerServiceUseCaseProtocol, 
+         fireBaseStorageService: FileDataWorkerFireBaseStorageServiceUseCaseProtocol,
+         storage: LocationNotificationStorage) {
         self.fileManagerService = fileManagerService
         self.fireBaseStorageService = fireBaseStorageService
+        self.storage = storage
     }
     
     func save(image: UIImage, id: String) {
@@ -39,25 +44,29 @@ final class FileDataWorker {
         fireBaseStorageService.upload(model: (id, image), complition: nil)
     }
     
-    func getImage(id: String, complition: @escaping (UIImage?) -> Void) {
+    func getImage(id: String, complition: @escaping ((UIImage?) -> Void)) {
         if let image = fileManagerService
             .read(with: id) {
             complition(image)
         }
         else {
             fireBaseStorageService
-                .download(fileName: id) { [weak self] complitionFireBase, image in
-                guard let image else { return }
+                .download(fileName: id) { [weak self] completion, image in
+                    guard let image, completion else { return }
                     self?.imageNotFoundInFileManager(id: id, image: image)
                     complition(image)
             }
-            
+        }
+    }
+    
+    func download() {
+        storage.fetch().forEach { dto in
+            getImage(id: dto.id) { _ in }
         }
     }
     
     private func imageNotFoundInFileManager(id: String, image: UIImage) {
-        fileManagerService.save(image: image,
-                                with: id)
+        fileManagerService.save(image: image, with: id)
     }
     
 }

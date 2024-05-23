@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LoginDataWorker: NotificationDataWorkerLoginUseCaseProtocol {
+struct LoginDataWorker: LoginNotificationDataWorkerLoginUseCaseProtocol {
     
     private let service: NotificationDataWorker
     

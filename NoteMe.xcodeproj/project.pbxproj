@@ -203,6 +203,8 @@
 		F2EA56C42BFD03BE00CAA359 /* DataWorker+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EA56C32BFD03BE00CAA359 /* DataWorker+Timer.swift */; };
 		F2EA56C72BFD134A00CAA359 /* FileDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EA56C62BFD134A00CAA359 /* FileDataWorker.swift */; };
 		F2EA56C92BFD214500CAA359 /* FileDataWorker+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EA56C82BFD214500CAA359 /* FileDataWorker+Location.swift */; };
+		F2EA56CB2BFF6A7D00CAA359 /* DataWorker+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EA56CA2BFF6A7D00CAA359 /* DataWorker+Profile.swift */; };
+		F2EA56CD2BFF82FD00CAA359 /* FileDataWorker+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EA56CC2BFF82FD00CAA359 /* FileDataWorker+Login.swift */; };
 		F2F3EA5F2AF15F710019445B /* View+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3EA5E2AF15F710019445B /* View+Layer.swift */; };
 		F2F3EA622AF160440019445B /* UIButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3EA612AF160440019445B /* UIButton+Styles.swift */; };
 		F2F3EA652AF16ECA0019445B /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3EA642AF16ECA0019445B /* LineTextField.swift */; };
@@ -441,6 +443,8 @@
 		F2EA56C32BFD03BE00CAA359 /* DataWorker+Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataWorker+Timer.swift"; sourceTree = "<group>"; };
 		F2EA56C62BFD134A00CAA359 /* FileDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDataWorker.swift; sourceTree = "<group>"; };
 		F2EA56C82BFD214500CAA359 /* FileDataWorker+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileDataWorker+Location.swift"; sourceTree = "<group>"; };
+		F2EA56CA2BFF6A7D00CAA359 /* DataWorker+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataWorker+Profile.swift"; sourceTree = "<group>"; };
+		F2EA56CC2BFF82FD00CAA359 /* FileDataWorker+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileDataWorker+Login.swift"; sourceTree = "<group>"; };
 		F2F3EA5E2AF15F710019445B /* View+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Layer.swift"; sourceTree = "<group>"; };
 		F2F3EA612AF160440019445B /* UIButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styles.swift"; sourceTree = "<group>"; };
 		F2F3EA642AF16ECA0019445B /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
@@ -927,6 +931,7 @@
 			children = (
 				F25B2F852B5EB5B900F13A5A /* AuthService+Profile.swift */,
 				F2EA56A62BD7D66F00CAA359 /* AlertService+Profile.swift */,
+				F2EA56CA2BFF6A7D00CAA359 /* DataWorker+Profile.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1192,6 +1197,7 @@
 				F28621002B1F975A00C91413 /* AuthService+Login.swift */,
 				F2CDC9292B2FB6BE001EBA76 /* AlertService+Login.swift */,
 				F2EA56AE2BEA606C00CAA359 /* DataWorker+Login.swift */,
+				F2EA56CC2BFF82FD00CAA359 /* FileDataWorker+Login.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1809,6 +1815,7 @@
 				F2DF71732B31AC92000267C8 /* ProfileCoordinator.swift in Sources */,
 				F245B3FF2B7E2B14003FD5B7 /* PopNotificationCoordinator.swift in Sources */,
 				F2F3EA6B2AF564E00019445B /* ResetVC.swift in Sources */,
+				F2EA56CD2BFF82FD00CAA359 /* FileDataWorker+Login.swift in Sources */,
 				F2B976BC2AFEA814005ADC3B /* InputValidator+Login.swift in Sources */,
 				F2EA56BE2BFCFD5200CAA359 /* DataWorker+Date.swift in Sources */,
 				F2EA56BC2BFCFA2B00CAA359 /* DataWorker+Home.swift in Sources */,
@@ -1853,6 +1860,7 @@
 				F2ADABE22B68098100040848 /* ProfileTableViewHeader.swift in Sources */,
 				F2FD43A22AE9BB720068A5CB /* UIView+Styles.swift in Sources */,
 				F2EA56C92BFD214500CAA359 /* FileDataWorker+Location.swift in Sources */,
+				F2EA56CB2BFF6A7D00CAA359 /* DataWorker+Profile.swift in Sources */,
 				F2CDC92C2B30569B001EBA76 /* AlertService+Register.swift in Sources */,
 				F20FC0A92B9F83C100F7BBE2 /* LocationCoordinator.swift in Sources */,
 				F2E6B8AA2B0D1B7000F42C7E /* LoginCoordinator.swift in Sources */,

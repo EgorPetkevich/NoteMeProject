@@ -140,7 +140,7 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
             notifyOnExit: false,
             repeats: false)
         
-        saveImage(image: editImage ?? UIImage(), for: dto?.id ?? newID)
+        saveImage(image: editImage ?? .Home.map, for: dto?.id ?? newID)
         
         dataWorker.updateOrCreate(dto: dto ?? newDTO)
         
@@ -164,7 +164,7 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
     private func takeImage(for key: String) {
         fileDataWorker.getImage(id: key) { [weak self] image in
             self?.editImage =  image ?? .Home.map
-            self?.locationProperties.screenLoc = image ??  .Home.map
+            self?.locationProperties.screenLoc = image ?? .Home.map
         }
     }
     

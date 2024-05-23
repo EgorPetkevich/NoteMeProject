@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Foundation
 import Storage
 
 struct TimerDataWorker: TimerNotificationDataWorkerUseCaseProtocol  {
@@ -19,7 +18,7 @@ struct TimerDataWorker: TimerNotificationDataWorkerUseCaseProtocol  {
     
     func updateOrCreate(dto: TimerNotificationDTO) {
         dataWorker.updateOrCreate(dto: dto) { complition in
-            print(#function + "\(complition)")
+            print(#function + "TimerNotification \(complition)")
         }
     }
     

@@ -34,8 +34,12 @@ protocol LoginAlertServiceUseCaseProtocol {
     func showLogAlert(title: String, message: String?, okTitle: String)
 }
 
-protocol NotificationDataWorkerLoginUseCaseProtocol {
+protocol LoginNotificationDataWorkerLoginUseCaseProtocol {
     func restore(completion: ((Bool) -> Void)?)
+}
+
+protocol LoginFileDataWorkerUseCaseProtocol {
+    func download()
 }
 
 
@@ -51,20 +55,24 @@ final class LoginVM: LoginViewModelProtocol {
     private let authService: LoginAuthServiceUseCaseProtocol
     private let inputValidator: LoginInputValidatorUseCaseProtocol
     private let alertService: LoginAlertServiceUseCase
-    private let dataWorker: NotificationDataWorkerLoginUseCaseProtocol
+    private let dataWorker: LoginNotificationDataWorkerLoginUseCaseProtocol
+    private let fileDataWorker: LoginFileDataWorkerUseCaseProtocol
     
     init(authService: LoginAuthServiceUseCaseProtocol,
          inputValidator: LoginInputValidatorUseCaseProtocol,
          coordinator: LoginCoordinatorProtocol,
          keyboardHelper: KeyboardHelperLoginUseCaseProtocol,
          alertService: LoginAlertServiceUseCase,
-         dataWorker: NotificationDataWorkerLoginUseCaseProtocol) {
+         dataWorker: LoginNotificationDataWorkerLoginUseCaseProtocol,
+         fileDataWorker: LoginFileDataWorkerUseCaseProtocol) {
         self.inputValidator = inputValidator
         self.authService = authService
         self.coordinator = coordinator
         self.keyboardHelper = keyboardHelper
         self.alertService = alertService
         self.dataWorker = dataWorker
+        self.fileDataWorker = fileDataWorker
+        
         bind()
     }
     
@@ -89,6 +97,7 @@ final class LoginVM: LoginViewModelProtocol {
             if isSuccess {
                 self?.dataWorker.restore { isSuccess in
                     DispatchQueue.main.async {
+                        self?.fileDataWorker.download()
                         self?.coordinator?.finish()
                     }
                 }
@@ -96,7 +105,6 @@ final class LoginVM: LoginViewModelProtocol {
                     title: "Login Success",
                     message: nil,
                     okTitle: "Ok")
-//                self?.coordinator?.finish()
             }else {
                 self?.alertService.showLogAlert(
                     title: "Error",

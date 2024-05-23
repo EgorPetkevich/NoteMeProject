@@ -15,8 +15,6 @@ final class HomeAdapter: NSObject, HomeAdapterProtocol {
         static var headerHeight: CGFloat = 32.0 + 10
     }
     
-//    private var selectedFilter
-    
     var filterDidSelect: ((NotificationFilterType) -> Void)?
 
     var tapButtonOnDTO: ((_ sender: UIButton,

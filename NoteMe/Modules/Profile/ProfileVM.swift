@@ -40,13 +40,19 @@ protocol ProfileAlertServiceUseCase {
 
 }
 
+protocol ProfileDataWorkerUseCaseProtocol {
+    func deleteByLogout(complition: ((Bool) -> Void)?)
+}
+
 final class ProfileVM: ProfileViewModelProtocol {
     
     private weak var coordinator: ProfileCoordinatorProtocol?
     private var userName: String = "user_email@gmai.com"
+    private var adapter: ProfileAdapterProtocol
+    
     private let alertService: ProfileAlertServiceUseCase
     private let authService: ProfileAuthServiceUseCaseProtocol
-    private var adapter: ProfileAdapterProtocol
+    private let dataWorker: ProfileDataWorkerUseCaseProtocol
     
     var sections: [ProfileSections] {
         return [
@@ -59,11 +65,13 @@ final class ProfileVM: ProfileViewModelProtocol {
     init(coordinator: ProfileCoordinatorProtocol? = nil, 
          authService: ProfileAuthServiceUseCaseProtocol,
          adapter: ProfileAdapterProtocol,
-         alertService: ProfileAlertServiceUseCase) {
+         alertService: ProfileAlertServiceUseCase,
+         dataWorker: ProfileDataWorkerUseCaseProtocol) {
         self.coordinator = coordinator
         self.authService = authService
         self.adapter = adapter
         self.alertService = alertService
+        self.dataWorker = dataWorker
         
         commonInit()
         bind()
@@ -105,14 +113,33 @@ final class ProfileVM: ProfileViewModelProtocol {
             authService.logout { [weak self] result in
                 switch result {
                 case .success(_):
-                    ParametersHelper.set(.authenticatied, value: false)
-                    self?.coordinator?.finish()
+                    self?.dataWorker.deleteByLogout(complition: { isSuccess in
+                        DispatchQueue.main.async {
+                            self?.deleteByLogout(isSuccess)
+                        }
+                    })
                 case .failure(let error):
-                    self?.alertService.showAlert(title: "Error",
-                                                 message: error.localizedDescription,
-                                                 okTitile: "ok")
+                    self?.logoutFailure(whith: error.localizedDescription)
                 }
             }
         }
+    
+    private func deleteByLogout(_ complition: Bool) {
+        if complition {
+            ParametersHelper.set(.authenticatied, value: false)
+            coordinator?.finish()
+        } else {
+            alertService.showAlert(title: "Error",
+                                   message: "Cannot delete notification",
+                                   okTitile: "ok")
+        }
+    }
+    
+    private func logoutFailure(whith error: String) {
+        alertService
+            .showAlert(title: "Error",
+                       message: error,
+                       okTitile: "ok")
+    }
     
 }
