@@ -41,5 +41,5 @@ extension ProfileCoordinator: ProfileCoordinatorProtocol {
         vc.modalPresentationStyle = .fullScreen
         rootVC?.present(vc, animated: true)
     }
-   
+    
 }

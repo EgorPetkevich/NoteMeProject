@@ -30,6 +30,7 @@ struct ProfileAlertService: ProfileAlertServiceUseCase{
                    okHandler: (() -> Void)?) {
         self.service.showAlert(title: title,
                                message: message,
+                               cancelTitle: cancelTitle,
                                cancelHeldler: nil,
                                okTitle: okTitle,
                                okHandler: okHandler)

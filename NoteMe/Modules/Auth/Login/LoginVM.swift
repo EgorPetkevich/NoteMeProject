@@ -35,7 +35,7 @@ protocol LoginAlertServiceUseCaseProtocol {
 }
 
 protocol NotificationDataWorkerLoginUseCaseProtocol {
-    func restore()
+    func restore(completion: ((Bool) -> Void)?)
 }
 
 
@@ -85,15 +85,18 @@ final class LoginVM: LoginViewModelProtocol {
         
         authService.login(email: email, password: password) { [weak self]
             isSuccess in
-            print(isSuccess)
+            ParametersHelper.set(.authenticatied, value: true)
             if isSuccess {
-                self?.dataWorker.restore()
+                self?.dataWorker.restore { isSuccess in
+                    DispatchQueue.main.async {
+                        self?.coordinator?.finish()
+                    }
+                }
                 self?.alertService.showLogAlert(
                     title: "Login Success",
                     message: nil,
                     okTitle: "Ok")
-                ParametersHelper.set(.authenticatied, value: true)
-                self?.coordinator?.finish()
+//                self?.coordinator?.finish()
             }else {
                 self?.alertService.showLogAlert(
                     title: "Error",

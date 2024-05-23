@@ -10,6 +10,9 @@ import UIKit
 final class ProfileAdapter: NSObject {
     
     var selectMap: (() -> Void)?
+    var selectNotifications: (()-> Void)?
+    var selectExport: (() -> Void)?
+    var selectLogout: (() -> Void)?
     
     var sections: [ProfileSections] = [] {
         didSet {
@@ -91,14 +94,27 @@ extension ProfileAdapter: UITableViewDelegate {
         
         switch section {
         case .map: selectMap?()
+        case .settings(let rows): didSelectSetting(with: rows[indexPath.row])
         default : break
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
+    
+    func didSelectSetting(with row: ProfileSettingsRows) {
+        switch row {
+        case .notifications: selectNotifications?()
+        case .export: selectExport?()
+        case .logout: selectLogout?()
+        }
+    }
+    
 }
 
 extension ProfileAdapter: ProfileAdapterProtocol {
+    
+    func reloadData() {
+        self.tableView.reloadData()
+    }
     
     func reloadData(whith sections: [ProfileSections]) {
         self.sections = sections
@@ -107,5 +123,6 @@ extension ProfileAdapter: ProfileAdapterProtocol {
     func makeTableView() -> UITableView {
         return tableView
     }
+    
     
 }

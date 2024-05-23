@@ -19,7 +19,11 @@ protocol ProfileAuthServiceUseCaseProtocol {
 
 protocol ProfileAdapterProtocol {
     var selectMap: (() -> Void)? { get set }
+    var selectNotifications: (()-> Void)? { get set }
+    var selectExport: (() -> Void)? { get set }
+    var selectLogout: (() -> Void)? { get set }
     
+    func reloadData()
     func reloadData(whith sections: [ProfileSections])
     func makeTableView() -> UITableView
 }
@@ -46,7 +50,7 @@ final class ProfileVM: ProfileViewModelProtocol {
     
     var sections: [ProfileSections] {
         return [
-            .account(userName),
+            .account(getUserEmail()),
             .map,
             .settings(ProfileSettingsRows.allCases)
         ]
@@ -69,6 +73,9 @@ final class ProfileVM: ProfileViewModelProtocol {
         adapter.selectMap = { [weak self]  in
             self?.coordinator?.openMap()
         }
+        adapter.selectLogout = { [weak self]  in
+            self?.logout()
+        }
     }
     
     func makeTableView() -> UITableView {
@@ -79,8 +86,9 @@ final class ProfileVM: ProfileViewModelProtocol {
         adapter.reloadData(whith: sections)
     }
     
-    private func setUserEmail() {
+    private func getUserEmail() -> String {
         userName = authService.getUserEmail() ?? "user_email@gmai.com"
+        return userName
     }
     
     func logout() {

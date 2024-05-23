@@ -32,7 +32,6 @@ final class AppCoordinator: Coordinator {
             //open mainApp
             openMainApp()
         }
-        openAuthModule()
        
     }
     

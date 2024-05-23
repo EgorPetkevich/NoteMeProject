@@ -11,7 +11,6 @@ protocol ProfileViewModelProtocol {
     var sections: [ProfileSections] { get }
     
     func makeTableView() -> UITableView
-
 }
 
 final class ProfileVC: UIViewController {
@@ -39,7 +38,6 @@ final class ProfileVC: UIViewController {
         setupConstrains()
 
     }
-    
     
     private func setupUI() {
         view.backgroundColor = .appBackground

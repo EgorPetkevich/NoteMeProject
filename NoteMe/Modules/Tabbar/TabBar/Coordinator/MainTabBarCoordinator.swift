@@ -34,10 +34,12 @@ final class MainTabBarCoordinator: Coordinator {
     private func makeProfileModule() -> UIViewController {
         let coordinator = ProfileCoordinator(container: container)
         children.append(coordinator)
-        
+        coordinator.onDidFinish = { [weak self] coordinator in
+            self?.children.removeAll {coordinator == $0}
+            self?.finish()}
         return coordinator.start()
     }
-    
+
 }
     
 extension MainTabBarCoordinator: MainTabBarCoordinatorProtocol {

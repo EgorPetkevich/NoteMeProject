@@ -135,69 +135,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F6A43F06-059C-4B34-9BC8-2E6C91E45780"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoteMe/Modules/Tabbar/TabBar/Coordinator/MainTabBarCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "openNewDateNotification()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F6A43F06-059C-4B34-9BC8-2E6C91E45780 - b5bdc411cdc4f2ce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NoteMe.MainTabBarCoordinator.openNewDateNotification() -&gt; ()"
-                  moduleName = "NoteMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/Tabbar/TabBar/Coordinator/MainTabBarCoordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  uuid = "F6A43F06-059C-4B34-9BC8-2E6C91E45780 - b5bdc411cdc4f2a9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NoteMe.MainTabBarCoordinator.openNewDateNotification() -&gt; ()"
-                  moduleName = "NoteMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/Tabbar/TabBar/Coordinator/MainTabBarCoordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  uuid = "F6A43F06-059C-4B34-9BC8-2E6C91E45780 - b5bdc411cdc4f2ef"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NoteMe.MainTabBarCoordinator.openNewDateNotification() -&gt; ()"
-                  moduleName = "NoteMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/Tabbar/TabBar/Coordinator/MainTabBarCoordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
-                  offsetFromSymbolStart = "104">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A7736BD1-FF66-433C-AD76-4F6428701559"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -240,38 +177,6 @@
             startingLineNumber = "110"
             endingLineNumber = "110"
             landmarkName = "numberOfComponents(in:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9AA4AF38-CCA6-46FF-AA5F-F7900E2BE609"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Storage/Models/DTOs/LocationNotificationDTO.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "createMO(context:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "60CCD1C4-0F9D-485C-8807-8A7DE9388BDD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Storage/Storages/NotificationStorage.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "createDTOs(dtos:complition:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

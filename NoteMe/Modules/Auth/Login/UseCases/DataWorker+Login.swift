@@ -15,8 +15,8 @@ struct LoginDataWorker: NotificationDataWorkerLoginUseCaseProtocol {
         self.service = service
     }
     
-    func restore() {
-        service.restore { complition in print(#function + "\(complition)")}
+    func restore(completion: ((Bool) -> Void)?) {
+        self.service.restore(complition: completion)
     }
     
 }
