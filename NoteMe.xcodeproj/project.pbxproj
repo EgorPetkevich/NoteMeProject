@@ -214,7 +214,6 @@
 		F2FD43772AE825000068A5CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD43762AE825000068A5CB /* AppDelegate.swift */; };
 		F2FD43792AE825000068A5CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD43782AE825000068A5CB /* SceneDelegate.swift */; };
 		F2FD43802AE825020068A5CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2FD437F2AE825020068A5CB /* Assets.xcassets */; };
-		F2FD43832AE825020068A5CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2FD43812AE825020068A5CB /* LaunchScreen.storyboard */; };
 		F2FD438E2AE82E810068A5CB /* UIColor+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD438D2AE82E810068A5CB /* UIColor+Consts.swift */; };
 		F2FD43902AE834E70068A5CB /* UIFont+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD438F2AE834E70068A5CB /* UIFont+Consts.swift */; };
 		F2FD43922AE838290068A5CB /* UIImage+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD43912AE838290068A5CB /* UIImage+Consts.swift */; };
@@ -455,7 +454,6 @@
 		F2FD43762AE825000068A5CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2FD43782AE825000068A5CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F2FD437F2AE825020068A5CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F2FD43822AE825020068A5CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2FD43842AE825020068A5CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2FD438D2AE82E810068A5CB /* UIColor+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Consts.swift"; sourceTree = "<group>"; };
 		F2FD438F2AE834E70068A5CB /* UIFont+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Consts.swift"; sourceTree = "<group>"; };
@@ -1471,7 +1469,6 @@
 			isa = PBXGroup;
 			children = (
 				F2FD43752AE825000068A5CB /* NoteMe */,
-				F2FD43812AE825020068A5CB /* LaunchScreen.storyboard */,
 				F2ADABF52B695AC400040848 /* Storage */,
 				F24AC0BE2BB32B2E00F12829 /* NoteMeTests */,
 				F2FD43742AE825000068A5CB /* Products */,
@@ -1723,7 +1720,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2FD43832AE825020068A5CB /* LaunchScreen.storyboard in Resources */,
 				F2EA56B12BEA8C6500CAA359 /* GoogleService-Info.plist in Resources */,
 				F2F3EA6F2AF69B720019445B /* Localizable.strings in Resources */,
 				F2FD43802AE825020068A5CB /* Assets.xcassets in Resources */,
@@ -1973,14 +1969,6 @@
 				F2F3EA722AF69C4E0019445B /* ru */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		F2FD43812AE825020068A5CB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F2FD43822AE825020068A5CB /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

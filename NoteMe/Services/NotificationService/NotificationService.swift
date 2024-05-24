@@ -101,9 +101,7 @@ final class NotificationService {
 }
 
 
-extension NotificationService:
-    
-    NotificationServiceDataWorkerUseCase {
+extension NotificationService: NotificationServiceDataWorkerUseCase {
     func makeNotifications(from dtos: [any DTODescription]) {
         dtos.forEach { dto in
             self.updateOrCreateNotification(dto: dto)
