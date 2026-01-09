@@ -114,11 +114,6 @@ Notifications are stored locally and automatically synced to the cloud.
   <img src="Screenshots/Profile.PNG" alt="Profile" width="200"/>
 </p>
 
-<p float="left">
-  <img src="Screenshots/Task.PNG" alt="Task" width="200"/>
-  <img src="Screenshots/ImageTask.png" alt="Image Task" width="200"/>
-</p>
-
 ---
 
 ## **Installation**
