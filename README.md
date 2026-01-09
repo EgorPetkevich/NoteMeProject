@@ -103,13 +103,13 @@ Notifications are stored locally and automatically synced to the cloud.
 
 ---
 
-## Screenshots
+## **Screenshots**
 
 <p float="left">
-  <img src="Screenshots/Home:Auth.PNG" alt="Auth" width="200"/>
-  <img src="Screenshots/LocationNotification.PNG" alt="LocationNotification" width="200"/>
-  <img src="Screenshots/AddLocation.PNG" alt="AddLocation" width="200"/>
-  <img src="Screenshots/DateNotification.PNG" alt="DateNotification" width="200"/>
+  <img src="Screenshots/Auth.PNG" alt="Auth" width="200"/>
+  <img src="Screenshots/LocationNotification.PNG" alt="Location Notification" width="200"/>
+  <img src="Screenshots/AddLocation.PNG" alt="Add Location" width="200"/>
+  <img src="Screenshots/DateNotification.PNG" alt="Date Notification" width="200"/>
   <img src="Screenshots/Home.PNG" alt="Home" width="200"/>
   <img src="Screenshots/Profile.PNG" alt="Profile" width="200"/>
 </p>
