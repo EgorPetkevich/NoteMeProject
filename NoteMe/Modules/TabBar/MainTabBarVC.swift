@@ -8,14 +8,10 @@
 import UIKit
 import SnapKit
 
-//protocol MainTabBarViewModelProtocol {
-//    func plusButtonDidTap(view: UIView?, select: PopNotificationSections)
-//}
 
 @objc protocol MainTabBarViewModelProtocol {
     @objc func addButtonDidTap(sender: UIView)
 }
-
 
 final class MainTabBarVC: UITabBarController {
     
@@ -58,10 +54,6 @@ final class MainTabBarVC: UITabBarController {
         }
         addButton.cornerRadius = 50 / 2
     }
-    
-//    @objc private func plusButtonDidTap() {
-//        viewModel.plusButtonDidTap(view: button, select: .notifications)
-//    }
 
     @objc private func addButtonDidTap() {
         viewModel.addButtonDidTap(sender: addButton)

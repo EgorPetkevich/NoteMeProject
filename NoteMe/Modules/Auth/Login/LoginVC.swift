@@ -94,6 +94,8 @@ final class LoginVC: UIViewController {
         infoView.addSubview(forgotPasswordButton)
         
         logoContainer.addSubview(logoImageView)
+        
+        view.addGesture(self, action: #selector(dismissKeyboard))
     }
     
     private func setupConstrains() {
@@ -160,6 +162,10 @@ final class LoginVC: UIViewController {
     
     @objc private func forgotPasswordDidTap() {
         viewModel.forgotPasswordDidTap(email: emailTextField.text)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     private func keyboardFrameChanged(_ frame: CGRect) {

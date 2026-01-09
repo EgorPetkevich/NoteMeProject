@@ -133,6 +133,7 @@ final class DateNotificationVC: UIViewController {
         infoView.addSubview(dateTextField)
         infoView.addSubview(commentTextView)
         
+        view.addGesture(self, action: #selector(dismissKeyboard))
     }
     
     private func setupConstrains() {
@@ -204,6 +205,10 @@ final class DateNotificationVC: UIViewController {
     
     @objc func hideKeyboardOnSwipeDown() {
         self.view.endEditing(true)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }

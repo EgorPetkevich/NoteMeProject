@@ -80,13 +80,7 @@ final class LineTextField: UIView {
         set { textField.inputView = newValue }
     }
     
-    
-    //    var delegate: UITextFieldDelegate? {
-    //        get { textField.delegate }
-    //        set { textField.delegate = newValue }
-    //    }
     weak var delegate: LineTextFieldDelegate?
-    
     
     init() {
         super.init(frame: .zero)
@@ -97,7 +91,6 @@ final class LineTextField: UIView {
         super.init(frame: .zero)
         commentInit()
     }
-    
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -169,4 +162,11 @@ extension LineTextField: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true 
+    }
+
+    
 }

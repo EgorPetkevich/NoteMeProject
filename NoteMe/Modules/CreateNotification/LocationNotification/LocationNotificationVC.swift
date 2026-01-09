@@ -131,6 +131,7 @@ final class LocationNotificationVC: UIViewController {
         infoView.addSubview(locationImageView)
         infoView.addSubview(locationImageButton)
         
+        view.addGesture(self, action: #selector(hideKeyboard))
     }
     
     private func setupConstrains() {
@@ -190,7 +191,7 @@ final class LocationNotificationVC: UIViewController {
                                comment: commentTextView.text)
     }
     
-    @objc func hideKeyboardOnSwipeDown() {
+    @objc func hideKeyboard() {
         self.view.endEditing(true)
     }
     
@@ -208,7 +209,7 @@ extension LocationNotificationVC: UIGestureRecognizerDelegate {
     
     private func swipeGesture() {
         let swipeDown = UISwipeGestureRecognizer(target: self, 
-                                                 action: #selector(self.hideKeyboardOnSwipeDown))
+                                                 action: #selector(self.hideKeyboard))
         swipeDown.delegate = self
         swipeDown.direction =  UISwipeGestureRecognizer.Direction.down
         self.infoView.addGestureRecognizer(swipeDown)

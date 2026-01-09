@@ -78,6 +78,8 @@ final class RegisterVC: UIViewController {
         infoView.addSubview(emailTextField)
         infoView.addSubview(passwordTextField)
         infoView.addSubview(repeatPasswordTextField)
+        
+        view.addGesture(self, action: #selector(dismissKeyboard))
     }
     
     private func setUpConstrains() {
@@ -144,6 +146,10 @@ final class RegisterVC: UIViewController {
             password: passwordTextField.text,
             repeatPassword: repeatPasswordTextField.text
         )
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }

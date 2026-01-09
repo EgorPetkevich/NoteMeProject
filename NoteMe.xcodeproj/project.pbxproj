@@ -37,7 +37,6 @@
 		F245B3EC2B796301003FD5B7 /* LineTextView+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3EB2B796301003FD5B7 /* LineTextView+Set.swift */; };
 		F245B3EE2B7A2723003FD5B7 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3ED2B7A2723003FD5B7 /* DatePickerView.swift */; };
 		F245B3F22B7A63ED003FD5B7 /* KeyboardHelper+DateNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3F12B7A63ED003FD5B7 /* KeyboardHelper+DateNotification.swift */; };
-		F245B3F52B7BBBBC003FD5B7 /* MainTabBarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3F42B7BBBBC003FD5B7 /* MainTabBarVM.swift */; };
 		F245B3F92B7BBF3C003FD5B7 /* PopNotificationSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3F82B7BBF3C003FD5B7 /* PopNotificationSelectorVC.swift */; };
 		F245B3FB2B7BBF4E003FD5B7 /* PopNotificationSelectorVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3FA2B7BBF4E003FD5B7 /* PopNotificationSelectorVM.swift */; };
 		F245B3FD2B7BD226003FD5B7 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245B3FC2B7BD226003FD5B7 /* HomeVM.swift */; };
@@ -96,15 +95,13 @@
 		F25B2F892B5EE6F600F13A5A /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2F882B5EE6F600F13A5A /* Container.swift */; };
 		F25B2F8B2B5EEAAB00F13A5A /* ContainerRegistrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2F8A2B5EEAAB00F13A5A /* ContainerRegistrator.swift */; };
 		F25B2F8E2B5EF50500F13A5A /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2F8D2B5EF50500F13A5A /* WindowManager.swift */; };
+		F26D09B72E7EC75600FF9F5F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F26D09B62E7EC75600FF9F5F /* SnapKit */; };
 		F28284672B0BE51400AF496D /* KeyboardHelper+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28284662B0BE51400AF496D /* KeyboardHelper+Register.swift */; };
 		F28284692B0BF70E00AF496D /* InputValidator+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28284682B0BF70E00AF496D /* InputValidator+Register.swift */; };
 		F282846B2B0C0BD600AF496D /* ResetVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F282846A2B0C0BD600AF496D /* ResetVM.swift */; };
 		F282846D2B0C0D5100AF496D /* ResetAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F282846C2B0C0D5100AF496D /* ResetAssembler.swift */; };
 		F28284702B0C0E4700AF496D /* InputValidator+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F282846F2B0C0E4700AF496D /* InputValidator+Reset.swift */; };
 		F28620B82B1F12D100C91413 /* Localization+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28620B72B1F12D100C91413 /* Localization+Onboarding.swift */; };
-		F28620BD2B1F5E4900C91413 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28620BC2B1F5E4900C91413 /* MainTabBarVC.swift */; };
-		F28620C12B1F5FEC00C91413 /* MainTabBarAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28620C02B1F5FEC00C91413 /* MainTabBarAssembler.swift */; };
-		F28620C32B1F612E00C91413 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28620C22B1F612E00C91413 /* MainTabBarCoordinator.swift */; };
 		F28620C82B1F88E200C91413 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F28620C72B1F88E200C91413 /* FirebaseAnalytics */; };
 		F28620CA2B1F88E200C91413 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = F28620C92B1F88E200C91413 /* FirebaseAnalyticsOnDeviceConversion */; };
 		F28620CC2B1F88E200C91413 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F28620CB2B1F88E200C91413 /* FirebaseAnalyticsSwift */; };
@@ -191,7 +188,6 @@
 		F2EA56A72BD7D66F00CAA359 /* AlertService+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EA56A62BD7D66F00CAA359 /* AlertService+Profile.swift */; };
 		F2EA56AA2BD81C0700CAA359 /* NotificationDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EA56A92BD81C0700CAA359 /* NotificationDataWorker.swift */; };
 		F2EA56AF2BEA606C00CAA359 /* DataWorker+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EA56AE2BEA606C00CAA359 /* DataWorker+Login.swift */; };
-		F2EA56B12BEA8C6500CAA359 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2EA56B02BEA8C6500CAA359 /* GoogleService-Info.plist */; };
 		F2EA56B32BEA8CF700CAA359 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F2EA56B22BEA8CF700CAA359 /* FirebaseStorage */; };
 		F2EA56B52BEA8CF700CAA359 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F2EA56B42BEA8CF700CAA359 /* FirebaseStorageCombine-Community */; };
 		F2EA56B82BEA8D4000CAA359 /* FireBaseStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EA56B72BEA8D4000CAA359 /* FireBaseStorageService.swift */; };
@@ -204,6 +200,12 @@
 		F2EA56C92BFD214500CAA359 /* FileDataWorker+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EA56C82BFD214500CAA359 /* FileDataWorker+Location.swift */; };
 		F2EA56CB2BFF6A7D00CAA359 /* DataWorker+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EA56CA2BFF6A7D00CAA359 /* DataWorker+Profile.swift */; };
 		F2EA56CD2BFF82FD00CAA359 /* FileDataWorker+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EA56CC2BFF82FD00CAA359 /* FileDataWorker+Login.swift */; };
+		F2EC48A22F11263D00F4045C /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC48A12F11263D00F4045C /* MainTabBarCoordinator.swift */; };
+		F2EC48A32F11263D00F4045C /* MainTabBarAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC48A02F11263D00F4045C /* MainTabBarAssembler.swift */; };
+		F2EC48A52F11265500F4045C /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC48A42F11265500F4045C /* MainTabBarVC.swift */; };
+		F2EC48A72F11265800F4045C /* MainTabBarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC48A62F11265800F4045C /* MainTabBarVM.swift */; };
+		F2EC48A92F11282800F4045C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2EC48A82F11282800F4045C /* GoogleService-Info.plist */; };
+		F2EC48AB2F112CD500F4045C /* UIView+TapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC48AA2F112CD500F4045C /* UIView+TapGesture.swift */; };
 		F2F3EA5F2AF15F710019445B /* View+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3EA5E2AF15F710019445B /* View+Layer.swift */; };
 		F2F3EA622AF160440019445B /* UIButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3EA612AF160440019445B /* UIButton+Styles.swift */; };
 		F2F3EA652AF16ECA0019445B /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3EA642AF16ECA0019445B /* LineTextField.swift */; };
@@ -217,8 +219,6 @@
 		F2FD438E2AE82E810068A5CB /* UIColor+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD438D2AE82E810068A5CB /* UIColor+Consts.swift */; };
 		F2FD43902AE834E70068A5CB /* UIFont+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD438F2AE834E70068A5CB /* UIFont+Consts.swift */; };
 		F2FD43922AE838290068A5CB /* UIImage+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD43912AE838290068A5CB /* UIImage+Consts.swift */; };
-		F2FD43952AE83B2B0068A5CB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F2FD43942AE83B2B0068A5CB /* SnapKit */; };
-		F2FD43972AE83B2B0068A5CB /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F2FD43962AE83B2B0068A5CB /* SnapKit-Dynamic */; };
 		F2FD439E2AE83DE10068A5CB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD439D2AE83DE10068A5CB /* LoginVC.swift */; };
 		F2FD43A02AE9BA330068A5CB /* UILabel+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD439F2AE9BA330068A5CB /* UILabel+Styles.swift */; };
 		F2FD43A22AE9BB720068A5CB /* UIView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FD43A12AE9BB720068A5CB /* UIView+Styles.swift */; };
@@ -286,7 +286,6 @@
 		F245B3EB2B796301003FD5B7 /* LineTextView+Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LineTextView+Set.swift"; sourceTree = "<group>"; };
 		F245B3ED2B7A2723003FD5B7 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		F245B3F12B7A63ED003FD5B7 /* KeyboardHelper+DateNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+DateNotification.swift"; sourceTree = "<group>"; };
-		F245B3F42B7BBBBC003FD5B7 /* MainTabBarVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVM.swift; sourceTree = "<group>"; };
 		F245B3F82B7BBF3C003FD5B7 /* PopNotificationSelectorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopNotificationSelectorVC.swift; sourceTree = "<group>"; };
 		F245B3FA2B7BBF4E003FD5B7 /* PopNotificationSelectorVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopNotificationSelectorVM.swift; sourceTree = "<group>"; };
 		F245B3FC2B7BD226003FD5B7 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
@@ -352,9 +351,6 @@
 		F282846C2B0C0D5100AF496D /* ResetAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetAssembler.swift; sourceTree = "<group>"; };
 		F282846F2B0C0E4700AF496D /* InputValidator+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Reset.swift"; sourceTree = "<group>"; };
 		F28620B72B1F12D100C91413 /* Localization+Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localization+Onboarding.swift"; sourceTree = "<group>"; };
-		F28620BC2B1F5E4900C91413 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
-		F28620C02B1F5FEC00C91413 /* MainTabBarAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarAssembler.swift; sourceTree = "<group>"; };
-		F28620C22B1F612E00C91413 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		F28620FE2B1F95CC00C91413 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F28621002B1F975A00C91413 /* AuthService+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Login.swift"; sourceTree = "<group>"; };
 		F289A8872B7131BD00A078A1 /* NotificationDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotificationDataBase.xcdatamodel; sourceTree = "<group>"; };
@@ -431,7 +427,6 @@
 		F2EA56A62BD7D66F00CAA359 /* AlertService+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+Profile.swift"; sourceTree = "<group>"; };
 		F2EA56A92BD81C0700CAA359 /* NotificationDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDataWorker.swift; sourceTree = "<group>"; };
 		F2EA56AE2BEA606C00CAA359 /* DataWorker+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataWorker+Login.swift"; sourceTree = "<group>"; };
-		F2EA56B02BEA8C6500CAA359 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F2EA56B72BEA8D4000CAA359 /* FireBaseStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseStorageService.swift; sourceTree = "<group>"; };
 		F2EA56B92BEA99B100CAA359 /* Error+Logs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Logs.swift"; sourceTree = "<group>"; };
 		F2EA56BB2BFCFA2B00CAA359 /* DataWorker+Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataWorker+Home.swift"; sourceTree = "<group>"; };
@@ -442,6 +437,12 @@
 		F2EA56C82BFD214500CAA359 /* FileDataWorker+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileDataWorker+Location.swift"; sourceTree = "<group>"; };
 		F2EA56CA2BFF6A7D00CAA359 /* DataWorker+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataWorker+Profile.swift"; sourceTree = "<group>"; };
 		F2EA56CC2BFF82FD00CAA359 /* FileDataWorker+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileDataWorker+Login.swift"; sourceTree = "<group>"; };
+		F2EC48A02F11263D00F4045C /* MainTabBarAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarAssembler.swift; sourceTree = "<group>"; };
+		F2EC48A12F11263D00F4045C /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
+		F2EC48A42F11265500F4045C /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
+		F2EC48A62F11265800F4045C /* MainTabBarVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVM.swift; sourceTree = "<group>"; };
+		F2EC48A82F11282800F4045C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F2EC48AA2F112CD500F4045C /* UIView+TapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TapGesture.swift"; sourceTree = "<group>"; };
 		F2F3EA5E2AF15F710019445B /* View+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Layer.swift"; sourceTree = "<group>"; };
 		F2F3EA612AF160440019445B /* UIButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styles.swift"; sourceTree = "<group>"; };
 		F2F3EA642AF16ECA0019445B /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
@@ -483,10 +484,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2B73EED2BD53F6800601F1D /* FirebaseDatabaseSwift in Frameworks */,
-				F2FD43952AE83B2B0068A5CB /* SnapKit in Frameworks */,
 				F28620CE2B1F88E200C91413 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				F26D09B72E7EC75600FF9F5F /* SnapKit in Frameworks */,
 				F2ADABFA2B695AC400040848 /* Storage.framework in Frameworks */,
-				F2FD43972AE83B2B0068A5CB /* SnapKit-Dynamic in Frameworks */,
 				F28620C82B1F88E200C91413 /* FirebaseAnalytics in Frameworks */,
 				F28620D42B1F88E200C91413 /* FirebaseAuth in Frameworks */,
 				F28620D82B1F88E200C91413 /* FirebaseCrashlytics in Frameworks */,
@@ -970,26 +970,6 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
-		F28620BA2B1F5E1F00C91413 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				F28620BB2B1F5E2B00C91413 /* Coordinator */,
-				F28620BC2B1F5E4900C91413 /* MainTabBarVC.swift */,
-				F245B3F42B7BBBBC003FD5B7 /* MainTabBarVM.swift */,
-			);
-			name = TabBar;
-			path = Tabbar/TabBar;
-			sourceTree = "<group>";
-		};
-		F28620BB2B1F5E2B00C91413 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				F28620C02B1F5FEC00C91413 /* MainTabBarAssembler.swift */,
-				F28620C22B1F612E00C91413 /* MainTabBarCoordinator.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
 		F28620FD2B1F95BB00C91413 /* AuthService */ = {
 			isa = PBXGroup;
 			children = (
@@ -1389,6 +1369,25 @@
 			path = FileDataWorker;
 			sourceTree = "<group>";
 		};
+		F2EC489E2F11260D00F4045C /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC489F2F11262D00F4045C /* Coordinator */,
+				F2EC48A62F11265800F4045C /* MainTabBarVM.swift */,
+				F2EC48A42F11265500F4045C /* MainTabBarVC.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F2EC489F2F11262D00F4045C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC48A02F11263D00F4045C /* MainTabBarAssembler.swift */,
+				F2EC48A12F11263D00F4045C /* MainTabBarCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		F2F3EA5D2AF15F560019445B /* Utiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -1413,6 +1412,7 @@
 		F2F3EA602AF160220019445B /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				F2EC48AA2F112CD500F4045C /* UIView+TapGesture.swift */,
 				F2F3EA612AF160440019445B /* UIButton+Styles.swift */,
 				F2FD439F2AE9BA330068A5CB /* UILabel+Styles.swift */,
 				F2FD43A12AE9BB720068A5CB /* UIView+Styles.swift */,
@@ -1488,7 +1488,6 @@
 		F2FD43752AE825000068A5CB /* NoteMe */ = {
 			isa = PBXGroup;
 			children = (
-				F2EA56B02BEA8C6500CAA359 /* GoogleService-Info.plist */,
 				F2FD438A2AE82D2A0068A5CB /* App */,
 				F2F3EA632AF16E9C0019445B /* Custom */,
 				F2FD43982AE83D880068A5CB /* Modules */,
@@ -1506,6 +1505,7 @@
 				F2FD43762AE825000068A5CB /* AppDelegate.swift */,
 				F2FD43782AE825000068A5CB /* SceneDelegate.swift */,
 				F2E6B8A32B0D124700F42C7E /* AppCoordinator.swift */,
+				F2EC48A82F11282800F4045C /* GoogleService-Info.plist */,
 				F2FD43842AE825020068A5CB /* Info.plist */,
 			);
 			path = App;
@@ -1536,12 +1536,12 @@
 		F2FD43982AE83D880068A5CB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F2EC489E2F11260D00F4045C /* TabBar */,
 				F23B25B82B8E440A00AC1813 /* MenuPopover */,
 				F2FD439B2AE83DBF0068A5CB /* Auth */,
 				F2DF71642B306988000267C8 /* Home */,
 				F253EA382B16541600AEDDD7 /* Onboarding */,
 				F2DF716C2B31A961000267C8 /* Profile */,
-				F28620BA2B1F5E1F00C91413 /* TabBar */,
 				F245B3F62B7BBEE8003FD5B7 /* PopNotificationSelector */,
 				F245B3D32B78D87F003FD5B7 /* CreateNotification */,
 			);
@@ -1635,8 +1635,6 @@
 			);
 			name = NoteMe;
 			packageProductDependencies = (
-				F2FD43942AE83B2B0068A5CB /* SnapKit */,
-				F2FD43962AE83B2B0068A5CB /* SnapKit-Dynamic */,
 				F28620C72B1F88E200C91413 /* FirebaseAnalytics */,
 				F28620C92B1F88E200C91413 /* FirebaseAnalyticsOnDeviceConversion */,
 				F28620CB2B1F88E200C91413 /* FirebaseAnalyticsSwift */,
@@ -1648,6 +1646,7 @@
 				F2B73EEC2BD53F6800601F1D /* FirebaseDatabaseSwift */,
 				F2EA56B22BEA8CF700CAA359 /* FirebaseStorage */,
 				F2EA56B42BEA8CF700CAA359 /* FirebaseStorageCombine-Community */,
+				F26D09B62E7EC75600FF9F5F /* SnapKit */,
 			);
 			productName = NoteMe;
 			productReference = F2FD43732AE825000068A5CB /* NoteMe.app */;
@@ -1687,8 +1686,8 @@
 			);
 			mainGroup = F2FD436A2AE825000068A5CB;
 			packageReferences = (
-				F2FD43932AE83B2B0068A5CB /* XCRemoteSwiftPackageReference "SnapKit" */,
 				F28620C62B1F88E200C91413 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F26D09B52E7EC75600FF9F5F /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = F2FD43742AE825000068A5CB /* Products */;
 			projectDirPath = "";
@@ -1720,9 +1719,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2EA56B12BEA8C6500CAA359 /* GoogleService-Info.plist in Resources */,
 				F2F3EA6F2AF69B720019445B /* Localizable.strings in Resources */,
 				F2FD43802AE825020068A5CB /* Assets.xcassets in Resources */,
+				F2EC48A92F11282800F4045C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1833,16 +1832,15 @@
 				F25B2F892B5EE6F600F13A5A /* Container.swift in Sources */,
 				F2C458D82BA2175E000BE010 /* String+Size.swift in Sources */,
 				F2B976B12AFE9785005ADC3B /* LoginVM.swift in Sources */,
-				F28620BD2B1F5E4900C91413 /* MainTabBarVC.swift in Sources */,
 				F24AC1012BB41AB200F12829 /* SearchLocationAdapter.swift in Sources */,
 				F20FC0A12B9DD1CE00F7BBE2 /* TimerPickerView+Actions.swift in Sources */,
 				F24AC11E2BC5894400F12829 /* MapNotificationAssembler.swift in Sources */,
+				F2EC48A72F11265800F4045C /* MainTabBarVM.swift in Sources */,
 				F2E6B8AD2B0D24D200F42C7E /* RegisteCoordinator.swift in Sources */,
 				F2FD439E2AE83DE10068A5CB /* LoginVC.swift in Sources */,
 				F2B976B32AFE97F3005ADC3B /* LoginAssembler.swift in Sources */,
 				F2287FBD2B8CAF810010E58C /* HomeAdapter.swift in Sources */,
 				F245B3E02B78D97E003FD5B7 /* DateNotificationAssembler.swift in Sources */,
-				F245B3F52B7BBBBC003FD5B7 /* MainTabBarVM.swift in Sources */,
 				F2ADABEE2B691E8000040848 /* ProfileAdapter.swift in Sources */,
 				F253EA482B165B3000AEDDD7 /* OnboardSecondStepVC.swift in Sources */,
 				F2E6B8A42B0D124700F42C7E /* AppCoordinator.swift in Sources */,
@@ -1864,7 +1862,6 @@
 				F282846B2B0C0BD600AF496D /* ResetVM.swift in Sources */,
 				F23B25BF2B8E452E00AC1813 /* MenuPopoverAdapter.swift in Sources */,
 				F25B2F8E2B5EF50500F13A5A /* WindowManager.swift in Sources */,
-				F28620C12B1F5FEC00C91413 /* MainTabBarAssembler.swift in Sources */,
 				F24AC1202BC5895500F12829 /* MapNotificationCoordinator.swift in Sources */,
 				F2C459072BA9F4DA000BE010 /* NetworkRequest.swift in Sources */,
 				F253EA3E2B16569400AEDDD7 /* OnboardingFirstStepVM.swift in Sources */,
@@ -1879,11 +1876,12 @@
 				F2C458D22BA20C73000BE010 /* NotificatoinFilterView.swift in Sources */,
 				F253EA4E2B165D5700AEDDD7 /* OnboardSecondStepCoordinator.swift in Sources */,
 				F23B25C22B8E467900AC1813 /* MenuActionCell.swift in Sources */,
+				F2EC48A22F11263D00F4045C /* MainTabBarCoordinator.swift in Sources */,
+				F2EC48A32F11263D00F4045C /* MainTabBarAssembler.swift in Sources */,
 				F2EA56A32BD663DF00CAA359 /* MapNotificationInfoAssembler.swift in Sources */,
 				F20FC0A52B9F6F3600F7BBE2 /* LocationVC.swift in Sources */,
 				F245B3FB2B7BBF4E003FD5B7 /* PopNotificationSelectorVM.swift in Sources */,
 				F2C458DA2BA83674000BE010 /* CollectionView+Register.swift in Sources */,
-				F28620C32B1F612E00C91413 /* MainTabBarCoordinator.swift in Sources */,
 				F245B40D2B7F716F003FD5B7 /* LocationNotificationVC.swift in Sources */,
 				F2FD43772AE825000068A5CB /* AppDelegate.swift in Sources */,
 				F24AC0B82BB20F2F00F12829 /* PlaceSearchRequest.swift in Sources */,
@@ -1930,6 +1928,8 @@
 				F245B42A2B7F8752003FD5B7 /* TimerNotificationCoordinator.swift in Sources */,
 				F2F3EA682AF55E3D0019445B /* RegisterVC.swift in Sources */,
 				F2DF716F2B31A991000267C8 /* ProfileVC.swift in Sources */,
+				F2EC48A52F11265500F4045C /* MainTabBarVC.swift in Sources */,
+				F2EC48AB2F112CD500F4045C /* UIView+TapGesture.swift in Sources */,
 				F245B3F92B7BBF3C003FD5B7 /* PopNotificationSelectorVC.swift in Sources */,
 				F2FD43792AE825000068A5CB /* SceneDelegate.swift in Sources */,
 				F245B3E42B78DF33003FD5B7 /* UIDatePicker.swift in Sources */,
@@ -2231,7 +2231,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = egorpetkevich.NoteMe;
+				PRODUCT_BUNDLE_IDENTIFIER = egorpetkevich.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -2264,7 +2264,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = egorpetkevich.NoteMe;
+				PRODUCT_BUNDLE_IDENTIFIER = egorpetkevich.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -2314,6 +2314,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F26D09B52E7EC75600FF9F5F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 		F28620C62B1F88E200C91413 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -2322,17 +2330,14 @@
 				minimumVersion = 10.18.0;
 			};
 		};
-		F2FD43932AE83B2B0068A5CB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.6.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F26D09B62E7EC75600FF9F5F /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F26D09B52E7EC75600FF9F5F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		F28620C72B1F88E200C91413 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F28620C62B1F88E200C91413 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -2387,16 +2392,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F28620C62B1F88E200C91413 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
-		};
-		F2FD43942AE83B2B0068A5CB /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F2FD43932AE83B2B0068A5CB /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		F2FD43962AE83B2B0068A5CB /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F2FD43932AE83B2B0068A5CB /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -78,6 +78,8 @@ final class ResetVC: UIViewController {
         infoView.addSubview(emailTextField)
         
         logoContainer.addSubview(logoImageView)
+        
+        view.addGesture(self, action: #selector(dismissKeyboard))
     }
     
     private func setUpConstrains() {
@@ -133,6 +135,10 @@ final class ResetVC: UIViewController {
     
     @objc private func resetButtonDidTap() {
         viewModel.resetDidTap(email: emailTextField.text)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     private func keyboardFrameChanged(_ frame: CGRect) {

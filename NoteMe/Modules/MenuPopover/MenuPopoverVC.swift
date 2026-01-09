@@ -101,7 +101,6 @@ final class MenuPopoverVC: UIViewController {
             make.horizontalEdges.equalToSuperview()
             make.verticalEdges.equalTo(
                 self.view.safeAreaLayoutGuide.snp.verticalEdges)
-//            make.height.equalTo(adapter.contentHeight)
         }
     }
     

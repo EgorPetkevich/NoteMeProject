@@ -7,70 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "08367391-B50E-47C0-8D82-2995843934CA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoteMe/Modules/MenuPopover/Coordinator/MenuPopoverBuilder.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "buildAddMenu(delegate:sourseView:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1A8BDB75-61F2-4333-9A77-933C72FD4114"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoteMe/Modules/MenuPopover/Coordinator/MenuPopoverBuilder.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "buildAddMenu(delegate:sourseView:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1A8BDB75-61F2-4333-9A77-933C72FD4114 - 26b2bfa16aecdec1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static NoteMe.MenuPopoverBuilder.buildAddMenu(delegate: NoteMe.MenuPopoverDelegate, sourseView: __C.UIView) -&gt; __C.UIViewController"
-                  moduleName = "NoteMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/MenuPopover/Coordinator/MenuPopoverBuilder.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "80">
-               </Location>
-               <Location
-                  uuid = "1A8BDB75-61F2-4333-9A77-933C72FD4114 - 26b2bfa16aecdec1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static NoteMe.MenuPopoverBuilder.buildAddMenu(delegate: NoteMe.MenuPopoverDelegate, sourseView: __C.UIView) -&gt; __C.UIViewController"
-                  moduleName = "NoteMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/MenuPopover/Coordinator/MenuPopoverBuilder.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1DAE2672-7FEF-4367-98CC-061A5E4EE64A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -81,54 +17,6 @@
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "build(delegate:actions:sourseView:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1DAE2672-7FEF-4367-98CC-061A5E4EE64A - 91571fef859d42c8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static NoteMe.MenuPopoverBuilder.build(delegate: NoteMe.MenuPopoverDelegate, actions: Swift.Array&lt;NoteMe.MenuPopoverVC.Action&gt;, sourseView: __C.UIView) -&gt; __C.UIViewController"
-                  moduleName = "NoteMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/MenuPopover/Coordinator/MenuPopoverBuilder.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "84">
-               </Location>
-               <Location
-                  uuid = "1DAE2672-7FEF-4367-98CC-061A5E4EE64A - 91571fef859d424c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static NoteMe.MenuPopoverBuilder.build(delegate: NoteMe.MenuPopoverDelegate, actions: Swift.Array&lt;NoteMe.MenuPopoverVC.Action&gt;, sourseView: __C.UIView) -&gt; __C.UIViewController"
-                  moduleName = "NoteMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgepopkich/Desktop/SwiftSecondSem/NoteMe/NoteMe/Modules/MenuPopover/Coordinator/MenuPopoverBuilder.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "39FE7E71-DAD7-4A49-97D4-434513FF96B4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoteMe/Modules/MenuPopover/MenuPopoverVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "setupPopover(sourseView:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

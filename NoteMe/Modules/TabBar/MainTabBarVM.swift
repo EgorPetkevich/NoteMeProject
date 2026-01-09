@@ -7,12 +7,6 @@
 
 import UIKit
 
-
-//protocol MainTabBarCoordinatorProtocol: AnyObject {
-//    func showPopNotificationsScreen(view: UIView?,
-//                                    select: PopNotificationSections)
-//}
-
 protocol MainTabBarCoordinatorProtocol: AnyObject {
     func showMenu(sender: UIView, delegate: MenuPopoverDelegate)
     func openNewDateNotification()
@@ -32,11 +26,7 @@ final class MainTabBarVM: MainTabBarViewModelProtocol {
         coordinator?.showMenu(sender: sender, delegate: self)
     }
 }
-    
-//    func plusButtonDidTap(view: UIView?, select: PopNotificationSections) {
-//        coordinator?.showPopNotificationsScreen(view: view, select: select)
-//    }
-    
+
     
 extension MainTabBarVM: MenuPopoverDelegate {
     
