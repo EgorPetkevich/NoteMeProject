@@ -35,5 +35,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_ scene: UIScene) {}
 
 
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let url = URLContexts.first?.url else { return }
+           handleDeepLink(url)
+    }
+    
+    func handleDeepLink(_ url: URL) {
+        guard url.scheme == "myapp" else { return }
+
+        switch url.host {
+        case "profile":
+            if let id = url.pathComponents.dropFirst().first {
+//                openProfile(id: id)
+            }
+
+        case "settings":
+//           openSettings()
+            print("Settings")
+
+        default:
+            break
+        }
+    }
+    func scene(
+        _ scene: UIScene,
+        continue userActivity: NSUserActivity
+    ) {
+        guard let url = userActivity.webpageURL else { return }
+        handleDeepLink(url)
+    }
 }
+
 

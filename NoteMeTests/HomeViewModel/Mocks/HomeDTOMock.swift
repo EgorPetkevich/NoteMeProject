@@ -10,7 +10,7 @@ import Storage
 import CoreData
 
 struct HomeDTOMock: DTODescription {
-    
+  
     typealias MO = BaseNotificationMO
     
     var id: String = "testID"
@@ -20,6 +20,10 @@ struct HomeDTOMock: DTODescription {
     var completedDate: Date? = nil
     
     static func fromMO(_ mo: Storage.BaseNotificationMO) -> HomeDTOMock? {
+        return nil
+    }
+    
+    func createMO(context: NSManagedObjectContext) -> Storage.BaseNotificationMO? {
         return nil
     }
     

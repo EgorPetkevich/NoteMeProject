@@ -9,8 +9,8 @@ import UIKit
 import Storage
 @testable import NoteMe
 
-final class HomeStorageStub: HomeStorageUseCaseProtocol {
+final class HomeDataWorkerStub: HomeNotificationDataWorkerUseCaseProtocol {
     
-    func delete(dto: any DTODescription) { }
+    func deleteByUser(dto: any Storage.DTODescription) { }
     
 }

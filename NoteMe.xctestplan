@@ -1,0 +1,30 @@
+{
+  "configurations" : [
+    {
+      "id" : "3F52A885-D218-4EA5-AEF5-1DDCA4866F4C",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:NoteMe.xcodeproj",
+      "identifier" : "F2FD43722AE825000068A5CB",
+      "name" : "NoteMe"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:NoteMe.xcodeproj",
+        "identifier" : "F24AC0BC2BB32B2E00F12829",
+        "name" : "NoteMeTests"
+      }
+    }
+  ],
+  "version" : 1
+}

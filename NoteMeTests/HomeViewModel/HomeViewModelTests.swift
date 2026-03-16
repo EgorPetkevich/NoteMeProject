@@ -11,15 +11,15 @@ import XCTest
 final class HomeViewModelTests: XCTestCase {
     
     private let adapterSpy = HomeAdapterSpy()
-    private let storageSpy = HomeStorageStub()
     private let frcSpy = HomeFRCServiceSpy()
     private let coordinatorSpy = HomeCoordinatorStub()
+    private let dataWorkerStub = HomeDataWorkerStub()
     
     private func makeSut() -> HomeVM {
         return HomeVM(adapter: adapterSpy,
-                      storage: storageSpy,
                       coordinator: coordinatorSpy,
-                      frcService: frcSpy)
+                      frcService: frcSpy,
+                      dataWorker: dataWorkerStub)
     }
     
     private func clearData() {
@@ -38,7 +38,7 @@ final class HomeViewModelTests: XCTestCase {
         
         XCTAssert(frcSpy.startHandleCalled)
         XCTAssert(adapterSpy.reloadDataCalled)
-        XCTAssert(frcSpy.fetchedDTOs.count == adapterSpy.reloadDataDTOList.count)
+        XCTAssertEqual(frcSpy.fetchedDTOs.count, adapterSpy.reloadDataDTOList.count)
     }
     
     func test_filter() {

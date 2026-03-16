@@ -61,7 +61,7 @@
 		F24AC0C92BB331D500F12829 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AC0C82BB331D500F12829 /* HomeViewModelTests.swift */; };
 		F24AC0CD2BB3332200F12829 /* HomeAdapterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AC0CC2BB3332200F12829 /* HomeAdapterSpy.swift */; };
 		F24AC0CF2BB333BA00F12829 /* HomeCoordinatorStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AC0CE2BB333BA00F12829 /* HomeCoordinatorStub.swift */; };
-		F24AC0D12BB3340D00F12829 /* HomeStorageStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AC0D02BB3340D00F12829 /* HomeStorageStub.swift */; };
+		F24AC0D12BB3340D00F12829 /* HomeDataWorkerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AC0D02BB3340D00F12829 /* HomeDataWorkerStub.swift */; };
 		F24AC0D52BB3360100F12829 /* FRCService+Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AC0D42BB3360100F12829 /* FRCService+Home.swift */; };
 		F24AC0D72BB336E500F12829 /* HomeFRCServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AC0D62BB336E500F12829 /* HomeFRCServiceSpy.swift */; };
 		F24AC0DA2BB33DF900F12829 /* HomeDTOMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AC0D92BB33DF900F12829 /* HomeDTOMock.swift */; };
@@ -311,7 +311,7 @@
 		F24AC0C82BB331D500F12829 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		F24AC0CC2BB3332200F12829 /* HomeAdapterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAdapterSpy.swift; sourceTree = "<group>"; };
 		F24AC0CE2BB333BA00F12829 /* HomeCoordinatorStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorStub.swift; sourceTree = "<group>"; };
-		F24AC0D02BB3340D00F12829 /* HomeStorageStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStorageStub.swift; sourceTree = "<group>"; };
+		F24AC0D02BB3340D00F12829 /* HomeDataWorkerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataWorkerStub.swift; sourceTree = "<group>"; };
 		F24AC0D42BB3360100F12829 /* FRCService+Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FRCService+Home.swift"; sourceTree = "<group>"; };
 		F24AC0D62BB336E500F12829 /* HomeFRCServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFRCServiceSpy.swift; sourceTree = "<group>"; };
 		F24AC0D92BB33DF900F12829 /* HomeDTOMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDTOMock.swift; sourceTree = "<group>"; };
@@ -368,6 +368,7 @@
 		F289A8A62B73E35600A078A1 /* DTODescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTODescription.swift; sourceTree = "<group>"; };
 		F289A8A82B73E43400A078A1 /* NotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStorage.swift; sourceTree = "<group>"; };
 		F289A8AB2B73F60800A078A1 /* FRCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRCService.swift; sourceTree = "<group>"; };
+		F28B2E712F674DF1003777D9 /* NoteMe.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = NoteMe.xctestplan; sourceTree = "<group>"; };
 		F2ADABDF2B67BE4D00040848 /* ProfileSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSections.swift; sourceTree = "<group>"; };
 		F2ADABE12B68098100040848 /* ProfileTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeader.swift; sourceTree = "<group>"; };
 		F2ADABE62B68162300040848 /* ProfileAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAccountCell.swift; sourceTree = "<group>"; };
@@ -764,7 +765,7 @@
 			children = (
 				F24AC0CC2BB3332200F12829 /* HomeAdapterSpy.swift */,
 				F24AC0CE2BB333BA00F12829 /* HomeCoordinatorStub.swift */,
-				F24AC0D02BB3340D00F12829 /* HomeStorageStub.swift */,
+				F24AC0D02BB3340D00F12829 /* HomeDataWorkerStub.swift */,
 				F24AC0D62BB336E500F12829 /* HomeFRCServiceSpy.swift */,
 			);
 			path = Spies;
@@ -1468,6 +1469,7 @@
 		F2FD436A2AE825000068A5CB = {
 			isa = PBXGroup;
 			children = (
+				F28B2E712F674DF1003777D9 /* NoteMe.xctestplan */,
 				F2FD43752AE825000068A5CB /* NoteMe */,
 				F2ADABF52B695AC400040848 /* Storage */,
 				F24AC0BE2BB32B2E00F12829 /* NoteMeTests */,
@@ -1738,7 +1740,7 @@
 				F24AC0DA2BB33DF900F12829 /* HomeDTOMock.swift in Sources */,
 				F24AC0D72BB336E500F12829 /* HomeFRCServiceSpy.swift in Sources */,
 				F24AC0C92BB331D500F12829 /* HomeViewModelTests.swift in Sources */,
-				F24AC0D12BB3340D00F12829 /* HomeStorageStub.swift in Sources */,
+				F24AC0D12BB3340D00F12829 /* HomeDataWorkerStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1982,7 +1984,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HS3N4SX6NK;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = egorpetkevich.NoteMeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2001,7 +2003,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HS3N4SX6NK;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = egorpetkevich.NoteMeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
